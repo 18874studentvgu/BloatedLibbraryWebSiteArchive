@@ -4,7 +4,7 @@
 
 ## Members:
  1. Tra Dang Khoa - @17637 - User ID: 13789744 (team leader)
- 2. Son Nguyen Thanh - @18874vgustudent  -  User ID: 13789908
+ 2. Son Nguyen Thanh - @18874studentvgu  -  User ID: 13789908
  3. Dong Do Dinh - @170001 - User ID: 13789722
  4. Quang Nguyen Huu Minh - @174521 -  User ID: 13789726
  5. Mai Trọng Nhân - @StarKevin20022002 - User ID: 13794792
