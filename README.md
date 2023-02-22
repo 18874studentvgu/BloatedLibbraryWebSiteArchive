@@ -1,6 +1,6 @@
 # vgupe2023_team3
 
-# project:
+# Project: Online Library Management
 
 ## Members:
  1. Tra Dang Khoa - @17637 - User ID: 13789744 (team leader)
