@@ -220,7 +220,7 @@ Microservices are an architectural and organizational approach to software devel
   - In order to effectively test and debug an application, you need to have access to all of the servers and devices that are part of the system.
   - This can be difficult to do in a large, distributed system.
 
-### 5. Monolithic and Microservice Architecture**
+### 5. Monolithic and Microservice Architecture
 
 | Monolithic Architecture | Microservice Architecture |
 | :----------- | :----------- |
