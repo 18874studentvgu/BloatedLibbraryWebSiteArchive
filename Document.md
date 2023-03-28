@@ -291,6 +291,6 @@ N-tier architecture - also called multi-tier architecture - refers to any applic
 [What is Three-Tier Architecture? - Definition from Techopedia. (2023)](https://www.techopedia.com/definition/24649/three-tier-architecture). Retrieved 23 February 2023.
 
 
-##**User-case**
+## **User-case**
 ### Browse book
-![Alt text](file:///C:/Users/HP/Downloads/Use%20case%20diagrams-Browse%20book.drawio.png)
+![](Use case diagrams-Browse book.drawio.png)
