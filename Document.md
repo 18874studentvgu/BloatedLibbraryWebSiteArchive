@@ -293,4 +293,4 @@ N-tier architecture - also called multi-tier architecture - refers to any applic
 
 ## **User-case**
 ### Browse book
-![](/Downloads/Use%20case%20diagrams-Browse%20book.drawio.png)
+![](https://viewer.diagrams.net/?page-id=V9PhQFXbO9-B-3GSCc7o&highlight=0000ff&edit=_blank&layers=1&nav=1#G1pjmIc-r6MefOpEwL4B3vp-AH3VBShdYR)
