@@ -3,18 +3,17 @@ const mongoose = require('mongoose');
 const AdminSchema = new mongoose.Schema({
     userName: {
         type: String,
-        Required: true,
-        Unique: true
+        required: true,
+         unique: true
     },
     email: {
         type: String,
-        Required: true,
-        Unique: true
+        required: true,
+         unique: true
     },
     passHash: {
         type: String,
-        Required: true,
-        Unique: true
+        required: true
     },
     permissions: {
         makeAndModifyAccounts: { type: Boolean, default: false },

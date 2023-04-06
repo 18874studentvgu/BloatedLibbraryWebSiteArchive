@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const BookSchema = new mongoose.Schema({
-    title: { type: String, Required: true },
-    internationalNumber: { type: Number, Required: true}, //IBSN for books and ISSN for mangazines
-    author: [ {type: String, Required: true }],
+    title: { type: String, required: true },
+    internationalNumber: { type: Number, required: true}, //IBSN for books and ISSN for mangazines
+    author: [ {type: String, required: true }],
     synopsis: String,
     copiesAvailable: {type: Number, min: [0,'Availables copies cannot be negative ({VALUE})!']},
     PDFPreviewLink: String,
@@ -25,7 +25,8 @@ const BookSchema = new mongoose.Schema({
         dayModified: Date,
     }]
 
-});
+},
+{ timestamps: true});
 
 const Book = mongoose.model('Book',BookSchema);
 module.exports = Book;

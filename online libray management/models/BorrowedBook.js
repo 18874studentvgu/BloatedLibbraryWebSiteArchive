@@ -3,19 +3,19 @@ const mongoose = require('mongoose');
 const BorrowedBookSchema = new mongoose.Schema({
     userID: {
         type: String,
-        Required: true
+        required: true
     },
     bookID: {
         type: String,
-        Required: true
+        required: true
     },
     leaseDate: {
         type: Date,
-        Required: true
+        required: true
     },
     dueDate: {
         type: Date,
-        Required: true
+        required: true
     },
     paymentAmount: {
         type: Number,

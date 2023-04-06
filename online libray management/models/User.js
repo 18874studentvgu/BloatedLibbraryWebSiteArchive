@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const UserSchema = new mongoose.Schema({
     userName: {
         type: String,
-        Required: true,
-        Unique: true
+        required: true,
+        unique: true
     },
     iconLink: {
         type: String,
@@ -13,19 +13,18 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        Unique: true
+        unique: true
     },
     passHash: {
         type: String,
-        Required: true,
-        Unique: true
+        required: true
     },
     dateCreated: {
         type: Date,
     },
     dateLastActive: {
         type: Date,
-        Required: true
+        required: true
     },
     userInfo: {
         lName: String,
@@ -39,19 +38,19 @@ const UserSchema = new mongoose.Schema({
     booksBorrowing: [{
         bookName: {
             type: String,
-            Required: true
+            required: true
         },
         bookID: {
             type: String,
-            Required: true
+            required: true
         },
         borrowID: {
             type: String,
-            Required: true
+            required: true
         },
         dueDate: {
             type: Date,
-            Required: true
+            required: true
         }
     }]
 },
