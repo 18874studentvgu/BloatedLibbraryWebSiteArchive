@@ -11,9 +11,9 @@ app.use(expressSession({
 }))
 
 //controller
-
 const homeController = require('./controllers/home')
-
+const aboutController = require('./controllers/about')
+const contactController = require('./controllers/contact')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -44,4 +44,10 @@ app.listen(3000, () => {
 //home and post preview
 app.get('/', homeController)
 app.get('/index', homeController)
+
+//get
+app.get('/about', aboutController)
+
+//contact
+app.get('/contact', contactController)
 
