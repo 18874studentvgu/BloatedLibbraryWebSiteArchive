@@ -1,26 +1,59 @@
-const mongoose=require('mongoose')
-const schema=mongoose.Schema
-const bcrypt=require('bcrypt')
+const mongoose = require('mongoose');
 
-const userSchema = new schema({
-    username: {
+const UserSchema = new mongoose.Schema({
+    userName: {
         type: String,
         required: true,
         unique: true
     },
-    password: {
+    iconLink: {
+        type: String,
+        default: "" /*link to defaut profile picture here*/
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    passHash: {
         type: String,
         required: true
-    }
-});
-
-userSchema.pre('save', function (next) {
-    const user = this
-    bcrypt.hash(user.password, 10, (error, hash) => {
-        user.password = hash
-        next()
-    })
-})
-
-const user=mongoose.model('user',userSchema)
-module.exports=user
+    },
+    dateCreated: {
+        type: Date,
+    },
+    dateLastActive: {
+        type: Date,
+        required: true
+    },
+    userInfo: {
+        lName: String,
+        fName: String,
+        age: {
+            type: Number,
+            min: [0, 'Age cannot be negative, got {VALUE}!']
+        },
+        userDescription: String
+    },
+    booksBorrowing: [{
+        bookName: {
+            type: String,
+            required: true
+        },
+        bookID: {
+            type: String,
+            required: true
+        },
+        borrowID: {
+            type: String,
+            required: true
+        },
+        dueDate: {
+            type: Date,
+            required: true
+        }
+    }]
+},
+{ timestamps: true});
+const User = mongoose.model('User',UserSchema);
+module.exports = User;
