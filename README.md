@@ -10,8 +10,7 @@
  5. Mai Trọng Nhân - @StarKevin20022002 - User ID: 13794792
  6. Tran Hoang Kim - @HoangKim1504 - User ID: 13796562
  7. Võ Nguyễn Minh Duy (He) - @themeowsketeer -  User ID: 13796504
- 8.  Chau Truong Vinh Hoang - @16076 - User ID: 5928255
-
+ 
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
