@@ -14,6 +14,10 @@ app.use(expressSession({
 const homeController = require('./controllers/home')
 const aboutController = require('./controllers/about')
 const contactController = require('./controllers/contact')
+const loginController = require('./controllers/login')
+const authController = require('./controllers/authUser')
+const registerController = require('./controllers/register')
+const storeUserController = require('./controllers/storeUser')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -23,7 +27,6 @@ app.use('*', (req, res, next) => {
 });
 
 //middleware
-
 app.use(fileUpload())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true})) 
@@ -51,3 +54,14 @@ app.get('/about', aboutController)
 //contact
 app.get('/contact', contactController)
 
+//login
+app.get('/login', loginController)
+
+//authUser
+app.get('/login/auth', authController)
+
+//register
+app.get('/register',registerController)
+
+//storeUser
+app.get('/register', storeUserController)
