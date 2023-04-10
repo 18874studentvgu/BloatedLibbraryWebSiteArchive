@@ -16,7 +16,7 @@ const aboutController = require('./controllers/about')
 const contactController = require('./controllers/contact')
 const loginController = require('./controllers/login')
 const authController = require('./controllers/authUser')
-const registerController = require('./controllers/register')
+const registerController = require('./controllers/newUser')
 const storeUserController = require('./controllers/storeUser')
 
 //check logged in and newuser
@@ -55,13 +55,13 @@ app.get('/about', aboutController)
 app.get('/contact', contactController)
 
 //login
-app.get('/login', loginController)
+app.get('/auth/login', loginController)
 
 //authUser
 app.get('/login/auth', authController)
 
 //register
-app.get('/register',registerController)
+app.get('/auth/register', registerController)
 
 //storeUser
-app.get('/register', storeUserController)
+app.get('/users/register', storeUserController)
