@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
+const jwt= require('jsonwebtoken')
 //idk what this is 
 app.use(expressSession({
     secret: 'keyboard cat'
@@ -69,11 +70,11 @@ app.get('/auth/register', registerController)
 //storeUser
 app.get('/users/register', storeUserController)
 
-//email confirmation
+//email confirmation page
 app.get('/reset', emailConfPageController)
 
 //send confirmation email
 app.post('/reset/sendEmail', sendConfEmailController)
 
-//send confirmation email
+//reset password page
 app.get('/reset/password', resetPasswordController)
