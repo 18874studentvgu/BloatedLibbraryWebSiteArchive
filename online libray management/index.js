@@ -65,3 +65,6 @@ app.get('/auth/register', registerController)
 
 //storeUser
 app.get('/users/register', storeUserController)
+
+//error page
+app.use((req, res) => res.render('404')); 
