@@ -1,4 +1,4 @@
-.forget-password-container {
+.error-page-container {
   width: 100%;
   display: flex;
   overflow: auto;
@@ -6,9 +6,9 @@
   align-items: center;
   flex-direction: column;
 }
-.forget-password-forgotpassword {
+.error-page-errorpage {
   width: 100%;
-  height: 1000px;
+  height: 1003px;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -17,9 +17,9 @@
   border-color: transparent;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(219, 129, 45);
 }
-.forget-password-nav-bar {
+.error-page-nav-bar {
   width: 100%;
   height: 85px;
   display: flex;
@@ -32,16 +32,16 @@
   justify-content: center;
   background-color: rgba(255, 255, 255, 1);
 }
-.forget-password-container1 {
+.error-page-container1 {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.forget-password-navlink {
+.error-page-navlink {
   display: contents;
 }
-.forget-password-vg-logo1 {
+.error-page-vg-logo1 {
   width: 161px;
   cursor: pointer;
   height: 46px;
@@ -50,7 +50,7 @@
   margin-right: 40%;
   text-decoration: none;
 }
-.forget-password-navbutton {
+.error-page-navbutton {
   width: auto;
   display: flex;
   align-self: center;
@@ -58,10 +58,10 @@
   margin-right: 5%;
   flex-direction: row;
 }
-.forget-password-navlink1 {
+.error-page-navlink1 {
   display: contents;
 }
-.forget-password-text {
+.error-page-text {
   color: rgb(115, 117, 117);
   width: auto;
   cursor: pointer;
@@ -78,10 +78,10 @@
   margin-right: 5%;
   text-decoration: none;
 }
-.forget-password-navlink2 {
+.error-page-navlink2 {
   display: contents;
 }
-.forget-password-text03 {
+.error-page-text03 {
   color: rgba(115, 117, 117, 1);
   width: auto;
   cursor: pointer;
@@ -98,10 +98,10 @@
   margin-right: 5%;
   text-decoration: none;
 }
-.forget-password-navlink3 {
+.error-page-navlink3 {
   display: contents;
 }
-.forget-password-text05 {
+.error-page-text05 {
   color: rgb(115, 117, 117);
   width: auto;
   cursor: pointer;
@@ -118,7 +118,7 @@
   margin-right: 5%;
   text-decoration: none;
 }
-.forget-password-magnifyingglass1 {
+.error-page-magnifyingglass1 {
   width: 33px;
   height: 29px;
   display: flex;
@@ -130,7 +130,7 @@
   flex-direction: initial;
   text-decoration: none;
 }
-.forget-password-button {
+.error-page-button {
   color: rgb(255, 255, 255);
   width: 183px;
   font-size: 24px;
@@ -144,121 +144,107 @@
   margin-right: 2%;
   background-color: rgb(222, 112, 0);
 }
-.forget-password-button:hover {
+.error-page-button:hover {
   width: 181px;
   height: 39px;
   font-style: normal;
   font-weight: 500;
 }
-.forget-password-text07:hover {
-  width: 181px;
-  height: 39px;
-  font-style: normal;
-  font-weight: 500;
-}
-.forget-password-container2 {
+.error-page-container2 {
   width: 100%;
-  height: 915px;
+  height: 952px;
   display: flex;
+  align-self: flex-start;
   align-items: center;
   flex-direction: column;
-  background-size: cover;
-  justify-content: center;
-  background-image: url("public/playground_assets/image15919-goa-1000h.png");
 }
-.forget-password-container3 {
-  width: 1094px;
-  height: 597px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-size: cover;
-  justify-content: center;
-  background-image: url("public/playground_assets/rectangle165920-3emg-1100w.png");
-}
-.forget-password-text09 {
-  color: rgba(0, 0, 0, 1);
-  width: 451px;
+.error-page-container3 {
+  width: 1000px;
   height: auto;
-  font-size: 48px;
-  align-self: auto;
-  font-style: Bold;
+  display: flex;
+  align-self: center;
+  margin-top: 100px;
+  align-items: flex-end;
+  margin-left: 0px;
+  justify-content: center;
+}
+.error-page-container4 {
+  flex: 0 0 auto;
+  width: 450px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.error-page-errorcat1 {
+  width: 450px;
+  height: auto;
+  align-self: center;
+  margin-left: 0px;
+  border-color: transparent;
+}
+.error-page-text06 {
+  color: rgba(255, 255, 255, 1);
+  width: 1000px;
+  height: auto;
+  font-size: 60px;
+  align-self: center;
+  font-style: Black;
+  margin-top: 25px;
   text-align: center;
   font-family: Montserrat;
-  font-weight: 700;
+  font-weight: 900;
   line-height: normal;
   font-stretch: normal;
-  margin-bottom: 30px;
   text-decoration: none;
 }
-.forget-password-text11 {
-  color: rgba(0, 0, 0, 1);
-  width: 558px;
+.error-page-text11 {
+  color: rgba(255, 255, 255, 1);
+  width: 850px;
   height: auto;
-  font-size: 18px;
-  align-self: auto;
+  font-size: 28px;
+  align-self: center;
   font-style: Medium;
-  text-align: left;
+  margin-top: 25px;
+  text-align: center;
   font-family: Montserrat;
   font-weight: 500;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
 }
-.forget-password-email-address {
-  width: auto;
-  height: 60.9765625px;
-  display: flex;
-  margin-top: 20px;
-  margin-bottom: var(--dl-space-space-fourunits);
-  flex-direction: column;
-}
-.forget-password-text13 {
-  margin-top: 10px;
-  font-family: Montserrat;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.forget-password-email-address1 {
-  width: 541px;
-  height: auto;
-  align-self: stretch;
-  text-align: center;
-  font-family: Montserrat;
-  border-color: var(--dl-color-gray-black);
-  border-width: 1px;
-  margin-bottom: 0px;
-}
-.forget-password-res-pwd-reset-mail {
-  color: rgb(255, 255, 255);
-  width: 417px;
-  font-size: 20px;
+.error-page-return-home-button {
+  color: rgb(219, 129, 45);
+  width: 210px;
+  font-size: 24px;
+  align-self: center;
   box-shadow: rgb(212, 212, 212) 5px 5px 10px 0px;
   font-style: normal;
+  margin-top: 25px;
   text-align: center;
   font-family: Montserrat;
   font-weight: 700;
   border-width: 0px;
   border-radius: 9px;
-  background-size: cover;
+  text-transform: capitalize;
   text-decoration: none;
-  background-color: rgb(219, 129, 45);
+  background-color: rgb(255, 255, 255);
 }
 @media(max-width: 1200px) {
-  .forget-password-vg-logo1 {
+  .error-page-vg-logo1 {
     top: 30px;
     left: 21px;
     width: auto;
     position: static;
     margin-left: 20px;
   }
-  .forget-password-navbutton {
+  .error-page-navbutton {
     width: auto;
     position: static;
     margin-left: var(--dl-space-space-sixunits);
     margin-right: var(--dl-space-space-sixunits);
   }
-  .forget-password-text {
+  .error-page-text {
     top: 0px;
     left: 0px;
     width: auto;
@@ -266,7 +252,7 @@
     margin-left: 6px;
     margin-right: 6px;
   }
-  .forget-password-text03 {
+  .error-page-text03 {
     top: 4.00390625px;
     right: 0px;
     width: auto;
@@ -274,7 +260,7 @@
     margin-left: 6px;
     margin-right: 6px;
   }
-  .forget-password-text05 {
+  .error-page-text05 {
     top: 2.01171875px;
     color: rgb(115, 117, 117);
     width: auto;
@@ -287,7 +273,7 @@
     margin-right: 6px;
     text-decoration: none;
   }
-  .forget-password-magnifyingglass1 {
+  .error-page-magnifyingglass1 {
     top: 31px;
     left: 890px;
     width: auto;

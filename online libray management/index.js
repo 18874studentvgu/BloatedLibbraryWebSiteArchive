@@ -5,7 +5,6 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
-const jwt= require('jsonwebtoken')
 //idk what this is 
 app.use(expressSession({
     secret: 'keyboard cat'
@@ -60,7 +59,7 @@ app.get('/about', aboutController)
 app.get('/contact', contactController)
 
 //login
-app.get('/login', loginController)
+app.get('/auth/login', loginController)
 
 //authUser
 app.get('/login/auth', authController)
@@ -82,3 +81,5 @@ app.get('/reset/:id/:token', resetPasswordPageController)
 
 //reset password
 app.post('/reset/:id/:token/send', resetPasswordController)
+//error page
+app.use((req, res) => res.render('404')); 
