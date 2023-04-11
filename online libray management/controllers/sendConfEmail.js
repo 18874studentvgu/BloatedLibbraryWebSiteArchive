@@ -14,4 +14,11 @@ module.exports=(req,res)=>{
     const link='http://localhost:3000/reset/${user.id}/${token}'
     res.send('Password reset link has been sent')
     console.log(user.id,token)
+
+    //valid id
+    const secret=jwtSecret+user.password
+    try{
+        const payload=jwt.verify(token,secret)
+        res.render('passwordResetPage')
+    }
 }

@@ -19,9 +19,9 @@ const loginController = require('./controllers/login')
 const authController = require('./controllers/authUser')
 const registerController = require('./controllers/newUser')
 const storeUserController = require('./controllers/storeUser')
-const emailConfPageController = require('./controllers/emailConf')
+const emailConfPageController = require('./controllers/emailConfPage')
 const sendConfEmailController = require('./controllers/sendConfEmail')
-const resetPasswordController = require('./controllers/resetPassword')
+const resetPasswordPageController = require('./controllers/resetPasswordPage')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -77,4 +77,4 @@ app.get('/reset', emailConfPageController)
 app.post('/reset/sendEmail', sendConfEmailController)
 
 //reset password page
-app.get('/reset/password', resetPasswordController)
+app.get('/reset/:id/:token', resetPasswordPageController)
