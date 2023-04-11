@@ -21,4 +21,7 @@ module.exports=(req,res)=>{
         const payload=jwt.verify(token,secret)
         res.render('passwordResetPage')
     }
+    catch{
+        console.log(error.message)
+    }
 }
