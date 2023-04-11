@@ -22,6 +22,7 @@ const storeUserController = require('./controllers/storeUser')
 const emailConfPageController = require('./controllers/emailConfPage')
 const sendConfEmailController = require('./controllers/sendConfEmail')
 const resetPasswordPageController = require('./controllers/resetPasswordPage')
+const resetPasswordController=require('./controllers/resetPassword')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -68,7 +69,7 @@ app.get('/login/auth', authController)
 app.get('/auth/register', registerController)
 
 //storeUser
-app.get('/users/register', storeUserController)
+app.post('/users/register', storeUserController)
 
 //email confirmation page
 app.get('/reset', emailConfPageController)
@@ -78,3 +79,6 @@ app.post('/reset/sendEmail', sendConfEmailController)
 
 //reset password page
 app.get('/reset/:id/:token', resetPasswordPageController)
+
+//reset password
+app.post('/reset/:id/:token/send', resetPasswordController)

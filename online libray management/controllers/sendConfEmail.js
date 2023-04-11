@@ -2,18 +2,22 @@ const User=require('../models/User')
 const jwt=require('jsonwebtoken')
 const jwtSecret='secret secret'
 
-let user={
-    id:"jreodd",
-    email:"dodinhdong28092002@gmail.com",
-    password:"1111"
-}
+
 module.exports=(req,res)=>{
-    const payload={email:user.email,id:user.id}
-    console.log(user.email)
-    const token=jwt.sign(payload,jwtSecret,{expiresIn:'5m'})
-    const link='http://localhost:3000/reset/${user.id}/${token}'
-    res.send('Password reset link has been sent')
-    console.log(user.id,token)
+    const {email}=req.body
+    User.findOne({email})
+    .then((user)=>{
+        const payload={email:user.email,id:user.id}
+        console.log(user.email)
+        const token=jwt.sign(payload,jwtSecret,{expiresIn:'5m'})
+        const link=`http://localhost:3000/reset/${user.id}/${token}`
+        res.send(`Password reset link has been sent to ${user.email}`)
+        console.log(link)
+    })
+    .catch(()=>{
+        console.log('User not exist')
+        res.redirect('/reset')
+    })
 
     //valid id
     const secret=jwtSecret+user.password
@@ -21,7 +25,7 @@ module.exports=(req,res)=>{
         const payload=jwt.verify(token,secret)
         res.render('passwordResetPage')
     }
-    catch{
+    catch(error){
         console.log(error.message)
     }
 }

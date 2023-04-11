@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-    userName: {
+    username: {
         type: String,
         required: true,
         unique: true
@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    passHash: {
+    password: {
         type: String,
         required: true
     },
@@ -24,11 +24,11 @@ const UserSchema = new mongoose.Schema({
     },
     dateLastActive: {
         type: Date,
-        required: true
+        //required: true
     },
     userInfo: {
-        lName: String,
-        fName: String,
+        lastname: String,
+        firstname: String,
         age: {
             type: Number,
             min: [0, 'Age cannot be negative, got {VALUE}!']
