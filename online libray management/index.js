@@ -62,7 +62,7 @@ app.get('/contact', contactController)
 app.get('/auth/login', loginController)
 
 //authUser
-app.get('/login/auth', authController)
+app.post('/users/login', authController)
 
 //register
 app.get('/auth/register', registerController)

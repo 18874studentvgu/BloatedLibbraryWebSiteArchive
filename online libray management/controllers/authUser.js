@@ -6,20 +6,26 @@ module.exports=(req,res)=>{
     User.findOne({username:username})
     .then((user)=>{
         if(user){
-            bcrypt.compare(password,user.password)
-            .then((same)=>{
+            bcrypt.compare(password,user.password, (error,same)=>{
+        //    .then((same)=>{
                 if(same){
+                    req.session.userId = user._id
                     console.log("Successful")
                     res.redirect('/')
+
                 }
                 else{
                     console.log("Failed")
-                    res.redirect('/')
+                    res.redirect('/auth/login')
                 }
             })
         }
         else{
-            res.redirect('/register')
+            console.log("Failed")
+            res.redirect('/auth/login')
         }
+    })
+    .catch((error,user) =>{
+        console.log(error,user)
     })
 }
