@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
+const User =require('./models/User');
+
 //idk what this is 
 app.use(expressSession({
     secret: 'keyboard cat'
@@ -23,10 +25,23 @@ const sendConfEmailController = require('./controllers/sendConfEmail')
 const resetPasswordPageController = require('./controllers/resetPasswordPage')
 const resetPasswordController=require('./controllers/resetPassword')
 
+
 //check logged in and newuser
 global.loggedIn = null;
 app.use('*', (req, res, next) => {    
     loggedIn = req.session.userId;    
+    next()
+});
+
+global.user1= null;
+app.use('*', (req, res, next) => {    
+    const {id}=loggedIn;
+    User.findOne({loggedIn: id})
+    .then ((user) => {
+        user1 : user._username;
+
+    })
+    
     next()
 });
 
