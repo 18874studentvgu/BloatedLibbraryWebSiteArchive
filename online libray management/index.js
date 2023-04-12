@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
-const expressSession = require('express-session');
+const expressSession = require('express-session')
 //idk what this is 
 app.use(expressSession({
     secret: 'keyboard cat'
@@ -76,10 +76,11 @@ app.get('/reset', emailConfPageController)
 //send confirmation email
 app.post('/reset/sendEmail', sendConfEmailController)
 
-//reset password page
+//user clicks on the unique link, go to reset password page
 app.get('/reset/:id/:token', resetPasswordPageController)
 
-//reset password
-app.post('/reset/:id/:token/send', resetPasswordController)
+//after user types in the new password, click reset
+app.post('/reset/:id/:token/change', resetPasswordController)
+
 //error page
 app.use((req, res) => res.render('404')); 

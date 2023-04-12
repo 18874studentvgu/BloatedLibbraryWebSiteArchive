@@ -1,7 +1,12 @@
 const User = require("../models/User")
 
 module.exports=(req,res)=>{
-    const{is,token}=req.params
-
-    const secret=jwtSecret+User.password
+    const{id,token}=req.params
+    User.findOne({id})
+    .then((user)=>{
+        console.log(user)
+    })
+    .catch(()=>{
+        console.log('invalid id')
+    })
 }

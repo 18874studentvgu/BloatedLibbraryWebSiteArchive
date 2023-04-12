@@ -14,12 +14,12 @@ module.exports=(req,res)=>{
                 }
                 else{
                     console.log("Failed")
-                    res.redirect('/')
+                    res.redirect('/auth/login')
                 }
             })
         }
         else{
-            res.redirect('/')
+            res.redirect('/auth/login')
         }
     })
 }
