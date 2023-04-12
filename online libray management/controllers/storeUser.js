@@ -3,6 +3,6 @@ module.exports=(req,res) =>{
     User.create(req.body)
     .then(()=>{
         console.log(req.body)
-        res.redirect('/login')
+        res.redirect('/auth/login')
     })
 }
