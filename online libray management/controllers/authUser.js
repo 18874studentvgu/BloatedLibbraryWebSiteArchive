@@ -3,14 +3,17 @@ const User = require('../models/User')
 
 module.exports=(req,res)=>{
     const {username,password}=req.body
-    User.findOne({username:username})
+    User.findOne({username: username})
     .then((user)=>{
+        //console.log(User);
         if(user){
             bcrypt.compare(password,user.password)
-            .then((same)=>{
+       .then((same)=>{
                 if(same){
+                    req.session.userId = user._id
                     console.log("Successful")
                     res.redirect('/')
+
                 }
                 else{
                     console.log("Failed")
@@ -18,8 +21,8 @@ module.exports=(req,res)=>{
                 }
             })
         }
-        else{
-            res.redirect('/auth/login')
-        }
+    })
+    .catch((error,user) =>{
+        console.log(error,user)
     })
 }
