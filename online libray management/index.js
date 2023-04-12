@@ -5,7 +5,6 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
-const User = require('./models/User')
 
 //idk what this is 
 app.use(expressSession({
