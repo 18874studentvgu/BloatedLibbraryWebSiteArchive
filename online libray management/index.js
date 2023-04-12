@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
-const User =require('./models/User');
+const User = require('./models/User')
 
 //idk what this is 
 app.use(expressSession({
@@ -30,19 +30,7 @@ const resetPasswordController=require('./controllers/resetPassword')
 global.loggedIn = null;
 global.user1= null;
 app.use('*', (req, res, next) => {    
-    loggedIn = req.session.userId;    
-    User.findOne({_id: loggedIn})
-        .then((user)=>{
-            if(user){
-                user1 = user.username;
-            }
-            else {
-                console.log('failed');
-            }
-        })
-        .catch((error,user) =>{
-            console.log(error,user)
-        })
+    loggedIn = req.session.userId;
     next()
 
 });
