@@ -98,7 +98,7 @@ app.get('/reset', emailConfPageController)
 //send confirmation email
 app.post('/reset/sendEmail', sendConfEmailController)
 
-//user clicks on the unique link, go to reset password page
+//check token, id, user, then redirect to reset password
 app.get('/reset/:id/:token', resetPasswordPageController)
 
 //after user types in the new password, click reset
