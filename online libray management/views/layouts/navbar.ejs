@@ -22,6 +22,13 @@
       <img alt="magnifyingglass11955" src="/playground_assets/magnifyingglass11955-xoij-200h.png"
         class="home-magnifyingglass1" />
     </a>
+    <% if(!loggedIn) { %>
     <a href="/auth/login" class="home-navlink5 button">LOGIN</a>
+    <%  } %>
+
+    <% if(loggedIn) { %>
+      <a href="/auth/login" class="home-navlink5 button">Hi Username</a>
+      <%  } %>
+      
   </div>
 </div>

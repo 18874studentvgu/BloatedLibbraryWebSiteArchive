@@ -81,5 +81,6 @@ app.get('/reset/:id/:token', resetPasswordPageController)
 
 //reset password
 app.post('/reset/:id/:token/send', resetPasswordController)
+
 //error page
 app.use((req, res) => res.render('404')); 
