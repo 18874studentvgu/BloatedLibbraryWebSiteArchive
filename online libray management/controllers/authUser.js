@@ -19,7 +19,7 @@ module.exports=(req,res)=>{
             })
         }
         else{
-            res.redirect('/')
+            res.redirect('/register')
         }
     })
 }
