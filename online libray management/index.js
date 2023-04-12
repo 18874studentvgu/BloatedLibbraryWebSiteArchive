@@ -28,22 +28,29 @@ const resetPasswordController=require('./controllers/resetPassword')
 
 //check logged in and newuser
 global.loggedIn = null;
-app.use('*', (req, res, next) => {    
-    loggedIn = req.session.userId;    
-    next()
-});
-
 global.user1= null;
 app.use('*', (req, res, next) => {    
-    const {id}=loggedIn;
-    User.findOne({loggedIn: id})
-    .then ((user) => {
-        user1 : user._username;
-
-    })
-    
+    loggedIn = req.session.userId;    
+    User.findOne({_id: loggedIn})
+        .then((user)=>{
+            if(user){
+                user1 = user.username;
+            }
+            else {
+                console.log('failed');
+            }
+        })
+        .catch((error,user) =>{
+            console.log(error,user)
+        })
     next()
+
 });
+
+
+
+    
+
 
 //middleware
 app.use(fileUpload())

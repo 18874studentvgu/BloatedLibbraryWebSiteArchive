@@ -11,12 +11,12 @@ module.exports=(req,res)=>{
        .then((same)=>{
                 if(same){
                     req.session.userId = user._id
-                    console.log("Successful")
+                    //console.log("Successful")
                     res.redirect('/')
 
                 }
                 else{
-                    console.log("Failed")
+                    //console.log("Failed")
                     res.redirect('/auth/login')
                 }
             })
