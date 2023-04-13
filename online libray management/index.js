@@ -23,7 +23,8 @@ const emailConfPageController = require('./controllers/emailConfPage')
 const sendConfEmailController = require('./controllers/sendConfEmail')
 const resetPasswordPageController = require('./controllers/resetPasswordPage')
 const resetPasswordController=require('./controllers/resetPassword')
-
+const userProfileController=require('./controllers/userProfile')
+const userProfileSettingController=require('./controllers/userProfileSetting')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -93,3 +94,7 @@ app.post('/reset/:id/:token/change', resetPasswordController)
 
 //error page
 app.use((req, res) => res.render('404')); 
+
+//userprofile
+app.get('/user_profile', userProfileController)
+app.get('/user_profile_setting', userProfileSettingController)
