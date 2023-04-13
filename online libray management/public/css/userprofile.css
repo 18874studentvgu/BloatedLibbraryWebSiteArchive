@@ -336,7 +336,7 @@
   flex-direction: column;
   background-size: cover;
   justify-content: center;
-  background-image: url("public/playground_assets/image68813-rf0i-1500w.png");
+  background-image: url("/playground_assets/image68813-rf0i-1500w.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -647,7 +647,7 @@
   padding-bottom: 2%;
   background-size: cover;
   justify-content: center;
-  background-image: url("public/playground_assets/image68813-rf0i-1500w.png");
+  background-image: url("/playground_assets/image68813-rf0i-1500w.png");
 }
 .userprofile-footer {
   width: 100%;
@@ -659,7 +659,7 @@
   flex-shrink: 0;
   border-color: transparent;
   background-size: cover;
-  background-image: url("public/playground_assets/rectangle247216-8dmo-300h.png");
+  background-image: url("/playground_assets/rectangle247216-8dmo-300h.png");
 }
 .userprofile-container10 {
   width: 100%;

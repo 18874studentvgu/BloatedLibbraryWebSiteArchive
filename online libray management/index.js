@@ -92,9 +92,10 @@ app.get('/reset/:id/:token', resetPasswordPageController)
 //after user types in the new password, click reset
 app.post('/reset/:id/:token/change', resetPasswordController)
 
-//error page
-app.use((req, res) => res.render('404')); 
-
 //userprofile
 app.get('/user_profile', userProfileController)
 app.get('/user_profile_setting', userProfileSettingController)
+
+//error page
+app.use((req, res) => res.render('404')); 
+
