@@ -20,7 +20,7 @@ const authController = require('./controllers/authUser')
 const registerController = require('./controllers/newUser')
 const storeUserController = require('./controllers/storeUser')
 const emailConfPageController = require('./controllers/emailConfPage')
-const sendConfEmailController = require('./controllers/sendConfEmail')
+const sendConfLinkController = require('./controllers/sendConfLink')
 const resetPasswordPageController = require('./controllers/resetPasswordPage')
 const resetPasswordController=require('./controllers/resetPassword')
 const userProfileController=require('./controllers/userProfile')
@@ -83,8 +83,8 @@ app.post('/users/register', storeUserController)
 //email confirmation page
 app.get('/reset', emailConfPageController)
 
-//send confirmation email
-app.post('/reset/sendEmail', sendConfEmailController)
+//send confirmation link to email
+app.post('/reset/sendLink', sendConfLinkController)
 
 //check token, id, user, then redirect to reset password
 app.get('/reset/:id/:token', resetPasswordPageController)
