@@ -29,6 +29,7 @@ const resetPasswordPageController = require('./controllers/resetPasswordPage')
 const resetPasswordController=require('./controllers/resetPassword')
 const userProfileController=require('./controllers/userProfile')
 const userProfileSettingController=require('./controllers/userProfileSetting')
+const bookInfoController=require('./controllers/bookInfo')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -111,6 +112,9 @@ app.post('/reset/:id/:token/change', resetPasswordController)
 //userprofile
 app.get('/user_profile', userProfileController)
 app.get('/user_profile_setting', userProfileSettingController)
+
+//bookInfo
+app.get('/book-info', bookInfoController)
 
 //error page
 app.use((req, res) => res.render('404')); 
