@@ -98,7 +98,7 @@ app.get('/user_profile', userProfileController)
 app.get('/user_profile_setting', userProfileSettingController)
 
 //bookInfo
-app.get('/books', bookInfoController)
+app.get('/book-info', bookInfoController)
 
 //error page
 app.use((req, res) => res.render('404')); 
