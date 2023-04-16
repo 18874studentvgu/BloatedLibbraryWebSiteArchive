@@ -19,10 +19,6 @@ const loginController = require('./controllers/login')
 const authController = require('./controllers/authUser')
 const registerController = require('./controllers/newUser')
 const storeUserController = require('./controllers/storeUser')
-const loginAdminController = require('./controllers/loginAdmin')
-const authAdminController = require('./controllers/authAdmin')
-const regisAdminController = require('./controllers/regisAdmin')
-const storeAdminController = require('./controllers/storeAdmin')
 const emailConfPageController = require('./controllers/emailConfPage')
 const sendConfLinkController = require('./controllers/sendConfLink')
 const resetPasswordPageController = require('./controllers/resetPasswordPage')
@@ -84,18 +80,6 @@ app.get('/auth/register', registerController)
 
 //storeUser
 app.post('/users/register', storeUserController)
-
-//loginAdmin
-app.get('/loginAdmin', loginAdminController)
-
-//authAdmin
-app.post('/admins/loginAdmin', authAdminController)
-
-//regisAdmin
-app.get('/regisAdmin', regisAdminController)
-
-//storeAdmin
-app.post('/admins/regisAdmin', storeAdminController)
 
 //email confirmation page
 app.get('/reset', emailConfPageController)
