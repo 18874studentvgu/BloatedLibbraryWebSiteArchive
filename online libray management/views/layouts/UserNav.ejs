@@ -24,16 +24,18 @@
         href="/user_profile_setting"
         class="userprofilesetting-navlink08"
         >
-        <h2 class="userprofilesetting-navlink06"><span>Admin</span></h2>
+        <h2 class="userprofilesetting-text12"><span>Admin</span></h2>
         </a>
         <%  } %>
-  
+        
+      <% if(!loggedInAdmin) { %>
       <a
         href="/user_profile_setting"
         class="userprofilesetting-navlink08"
       >
         <h2 class="userprofilesetting-text12"><span>Account</span></h2>
       </a>
+      <%  } %>
 
       <a href ="/auth/logout"
       class="userprofilesetting-navlink08"
