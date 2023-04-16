@@ -1,7 +1,7 @@
 # Diagrams
 _Notes: all files ending with `.drawio.png` can be opened and edited using draw.io_
 
-## Use case:
+## Use case _(still need to put authentication inside the sys bondary)_:
 ![Alt text](Diagrams/Use_case_diagram.png)
 
 ## Use Case Description tables
@@ -83,7 +83,7 @@ Sequence_diagram-Register_a_new_account.png
 ### V1.0:
 ![Alt text](Diagrams/Database%20Diagram.v1.0.png)
 
-### V2.1 _still need to put authentication inside the sys bondary_:
+### V2.1:
 ![Alt text](Diagrams/DB-ER%20diagram.v2.1.drawio.png)
 
 
