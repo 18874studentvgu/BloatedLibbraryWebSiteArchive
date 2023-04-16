@@ -281,7 +281,7 @@
   font-style: normal;
   text-align: center;
   font-family: Montserrat;
-  font-weight: 700;
+  font-weight: 300;
   line-height: normal;
   font-stretch: normal;
   margin-bottom: 4%;
@@ -303,6 +303,7 @@
   flex-direction: row;
   justify-content: center;
   background-color: #DB812D;
+  cursor: pointer;
 }
 .userprofilesetting-text14 {
   color: rgba(255, 253, 252, 1);

@@ -3,8 +3,8 @@ const Admin = require('../models/Admin')
 const mongoose = require('mongoose')
 
 module.exports=(req,res)=>{
-    const {username,password}=req.body
-    Admin.findOne({username: username})
+    const {userName,password}=req.body;
+    Admin.findOne({userName: userName})
     .then((admin)=>{
         //console.log(User);
         if(admin){
@@ -12,16 +12,15 @@ module.exports=(req,res)=>{
        .then((same)=>{
                 if(same){
                     //get username
-                    const admin1 = admin.username;
+                    user1 = admin.userName;
                     console.log('sucess')
-                    console.log(admin1)
-                    req.session.adminId = admin._id
-                    //console.log("Successful")
+                    console.log(user1)
+                    req.session.userId = admin._id
                     res.redirect('/')
-                   
+                    loggedInAdmin = admin._id
                 }
                 else{
-                    //console.log("Failed")
+                    console.log("Failed")
                     res.redirect('/auth/loginAdmin')
                 }
             })

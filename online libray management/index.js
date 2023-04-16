@@ -30,10 +30,11 @@ const resetPasswordController=require('./controllers/resetPassword')
 const userProfileController=require('./controllers/userProfile')
 const userProfileSettingController=require('./controllers/userProfileSetting')
 const bookInfoController=require('./controllers/bookInfo')
-
+const logout=require('./controllers/logout')
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
+global.loggedInAdmin= null;
 app.use('*', (req, res, next) => {    
     loggedIn = req.session.userId;
     next()
@@ -86,13 +87,13 @@ app.get('/auth/register', registerController)
 app.post('/users/register', storeUserController)
 
 //loginAdmin
-app.get('/loginAdmin', loginAdminController)
+app.get('/auth/loginAdmin', loginAdminController)
 
 //authAdmin
 app.post('/admins/loginAdmin', authAdminController)
 
 //regisAdmin
-app.get('/regisAdmin', regisAdminController)
+app.get('/auth/regisAdmin', regisAdminController)
 
 //storeAdmin
 app.post('/admins/regisAdmin', storeAdminController)
@@ -112,6 +113,9 @@ app.post('/reset/:id/:token/change', resetPasswordController)
 //userprofile
 app.get('/user_profile', userProfileController)
 app.get('/user_profile_setting', userProfileSettingController)
+
+//logout
+app.get('/auth/logout', logout)
 
 //bookInfo
 app.get('/book-info', bookInfoController)

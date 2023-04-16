@@ -27,13 +27,12 @@
       <button  class="home-navlink5 button" onclick="myFunction()">LOGIN</button>
       <div class = "dropdown-content" id ="myDropdown"  >
         <a href="/auth/login">as User</a>
-        <a href="/loginAdmin">as Admin</a>
+        <a href="/auth/loginAdmin">as Admin</a>
       </div>
     </div>
     <%  } %>
-
     <% if(loggedIn) { %>
-      <button  href="/user_profile" class="home-navlink5 button">Hi <%= user1 %></button>
+      <a  href="/user_profile" class="home-navlink5 button">Hi <%= user1 %></a>
       <%  } %>
   </div>
 </div>
