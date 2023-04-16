@@ -1,25 +1,21 @@
 const nodemailer=require('nodemailer')
 
-const htmlContent=` //email content
-  <h1>Hello</h1>
-  <p>This is a test email</p>
+const htmlContent=`
+  email content here
   `;
 
   async function main(){
-    const testAcc=await nodemailer.createTestAccount()
     const transporter=nodemailer.createTransport({
-      host:'smtp.ethereal.email',
-      port:465,
-      secure:true,
+      service:'hotmail',
       auth:{
-        user:testAcc.user,
-        pass:testAcc.pass
+        user:'vgulibpeteam3@outlook.com.vn',
+        pass:'vgupe2023'
       }
     })
     const info=await transporter.sendMail({
-      from:'foo@x.com',
-      to:'bar@x.com',
-      subject:'Testing',
+      from:'vgulibpeteam3@outlook.com.vn',
+      to:'dodinhdong28092002@gmail.com',
+      subject:'Sending email with nodejs',
       html:htmlContent,
     })
     console.log('Message sent: '+info.messageId)
