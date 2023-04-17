@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt')
 const Admin = require('../models/Admin')
-const mongoose = require('mongoose')
 
 module.exports=(req,res)=>{
     const {userName,password}=req.body;
@@ -15,6 +14,7 @@ module.exports=(req,res)=>{
                     user1 = admin.userName;
                     console.log('sucess')
                     console.log(user1)
+                    //assign cookies as user id
                     req.session.userId = admin._id
                     res.redirect('/')
                     loggedInAdmin = admin._id
