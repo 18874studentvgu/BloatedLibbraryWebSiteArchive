@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
  
-    <%- include('layouts/navbar'); -%>
+    <%- include('layouts/header'); -%>
 
         <body>
             <div>
@@ -9,6 +9,7 @@
                 <div class="paymentsucess-container">
                   <div class="paymentsucess-successpayment">
                     <div class="paymentsucess-container1">
+                      <%- include('layouts/navbar'); -%>
                       <h1 class="paymentsucess-text06">Success payment</h1>
                       <div class="paymentsucess-container3">
                         <img
@@ -46,4 +47,6 @@
             </div>
         </div>
     </body>
+    <!--Script-->
+    <%- include('layouts/script'); -%>
 </html>

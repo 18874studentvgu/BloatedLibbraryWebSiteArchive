@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
  
-  <%- include('layouts/navbar'); -%>
+  <%- include('layouts/header'); -%>
 
         <body>
             <div>
@@ -11,6 +11,7 @@
                     <div class="waiting-for-payment-confirmation-container1">
                     </div>
                       </nav>
+                      <%- include('layouts/navbar'); -%>
                       <h1 class="waiting-for-payment-confirmation-text06">
                         <span>Waiting for online payment</span>
                       </h1>
@@ -64,4 +65,6 @@
             <div>
         </div>
     </body>
+    <!--Script-->
+    <%- include('layouts/script'); -%>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
  
-    <%- include('layouts/navbar'); -%>
+    <%- include('layouts/header'); -%>
 
         <body>
             <div>
@@ -10,6 +10,7 @@
                   <div class="filterno-result-filterbooknoresult">
                     <div class="filterno-result-container1">
                       <div class="filterno-result-container3">
+                        <%- include('layouts/navbar'); -%>
                         <div class="filterno-result-search-bar">
                           <input
                             type="text"
@@ -58,4 +59,6 @@
             </div>
         </div>
     </body>
+    <!--Script-->
+    <%- include('layouts/script'); -%>
 </html>
