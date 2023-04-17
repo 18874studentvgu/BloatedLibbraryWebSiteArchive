@@ -33,7 +33,7 @@ const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
 //check logged in and newuser
 global.loggedIn = null;
-global.user1= null;
+//global.user1= null;
 global.loggedInAdmin= null;
 app.use('*', (req, res, next) => {    
     loggedIn = req.session.userId;
