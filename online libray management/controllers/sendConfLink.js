@@ -1,18 +1,21 @@
 const User=require('../models/User')
 const jwt=require('jsonwebtoken')
 const jwtSecret='secret secret'
+const sendEmail=require('../controllers/sendEmail')
 
 module.exports=(req,res)=>{
-    const {email}=req.body
-    User.findOne({email:'17000@student.vgu.edu.vn'})
+    const{email}=req.body
+    console.log(email)
+    User.findOne({email:email})
     .then((user)=>{
         const payload={email:user.email,id:user._id}
         console.log(user.email)
         const token=jwt.sign(payload,jwtSecret,{expiresIn:'5s'})
         const link=`http://localhost:3000/reset/${user.id}/${token}`
         res.send(`Password reset link has been sent to ${user.email}`)
-        console.log(link)
-        const secret=jwtSecret+user.password
+        sendEmail(user.email,
+        'Password reset link',
+        `Here is your password reset link: ${link}`)
     })
     .catch(()=>{
         console.log('User not exist')
