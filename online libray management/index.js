@@ -46,7 +46,7 @@ app.use('*', (req, res, next) => {
     
 
 
-//middleware
+//cookies
 app.use(fileUpload())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true})) 
