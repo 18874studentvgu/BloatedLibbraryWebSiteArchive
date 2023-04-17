@@ -11,7 +11,7 @@ module.exports=(req,res)=>{
     .then((user)=>{
         const payload={email:user.email,id:user._id}
         console.log(user.email)
-        const token=jwt.sign(payload,jwtSecret,{expiresIn:'5s'})
+        const token=jwt.sign(payload,jwtSecret,{expiresIn:'30s'})
         const link=`http://localhost:3000/reset/${user.id}/${token}`
         res.send(`Password reset link has been sent to ${user.email}`)
         sendEmail(user.email,
