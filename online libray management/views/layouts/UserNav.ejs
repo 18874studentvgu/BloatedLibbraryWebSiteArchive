@@ -1,0 +1,49 @@
+<div class="userprofilesetting-container02">
+    <div class="userprofilesetting-userchoice">
+      <div class="userprofilesetting-group13">
+        <img
+          alt="image5884"
+          src="/playground_assets/image5884-bghq-200h.png"
+          class="userprofilesetting-image5"
+        />
+      </div>
+      <div class="userprofilesetting-nanme">
+        <h2 class="userprofilesetting-text06">
+          <span><%= user1 %></span>
+        </h2>
+      </div>
+      <a href="/user_profile" class="userprofilesetting-navlink06">
+        <h2 class="userprofilesetting-text08"><span>Profile</span></h2>
+      </a>
+      <a href="bookcart.html" class="userprofilesetting-navlink07">
+        <h2 class="userprofilesetting-text10"><span>Cart</span></h2>
+      </a>
+      
+      <% if(loggedInAdmin) { %>
+        <a
+        href="/user_profile_setting"
+        class="userprofilesetting-navlink08"
+        >
+        <h2 class="userprofilesetting-text12"><span>Admin</span></h2>
+        </a>
+        <%  } %>
+        
+      <% if(!loggedInAdmin) { %>
+      <a
+        href="/user_profile_setting"
+        class="userprofilesetting-navlink08"
+      >
+        <h2 class="userprofilesetting-text12"><span>Account</span></h2>
+      </a>
+      <%  } %>
+
+      <a href ="/auth/logout"
+      class="userprofilesetting-navlink08"
+      >
+      <div class="userprofilesetting-log-out">
+        <span class="userprofilesetting-text14">
+          <span>Logout</span>
+        </span>
+      </div>
+    </a>
+    </div>
