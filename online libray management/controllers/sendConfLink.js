@@ -2,6 +2,7 @@ const User=require('../models/User')
 const jwt=require('jsonwebtoken')
 const jwtSecret='secret secret'
 const sendEmail=require('../controllers/sendEmail')
+module.exports={jwtSecret}
 
 module.exports=(req,res)=>{
     const{email}=req.body
