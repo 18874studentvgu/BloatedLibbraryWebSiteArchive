@@ -12,7 +12,7 @@ module.exports=(req,res)=>{
        .then((same)=>{
                 if(same){
                     //get username
-                    user1 = user.username;
+                    user1= user.username;
                     console.log('sucess')
                     console.log(user1)
                     req.session.userId = user._id
