@@ -1,31 +1,34 @@
 const User = require("../models/User")
-const jwtScr=require('./sendConfLink')
+const jwt=require('jsonwebtoken')
+const jwtSecret='secret secret'
 
 module.exports=(req,res)=>{
     const{id,token}=req.params
-    const {password,password2}=req.body
-    module.exports = (req, res) => {
-        const {id,token,email}=req.params
-        console.log(req.params)
-        console.log('checking id')
-        User.findOne({id}) //check id, if id exists means that user exists
-        .then((user)=>{
-            console.log("id match")
-            const secret=jwtScr.jwtSecret+User.password //this is from sendConfEmail.js
-            //validate jwt token
-            try{
-                const payload=jwt.verify(token,secret)
-                console.log('token match')
-                user.password=password
-                console.log(user)
+    const{password,password2}=req.body
+    User.findOne({_id:id})
+    .then((user)=>{
+        console.log('User exist')
+        const secret=jwtSecret+user.password
+        try{
+            const verify=jwt.verify(token,secret)
+            if(password==password2){
+                const encryptedPassword = bcrypt.hash(password, 10)
+                User.updateOne(
+                    {_id:id},
+                    {$set:{password:encryptedPassword}}
+                )
+                res.redirect('login')
             }
-            catch(error){
-                console.log("Error: "+error.message)
-                res.render('404')
+            else{
+                console.log('Password not match, try again')
+                res.redirect('/reset/:id/:token')
             }
-        })
-        .catch(()=>{
-            console.log("invalid id")
-        })
-    }
+        }
+        catch{
+            console.error()
+        }
+    })
+    .catch(()=>{
+        console.log('User not exist')
+    })
 }

@@ -1,30 +1,30 @@
 //user clicks the link
 const jwt=require('jsonwebtoken')
 const User=require('../models/User')
-const jwtScr=require('./sendConfLink')
+const jwtSecret='secret secret'
 
+//before redirecting to the page, check first
 module.exports = (req, res) => {
-    const {id,token,email}=req.params
-    console.log(req.params)
-    console.log('checking id')
-    User.findOne({id}) //check id, if id exists means that user exists
+    const {id,token}=req.params
+    User.findOne({_id:id}) //check id, if id exists means that user exists
     .then((user)=>{
-        console.log("id match")
+        console.log("Id match, user exist")
         console.log("checking token")
-        const secret=jwtScr.jwtSecret+User.password //this is from sendConfEmail.js
+        const secret=jwtSecret+user.password
+        console.log(secret)
         //validate jwt token
         try{
-            const payload=jwt.verify(token,secret)
-            res.render('resetPasswordPage')
-            console.log('token match')
+            const verify=jwt.verify(token,secret)
+            res.render('resetPasswordPage',{email:verify.email})
+            console.log('Verified token')
         }
         catch(error){
-            console.log("invalid token")
+            console.log("Invalid token")
             console.log("Error: "+error.message)
             res.render('404')
         }
     })
     .catch(()=>{
-        console.log("invalid id")
+        console.log("Invalid id, no user found")
     })
 }
