@@ -4,14 +4,14 @@ const User=require('../models/User')
 const jwtSecret='secret secret'
 
 //before redirecting to the page, check first
-module.exports = (req, res) => {
+module.exports = (req,res) => {
     const {id,token}=req.params
+    console.log(req.params)
     User.findOne({_id:id}) //check id, if id exists means that user exists
     .then((user)=>{
         console.log("Id match, user exist")
         console.log("checking token")
         const secret=jwtSecret+user.password
-        console.log(secret)
         //validate jwt token
         try{
             const verify=jwt.verify(token,secret)
