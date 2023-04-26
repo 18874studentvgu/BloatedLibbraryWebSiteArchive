@@ -6,6 +6,7 @@ const config=require('../controllers/config')
 //before redirecting to the page, check first
 module.exports = (req,res) => {
     const {id,token}=req.params
+    console.log(req.params)
     User.findOne({_id:id}) //check id, if id exists means that user exists
     .then((user)=>{
         console.log("Id match, user exist")

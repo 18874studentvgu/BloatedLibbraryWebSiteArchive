@@ -1,8 +1,10 @@
 const User = require("../models/User")
 const jwt=require('jsonwebtoken')
 const config=require('../controllers/config')
+const userid=require('../controllers/resetPasswordPage')
 
 module.exports=(req,res)=>{
+    console.log(userid.userid)
     const{id,token}=req.params
     console.log(req.params)
     const{password,password2}=req.body
