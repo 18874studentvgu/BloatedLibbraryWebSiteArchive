@@ -1,26 +1,24 @@
 //user clicks the link
 const jwt=require('jsonwebtoken')
 const User=require('../models/User')
-const jwtSecret='secret secret'
+const config=require('../controllers/config')
 
 //before redirecting to the page, check first
 module.exports = (req,res) => {
     const {id,token}=req.params
-    console.log(req.params)
     User.findOne({_id:id}) //check id, if id exists means that user exists
     .then((user)=>{
         console.log("Id match, user exist")
         console.log("checking token")
-        const secret=jwtSecret+user.password
+        const secret=config.secret+user.password
         //validate jwt token
         try{
             const verify=jwt.verify(token,secret)
-            res.render('resetPasswordPage',{email:verify.email})
-            console.log('Verified token')
+            console.log('Valid token')
+            res.render('resetPasswordPage')
         }
-        catch(error){
-            console.log("Invalid token")
-            console.log("Error: "+error.message)
+        catch{
+            console.log('Invalid token')
             res.render('404')
         }
     })

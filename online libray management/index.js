@@ -108,7 +108,7 @@ app.post('/reset/sendLink', sendConfLinkController)
 app.get('/reset/:id/:token', resetPasswordPageController)
 
 //after user types in the new password, click reset
-app.post('/reset/:id/:token/change', resetPasswordController)
+app.post('/reset/:id/:token', resetPasswordController)
 
 //userprofile
 app.get('/user_profile', userProfileController)

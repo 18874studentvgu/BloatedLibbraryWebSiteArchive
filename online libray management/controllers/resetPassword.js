@@ -1,14 +1,15 @@
 const User = require("../models/User")
 const jwt=require('jsonwebtoken')
-const jwtSecret='secret secret'
+const config=require('../controllers/config')
 
 module.exports=(req,res)=>{
     const{id,token}=req.params
+    console.log(req.params)
     const{password,password2}=req.body
     User.findOne({_id:id})
     .then((user)=>{
         console.log('User exist')
-        const secret=jwtSecret+user.password
+        const secret=config.secret+user.password
         try{
             const verify=jwt.verify(token,secret)
             if(password==password2){
@@ -17,7 +18,7 @@ module.exports=(req,res)=>{
                     {_id:id},
                     {$set:{password:encryptedPassword}}
                 )
-                res.redirect('login')
+                res.redirect('/login')
             }
             else{
                 console.log('Password not match, try again')
