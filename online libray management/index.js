@@ -18,6 +18,9 @@ const loginController = require('./controllers/login')
 const authController = require('./controllers/authUser')
 const registerController = require('./controllers/register')
 const storeUserController = require('./controllers/storeUser')
+const adminBooksListController = require('./controllers/admin/booksList')
+const adminUsersListController = require('./controllers/admin/usersList')
+const adminDashboardController = require('./controllers/admin/dashboard')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -42,8 +45,6 @@ app.listen(3000, () => {
 }) 
 
 
-
-
 //home and post preview
 app.get('/', homeController)
 app.get('/index', homeController)
@@ -65,3 +66,12 @@ app.get('/register',registerController)
 
 //storeUser
 app.get('/register', storeUserController)
+
+//get admin dashboard
+app.get('/adminDashboard', adminDashboardController)
+
+//get admin's list of total books
+app.get('/adminBooksList', adminBooksListController)
+
+//get admin's list of total users
+app.get('/adminUsersList', adminUsersListController)
