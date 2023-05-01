@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const UserSchema = new mongoose.Schema({
-    userName: {
+    username: {
         type: String,
         required: true,
         unique: true
@@ -15,7 +16,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    passHash: {
+    password: {
         type: String,
         required: true
     },
@@ -24,11 +25,11 @@ const UserSchema = new mongoose.Schema({
     },
     dateLastActive: {
         type: Date,
-        required: true
+        //required: true
     },
     userInfo: {
-        lName: String,
-        fName: String,
+        last: String,
+        first: String,
         age: {
             type: Number,
             min: [0, 'Age cannot be negative, got {VALUE}!']
@@ -55,5 +56,14 @@ const UserSchema = new mongoose.Schema({
     }]
 },
 { timestamps: true});
+
+UserSchema.pre('save', function (next) {
+    const user = this
+    bcrypt.hash(user.password, 10, (error, hash) => {
+        user.password = hash
+        next()
+    })
+})
+
 const User = mongoose.model('User',UserSchema);
 module.exports = User;

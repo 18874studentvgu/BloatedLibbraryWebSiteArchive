@@ -1,25 +1,33 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/User')
+const mongoose = require('mongoose')
 
 module.exports=(req,res)=>{
     const {username,password}=req.body
-    User.findOne({username:username})
+    User.findOne({username: username})
     .then((user)=>{
+        //console.log(User);
         if(user){
             bcrypt.compare(password,user.password)
-            .then((same)=>{
+       .then((same)=>{
                 if(same){
-                    console.log("Successful")
+                    //get username
+                    var user1= user.username;
+                    console.log('sucess')
+                    console.log(user1)
+                    req.session.userId = user._id
+                    //console.log("Successful")
                     res.redirect('/')
+                   
                 }
                 else{
-                    console.log("Failed")
-                    res.redirect('/')
+                    //console.log("Failed")
+                    res.redirect('/auth/login')
                 }
             })
         }
-        else{
-            res.redirect('/')
-        }
+    })
+    .catch((error,user) =>{
+        console.log(error,user)
     })
 }

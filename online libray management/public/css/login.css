@@ -18,13 +18,11 @@
   background-color: rgba(255, 255, 255, 1);
 }
 .login-nav-bar {
-  top: 0px;
-  left: 0px;
   width: 100%;
   height: 85px;
   display: flex;
   overflow: hidden;
-  position: absolute;
+  position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
   align-items: center;
   flex-shrink: 0;
@@ -32,35 +30,30 @@
   justify-content: center;
   background-color: rgba(255, 255, 255, 1);
 }
+.login-container1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .login-navlink {
   display: contents;
 }
 .login-vg-logo1 {
-  top: 18px;
-  left: 28px;
   width: 161px;
   cursor: pointer;
   height: 46px;
-  position: absolute;
-  margin-top: auto;
-  margin-left: auto;
+  margin-left: 2%;
   border-color: transparent;
-  margin-right: auto;
-  margin-bottom: auto;
+  margin-right: 40%;
   text-decoration: none;
 }
 .login-navbutton {
-  right: 310px;
   width: auto;
-  bottom: -56px;
   display: flex;
-  position: absolute;
   align-self: center;
-  margin-top: 90px;
   align-items: center;
-  margin-left: auto;
-  margin-right: 40px;
-  margin-bottom: 90px;
+  margin-right: 5%;
   flex-direction: row;
 }
 .login-navlink1 {
@@ -78,9 +71,9 @@
   font-family: Montserrat;
   font-weight: 500;
   line-height: normal;
-  margin-left: 20px;
+  margin-left: 5%;
   font-stretch: normal;
-  margin-right: 20px;
+  margin-right: 5%;
   text-decoration: none;
 }
 .login-navlink2 {
@@ -89,6 +82,7 @@
 .login-text03 {
   color: rgba(115, 117, 117, 1);
   width: auto;
+  cursor: pointer;
   height: auto;
   font-size: 24px;
   align-self: auto;
@@ -97,9 +91,9 @@
   font-family: Montserrat;
   font-weight: 500;
   line-height: normal;
-  margin-left: 20px;
+  margin-left: 5%;
   font-stretch: normal;
-  margin-right: 20px;
+  margin-right: 5%;
   text-decoration: none;
 }
 .login-navlink3 {
@@ -108,6 +102,7 @@
 .login-text05 {
   color: rgb(115, 117, 117);
   width: auto;
+  cursor: pointer;
   height: auto;
   font-size: 24px;
   align-self: auto;
@@ -116,126 +111,93 @@
   font-family: Montserrat;
   font-weight: 500;
   line-height: normal;
-  margin-left: 20px;
+  margin-left: 5%;
   font-stretch: normal;
-  margin-right: 20px;
+  margin-right: 5%;
   text-decoration: none;
-}
-.login-navlink4 {
-  display: contents;
-}
-.login-text06 {
-  color: rgb(115, 117, 117);
-  width: auto;
-  height: auto;
-  font-size: 24px;
-  align-self: auto;
-  font-style: Medium;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  margin-left: 20px;
-  font-stretch: normal;
-  margin-right: 20px;
-  text-decoration: none;
-}
-.login-navlink5 {
-  display: contents;
 }
 .login-magnifyingglass1 {
-  top: 23px;
-  right: 110px;
   width: 33px;
   height: 29px;
   display: flex;
-  position: absolute;
   align-self: center;
-  margin-top: auto;
-  margin-left: auto;
+  margin-left: 2%;
   border-color: transparent;
-  margin-right: 170px;
+  margin-right: 2%;
   align-content: center;
-  margin-bottom: auto;
   flex-direction: initial;
   text-decoration: none;
 }
-.login-login-container {
-  top: 13px;
-  right: 35px;
-  width: 210px;
-  height: 50px;
+.login-navlink4 {
+  color: rgb(255, 255, 255);
+  width: 183px;
+  font-size: 24px;
+  font-style: normal;
+  text-align: center;
+  transition: 0.3s;
+  font-family: Montserrat;
+  font-weight: 700;
+  margin-left: 2%;
+  border-width: 0px;
+  margin-right: 2%;
+  text-decoration: none;
+  background-color: rgb(222, 112, 0);
+}
+.login-navlink4:hover {
+  width: 181px;
+  height: 39px;
+  font-style: normal;
+  font-weight: 500;
+}
+.login-container2 {
+  top: 85px;
+  left: -1px;
+  width: 100%;
+  height: 1004px;
   display: flex;
   position: absolute;
-  margin-top: auto;
-  align-items: flex-start;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: auto;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: center;
+  background-image: url("public/playground_assets/image15919-goa-1100h.png");
 }
-.login-navlink6 {
-  display: contents;
-}
-.login-rectangle2 {
-  width: 100%;
-  height: 100%;
-  border-color: transparent;
-  border-radius: 9px;
-  text-decoration: none;
-}
-.login-text07 {
-  top: 13px;
-  left: 15px;
-  color: rgb(255, 255, 255);
-  width: 180px;
-  cursor: pointer;
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  align-self: auto;
-  font-style: Black;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 900;
-  line-height: normal;
-  font-stretch: normal;
-  margin-right: 0;
-  margin-bottom: 0;
-}
-.login-image1 {
-  top: 87px;
-  right: 0px;
-  width: 100%;
-  height: 805px;
-  position: absolute;
-  border-color: transparent;
-}
-.login-container1 {
-  top: 207px;
-  left: -18px;
+.login-login1 {
   width: 100%;
   height: 596.9921875px;
   display: flex;
-  position: absolute;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
-.login-rectangle16 {
-  top: 0px;
-  left: 0px;
-  right: 0px;
+.login-background {
   width: 1094px;
   height: 597px;
-  margin: auto;
-  position: absolute;
-  border-color: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: center;
+  background-image: url("public/playground_assets/rectangle165920-3emg-1100w.png");
 }
-.login-group-form {
-  top: 110px;
-  right: -14px;
+.login-text06 {
+  color: rgb(0, 0, 0);
+  width: 100%;
+  height: auto;
+  font-size: 48px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  margin-bottom: 50px;
+  text-decoration: none;
+}
+.login-input-info {
   width: 100%;
   height: 245.99609375px;
   display: flex;
-  position: absolute;
   align-items: center;
   justify-content: center;
 }
@@ -248,7 +210,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.login-form-group {
+.login-user-name {
   width: 633px;
   height: 60.9765625px;
   display: flex;
@@ -256,10 +218,18 @@
   margin-bottom: 20px;
   flex-direction: column;
 }
+.login-text07 {
+  font-family: Montserrat;
+  font-weight: 700;
+}
 .login-textinput {
   width: 100%;
+  font-family: Montserrat;
+  border-color: #302f2f;
+  border-style: solid;
+  border-width: 1px;
 }
-.login-form-group1 {
+.login-password {
   width: 629px;
   height: 60.9765625px;
   display: flex;
@@ -267,29 +237,61 @@
   margin-bottom: 20px;
   flex-direction: column;
 }
-.login-button {
-  color: #000000;
+.login-text08 {
+  font-family: Montserrat;
+  font-weight: 700;
+}
+.login-textinput1 {
+  font-family: Montserrat;
+  border-color: #302f2f;
+  border-width: 1px;
+}
+.login-login2 {
+  color: rgb(255, 255, 255);
   width: 121px;
+  font-size: 20px;
   font-style: normal;
   text-align: center;
+  transition: 0.3s;
   font-family: Montserrat;
   font-weight: 700;
   border-width: 0px;
+  border-radius: 9px;
   background-size: cover;
-  background-color: transparent;
-  background-image: url("/playground_assets/rectangle21955-48i8-300h.png");
+  text-decoration: none;
+  background-color: #db812d;
 }
-.login-container2 {
-  top: 625px;
-  left: -12px;
+.login-login2:hover {
+  box-shadow: 5px 5px 10px 0px #b6b0b0;
+}
+.login-forgot-psw-sign-up {
   width: 100%;
   height: 23.75px;
   display: flex;
-  position: absolute;
+  margin-top: 50px;
   align-items: center;
+  margin-bottom: 50px;
   justify-content: center;
 }
-.login-text10 {
+.login-navlink5 {
+  display: contents;
+}
+.login-text09 {
+  color: rgba(0, 142, 226, 1);
+  width: 259px;
+  cursor: pointer;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.login-text11 {
   color: rgba(0, 142, 226, 1);
   width: 259px;
   height: auto;
@@ -302,263 +304,8 @@
   line-height: normal;
   font-stretch: normal;
   text-decoration: underline;
-}
-.login-text12 {
-  color: rgba(0, 142, 226, 1);
-  width: 259px;
-  height: auto;
-  font-size: 20px;
-  align-self: auto;
-  font-style: Bold;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: underline;
-}
-.login-text14 {
-  top: 276px;
-  left: -10px;
-  color: rgba(0, 0, 0, 1);
-  width: 100%;
-  height: auto;
-  position: absolute;
-  font-size: 48px;
-  align-self: auto;
-  font-style: Bold;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  margin-right: 0;
-  margin-bottom: 0;
-  text-decoration: none;
-}
-.login-footer {
-  left: -5px;
-  width: 100%;
-  bottom: -8px;
-  height: 210px;
-  display: flex;
-  overflow: hidden;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 0;
-  border-color: transparent;
-  background-color: rgba(255, 255, 255, 1);
-}
-.login-rectangle24 {
-  top: -2px;
-  right: -5px;
-  width: 100%;
-  height: 210px;
-  position: absolute;
-  border-color: transparent;
-}
-.login-container3 {
-  top: 19px;
-  right: -22px;
-  width: 100%;
-  height: 165px;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-}
-.login-container4 {
-  width: 346.9921875px;
-  height: 165px;
-  display: flex;
-  align-self: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.login-v-ulogofullwhite1 {
-  width: 187px;
-  height: 50px;
-  border-color: transparent;
-}
-.login-text16 {
-  color: rgba(255, 255, 255, 1);
-  width: 243px;
-  height: auto;
-  font-size: 12px;
-  align-self: auto;
-  font-style: Medium;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-text23 {
-  color: rgba(255, 255, 255, 1);
-  width: 347px;
-  height: auto;
-  font-size: 12px;
-  align-self: auto;
-  font-style: Medium;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-container5 {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.login-text25 {
-  color: rgb(255, 255, 255);
-  width: 176px;
-  height: auto;
-  font-size: 24px;
-  align-self: auto;
-  font-style: Bold;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-text26 {
-  color: rgb(255, 255, 255);
-  width: 258px;
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: Medium;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-container6 {
-  width: 216.9921875px;
-  height: 107.98828125px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.login-text34 {
-  color: rgba(255, 255, 255, 1);
-  width: 173px;
-  height: auto;
-  font-size: 24px;
-  align-self: auto;
-  font-style: Bold;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-text36 {
-  color: rgba(255, 255, 255, 1);
-  width: 217px;
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: Medium;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-container7 {
-  width: 252.98828125px;
-  height: 107.98828125px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.login-text45 {
-  color: rgba(255, 255, 255, 1);
-  width: 181px;
-  height: auto;
-  font-size: 24px;
-  align-self: auto;
-  font-style: Bold;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-text47 {
-  color: rgba(255, 255, 255, 1);
-  width: 253px;
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: Medium;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-container8 {
-  width: 222.98828125px;
-  height: 107.98828125px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.login-text58 {
-  color: rgba(255, 255, 255, 1);
-  width: 181px;
-  height: auto;
-  font-size: 24px;
-  align-self: auto;
-  font-style: Bold;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.login-text60 {
-  color: rgba(255, 255, 255, 1);
-  width: 223px;
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: Medium;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
 }
 @media(max-width: 1200px) {
-  .login-nav-bar {
-    top: 2px;
-    left: 0px;
-    position: absolute;
-    background-color: #ffffff;
-  }
   .login-vg-logo1 {
     top: 30px;
     left: 21px;
@@ -601,36 +348,10 @@
     margin-right: 6px;
     text-decoration: none;
   }
-  .login-text06 {
-    top: 4.00390625px;
-    left: 220px;
-    width: auto;
-    position: static;
-    margin-left: 6px;
-    margin-right: 6px;
-  }
   .login-magnifyingglass1 {
     top: 31px;
     left: 890px;
     width: auto;
     position: static;
-  }
-  .login-login-container {
-    top: 26px;
-    right: -28px;
-    width: 198px;
-    position: static;
-    margin-left: var(--dl-space-space-fourunits);
-  }
-  .login-rectangle2 {
-    top: -3px;
-    left: 1px;
-    width: 206px;
-    position: static;
-  }
-  .login-text07 {
-    top: 34px;
-    right: 13px;
-    margin-left: 1000px;
   }
 }
