@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// import './Review';
 
 const BookSchema = new mongoose.Schema({
     title: { type: String, required: true },
@@ -7,22 +8,27 @@ const BookSchema = new mongoose.Schema({
     synopsis: String,
     copiesAvailable: {type: Number, min: [0,'Availables copies cannot be negative ({VALUE})!']},
     PDFPreviewLink: String,
+    pagePerviewLink:[{page: Number, link: String}],
+
     totalRating:{
-        recommended: Number,
-        notRecommended: Number
+        recommended: {type: Number, default: 0},
+        notRecommended: {type: Number, default: 0}
     },
     reviewPreview: [{
-        reviewID: String,
-        userID: String,
-        rating: {
-            type: String,
-            default: '',
-            enum: ['Recommended', 'Not Recommended','','._.']
-        },
-        title: String,
-        body: String,
-        dayCreated: Date,
-        dayModified: Date,
+        // review: {type: mongoose.Schema.Types.ObjectId, ref: 'Review'},
+        // user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+        // rating: {
+        //     type: String,
+        //     default: '',
+        //     enum: ['Recommended', 'Not Recommended','','._.']
+        // },
+        // title: String,
+        // body: String,
+        // dayCreated: Date,
+        // dayModified: Date,
+        type: String,
+        // type: ReviewSchema,
+        // default: {}
     }]
 
 },

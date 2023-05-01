@@ -1,0 +1,5 @@
+# ignore all mongo realted library (from being trcked by git)
+node_modules/mongo*
+
+# actually, y'know what, the whole node_modules directory as well
+node_modules/
