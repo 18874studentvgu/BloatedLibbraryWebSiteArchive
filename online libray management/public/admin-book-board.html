@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Books Dashboard</title>
+    <meta property="og:title" content="admin-book-board - exported project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./css/admin-book-board.css" rel="stylesheet" />
+
+      <div class="admin-book-board-container">
+        <div class="admin-book-board-container01">
+          <nav id="MainNav" class="admin-book-board-nav-bar">
+            <div class="admin-book-board-container02">
+              <a href="index.html" class="admin-book-board-navlink">
+                <img
+                  alt="VGULogo11954"
+                  src="/playground_assets/vgulogo11954-887-200h.png"
+                  class="admin-book-board-vg-logo1"
+                />
+              </a>
+              <div class="admin-book-board-navbutton">
+                <a href="index.html" class="admin-book-board-navlink1">
+                  <h2 class="admin-book-board-text">
+                    <span>Home</span>
+                    <span></span>
+                  </h2>
+                </a>
+                <a href="contact.html" class="admin-book-board-navlink2">
+                  <h2 class="admin-book-board-text003"><span>Contact</span></h2>
+                </a>
+                <a href="about.html" class="admin-book-board-navlink3">
+                  <h2 class="admin-book-board-text005">About</h2>
+                </a>
+              </div>
+              <a
+                href="search-filter-book.html"
+                class="admin-book-board-navlink4"
+              >
+                <img
+                  alt="magnifyingglass11955"
+                  src="/playground_assets/magnifyingglass11955-xoij-200h.png"
+                  class="admin-book-board-magnifyingglass1"
+                />
+              </a>
+              <a
+                href="login.html"
+                class="admin-book-board-add-new-book-button button"
+              >
+                Hi, User name
+              </a>
+            </div>
+          </nav>
+          <div class="adminheader-adminheader adminheader-root-class-name2">
+            <div class="adminheader-adminheader1">
+              <a href="admin.html" class="adminheader-navlink">
+                <div class="adminheader-dashboardadminbutton button">
+                  <img
+                    alt="Rectangle492645"
+                    src="/playground_assets/rectangle492645-thch-200h.png"
+                    class="adminheader-rectangle49"
+                  />
+                  <span class="adminheader-text"><span>Dashboard</span></span>
+                </div>
+              </a>
+              <a href="admin-user-board.html" class="adminheader-navlink1">
+                <div class="adminheader-useradminbutton button">
+                  <img
+                    alt="Rectangle492651"
+                    src="/playground_assets/rectangle492651-sxib-200h.png"
+                    class="adminheader-rectangle491"
+                  />
+                  <span class="adminheader-text2"><span>User</span></span>
+                </div>
+              </a>
+              <a href="admin-book-board.html" class="adminheader-navlink2">
+                <div class="adminheader-bookadminbutton button">
+                  <img
+                    alt="Rectangle492661"
+                    src="/playground_assets/rectangle492661-4kxr-200h.png"
+                    class="adminheader-rectangle492"
+                  />
+                  <span class="adminheader-text4"><span>Book</span></span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="admin-book-board-searchbar">
+            <img
+              alt="magnifyingglass23561"
+              src="/playground_assets/magnifyingglass23561-onpt-200h.png"
+              class="admin-book-board-magnifyingglass2"
+            />
+            <input
+              type="text"
+              placeholder="Search"
+              class="admin-book-board-textinput input"
+            />
+            <select class="admin-book-board-select">
+              <option value="Option 1">Option 1</option>
+              <option value="Option 1">Option 1</option>
+              <option value="Option 2">Option 2</option>
+              <option value="Option 2">Option 2</option>
+              <option value="Option 3">Option 3</option>
+              <option value="Option 3">Option 3</option>
+            </select>
+            <button
+              id="add new user"
+              type="submit"
+              class="admin-book-board-add-new-user-button button"
+            >
+              Add new Book
+            </button>
+          </div>
+          <div class="admin-book-board-adminuserboard">
+            <div class="admin-book-board-container03">
+              <div class="admin-book-board-newusertable">
+                <div class="admin-book-board-container04">
+                  <div class="admin-book-board-container05">
+                    <div class="admin-book-board-container06">
+                      <span class="admin-book-board-text006">
+                        <span>ID</span>
+                      </span>
+                      <span class="admin-book-board-text008">Name</span>
+                      <span class="admin-book-board-text009">Author</span>
+                      <span class="admin-book-board-text010">Cat.</span>
+                      <span class="admin-book-board-text011">Pub. date</span>
+                      <span class="admin-book-board-text012">Up. date</span>
+                      <span class="admin-book-board-text013">Quan.</span>
+                      <span class="admin-book-board-text014">Rec. %</span>
+                    </div>
+                  </div>
+                  <div class="admin-book-board-book-info">
+                    <img
+                      alt="image"
+                      src="/playground_assets/user112951-5rs-200h.png"
+                      class="admin-book-board-image"
+                    />
+                    <span class="admin-book-board-text015">123</span>
+                    <span class="admin-book-board-text016">
+                      The Narrative of Arthur Gordon Pym of Nantucket
+                    </span>
+                    <span class="admin-book-board-text017">
+                      Edgar Allan Poe
+                    </span>
+                    <span class="admin-book-board-text018">
+                      Fantasy, Adventure
+                    </span>
+                    <span class="admin-book-board-text019">31/07/1838</span>
+                    <span class="admin-book-board-text020">
+                      <span>13/04/2023</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text023">
+                      <span>500</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text026">75.2%</span>
+                    <img
+                      alt="draw13434"
+                      src="/playground_assets/draw13434-8jw-200w.png"
+                      class="admin-book-board-draw1"
+                    />
+                    <img
+                      alt="trashcan13434"
+                      src="/playground_assets/trashcan13434-meoe-200w.png"
+                      class="admin-book-board-trashcan1"
+                    />
+                    <img
+                      alt="image"
+                      src="/playground_assets/trashcan13831-is4-200w.png"
+                      class="admin-book-board-image01"
+                    />
+                  </div>
+                  <div class="admin-book-board-book-info1">
+                    <img
+                      alt="image"
+                      src="/playground_assets/user112951-5rs-200h.png"
+                      class="admin-book-board-image02"
+                    />
+                    <span class="admin-book-board-text055">123</span>
+                    <span class="admin-book-board-text056">
+                      The Narrative of Arthur Gordon Pym of Nantucket
+                    </span>
+                    <span class="admin-book-board-text057">
+                      Edgar Allan Poe
+                    </span>
+                    <span class="admin-book-board-text058">
+                      Fantasy, Adventure
+                    </span>
+                    <span class="admin-book-board-text059">31/07/1838</span>
+                    <span class="admin-book-board-text060">
+                      <span>13/04/2023</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text063">
+                      <span>500</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text066">75.2%</span>
+                    <img
+                      alt="draw13434"
+                      src="/playground_assets/draw13434-8jw-200w.png"
+                      class="admin-book-board-draw11"
+                    />
+                    <img
+                      alt="trashcan13434"
+                      src="/playground_assets/trashcan13434-meoe-200w.png"
+                      class="admin-book-board-trashcan11"
+                    />
+                    <img
+                      alt="image"
+                      src="/playground_assets/trashcan13831-is4-200w.png"
+                      class="admin-book-board-image03"
+                    />
+                  </div>
+                  <div class="admin-book-board-book-info2">
+                    <img
+                      alt="image"
+                      src="/playground_assets/user112951-5rs-200h.png"
+                      class="admin-book-board-image04"
+                    />
+                    <span class="admin-book-board-text067">123</span>
+                    <span class="admin-book-board-text068">
+                      The Narrative of Arthur Gordon Pym of Nantucket
+                    </span>
+                    <span class="admin-book-board-text069">
+                      Edgar Allan Poe
+                    </span>
+                    <span class="admin-book-board-text070">
+                      Fantasy, Adventure
+                    </span>
+                    <span class="admin-book-board-text071">31/07/1838</span>
+                    <span class="admin-book-board-text072">
+                      <span>13/04/2023</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text075">
+                      <span>500</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text078">75.2%</span>
+                    <img
+                      alt="draw13434"
+                      src="/playground_assets/draw13434-8jw-200w.png"
+                      class="admin-book-board-draw12"
+                    />
+                    <img
+                      alt="trashcan13434"
+                      src="/playground_assets/trashcan13434-meoe-200w.png"
+                      class="admin-book-board-trashcan12"
+                    />
+                    <img
+                      alt="image"
+                      src="/playground_assets/trashcan13831-is4-200w.png"
+                      class="admin-book-board-image05"
+                    />
+                  </div>
+                  <div class="admin-book-board-book-info3">
+                    <img
+                      alt="image"
+                      src="/playground_assets/user112951-5rs-200h.png"
+                      class="admin-book-board-image06"
+                    />
+                    <span class="admin-book-board-text079">123</span>
+                    <span class="admin-book-board-text080">
+                      The Narrative of Arthur Gordon Pym of Nantucket
+                    </span>
+                    <span class="admin-book-board-text081">
+                      Edgar Allan Poe
+                    </span>
+                    <span class="admin-book-board-text082">
+                      Fantasy, Adventure
+                    </span>
+                    <span class="admin-book-board-text083">31/07/1838</span>
+                    <span class="admin-book-board-text084">
+                      <span>13/04/2023</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text087">
+                      <span>500</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text090">75.2%</span>
+                    <img
+                      alt="draw13434"
+                      src="/playground_assets/draw13434-8jw-200w.png"
+                      class="admin-book-board-draw13"
+                    />
+                    <img
+                      alt="trashcan13434"
+                      src="/playground_assets/trashcan13434-meoe-200w.png"
+                      class="admin-book-board-trashcan13"
+                    />
+                    <img
+                      alt="image"
+                      src="/playground_assets/trashcan13831-is4-200w.png"
+                      class="admin-book-board-image07"
+                    />
+                  </div>
+                  <div class="admin-book-board-book-info4">
+                    <img
+                      alt="image"
+                      src="/playground_assets/user112951-5rs-200h.png"
+                      class="admin-book-board-image08"
+                    />
+                    <span class="admin-book-board-text091">123</span>
+                    <span class="admin-book-board-text092">
+                      The Narrative of Arthur Gordon Pym of Nantucket
+                    </span>
+                    <span class="admin-book-board-text093">
+                      Edgar Allan Poe
+                    </span>
+                    <span class="admin-book-board-text094">
+                      Fantasy, Adventure
+                    </span>
+                    <span class="admin-book-board-text095">31/07/1838</span>
+                    <span class="admin-book-board-text096">
+                      <span>13/04/2023</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text099">
+                      <span>500</span>
+                      <br />
+                    </span>
+                    <span class="admin-book-board-text102">75.2%</span>
+                    <img
+                      alt="draw13434"
+                      src="/playground_assets/draw13434-8jw-200w.png"
+                      class="admin-book-board-draw14"
+                    />
+                    <img
+                      alt="trashcan13434"
+                      src="/playground_assets/trashcan13434-meoe-200w.png"
+                      class="admin-book-board-trashcan14"
+                    />
+                    <img
+                      alt="image"
+                      src="/playground_assets/trashcan13831-is4-200w.png"
+                      class="admin-book-board-image09"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="admin-book-board-pagenumber">
+                <img
+                  alt="downarrow13541"
+                  src="/playground_assets/downarrow13541-cr4d-200h.png"
+                  class="admin-book-board-downarrow1"
+                />
+                <span class="admin-book-board-text103">1</span>
+                <span class="admin-book-board-text104">2</span>
+                <span class="admin-book-board-text105">3</span>
+                <span class="admin-book-board-text106"><span>...</span></span>
+                <span class="admin-book-board-text108"><span>10</span></span>
+                <img
+                  alt="downarrow23551"
+                  src="/playground_assets/downarrow23551-osiq-200h.png"
+                  class="admin-book-board-downarrow2"
+                />
+              </div>
+            </div>
+            <div class="admin-book-board-rectangle50">
+              <img
+                alt="Rectangle513521"
+                src="/playground_assets/rectangle513521-a7pb-200w.png"
+                class="admin-book-board-rectangle51"
+              />
+            </div>
+          </div>
+        </div>
+        <footer class="admin-book-board-footer">
+          <div class="admin-book-board-container11">
+            <div class="admin-book-board-container12">
+              <img
+                alt="VGUlogofullwhite17217"
+                src="/playground_assets/vgulogofullwhite17217-4d0rh-200h.png"
+                class="admin-book-board-v-ulogofullwhite1"
+              />
+              <h2 class="admin-book-board-text110">
+                <span>
+                  <span>
+                    Ring road 4, Quarter 4, Thoi Hoa Ward, Ben Cat Town, Binh
+                    Duong Province
+                  </span>
+                  <br />
+                  <span>Tel. (0274) 222 0990 - 70206</span>
+                  <br />
+                  <span>Fax: (0274) 222 0980</span>
+                </span>
+              </h2>
+              <h2 class="admin-book-board-text117">
+                © 2023 VGU Library, All Rights Reserved.
+              </h2>
+            </div>
+            <div class="admin-book-board-navbutton1">
+              <div class="admin-book-board-home">
+                <a href="index.html" class="admin-book-board-navlink5">
+                  <h2 class="admin-book-board-text118">
+                    <span>Home</span>
+                    <span></span>
+                  </h2>
+                </a>
+                <p class="admin-book-board-text121">
+                  <br />
+                  <span>Search books</span>
+                  <br />
+                  <span>Popular books</span>
+                  <br />
+                  <span>Featured books</span>
+                  <br />
+                  <span>Services</span>
+                  <br />
+                  <span>Research</span>
+                  <br />
+                  <span>News &amp; Events</span>
+                  <br />
+                </p>
+              </div>
+              <div class="admin-book-board-contact">
+                <a href="contact.html" class="admin-book-board-navlink6">
+                  <h2 class="admin-book-board-text135">Contact</h2>
+                </a>
+                <p class="admin-book-board-text136">
+                  <br />
+                  <span>Address</span>
+                  <br />
+                  <span>Phone number</span>
+                  <br />
+                  <span>Fax number</span>
+                  <br />
+                  <span>Email</span>
+                  <br />
+                </p>
+              </div>
+              <div class="admin-book-board-about">
+                <a href="contact.html" class="admin-book-board-navlink7">
+                  <h2 class="admin-book-board-text146">About</h2>
+                </a>
+                <p class="admin-book-board-text147">
+                  <br />
+                  <span>Introduction</span>
+                  <br />
+                  <span>Mission</span>
+                  <br />
+                  <span>Vision</span>
+                  <br />
+                  <span>Scale</span>
+                  <br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
