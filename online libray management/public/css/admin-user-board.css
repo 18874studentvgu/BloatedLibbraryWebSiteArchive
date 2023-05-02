@@ -207,7 +207,7 @@
 }
 .admin-user-board-container1 {
   flex: 0 0 auto;
-  width: 100%;
+  width: 1500px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -361,7 +361,7 @@
   margin-top: 3%;
   align-items: center;
   flex-shrink: 1;
-  margin-left: 8%;
+  margin-left: 35%;
   border-color: transparent;
   border-style: none;
   border-width: 0;
@@ -376,18 +376,10 @@
   align-self: center;
   border-color: transparent;
 }
-.admin-user-board-textinput {
-  width: 400px;
-  margin-left: 2%;
-}
-.admin-user-board-select {
-  align-self: center;
-  margin-left: 5%;
-}
 .admin-user-board-add-new-user-button {
   color: rgb(255, 255, 255);
   width: 250px;
-  height: 35px;
+  height: 40px;
   font-size: 20px;
   align-self: center;
   font-style: normal;
@@ -402,14 +394,14 @@
   background-color: rgb(219, 129, 45);
 }
 .admin-user-board-add-new-user-button:hover {
-  box-shadow: 5px 5px 10px 0px #aaa8a8;
+  box-shadow: 5px 5px 0px 0px #aaa8a8;
 }
 .admin-user-board-add-new-user-button:active {
   background-color: #985010;
 }
 .admin-user-board-adminuserboard {
   width: 100%;
-  height: 700px;
+  height: auto;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -429,8 +421,8 @@
   flex-direction: column;
 }
 .admin-user-board-newusertable {
-  width: 1264px;
-  height: 586px;
+  width: 1800;
+  height: 1000;
   display: flex;
   padding: 0;
   align-self: auto;

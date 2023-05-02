@@ -3,7 +3,8 @@
   <%- include('layouts/header'); -%>
   <body>
     <div>
-      <link href="/css/admin-book-board.css" rel="stylesheet" />
+      <link href="./css/admin-book-board.css" rel="stylesheet" />
+      <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
       <div class="admin-book-board-container">
         <div class="admin-book-board-container01">
           <nav id="MainNav" class="admin-book-board-nav-bar">
@@ -82,24 +83,6 @@
             </div>
           </div>
           <div class="admin-book-board-searchbar">
-            <img
-              alt="magnifyingglass23561"
-              src="playground_assets/magnifyingglass23561-onpt-200h.png"
-              class="admin-book-board-magnifyingglass2"
-            />
-            <input
-              type="text"
-              placeholder="Search"
-              class="admin-book-board-textinput input"
-            />
-            <select class="admin-book-board-select">
-              <option value="Option 1">Option 1</option>
-              <option value="Option 1">Option 1</option>
-              <option value="Option 2">Option 2</option>
-              <option value="Option 2">Option 2</option>
-              <option value="Option 3">Option 3</option>
-              <option value="Option 3">Option 3</option>
-            </select>
             <button
               id="add new user"
               type="submit"
@@ -111,256 +94,82 @@
           <div class="admin-book-board-adminuserboard">
             <div class="admin-book-board-container03">
               <div class="admin-book-board-newusertable">
-                <div class="admin-book-board-container04">
-                  <div class="admin-book-board-container05">
-                    <div class="admin-book-board-container06">
-                      <span class="admin-book-board-text006">ID</span>
-                      <span class="admin-book-board-text008">Name</span>
-                      <span class="admin-book-board-text009">Author</span>
-                      <span class="admin-book-board-text010">Cat.</span>
-                      <span class="admin-book-board-text011">Pub. date</span>
-                      <span class="admin-book-board-text012">Up. date</span>
-                      <span class="admin-book-board-text013">Quan.</span>
-                      <span class="admin-book-board-text014">Rec. %</span>
-                    </div>
-                  </div>
-                  <div class="admin-book-board-book-info">
-                    <img
-                      alt="image"
-                      src="playground_assets/user112951-5rs-200h.png"
-                      class="admin-book-board-image"
-                    />
-                    <span class="admin-book-board-text015">123</span>
-                    <span class="admin-book-board-text016">
-                      The Narrative of Arthur Gordon Pym of Nantucket
-                    </span>
-                    <span class="admin-book-board-text017">
-                      Edgar Allan Poe
-                    </span>
-                    <span class="admin-book-board-text018">
-                      Fantasy, Adventure
-                    </span>
-                    <span class="admin-book-board-text019">31/07/1838</span>
-                    <span class="admin-book-board-text020">
-                      <span>13/04/2023</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text023">
-                      <span>500</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text026">75.2%</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-book-board-draw1"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-book-board-trashcan1"
-                    />
-                    <img
-                      alt="image"
-                      src="playground_assets/trashcan13831-is4-200w.png"
-                      class="admin-book-board-image01"
-                    />
-                  </div>
-                  <div class="admin-book-board-book-info1">
-                    <img
-                      alt="image"
-                      src="playground_assets/user112951-5rs-200h.png"
-                      class="admin-book-board-image02"
-                    />
-                    <span class="admin-book-board-text055">123</span>
-                    <span class="admin-book-board-text056">
-                      The Narrative of Arthur Gordon Pym of Nantucket
-                    </span>
-                    <span class="admin-book-board-text057">
-                      Edgar Allan Poe
-                    </span>
-                    <span class="admin-book-board-text058">
-                      Fantasy, Adventure
-                    </span>
-                    <span class="admin-book-board-text059">31/07/1838</span>
-                    <span class="admin-book-board-text060">
-                      <span>13/04/2023</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text063">
-                      <span>500</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text066">75.2%</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-book-board-draw11"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-book-board-trashcan11"
-                    />
-                    <img
-                      alt="image"
-                      src="playground_assets/trashcan13831-is4-200w.png"
-                      class="admin-book-board-image03"
-                    />
-                  </div>
-                  <div class="admin-book-board-book-info2">
-                    <img
-                      alt="image"
-                      src="playground_assets/user112951-5rs-200h.png"
-                      class="admin-book-board-image04"
-                    />
-                    <span class="admin-book-board-text067">123</span>
-                    <span class="admin-book-board-text068">
-                      The Narrative of Arthur Gordon Pym of Nantucket
-                    </span>
-                    <span class="admin-book-board-text069">
-                      Edgar Allan Poe
-                    </span>
-                    <span class="admin-book-board-text070">
-                      Fantasy, Adventure
-                    </span>
-                    <span class="admin-book-board-text071">31/07/1838</span>
-                    <span class="admin-book-board-text072">
-                      <span>13/04/2023</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text075">
-                      <span>500</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text078">75.2%</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-book-board-draw12"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-book-board-trashcan12"
-                    />
-                    <img
-                      alt="image"
-                      src="playground_assets/trashcan13831-is4-200w.png"
-                      class="admin-book-board-image05"
-                    />
-                  </div>
-                  <div class="admin-book-board-book-info3">
-                    <img
-                      alt="image"
-                      src="playground_assets/user112951-5rs-200h.png"
-                      class="admin-book-board-image06"
-                    />
-                    <span class="admin-book-board-text079">123</span>
-                    <span class="admin-book-board-text080">
-                      The Narrative of Arthur Gordon Pym of Nantucket
-                    </span>
-                    <span class="admin-book-board-text081">
-                      Edgar Allan Poe
-                    </span>
-                    <span class="admin-book-board-text082">
-                      Fantasy, Adventure
-                    </span>
-                    <span class="admin-book-board-text083">31/07/1838</span>
-                    <span class="admin-book-board-text084">
-                      <span>13/04/2023</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text087">
-                      <span>500</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text090">75.2%</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-book-board-draw13"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-book-board-trashcan13"
-                    />
-                    <img
-                      alt="image"
-                      src="playground_assets/trashcan13831-is4-200w.png"
-                      class="admin-book-board-image07"
-                    />
-                  </div>
-                  <div class="admin-book-board-book-info4">
-                    <img
-                      alt="image"
-                      src="playground_assets/user112951-5rs-200h.png"
-                      class="admin-book-board-image08"
-                    />
-                    <span class="admin-book-board-text091">123</span>
-                    <span class="admin-book-board-text092">
-                      The Narrative of Arthur Gordon Pym of Nantucket
-                    </span>
-                    <span class="admin-book-board-text093">
-                      Edgar Allan Poe
-                    </span>
-                    <span class="admin-book-board-text094">
-                      Fantasy, Adventure
-                    </span>
-                    <span class="admin-book-board-text095">31/07/1838</span>
-                    <span class="admin-book-board-text096">
-                      <span>13/04/2023</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text099">
-                      <span>500</span>
-                      <br />
-                    </span>
-                    <span class="admin-book-board-text102">75.2%</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-book-board-draw14"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-book-board-trashcan14"
-                    />
-                    <img
-                      alt="image"
-                      src="playground_assets/trashcan13831-is4-200w.png"
-                      class="admin-book-board-image09"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="admin-book-board-pagenumber">
-                <img
-                  alt="downarrow13541"
-                  src="playground_assets/downarrow13541-cr4d-200h.png"
-                  class="admin-book-board-downarrow1"
-                />
-                <span class="admin-book-board-text103">1</span>
-                <span class="admin-book-board-text104">2</span>
-                <span class="admin-book-board-text105">3</span>
-                <span class="admin-book-board-text106"><span>...</span></span>
-                <span class="admin-book-board-text108"><span>10</span></span>
-                <img
-                  alt="downarrow23551"
-                  src="playground_assets/downarrow23551-osiq-200h.png"
-                  class="admin-book-board-downarrow2"
-                />
+                <table style="width: 100%; height: 100%;" id = "table">
+                  <thead>
+                    <tr>
+                      <th class="admin-book-board-text006">PFP</th>
+                      <th class="admin-book-board-text006">ID</th>
+                      <th class="admin-book-board-text008">Name</th>
+                      <th class="admin-book-board-text009" style="width: 10%;">Author</th>
+                      <th class="admin-book-board-text010">Cat.</th>
+                      <th class="admin-book-board-text011">Pub. date</th>
+                      <th class="admin-book-board-text012">Up. date</th>
+                      <th class="admin-book-board-text013">Quan.</th>
+                      <th class="admin-book-board-text014">Rec. %</th>
+                      <th class="admin-book-board-text014">Edit</th>
+                      <th class="admin-book-board-text014">Remove</th>
+                      <th class="admin-book-board-text014">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for (var i = 0; i < 20; i++) { %>
+                    <tr>
+                      <td>
+                        <img
+                          alt="image"
+                          src="playground_assets/user112951-5rs-200h.png"
+                          class="admin-book-board-image"
+                        />
+                      </td>
+                      <td class="admin-book-board-text015">123</td>
+                      <td class="admin-book-board-text016">
+                        The Narrative of Arthur Gordon Pym of Nantucket
+                      </td>
+                      <td class="admin-book-board-text017">
+                        Edgar Allan Poe
+                      </td>
+                      <td class="admin-book-board-text018">
+                        Fantasy, Adventure
+                      </td>
+                      <td class="admin-book-board-text019">31/07/1838</td>
+                      <td class="admin-book-board-text020">13/04/2023</td>
+                      <td class="admin-book-board-text023">500</td>
+                      <td class="admin-book-board-text026">75.2%</td>
+                      <br/>
+                      <td>
+                        <img
+                          alt="draw13434"
+                          src="playground_assets/draw13434-8jw-200w.png"
+                          class="admin-book-board-draw1"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          alt="trashcan13434"
+                          src="playground_assets/trashcan13434-meoe-200w.png"
+                          class="admin-book-board-trashcan1"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          alt="image"
+                          src="playground_assets/trashcan13831-is4-200w.png"
+                          class="admin-book-board-image01"
+                        />
+                      </td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
               </div>
             </div>
-            <div class="admin-book-board-rectangle50">
+            <!-- <div class="admin-book-board-rectangle50">
               <img
                 alt="Rectangle513521"
                 src="playground_assets/rectangle513521-a7pb-200w.png"
                 class="admin-book-board-rectangle51"
               />
-            </div>
+            </div> -->
           </div>
         </div>
         <!--footer-->
@@ -370,4 +179,7 @@
   </body>
   <!--Script-->
   <%- include('layouts/script'); -%>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="js/tablesorting.js" type="text/javascript"></script>
 </html>

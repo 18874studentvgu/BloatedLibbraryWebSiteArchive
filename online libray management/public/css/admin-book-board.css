@@ -361,7 +361,7 @@
   margin-top: 3%;
   align-items: center;
   flex-shrink: 1;
-  margin-left: 8%;
+  margin-left: 35%;
   border-color: transparent;
   border-style: none;
   border-width: 0;
@@ -375,14 +375,6 @@
   height: 20px;
   align-self: center;
   border-color: transparent;
-}
-.admin-book-board-textinput {
-  width: 400px;
-  margin-left: 2%;
-}
-.admin-book-board-select {
-  align-self: center;
-  margin-left: 5%;
 }
 .admin-book-board-add-new-user-button {
   color: rgb(255, 255, 255);
@@ -409,7 +401,7 @@
 }
 .admin-book-board-adminuserboard {
   width: 100%;
-  height: 700px;
+  height: auto;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -429,8 +421,8 @@
   flex-direction: column;
 }
 .admin-book-board-newusertable {
-  width: 1264px;
-  height: 586px;
+  width: 1500px;
+  height: auto;
   display: flex;
   padding: 0;
   align-self: auto;

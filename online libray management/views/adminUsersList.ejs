@@ -4,6 +4,7 @@
   <body>
     <div>
       <link href="/css/admin-user-board.css" rel="stylesheet" />
+      <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
       <div class="admin-user-board-container">
         <div class="admin-user-board-container1">
           <nav id="MainNav" class="admin-user-board-nav-bar">
@@ -78,323 +79,82 @@
               </a>
             </div>
           </div>
-          <div class="admin-user-board-searchbar">
-            <img
-              alt="magnifyingglass23561"
-              src="playground_assets/magnifyingglass23561-onpt-200h.png"
-              class="admin-user-board-magnifyingglass2"
-            />
-            <input
-              type="text"
-              placeholder="Search"
-              class="admin-user-board-textinput input"
-            />
-            <select class="admin-user-board-select">
+            <!-- <select class="admin-user-board-select">
               <option value="Option 1">Option 1</option>
               <option value="Option 2">Option 2</option>
               <option value="Option 3">Option 3</option>
-            </select>
+            </select> -->
             <button
               id="add new user"
               type="submit"
-              class="admin-user-board-add-new-user-button button"
-            >
+              class="admin-user-board-add-new-user-button button">
               Add new user
             </button>
           </div>
           <div class="admin-user-board-adminuserboard">
             <div class="admin-user-board-container3">
               <div class="admin-user-board-newusertable">
-                <div class="admin-user-board-container4">
-                  <div class="admin-user-board-table-headers">
-                    <div class="admin-user-board-container5">
-                      <span class="admin-user-board-text006">
-                        <span>ID</span>
-                      </span>
-                      <span class="admin-user-board-text008">Full name</span>
-                      <span class="admin-user-board-text009">Username</span>
-                      <span class="admin-user-board-text010">
-                        <span>Age</span>
-                      </span>
-                      <span class="admin-user-board-text012">
-                        <span>Email</span>
-                      </span>
-                      <span class="admin-user-board-text014">Created</span>
-                      <span class="admin-user-board-text015">Last active</span>
-                      <span class="admin-user-board-text016">Bor. books</span>
-                    </div>
-                  </div>
-                  <div class="admin-user-board-user-info">
-                    <img
-                      alt="user113434"
-                      src="playground_assets/user113434-gz8-200h.png"
-                      class="admin-user-board-user11"
-                    />
-                    <span class="admin-user-board-text017">
-                      <span>#200114</span>
-                    </span>
-                    <span class="admin-user-board-text019">
-                      <span>Nicolò Zaniolo</span>
-                    </span>
-                    <span class="admin-user-board-text021">catOverlord</span>
-                    <span class="admin-user-board-text022">
-                      <span>23</span>
-                    </span>
-                    <span class="admin-user-board-text024">
-                      <span>anhkoanmung@gmail.com</span>
-                    </span>
-                    <span class="admin-user-board-text026">
-                      <span>31/12/2022</span>
-                    </span>
-                    <span class="admin-user-board-text028">10/04/2023</span>
-                    <span class="admin-user-board-text029">3</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-user-board-draw1"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-user-board-trashcan1"
-                    />
-                  </div>
-                  <div class="admin-user-board-user-info1">
-                    <img
-                      alt="user113434"
-                      src="playground_assets/user113434-gz8-200h.png"
-                      class="admin-user-board-user111"
-                    />
-                    <span class="admin-user-board-text030">
-                      <span>#200114</span>
-                    </span>
-                    <span class="admin-user-board-text032">
-                      <span>Nicolò Zaniolo</span>
-                    </span>
-                    <span class="admin-user-board-text034">catOverlord</span>
-                    <span class="admin-user-board-text035">
-                      <span>23</span>
-                    </span>
-                    <span class="admin-user-board-text037">
-                      <span>anhkoanmung@gmail.com</span>
-                    </span>
-                    <span class="admin-user-board-text039">
-                      <span>31/12/2022</span>
-                    </span>
-                    <span class="admin-user-board-text041">10/04/2023</span>
-                    <span class="admin-user-board-text042">3</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-user-board-draw11"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-user-board-trashcan11"
-                    />
-                  </div>
-                  <div class="admin-user-board-user-info2">
-                    <img
-                      alt="user113434"
-                      src="playground_assets/user113434-gz8-200h.png"
-                      class="admin-user-board-user112"
-                    />
-                    <span class="admin-user-board-text043">
-                      <span>#200114</span>
-                    </span>
-                    <span class="admin-user-board-text045">
-                      <span>Nicolò Zaniolo</span>
-                    </span>
-                    <span class="admin-user-board-text047">catOverlord</span>
-                    <span class="admin-user-board-text048">
-                      <span>23</span>
-                    </span>
-                    <span class="admin-user-board-text050">
-                      <span>anhkoanmung@gmail.com</span>
-                    </span>
-                    <span class="admin-user-board-text052">
-                      <span>31/12/2022</span>
-                    </span>
-                    <span class="admin-user-board-text054">10/04/2023</span>
-                    <span class="admin-user-board-text055">3</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-user-board-draw12"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-user-board-trashcan12"
-                    />
-                  </div>
-                  <div class="admin-user-board-user-info3">
-                    <img
-                      alt="user113434"
-                      src="playground_assets/user113434-gz8-200h.png"
-                      class="admin-user-board-user113"
-                    />
-                    <span class="admin-user-board-text056">
-                      <span>#200114</span>
-                    </span>
-                    <span class="admin-user-board-text058">
-                      <span>Nicolò Zaniolo</span>
-                    </span>
-                    <span class="admin-user-board-text060">catOverlord</span>
-                    <span class="admin-user-board-text061">
-                      <span>23</span>
-                    </span>
-                    <span class="admin-user-board-text063">
-                      <span>anhkoanmung@gmail.com</span>
-                    </span>
-                    <span class="admin-user-board-text065">
-                      <span>31/12/2022</span>
-                    </span>
-                    <span class="admin-user-board-text067">10/04/2023</span>
-                    <span class="admin-user-board-text068">3</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-user-board-draw13"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-user-board-trashcan13"
-                    />
-                  </div>
-                  <div class="admin-user-board-user-info4">
-                    <img
-                      alt="user113434"
-                      src="playground_assets/user113434-gz8-200h.png"
-                      class="admin-user-board-user114"
-                    />
-                    <span class="admin-user-board-text069">
-                      <span>#200114</span>
-                    </span>
-                    <span class="admin-user-board-text071">
-                      <span>Nicolò Zaniolo</span>
-                    </span>
-                    <span class="admin-user-board-text073">catOverlord</span>
-                    <span class="admin-user-board-text074">
-                      <span>23</span>
-                    </span>
-                    <span class="admin-user-board-text076">
-                      <span>anhkoanmung@gmail.com</span>
-                    </span>
-                    <span class="admin-user-board-text078">
-                      <span>31/12/2022</span>
-                    </span>
-                    <span class="admin-user-board-text080">10/04/2023</span>
-                    <span class="admin-user-board-text081">3</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-user-board-draw14"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-user-board-trashcan14"
-                    />
-                  </div>
-                  <div class="admin-user-board-user-info5">
-                    <img
-                      alt="user113434"
-                      src="playground_assets/user113434-gz8-200h.png"
-                      class="admin-user-board-user115"
-                    />
-                    <span class="admin-user-board-text082">
-                      <span>#200114</span>
-                    </span>
-                    <span class="admin-user-board-text084">
-                      <span>Nicolò Zaniolo</span>
-                    </span>
-                    <span class="admin-user-board-text086">catOverlord</span>
-                    <span class="admin-user-board-text087">
-                      <span>23</span>
-                    </span>
-                    <span class="admin-user-board-text089">
-                      <span>anhkoanmung@gmail.com</span>
-                    </span>
-                    <span class="admin-user-board-text091">
-                      <span>31/12/2022</span>
-                    </span>
-                    <span class="admin-user-board-text093">10/04/2023</span>
-                    <span class="admin-user-board-text094">3</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-user-board-draw15"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-user-board-trashcan15"
-                    />
-                  </div>
-                  <div class="admin-user-board-user-info6">
-                    <img
-                      alt="user113434"
-                      src="playground_assets/user113434-gz8-200h.png"
-                      class="admin-user-board-user116"
-                    />
-                    <span class="admin-user-board-text095">
-                      <span>#200114</span>
-                    </span>
-                    <span class="admin-user-board-text097">
-                      <span>Nicolò Zaniolo</span>
-                    </span>
-                    <span class="admin-user-board-text099">catOverlord</span>
-                    <span class="admin-user-board-text100">
-                      <span>23</span>
-                    </span>
-                    <span class="admin-user-board-text102">
-                      <span>anhkoanmung@gmail.com</span>
-                    </span>
-                    <span class="admin-user-board-text104">
-                      <span>31/12/2022</span>
-                    </span>
-                    <span class="admin-user-board-text106">10/04/2023</span>
-                    <span class="admin-user-board-text107">3</span>
-                    <img
-                      alt="draw13434"
-                      src="playground_assets/draw13434-8jw-200w.png"
-                      class="admin-user-board-draw16"
-                    />
-                    <img
-                      alt="trashcan13434"
-                      src="playground_assets/trashcan13434-meoe-200w.png"
-                      class="admin-user-board-trashcan16"
-                    />
-                  </div>
-                </div>
+                <table style="width: 100%; height: 100%;" id = "table" class="display">
+                  <thead>
+                    <tr>
+                      <th class="admin-user-board-text006">PFP</th>
+                      <th class="admin-user-board-text006">ID</th>
+                      <th class="admin-user-board-text008">Full name</th>
+                      <th class="admin-user-board-text009">Username</th>
+                      <th class="admin-user-board-text010">Age</th>
+                      <th class="admin-user-board-text012">Email</th>
+                      <th class="admin-user-board-text014">Created</th>
+                      <th class="admin-user-board-text015">Last active</th>
+                      <th class="admin-user-board-text016">Bor. books</th>
+                      <th class="admin-user-board-text016">Edit</th>
+                      <th class="admin-user-board-text016">Remove</th>
+                      <th class="admin-user-board-text016">Info</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for (var i = 0; i < 20; i++) { %>
+                    <tr>
+                      <td>
+                        <img
+                          alt="user113434"
+                          src="playground_assets/user113434-gz8-200h.png"
+                          class="admin-user-board-user11"
+                        />
+                      </td>
+                      <td class="admin-user-board-text017">#200114</td>
+                      <td class="admin-user-board-text019">Nicolò Zaniolo</td>
+                      <td class="admin-user-board-text021">catOverlord</td>
+                      <td class="admin-user-board-text022">23</td>
+                      <td class="admin-user-board-text024">anhkoanmung@gmail.com</td>
+                      <td class="admin-user-board-text026">31/12/2022</td>
+                      <td class="admin-user-board-text028">10/04/2023</td>
+                      <td class="admin-user-board-text029">3</td>
+                      <td>
+                        <img
+                          alt="draw13434"
+                          src="playground_assets/draw13434-8jw-200w.png"
+                          class="admin-user-board-draw1"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          alt="trashcan13434"
+                          src="playground_assets/trashcan13434-meoe-200w.png"
+                          class="admin-user-board-trashcan1"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          alt="image"
+                          src="playground_assets/trashcan13831-is4-200w.png"
+                          class="admin-user-board-image01"
+                        />
+                      </td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
               </div>
-              <div class="admin-user-board-pagenumber">
-                <img
-                  alt="downarrow13541"
-                  src="playground_assets/downarrow13541-cr4d-200h.png"
-                  class="admin-user-board-downarrow1"
-                />
-                <span class="admin-user-board-text108">1</span>
-                <span class="admin-user-board-text109">2</span>
-                <span class="admin-user-board-text110">3</span>
-                <span class="admin-user-board-text111"><span>...</span></span>
-                <span class="admin-user-board-text113"><span>10</span></span>
-                <img
-                  alt="downarrow23551"
-                  src="playground_assets/downarrow23551-osiq-200h.png"
-                  class="admin-user-board-downarrow2"
-                />
-              </div>
-            </div>
-            <div class="admin-user-board-scroll-bar">
-              <img
-                alt="Rectangle513521"
-                src="playground_assets/rectangle513521-a7pb-200w.png"
-                class="admin-user-board-rectangle51"
-              />
             </div>
           </div>
         </div>
@@ -405,4 +165,7 @@
   </body>
   <!--Script-->
   <%- include('layouts/script'); -%>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="js/tablesorting.js" type="text/javascript"></script>
 </html>

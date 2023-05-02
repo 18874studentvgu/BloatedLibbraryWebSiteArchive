@@ -47,6 +47,7 @@ app.listen(3000, () => {
 
 //home and post preview
 app.get('/', homeController)
+
 app.get('/index', homeController)
 
 //get
