@@ -167,12 +167,30 @@
           </div>
           <div class="book-info-review">
             <span class="book-info-text066"><span>Review</span></span>
-            <form method="POST" class="book-info-form">
+            <% if(loggedInAdmin || loggedIn) { %>
+            <form  method="POST" id="review" name ="review" class="book-info-form">
               <input
                 type="text"
+                name="body"
+                id="body"
                 placeholder="enter you review"
                 class="book-info-textinput input"
               />
+              <input
+              type="hidden"
+              name="writtenBy.userName"
+              id="writtenBy.userName"
+              class="book-info-textinput input"
+              value= <%= user1 %>
+              />
+              <input
+              type="hidden"
+              name="writtenBy.userID"
+              id="writtenBy.userID"
+              class="book-info-textinput input"
+              value= <%= loggedIn %>
+              />
+
               <button id="like" type="submit" class="book-info-button3 button">
                 <img
                   alt="pngaaa18616"
@@ -190,6 +208,7 @@
                 <h2 class="book-info-text069">dislike</h2>
               </button>
             </form>
+            <% } %>
             <div class="book-info-reveiewplace">
               <div class="book-info-a-comment">
                 <div class="book-info-group13">

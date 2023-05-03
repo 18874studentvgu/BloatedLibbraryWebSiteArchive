@@ -5,12 +5,12 @@ const ReviewSchema = new mongoose.Schema({
         userName: String,
         userID: {
             type: String,
-            required: true,
+            //required: true,
         }
     },
     bookID: {
         type: String,
-        required: true
+        //required: true
     },
     rating: {
         type: String,

@@ -19,6 +19,7 @@ const loginController = require('./controllers/login')
 const authController = require('./controllers/authUser')
 const registerController = require('./controllers/newUser')
 const storeUserController = require('./controllers/storeUser')
+const storeReviewController = require('./controllers/storeReview')
 const loginAdminController = require('./controllers/loginAdmin')
 const authAdminController = require('./controllers/authAdmin')
 const regisAdminController = require('./controllers/regisAdmin')
@@ -119,6 +120,9 @@ app.get('/auth/logout', logout)
 
 //bookInfo
 app.get('/book-info', bookInfoController)
+
+//store user review
+app.post('/users/review', storeReviewController)
 
 //error page
 app.use((req, res) => res.render('404')); 
