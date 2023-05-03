@@ -94,7 +94,7 @@
           <div class="admin-user-board-adminuserboard">
             <div class="admin-user-board-container3">
               <div class="admin-user-board-newusertable">
-                <table style="width: 100%; height: 100%;" id = "table" class="display">
+                <table id = "table" class="display">
                   <thead>
                     <tr>
                       <th class="admin-user-board-text006">PFP</th>
@@ -112,7 +112,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% for (var i = 0; i < 20; i++) { %>
+                    <% for (var i = 0; i < usersList.length; i++) { %>
                     <tr>
                       <td>
                         <img
@@ -121,14 +121,14 @@
                           class="admin-user-board-user11"
                         />
                       </td>
-                      <td class="admin-user-board-text017">#200114</td>
-                      <td class="admin-user-board-text019">Nicolò Zaniolo</td>
-                      <td class="admin-user-board-text021">catOverlord</td>
-                      <td class="admin-user-board-text022">23</td>
-                      <td class="admin-user-board-text024">anhkoanmung@gmail.com</td>
-                      <td class="admin-user-board-text026">31/12/2022</td>
-                      <td class="admin-user-board-text028">10/04/2023</td>
-                      <td class="admin-user-board-text029">3</td>
+                      <td class="admin-user-board-text017">12421412</td>
+                      <td class="admin-user-board-text019"><%= usersList[i].fullName %></td>
+                      <td class="admin-user-board-text021"><%= usersList[i].userName %></td>
+                      <td class="admin-user-board-text022"><%= usersList[i].Age %></td>
+                      <td class="admin-user-board-text024"><%= usersList[i].Email %></td>
+                      <td class="admin-user-board-text026"><%= usersList[i].Created.toDateString() %></td>
+                      <td class="admin-user-board-text028"><%= usersList[i].lastActive.toDateString() %></td>
+                      <td class="admin-user-board-text029"><%= usersList[i].borrowedBook %></td>
                       <td>
                         <img
                           alt="draw13434"

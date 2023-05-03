@@ -1,5 +1,10 @@
-const path = require('path');
+const UsersAdmin = require("../../models/userAdmin.js")
 module.exports = (request, response) => {
-    response.render('adminUsersList')
-    // response.sendFile(path.resolve('../online libray management/public', 'admin-user-board.html'))
+    UsersAdmin.find({})
+    .then ( (users) => {
+        response.render('adminUsersList', { usersList : users });
+    })
+    .catch ( (error) => {
+        console.log(error);
+    })
 }

@@ -199,6 +199,7 @@
   
   .admin-container {
     width: 100%;
+    height: auto;
     display: flex;
     overflow: auto;
     min-height: 100vh;
@@ -208,6 +209,7 @@
   }
   .admin-container01 {
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -562,8 +564,8 @@
     text-decoration: none;
   }
   .admin-admindashboard {
-    width: 100%;
-    height: 1500px;
+    width: auto;
+    height: auto;
     display: flex;
     overflow: hidden;
     position: relative;
@@ -1037,8 +1039,8 @@
   }
   .admin-container06 {
     flex: 0 0 auto;
-    width: auto;
-    height: 600px;
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -1066,7 +1068,7 @@
   }
   .admin-container07 {
     flex: 0 0 auto;
-    width: 420px;
+    width: auto;
     height: auto;
     display: flex;
     align-items: flex-start;
@@ -1074,7 +1076,7 @@
   }
   .admin-container08 {
     flex: 0 0 auto;
-    width: 550px;
+    width: auto;
     height: auto;
     display: flex;
     align-items: flex-start;
@@ -1092,6 +1094,9 @@
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
+  }
+  .bookTable {
+    width: 100%;
   }
   .admin-table-headers {
     flex: 0 0 auto;
@@ -1682,8 +1687,8 @@
     background-color: #985010;
   }
   .admin-newbooktable {
-    width: 900px;
-    height: 600px;
+    width: auto;
+    height: auto;
     display: flex;
     align-self: flex-start;
     box-sizing: border-box;
@@ -1704,7 +1709,7 @@
   }
   .admin-container09 {
     flex: 0 0 auto;
-    width: 750px;
+    width: auto;
     height: auto;
     display: flex;
     align-items: flex-start;
@@ -1712,7 +1717,7 @@
   }
   .admin-container10 {
     flex: 0 0 auto;
-    width: 420px;
+    width: auto;
     height: auto;
     display: flex;
     align-items: flex-start;

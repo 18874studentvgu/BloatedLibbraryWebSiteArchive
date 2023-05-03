@@ -35,7 +35,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true})) 
 mongoose.connect('mongodb://0.0.0.0:27017/web', {useNewUrlParser: true}) 
 
-
 app.set('view engine','ejs')
 
 app.use(express.static('public'))

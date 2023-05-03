@@ -199,6 +199,7 @@
 
 .admin-user-board-container {
   width: 100%;
+  height: auto;
   display: flex;
   overflow: auto;
   min-height: 100vh;
@@ -422,7 +423,7 @@
 }
 .admin-user-board-newusertable {
   width: 1800;
-  height: 1000;
+  height: auto;
   display: flex;
   padding: 0;
   align-self: auto;

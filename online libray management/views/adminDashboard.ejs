@@ -85,7 +85,7 @@
             />
             <div class="admin-container03">
               <span class="admin-text006"><span>Total users</span></span>
-              <span class="admin-text008"><span>12,345,678</span></span>
+              <span class="admin-text008"><span><%= usersList.length %></span></span>
             </div>
           </div>
           <div class="admin-totalbooks">
@@ -96,7 +96,7 @@
             />
             <div class="admin-container04">
               <span class="admin-text010">Total books</span>
-              <span class="admin-text011"><span>12,345,678</span></span>
+              <span class="admin-text011"><span><%= booksList.length %></span></span>
             </div>
           </div>
           <div class="admin-issued">
@@ -141,8 +141,8 @@
                           class="admin-user11"
                           />
                         </td>
-                        <td class="admin-text052">Nicolò Zaniolo</td>
-                        <td class="admin-text053">catOverlord</td>
+                        <td class="admin-text052"><%= usersList[i].fullName %></td>
+                        <td class="admin-text053"><%= usersList[i].userName %></td>
                         <td class="admin-text054">17565</td>
                         <td class="admin-text055">45 sec. ago</td>
                       </tr>
@@ -161,41 +161,31 @@
             </div>
             <div class="admin-newbooktable">
               <div class="admin-container09">
-                <div class="admin-container10">
-                  <span class="admin-new-book-title">New books</span>
-                  <table cellpadding = "7">
-                    <thead>
-                      <tr>
-                        <th class="admin-text043">PFP</th>
-                        <th class="admin-text043">Name</th>
-                        <th class="admin-text043">ID</th>  
-                        <th class="admin-text043">Author</th>
-                        <th class="admin-text043">Published Date</th>
-                        <th class="admin-text043">Uploaded Date</th>
-                        <th class="admin-text043">Quantity</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <% for (var i = 0; i < 5; i++) { %>
-                      <tr>
-                        <td>
-                          <img
-                          alt="image"
-                          src="/playground_assets/user112956-sm4-200h.png"
-                          class="admin-image2"
-                          />
-                        </td>
-                        <td class="admin-text092">The Narra...</td>
-                        <td class="admin-text093">17657</span>
-                        <td class="admin-text094">Edgar Allan Poe</td>
-                        <td class="admin-text095">Jul 31, 1838</td>
-                        <td class="admin-text096">Apr 09, 2023</td>
-                        <td class="admin-text097">500</td>
-                      </tr>
-                      <% } %>
-                    </tbody>
-                  </table>
-                </div>
+                <span class="admin-new-book-title">New books</span>
+                <table cellpadding = "3">
+                  <thead>
+                    <tr>
+                      <th class="admin-text043" style="width: 30%">Title</th>
+                      <th class="admin-text043">ID</th>  
+                      <th class="admin-text043">Author</th>
+                      <th class="admin-text043">Published Date</th>
+                      <th class="admin-text043">Uploaded Date</th>
+                      <th class="admin-text043">Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for (var i = 0; i < 5; i++) { %>
+                    <tr>
+                      <td class="admin-text092"><%= booksList[i].Title %></td>
+                      <td class="admin-text093">17657</span>
+                      <td class="admin-text094"><%= booksList[i].Author %></td>
+                      <td class="admin-text095"><%= booksList[i].publishedDate %></td>
+                      <td class="admin-text096"><%= booksList[i].uploadedDate.toDateString() %></td>
+                      <td class="admin-text097"><%= booksList[i].Quantity %></td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
               </div>
               <a
                 href="/adminBooksList"

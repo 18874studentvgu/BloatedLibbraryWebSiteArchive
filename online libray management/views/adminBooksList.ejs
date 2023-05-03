@@ -112,7 +112,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% for (var i = 0; i < 20; i++) { %>
+                    <% for (var i = 0; i < booksList.length; i++) { %>
                     <tr>
                       <td>
                         <img
@@ -122,19 +122,13 @@
                         />
                       </td>
                       <td class="admin-book-board-text015">123</td>
-                      <td class="admin-book-board-text016">
-                        The Narrative of Arthur Gordon Pym of Nantucket
-                      </td>
-                      <td class="admin-book-board-text017">
-                        Edgar Allan Poe
-                      </td>
-                      <td class="admin-book-board-text018">
-                        Fantasy, Adventure
-                      </td>
-                      <td class="admin-book-board-text019">31/07/1838</td>
-                      <td class="admin-book-board-text020">13/04/2023</td>
-                      <td class="admin-book-board-text023">500</td>
-                      <td class="admin-book-board-text026">75.2%</td>
+                      <td class="admin-book-board-text016"><%= booksList[i].Title %></td>
+                      <td class="admin-book-board-text017"><%= booksList[i].Author %></td>
+                      <td class="admin-book-board-text018"><%= booksList[i].Category %></td>
+                      <td class="admin-book-board-text019"><%= booksList[i].publishedDate %></td>
+                      <td class="admin-book-board-text020"><%= booksList[i].uploadedDate.toDateString() %></td>
+                      <td class="admin-book-board-text023"><%= booksList[i].Quantity %></td>
+                      <td class="admin-book-board-text026"><%= booksList[i].Recommendation %>%</td>
                       <br/>
                       <td>
                         <img

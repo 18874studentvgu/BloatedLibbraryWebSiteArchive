@@ -199,6 +199,7 @@
 
 .admin-book-board-container {
   width: 100%;
+  height: auto;
   display: flex;
   overflow: auto;
   min-height: 100vh;
@@ -227,6 +228,7 @@
 }
 .admin-book-board-container02 {
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;

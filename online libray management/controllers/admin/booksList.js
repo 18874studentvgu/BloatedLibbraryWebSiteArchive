@@ -1,5 +1,11 @@
-const path = require('path');
+const BooksAdmin = require("../../models/bookAdmin.js")
 module.exports = (request, response) => {
-    response.render('adminBooksList')
-    // response.sendFile(path.resolve('../online libray management/public', 'admin-book-board.html'))
+    BooksAdmin.find({})
+    .then ( (books) => {
+        response.render('adminBooksList', { booksList : books });
+        // console.log(users);
+    })
+    .catch ( (error) => {
+        console.log(error);
+    })
 }
