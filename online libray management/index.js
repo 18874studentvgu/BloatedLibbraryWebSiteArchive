@@ -26,11 +26,12 @@ const storeAdminController = require('./controllers/storeAdmin')
 const emailConfPageController = require('./controllers/emailConfPage')
 const sendConfLinkController = require('./controllers/sendConfLink')
 const resetPasswordPageController = require('./controllers/resetPasswordPage')
-const resetPasswordController=require('./controllers/resetPassword')
-const userProfileController=require('./controllers/userProfile')
-const userProfileSettingController=require('./controllers/userProfileSetting')
-const bookInfoController=require('./controllers/bookInfo')
-const logout=require('./controllers/logout')
+const resetPasswordController = require('./controllers/resetPassword')
+const userProfileController = require('./controllers/userProfile')
+const userProfileSettingController = require('./controllers/userProfileSetting')
+const bookInfoController = require('./controllers/bookInfo')
+const logout = require('./controllers/logout')
+const filterController = require('./controllers/filter')
 //check logged in and newuser
 global.loggedIn = null;
 //global.user1= null;
@@ -121,5 +122,8 @@ app.get('/auth/logout', logout)
 app.get('/book-info', bookInfoController)
 
 //error page
-app.use((req, res) => res.render('404')); 
+// app.use((req, res) => res.render('404')); 
+
+// filter
+app.get('/searchFilterBook', filterController);
 
