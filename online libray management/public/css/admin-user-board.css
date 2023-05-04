@@ -208,10 +208,12 @@
 }
 .admin-user-board-container1 {
   flex: 0 0 auto;
-  width: 1500px;
+  width: 100%;
   height: auto;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 .admin-user-board-nav-bar {
   width: 100%;

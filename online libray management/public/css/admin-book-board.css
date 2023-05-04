@@ -211,7 +211,9 @@
   width: 100%;
   height: auto;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 .admin-book-board-nav-bar {
   width: 100%;
