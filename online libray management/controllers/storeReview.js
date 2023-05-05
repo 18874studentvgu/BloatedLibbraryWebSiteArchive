@@ -2,6 +2,9 @@ const Review = require('../models/Review')
 module.exports=(req,res) =>{
     Review.create(req.body)
     .then(()=>{
-        res.send("sucessfully send");
+        res.send({
+           text:"sucessfully send"
+           //_id: post.insertedID
+        });
     })
 }

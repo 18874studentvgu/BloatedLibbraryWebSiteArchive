@@ -784,12 +784,27 @@
   height: 800px;
   display: flex;
   overflow: hidden;
-  margin-top: -2%;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: gray;
+  border-width: 2px;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition-duration: 0.5s;
+}
+.book-info-reveiewplace2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-top: 2%;
   align-items: center;
   flex-shrink: 0;
   border-color: transparent;
   flex-direction: column;
   justify-content: flex-start;
+  
 }
 .book-info-a-comment {
   width: 70%;
@@ -797,7 +812,7 @@
   display: flex;
   align-self: auto;
   box-sizing: border-box;
-  margin-top: 3%;
+  margin-top: 2%;
   align-items: flex-start;
   flex-shrink: 1;
   margin-left: 0%;
@@ -806,7 +821,7 @@
   border-width: 0;
   margin-right: 0%;
   border-radius: 0px 0px 0px 0px;
-  margin-bottom: 0%;
+  margin-bottom: 2%;
   flex-direction: column;
   justify-content: center;
   background-color: transparent;

@@ -6,6 +6,9 @@ const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
 
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
+
 //idk what this is 
 app.use(expressSession({
     secret: 'keyboard cat'
@@ -56,9 +59,16 @@ mongoose.connect('mongodb://0.0.0.0:27017/web', {useNewUrlParser: true})
 
 app.set('view engine','ejs')
 
+io.on("connection", function(socket){
+    console.log("user connected");
+    socket.on("new_comment", function(reviews){
+        io.emit("new_comment", reviews);
+    })
+});
+
 app.use(express.static('public'))
 
-app.listen(3000, () => {
+http.listen(3000, () => {
     console.log("App listening on port 3000")
 }) 
 
@@ -123,6 +133,7 @@ app.get('/book-info', bookInfoController)
 
 //store user review
 app.post('/users/review', storeReviewController)
+
 
 //error page
 app.use((req, res) => res.render('404')); 
