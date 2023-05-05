@@ -45,13 +45,6 @@ socket.on("new_comment",function(reviews, userName, body){
     html += '</span>';
     html += '</p>';
     html += '</div>';
-    html += ' <div class="book-info-container4">';
-    html += '<div class="book-info-aditional">';
-    html += '<span class="book-info-text075">.detail</span>';
-    html += '<span class="book-info-text076">.Reply&nbsp;</span>';
     html += '</div>';
-    html += '</div>';
-    html += '</div>';
-
     $('#no').prepend(html);
 })
