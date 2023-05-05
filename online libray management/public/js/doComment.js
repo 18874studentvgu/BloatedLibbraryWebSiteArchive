@@ -19,13 +19,20 @@ $('#review').submit(function(e){
 
 socket.on("new_comment",function(reviews){
     console.log(reviews);
+    var hi = reviews.split("&");
+
+    var body = hi[0].split("=") // to get the comment
+    var comment1 = body[1].split("+");
+    var comment2 = comment1.join(" "); 
+    
+    var userName = hi[1].split("=") 
     var html = '';
     html += '<div class="book-info-a-comment">';
     html += ' <div class="book-info-group13">';
     html += '<img alt="image56170" src="/playground_assets/image56170-e9ep-200h.png" class="book-info-image5"/>';
     html += '  <h3 class="book-info-text070">';
     html += ' <span class="book-info-text071">';
-    //html +=  reviews.writtenBy.userName ;
+    //html +=  body[1] ;
     html += '</span>';
     html += '<span class="book-info-text072">Mar 23 at 11:06 PM</span>';
     html += ' </h3>';
@@ -33,7 +40,7 @@ socket.on("new_comment",function(reviews){
     html += '<div class="book-info-frame10">';
     html += '<p class="book-info-text073">';
     html += '<span>'; 
-    html +=  reviews.body ;
+    html +=  comment2;
     html += '</span>';
     html += '</p>';
     html += '</div>';
