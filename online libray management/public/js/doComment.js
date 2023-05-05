@@ -6,7 +6,6 @@ $('#review').submit(function(e){
    var userName = document.getElementById('writtenBy.userName').value; 
    var userID = document.getElementById('writtenBy.userID').value; 
    var body = document.getElementById('body').value; 
-
    e.preventDefault();
     $.ajax({
         url: "/users/review",
@@ -23,6 +22,9 @@ $('#review').submit(function(e){
 }); 
 
 socket.on("new_comment",function(reviews, userName, body){
+
+    const d = new Date();
+    let text = d.toDateString();
     var html = '';
     html += '<div class="book-info-a-comment">';
     html += ' <div class="book-info-group13">';
@@ -31,7 +33,9 @@ socket.on("new_comment",function(reviews, userName, body){
     html += ' <span class="book-info-text071">';
     html +=  userName ;
     html += ' -&nbsp;</span>';
-    html += '<span class="book-info-text072">Mar 23 at 11:06 PM</span>';
+    html += '<span class="book-info-text072">'; 
+    html += text ;
+    html += '</span>';
     html += ' </h3>';
     html += '</div>';
     html += '<div class="book-info-frame10">';
