@@ -4,7 +4,6 @@ module.exports=(req,res) =>{
     .then(()=>{
         res.send({
            text:"sucessfully send"
-           //_id: post.insertedID
         });
     })
 }

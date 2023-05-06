@@ -61,8 +61,8 @@ app.set('view engine','ejs')
 
 io.on("connection", function(socket){
     console.log("user connected");
-    socket.on("new_comment", function(reviews, userName, body){
-        io.emit("new_comment", reviews, userName, body);
+    socket.on("new_comment", function(reviews, userName, body, rating){
+        io.emit("new_comment", reviews, userName, body, rating);
     })
 });
 

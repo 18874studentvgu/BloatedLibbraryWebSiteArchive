@@ -229,19 +229,22 @@
                   <h3 class="book-info-text070">
                     <span class="book-info-text071"><%= reviews[i].writtenBy.userName%> -&nbsp;</span>
                     <span class="book-info-text072"><%= reviews[i].createdAt.toDateString()%></span>
-                    <input
-                        type="hidden"
-                        id="date"
-                        value= <%= reviews[i].createdAt.toDateString()%>
-                        />
-
                   </h3>
                 </div>
+                <% if (reviews[i].rating == "Recommended") { %>
                 <div class="book-info-frame10">
                   <p class="book-info-text073">
                     <span> <%= reviews[i].body %></span>
                   </p>
                 </div>
+                <% } %>
+                <% if (reviews[i].rating != "Recommended") { %>
+                  <div class="book-info-framed" >
+                    <p class="book-info-text073">
+                      <span> <%= reviews[i].body %></span>
+                    </p>
+                  </div>
+                  <% } %>
               </div>
               <% } %>
             </div>
