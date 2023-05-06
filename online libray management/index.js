@@ -35,6 +35,7 @@ const userProfileController=require('./controllers/userProfile')
 const userProfileSettingController=require('./controllers/userProfileSetting')
 const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
+const wishlist = require('./controllers/AddToWishlist')
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -61,8 +62,8 @@ app.set('view engine','ejs')
 
 io.on("connection", function(socket){
     console.log("user connected");
-    socket.on("new_comment", function(reviews, userName, body){
-        io.emit("new_comment", reviews, userName, body);
+    socket.on("new_comment", function(reviews, userName, body, rating){
+        io.emit("new_comment", reviews, userName, body, rating);
     })
 });
 
@@ -134,6 +135,8 @@ app.get('/book-info', bookInfoController)
 //store user review
 app.post('/users/review', storeReviewController)
 
+//add to wishlist
+app.post('/users/wishlist', wishlist)
 
 //error page
 app.use((req, res) => res.render('404')); 

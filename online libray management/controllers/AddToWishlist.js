@@ -1,6 +1,6 @@
-const Review = require('../models/Review')
+const WishList = require('../models/WishList')
 module.exports=(req,res) =>{
-    Review.create(req.body)
+    WishList.create(req.body)
     .then(()=>{
         res.send({
            text:"sucessfully send"

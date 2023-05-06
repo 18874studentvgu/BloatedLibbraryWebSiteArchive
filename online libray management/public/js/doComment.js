@@ -6,6 +6,7 @@ $('#review').submit(function(e){
    var userName = document.getElementById('writtenBy.userName').value; 
    var userID = document.getElementById('writtenBy.userID').value; 
    var body = document.getElementById('body').value; 
+   var rating = document.getElementById('rating').value;
    e.preventDefault();
     $.ajax({
         url: "/users/review",
@@ -13,7 +14,7 @@ $('#review').submit(function(e){
         data : formData,
         success: function(respond){
             formData._id = respond._id;
-            socket.emit("new_comment", formData, userName, body);
+            socket.emit("new_comment", formData, userName, body, rating);
             alert(respond.text);
             console.log("hi")
         }
@@ -21,7 +22,7 @@ $('#review').submit(function(e){
     return false;
 }); 
 
-socket.on("new_comment",function(reviews, userName, body){
+socket.on("new_comment",function(reviews, userName, body, rating){
 
     const d = new Date();
     let text = d.toDateString();
@@ -38,8 +39,13 @@ socket.on("new_comment",function(reviews, userName, body){
     html += '</span>';
     html += ' </h3>';
     html += '</div>';
-    html += '<div class="book-info-frame10">';
-    html += '<p class="book-info-text073">';
+    if( rating == "Recommended"){
+        html += '<div class="book-info-frame10">';
+        html += '<p class="book-info-text073">';
+    } else {
+        html += '<div class="book-info-framed">';
+        html += '<p class="book-info-text073">';
+    }
     html += '<span>'; 
     html +=  body;
     html += '</span>';

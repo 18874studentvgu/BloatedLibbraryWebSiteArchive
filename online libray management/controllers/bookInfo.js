@@ -3,13 +3,19 @@ const Review = require("../models/Review");
 module.exports = (req, response) => {
     Review.find({})
     .then((reviews)=>{
+        var id = "yes"
         console.log(req.session)
         //console.log(post)
         response.render('book-info',{
-            reviews:reviews
+            reviews:reviews,
+            id: id
         });
     })
-    .catch((error, post) => { 
-        console.log(error, post)
+    .catch((error, reviews) => { 
+        id = "no"
+        response.render('book-info',{
+            reviews:reviews,
+            id: id
+        });
     })
 }
