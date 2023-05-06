@@ -20,25 +20,54 @@
                     <a
                       href="searchfilterbook.html"
                       class="search-filter-book-add-to-cart-button button"
-                    >
-                      Search
+                    >Search
                     </a>
                   </div>
                   <div class="search-filter-book-container04">
-                    <span class="search-filter-book-text006">Result search books</span>
+                    <!-- <span class="search-filter-book-text006">Result search books</span> -->
                     <div class="search-filter-book-container05">
-                      <span class="search-filter-book-text007">
-                        <span>Filter:</span>
-                      </span>
-                      <select name="scsacasc" class="search-filter-book-select">
+                      <!-- <span class="search-filter-book-text007">
+                        <label>Filter</label>
+                      </span> -->
+                      <!--<select name="scsacasc" class="search-filter-book-select">
                         <option value="Option 1" selected></option>
                         <option value="Option 2">Author</option>
                         <option value="Option 3">Categories</option>
                         <option value="Option 4">Published</option>
-                      </select>
+                      </select> -->
+                      <br>
+                      <div class="row">
+                        <div class="col-12@sm filters-group-wrap">
+                          <div class="filters-group">
+                            <p class="filter-label">Filter</p>
+                            <div class="btn-group filter-options">
+                              <button class="btn btn--primary" data-group="space">Authour</button>
+                              <button class="btn btn--primary" data-group="nature">Published</button>
+                              <button class="btn btn--primary" data-group="animal">Category</button>
+                            </div>
+                          </div>
+                          <div class="search-filter-book-container05"></div>
+                          <fieldset class="filters-group">
+                            <legend class="filter-label">Sort</legend>
+                            <div class="btn-group sort-options">
+                              <label class="btn active">
+                                <input type="radio" name="sort-value" value="dom" checked /> Default
+                              </label>
+                              <label class="btn">
+                                <input type="radio" name="sort-value" value="title" /> Title
+                              </label>
+                              <label class="btn">
+                                <input type="radio" name="sort-value" value="date-created" /> Authour
+                              </label>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <br>
+                <br>
                 <div class="search-filter-book-contianer">
                   <img
                     alt="AlanTuringbook11711"
@@ -48,7 +77,7 @@
                   <div class="search-filter-book-container06">
                     <h1 class="search-filter-book-text009">ALAN TURING: THE ENIGMA</h1>
                     <h2 class="search-filter-book-text010">
-                      <span>Authour:</span>
+                      <label>Authour:</label>
                       <span class="search-filter-book-text012">Andrew Hodges</span>
                       <br class="search-filter-book-text013" />
                       <span></span>
@@ -167,7 +196,6 @@
             <!--footer-->
             <%- include('layouts/footer'); -%>
           </div>
-        </div>
       </div>
     </body>
   <!--Script-->
