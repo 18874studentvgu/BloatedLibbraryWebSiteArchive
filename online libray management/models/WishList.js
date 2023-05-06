@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const WishListSchema = new mongoose.Schema({
     userID: {
         type: String,
-        required: true,
+        //required: true,
         unique: true //should each user only have 1 wish list? 
     },
     books: [{
@@ -11,7 +11,7 @@ const WishListSchema = new mongoose.Schema({
         Author: [String],
         bookID: {
             type: String,
-            required: true,
+           // required: true,
             unique: true
         },
     }]
