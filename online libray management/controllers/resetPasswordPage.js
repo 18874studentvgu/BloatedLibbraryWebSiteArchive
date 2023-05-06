@@ -27,4 +27,4 @@ module.exports = (req,res) => {
         console.log("Invalid id, no user found")
     })
 }
-module.exports={'userid':userid}
+//module.exports={'userid':userid}
