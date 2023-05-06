@@ -19,7 +19,9 @@
     "mongoose": "^6.10.5",
     "nodemailer": "^6.9.1",
     "socket.io": "^4.6.1",
-    "swiper": "^9.2.0"
+    "swiper": "^9.2.0",
+    "url": "^0.11.0",
+    "url-pattern": "^1.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"
