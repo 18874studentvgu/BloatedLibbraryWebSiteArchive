@@ -2,13 +2,12 @@ const User = require("../models/User")
 const jwt=require('jsonwebtoken')
 const config=require('../controllers/config')
 const userid=require('../controllers/resetPasswordPage')
-
+//user clicks "reset password"
 module.exports=(req,res)=>{
     console.log(userid.userid)
-    const{id,token}=req.params
-    console.log(req.params)
+    console.log(config.secret)
     const{password,password2}=req.body
-    User.findOne({_id:id})
+    User.findOne({_id:userid})
     .then((user)=>{
         console.log('User exist')
         const secret=config.secret+user.password
@@ -24,7 +23,7 @@ module.exports=(req,res)=>{
             }
             else{
                 console.log('Password not match, try again')
-                res.redirect('/reset/:id/:token')
+                res.render('resetPasswordPage')
             }
         }
         catch{
