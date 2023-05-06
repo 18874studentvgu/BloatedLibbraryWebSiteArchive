@@ -36,6 +36,7 @@ const userProfileSettingController=require('./controllers/userProfileSetting')
 const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
+const updateAccount = require('./controllers/updateAccount')
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -125,6 +126,9 @@ app.post('/reset/:id/:token', resetPasswordController)
 //userprofile
 app.get('/user_profile', userProfileController)
 app.get('/user_profile_setting', userProfileSettingController)
+
+//update account
+app.post('/users/change', updateAccount)
 
 //logout
 app.get('/auth/logout', logout)
