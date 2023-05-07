@@ -53,13 +53,24 @@
                   </span>
                 </p>
                 <div class="home-container02">
-                  <button
+                  <form id="wishlist2" method="POST">
+                    <input
+                    type="hidden"
+                    name="userID"
+                    id="userID"
+                    class="book-info-textinput input"
+                    value= <%= loggedIn %>
+                    > 
+                    <button
                     id="add to cart"
                     type="submit"
                     class="home-add-to-cart-button1 button"
+                    id="wishListButton2"
                   >
                     WISH LIST
                   </button>
+                  </form>
+                  
                   <a href="/book-info" class="home-text020">
                     <span>View book</span>
                   </a>
@@ -91,6 +102,7 @@
                           <span class="home-text027">Y. Perelman</span>
                           <br />
                         </h2>
+                        
                         <form id="wishlist" method="POST">
                           <input
                           type="hidden"
@@ -99,7 +111,8 @@
                           class="book-info-textinput input"
                           value= <%= loggedIn %>
                           > 
-                          <button type ="submit" class="home-button button">WISH LIST</button>
+                          <button type ="submit" class="home-button button" id="wishListButton">WISH LIST</button>
+                       
                         </form>
                       </div>
                     </div>

@@ -1,9 +1,15 @@
 const WishList = require('../models/WishList')
 module.exports=(req,res) =>{
-    WishList.create(req.body)
-    .then(()=>{
+    if(loggedIn){
+        WishList.create(req.body)
+        .then(()=>{
+            res.send({
+            text:"sucessfully send"
+            });
+        })
+    } else {
         res.send({
-           text:"sucessfully send"
-        });
-    })
+            text:"please login bro"
+            });
+    }
 }
