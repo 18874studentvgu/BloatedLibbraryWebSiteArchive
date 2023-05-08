@@ -1,14 +1,12 @@
-.waiting-for-payment-confirmation-container {
+.paymentsuccess-container {
   width: 100%;
   display: flex;
   overflow: auto;
   min-height: 100vh;
-  align-items: flex-start;
-  flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.waiting-for-payment-confirmation-waitingforonlinepayment {
-  flex: 1;
+.paymentsuccess-successpayment {
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -16,18 +14,16 @@
   align-items: flex-start;
   flex-shrink: 0;
   border-color: transparent;
-  flex-direction: column;
-  justify-content: flex-start;
   background-color: rgba(255, 255, 255, 1);
 }
-.waiting-for-payment-confirmation-container1 {
+.paymentsuccess-container1 {
   flex: 0 0 auto;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
 }
-.waiting-for-payment-confirmation-nav-bar-logined {
+.paymentsuccess-nav-bar-logined {
   width: 100%;
   height: 85px;
   display: flex;
@@ -40,16 +36,16 @@
   justify-content: center;
   background-color: rgba(255, 255, 255, 1);
 }
-.waiting-for-payment-confirmation-container2 {
+.paymentsuccess-container2 {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.waiting-for-payment-confirmation-navlink {
+.paymentsuccess-navlink {
   display: contents;
 }
-.waiting-for-payment-confirmation-vg-logo1 {
+.paymentsuccess-vg-logo1 {
   width: 161px;
   cursor: pointer;
   height: 46px;
@@ -58,7 +54,7 @@
   margin-right: 40%;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-navbutton {
+.paymentsuccess-navbutton {
   width: auto;
   display: flex;
   align-self: center;
@@ -66,10 +62,10 @@
   margin-right: 5%;
   flex-direction: row;
 }
-.waiting-for-payment-confirmation-navlink1 {
+.paymentsuccess-navlink1 {
   display: contents;
 }
-.waiting-for-payment-confirmation-text {
+.paymentsuccess-text {
   color: rgb(115, 117, 117);
   width: auto;
   cursor: pointer;
@@ -86,10 +82,10 @@
   margin-right: 5%;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-navlink2 {
+.paymentsuccess-navlink2 {
   display: contents;
 }
-.waiting-for-payment-confirmation-text03 {
+.paymentsuccess-text03 {
   color: rgba(115, 117, 117, 1);
   width: auto;
   cursor: pointer;
@@ -106,10 +102,10 @@
   margin-right: 5%;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-navlink3 {
+.paymentsuccess-navlink3 {
   display: contents;
 }
-.waiting-for-payment-confirmation-text05 {
+.paymentsuccess-text05 {
   color: rgb(115, 117, 117);
   width: auto;
   cursor: pointer;
@@ -126,10 +122,10 @@
   margin-right: 5%;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-navlink4 {
+.paymentsuccess-navlink4 {
   display: contents;
 }
-.waiting-for-payment-confirmation-magnifyingglass1 {
+.paymentsuccess-magnifyingglass1 {
   width: 33px;
   cursor: pointer;
   height: 29px;
@@ -142,7 +138,7 @@
   flex-direction: initial;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-navlink5 {
+.paymentsuccess-navlink5 {
   color: rgb(255, 255, 255);
   width: 208px;
   font-size: 24px;
@@ -157,17 +153,17 @@
   text-decoration: none;
   background-color: rgb(219, 129, 45);
 }
-.waiting-for-payment-confirmation-navlink5:hover {
+.paymentsuccess-navlink5:hover {
   width: 181px;
   height: 39px;
   font-style: normal;
   font-weight: 500;
 }
-.waiting-for-payment-confirmation-navlink5:active {
+.paymentsuccess-navlink5:active {
   background-color: #af5d05;
 }
-.waiting-for-payment-confirmation-text06 {
-  color: rgba(0, 0, 0, 1);
+.paymentsuccess-text06 {
+  color: rgb(0, 0, 0);
   width: 891px;
   height: auto;
   font-size: 60px;
@@ -183,11 +179,11 @@
   margin-bottom: var(--dl-space-space-fourunits);
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-container3 {
+.paymentsuccess-container3 {
   display: flex;
   flex-direction: row;
 }
-.waiting-for-payment-confirmation-alan-turingbook2 {
+.paymentsuccess-alan-turingbook2 {
   width: 269px;
   height: 406px;
   align-self: flex-start;
@@ -195,13 +191,13 @@
   margin-left: 160px;
   border-color: transparent;
 }
-.waiting-for-payment-confirmation-container4 {
+.paymentsuccess-container4 {
   display: flex;
   align-items: flex-start;
   margin-bottom: var(--dl-space-space-halfunit);
   flex-direction: column;
 }
-.waiting-for-payment-confirmation-text08 {
+.paymentsuccess-text07 {
   color: rgb(0, 0, 0);
   width: 718px;
   height: auto;
@@ -218,14 +214,14 @@
   margin-bottom: var(--dl-space-space-unit);
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-text09 {
+.paymentsuccess-text08 {
   font-weight: 700;
 }
-.waiting-for-payment-confirmation-text11 {
+.paymentsuccess-text10 {
   font-style: normal;
   font-weight: 500;
 }
-.waiting-for-payment-confirmation-text12 {
+.paymentsuccess-text11 {
   color: rgb(0, 0, 0);
   width: 418px;
   height: auto;
@@ -242,15 +238,15 @@
   margin-bottom: var(--dl-space-space-twounits);
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-text13 {
+.paymentsuccess-text12 {
   font-weight: 700;
 }
-.waiting-for-payment-confirmation-text15 {
+.paymentsuccess-text14 {
   font-style: normal;
   font-weight: 500;
 }
-.waiting-for-payment-confirmation-text16 {
-  color: rgba(0, 0, 0, 1);
+.paymentsuccess-text15 {
+  color: rgb(0, 0, 0);
   width: 626px;
   height: auto;
   font-size: 32px;
@@ -266,7 +262,7 @@
   margin-bottom: var(--dl-space-space-twounits);
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-continue {
+.paymentsuccess-return-home {
   color: rgb(255, 255, 255);
   width: 198px;
   font-size: 20px;
@@ -283,7 +279,7 @@
   text-decoration: none;
   background-color: rgb(219, 129, 45);
 }
-.waiting-for-payment-confirmation-footer {
+.paymentsuccess-footer {
   width: 100%;
   height: 210px;
   display: flex;
@@ -297,7 +293,7 @@
   justify-content: flex-start;
   background-image: url("/playground_assets/rectangle247216-8dmo-300h.png");
 }
-.waiting-for-payment-confirmation-container5 {
+.paymentsuccess-container5 {
   width: 100%;
   height: 165px;
   display: flex;
@@ -305,7 +301,7 @@
   align-items: center;
   justify-content: center;
 }
-.waiting-for-payment-confirmation-container6 {
+.paymentsuccess-container6 {
   flex: 0 0 auto;
   width: 383px;
   height: auto;
@@ -316,12 +312,12 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-.waiting-for-payment-confirmation-v-ulogofullwhite1 {
+.paymentsuccess-v-ulogofullwhite1 {
   width: 255px;
   height: 72px;
   border-color: transparent;
 }
-.waiting-for-payment-confirmation-text23 {
+.paymentsuccess-text21 {
   color: rgba(255, 255, 255, 1);
   width: 243px;
   height: auto;
@@ -336,7 +332,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-text30 {
+.paymentsuccess-text28 {
   color: rgb(255, 255, 255);
   width: 347px;
   height: auto;
@@ -351,14 +347,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-navbutton1 {
+.paymentsuccess-navbutton1 {
   width: auto;
   display: flex;
   align-self: center;
   align-items: center;
   flex-direction: row;
 }
-.waiting-for-payment-confirmation-home {
+.paymentsuccess-home {
   display: flex;
   align-self: center;
   align-items: center;
@@ -366,10 +362,10 @@
   margin-right: 20px;
   flex-direction: column;
 }
-.waiting-for-payment-confirmation-navlink6 {
+.paymentsuccess-navlink6 {
   display: contents;
 }
-.waiting-for-payment-confirmation-text31 {
+.paymentsuccess-text29 {
   color: rgb(255, 255, 255);
   width: auto;
   cursor: pointer;
@@ -385,7 +381,7 @@
   margin-right: 20px;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-text34 {
+.paymentsuccess-text32 {
   color: rgb(255, 255, 255);
   width: 257px;
   font-size: 18px;
@@ -393,7 +389,7 @@
   font-family: Montserrat;
   line-height: 1.15;
 }
-.waiting-for-payment-confirmation-contact {
+.paymentsuccess-contact {
   display: flex;
   align-self: center;
   align-items: center;
@@ -401,10 +397,10 @@
   margin-right: 20px;
   flex-direction: column;
 }
-.waiting-for-payment-confirmation-navlink7 {
+.paymentsuccess-navlink7 {
   display: contents;
 }
-.waiting-for-payment-confirmation-text48 {
+.paymentsuccess-text46 {
   color: rgb(255, 255, 255);
   width: auto;
   cursor: pointer;
@@ -421,7 +417,7 @@
   margin-right: 20px;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-text49 {
+.paymentsuccess-text47 {
   color: rgb(255, 255, 255);
   width: 257px;
   font-size: 20px;
@@ -429,7 +425,7 @@
   font-family: Montserrat;
   line-height: 1.15;
 }
-.waiting-for-payment-confirmation-about {
+.paymentsuccess-about {
   display: flex;
   align-self: center;
   align-items: center;
@@ -437,10 +433,10 @@
   margin-right: 20px;
   flex-direction: column;
 }
-.waiting-for-payment-confirmation-navlink8 {
+.paymentsuccess-navlink8 {
   display: contents;
 }
-.waiting-for-payment-confirmation-text59 {
+.paymentsuccess-text57 {
   color: rgb(255, 255, 255);
   width: auto;
   cursor: pointer;
@@ -457,7 +453,7 @@
   margin-right: 20px;
   text-decoration: none;
 }
-.waiting-for-payment-confirmation-text60 {
+.paymentsuccess-text58 {
   color: rgb(255, 255, 255);
   width: 257px;
   font-size: 20px;
@@ -466,20 +462,20 @@
   line-height: 1.15;
 }
 @media(max-width: 1200px) {
-  .waiting-for-payment-confirmation-vg-logo1 {
+  .paymentsuccess-vg-logo1 {
     top: 30px;
     left: 21px;
     width: auto;
     position: static;
     margin-left: 20px;
   }
-  .waiting-for-payment-confirmation-navbutton {
+  .paymentsuccess-navbutton {
     width: auto;
     position: static;
     margin-left: var(--dl-space-space-sixunits);
     margin-right: var(--dl-space-space-sixunits);
   }
-  .waiting-for-payment-confirmation-text {
+  .paymentsuccess-text {
     top: 0px;
     left: 0px;
     width: auto;
@@ -487,7 +483,7 @@
     margin-left: 6px;
     margin-right: 6px;
   }
-  .waiting-for-payment-confirmation-text03 {
+  .paymentsuccess-text03 {
     top: 4.00390625px;
     right: 0px;
     width: auto;
@@ -495,7 +491,7 @@
     margin-left: 6px;
     margin-right: 6px;
   }
-  .waiting-for-payment-confirmation-text05 {
+  .paymentsuccess-text05 {
     top: 2.01171875px;
     color: rgb(115, 117, 117);
     width: auto;
@@ -508,19 +504,19 @@
     margin-right: 6px;
     text-decoration: none;
   }
-  .waiting-for-payment-confirmation-magnifyingglass1 {
+  .paymentsuccess-magnifyingglass1 {
     top: 31px;
     left: 890px;
     width: auto;
     position: static;
   }
-  .waiting-for-payment-confirmation-navbutton1 {
+  .paymentsuccess-navbutton1 {
     width: auto;
     position: static;
     margin-left: var(--dl-space-space-sixunits);
     margin-right: var(--dl-space-space-sixunits);
   }
-  .waiting-for-payment-confirmation-text31 {
+  .paymentsuccess-text29 {
     top: 0px;
     left: 0px;
     width: auto;
@@ -528,7 +524,7 @@
     margin-left: 6px;
     margin-right: 6px;
   }
-  .waiting-for-payment-confirmation-text48 {
+  .paymentsuccess-text46 {
     top: 0px;
     left: 0px;
     width: auto;
@@ -536,7 +532,7 @@
     margin-left: 6px;
     margin-right: 6px;
   }
-  .waiting-for-payment-confirmation-text59 {
+  .paymentsuccess-text57 {
     top: 0px;
     left: 0px;
     width: auto;
