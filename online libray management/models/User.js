@@ -57,13 +57,38 @@ const UserSchema = new mongoose.Schema({
 },
 { timestamps: true});
 
-UserSchema.pre('save', function (next) {
-    const user = this
-    bcrypt.hash(user.password, 10, (error, hash) => {
-        user.password = hash
-        next()
-    })
-})
+// UserSchema.pre('save', function (next) {
+//     const user = this
+//     bcrypt.hash(user.password, 10, (error, hash) => {
+//         user.password = hash
+//         next()
+//     })
+// })
+
+UserSchema.pre('save', async function (next) {
+    try {
+        if (!this.isModified('password')) {
+            return next();
+        }
+        const hashed = await bcrypt.hash(this.password, 10);
+        this.password = hashed;
+    } catch (err) {
+        return next(err);
+    }
+});
+
+
+UserSchema.pre('findOneAndUpdate', async function (next) {
+    try {
+        if (this._update.password) {
+            const hashed = await bcrypt.hash(this._update.password, 10)
+            this._update.password = hashed;
+        }
+        next();
+    } catch (err) {
+        return next(err);
+    }
+});
 
 const User = mongoose.model('User',UserSchema);
 module.exports = User;
