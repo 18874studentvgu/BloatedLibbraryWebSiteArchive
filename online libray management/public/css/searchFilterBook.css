@@ -1823,17 +1823,8 @@ a {
 text-decoration: none
 }
 
-a,
-a:visited {
-color: #3498db
-}
-
 a:hover {
-text-decoration: underline
-}
-
-a:active {
-color: #2ecc71
+text-decoration: none
 }
 
 p {
