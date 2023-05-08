@@ -12,7 +12,7 @@ const WishListSchema = new mongoose.Schema({
         bookID: {
             type: mongoose.Types.ObjectId,
            // required: true,
-            unique: true
+            //unique: true
         },
     }]
 },
