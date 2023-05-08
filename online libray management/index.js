@@ -37,6 +37,11 @@ const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
 const updateAccount = require('./controllers/updateAccount')
+const payCash = require('./controllers/payCash')
+const payOnline = require('./controllers/payOnline')
+const payWaiting = require('./controllers/payWaiting')
+const paySuccess = require('./controllers/paySuccess')
+
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -141,6 +146,18 @@ app.post('/users/review', storeReviewController)
 
 //add to wishlist
 app.post('/users/wishlist', wishlist)
+
+// pay cash
+app.get('/payCash', payCash)
+
+// pay online
+app.get('/payOnline', payOnline)
+
+// pay waiting
+app.get('/payWaiting', payWaiting)
+
+// pay success
+app.get('/paySuccess', paySuccess)
 
 //error page
 app.use((req, res) => res.render('404')); 
