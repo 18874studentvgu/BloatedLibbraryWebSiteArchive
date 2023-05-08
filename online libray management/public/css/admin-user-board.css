@@ -382,7 +382,7 @@
 .admin-user-board-add-new-user-button {
   color: rgb(255, 255, 255);
   top: 275px;
-  position: fixed;
+  position: absolute;
   width: 250px;
   height: 40px;
   font-size: 20px;
