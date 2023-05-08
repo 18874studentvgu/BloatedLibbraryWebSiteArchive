@@ -391,7 +391,7 @@
   transition: 0.3s;
   font-family: Montserrat;
   font-weight: 700;
-  margin-left: 10%;
+  margin-left: -10%;
   border-width: 0px;
   border-radius: 9px;
   text-transform: capitalize;

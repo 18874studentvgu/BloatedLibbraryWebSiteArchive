@@ -7,47 +7,7 @@
       <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
       <div class="admin-book-board-container">
         <div class="admin-book-board-container01">
-          <nav id="MainNav" class="admin-book-board-nav-bar">
-            <div class="admin-book-board-container02">
-              <a href="/index" class="admin-book-board-navlink">
-                <img
-                  alt="VGULogo11954"
-                  src="playground_assets/vgulogo11954-887-200h.png"
-                  class="admin-book-board-vg-logo1"
-                />
-              </a>
-              <div class="admin-book-board-navbutton">
-                <a href="/index" class="admin-book-board-navlink1">
-                  <h2 class="admin-book-board-text">
-                    <span>Home</span>
-                    <span></span>
-                  </h2>
-                </a>
-                <a href="/contact" class="admin-book-board-navlink2">
-                  <h2 class="admin-book-board-text003"><span>Contact</span></h2>
-                </a>
-                <a href="/about" class="admin-book-board-navlink3">
-                  <h2 class="admin-book-board-text005">About</h2>
-                </a>
-              </div>
-              <a
-                href="search-filter-book.html"
-                class="admin-book-board-navlink4"
-              >
-                <img
-                  alt="magnifyingglass11955"
-                  src="playground_assets/magnifyingglass11955-xoij-200h.png"
-                  class="admin-book-board-magnifyingglass1"
-                />
-              </a>
-              <a
-                href="/login"
-                class="admin-book-board-add-new-book-button button"
-              >
-                Hi, User name
-              </a>
-            </div>
-          </nav>
+          <%- include('layouts/navbar'); -%>
           <%- include('layouts/adminheader'); -%>
           <div class="admin-book-board-searchbar">
             <button

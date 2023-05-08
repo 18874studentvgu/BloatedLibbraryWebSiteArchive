@@ -37,6 +37,10 @@ const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
 const updateAccount = require('./controllers/updateAccount')
+const adminDashboard = require('./controllers/admin/dashboard')
+const adminUserDashboard = require('./controllers/admin/usersList')
+const adminBookDashboard = require('./controllers/admin/booksList')
+
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -142,6 +146,14 @@ app.post('/users/review', storeReviewController)
 //add to wishlist
 app.post('/users/wishlist', wishlist)
 
+//admin dashboard
+app.get('/adminDashboard', adminDashboard)
+
+//admin users dashboard
+app.get('/adminUsersList', adminUserDashboard)
+
+//admin books dashboard
+app.get('/adminBooksList', adminBookDashboard)
+
 //error page
 app.use((req, res) => res.render('404')); 
-

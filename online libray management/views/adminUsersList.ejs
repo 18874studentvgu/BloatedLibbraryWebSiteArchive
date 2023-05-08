@@ -7,56 +7,18 @@
       <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
       <div class="admin-user-board-container">
         <div class="admin-user-board-container1">
-          <nav id="MainNav" class="admin-user-board-nav-bar">
-            <div class="admin-user-board-container2">
-              <a href="/index" class="admin-user-board-navlink">
-                <img
-                  alt="VGULogo11954"
-                  src="playground_assets/vgulogo11954-887-200h.png"
-                  class="admin-user-board-vg-logo1"
-                />
-              </a>
-              <div class="admin-user-board-navbutton">
-                <a href="/index" class="admin-user-board-navlink1">
-                  <h2 class="admin-user-board-text">
-                    <span>Home</span>
-                    <span></span>
-                  </h2>
-                </a>
-                <a href="/contact" class="admin-user-board-navlink2">
-                  <h2 class="admin-user-board-text003"><span>Contact</span></h2>
-                </a>
-                <a href="/about" class="admin-user-board-navlink3">
-                  <h2 class="admin-user-board-text005">About</h2>
-                </a>
-              </div>
-              <a
-                href="search-filter-book.html"
-                class="admin-user-board-navlink4"
-              >
-                <img
-                  alt="magnifyingglass11955"
-                  src="playground_assets/magnifyingglass11955-xoij-200h.png"
-                  class="admin-user-board-magnifyingglass1"
-                />
-              </a>
-              <a href="/login" class="admin-user-board-navlink5 button">
-                Hi, User name
-              </a>
-            </div>
-          </nav>
+          <%- include('layouts/navbar'); -%>
           <%- include('layouts/adminheader'); -%>
-            <!-- <select class="admin-user-board-select">
-              <option value="Option 1">Option 1</option>
-              <option value="Option 2">Option 2</option>
-              <option value="Option 3">Option 3</option>
-            </select> -->
-          <button
+          <br>
+          <br>
+          <br>
+            <button
             id="add new user"
             type="submit"
             class="admin-user-board-add-new-user-button button">
             Add new user
           </button>
+          <br>
         </div>
           <div class="admin-user-board-adminuserboard">
             <div class="admin-user-board-container3">

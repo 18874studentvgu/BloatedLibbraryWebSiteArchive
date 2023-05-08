@@ -6,41 +6,7 @@
       <link href="/css/admin.css" rel="stylesheet" />
       <div class="admin-container">
         <div class="admin-container01">
-          <nav id="MainNav" class="admin-nav-bar">
-            <div class="admin-container02">
-              <a href="/index" class="admin-navlink">
-                <img
-                  alt="VGULogo11954"
-                  src="playground_assets/vgulogo11954-887-200h.png"
-                  class="admin-vg-logo1"
-                />
-              </a>
-              <div class="admin-navbutton">
-                <a href="/index" class="admin-navlink1">
-                  <h2 class="admin-text">
-                    <span>Home</span>
-                    <span></span>
-                  </h2>
-                </a>
-                <a href="/contact" class="admin-navlink2">
-                  <h2 class="admin-text003"><span>Contact</span></h2>
-                </a>
-                <a href="/about" class="admin-navlink3">
-                  <h2 class="admin-text005">About</h2>
-                </a>
-              </div>
-              <a href="search-filter-book.html" class="admin-navlink4">
-                <img
-                  alt="magnifyingglass11955"
-                  src="playground_assets/magnifyingglass11955-xoij-200h.png"
-                  class="admin-magnifyingglass1"
-                />
-              </a>
-              <a href="/login" class="admin-navlink5 button">
-                Hi, User name
-              </a>
-            </div>
-          </nav>
+          <%- include('layouts/navbar'); -%>
           <%- include('layouts/adminheader'); -%>
         </div>
         <div class="admin-number-tab">
