@@ -12,23 +12,30 @@
           <span><%= user1 %></span>
         </h2>
       </div>
-      <a href="/user_profile" class="userprofilesetting-navlink06">
-        <h2 class="userprofilesetting-text08"><span>Profile</span></h2>
-      </a>
-      <a href="bookcart.html" class="userprofilesetting-navlink07">
-        <h2 class="userprofilesetting-text10"><span>Cart</span></h2>
-      </a>
       
       <% if(loggedInAdmin) { %>
+
         <a
         href="/user_profile_setting"
         class="userprofilesetting-navlink08"
         >
         <h2 class="userprofilesetting-text12"><span>Admin</span></h2>
         </a>
+
+        <a
+          href="/user_profile_setting"
+          class="userprofilesetting-navlink08"
+        >
+        <h2 class="userprofilesetting-text12"><span>Account</span></h2>
+       </a>
+        
         <%  } %>
         
       <% if(!loggedInAdmin) { %>
+        <a href="bookcart.html" class="userprofilesetting-navlink07">
+          <h2 class="userprofilesetting-text10"><span>Books</span></h2>
+        </a>
+  
       <a
         href="/user_profile_setting"
         class="userprofilesetting-navlink08"

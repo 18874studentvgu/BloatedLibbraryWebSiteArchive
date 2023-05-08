@@ -58,7 +58,7 @@
                     type="submit"
                     class="home-add-to-cart-button1 button"
                   >
-                    Add to Cart
+                    WISH LIST
                   </button>
                   <a href="/book-info" class="home-text020">
                     <span>View book</span>
@@ -91,77 +91,20 @@
                           <span class="home-text027">Y. Perelman</span>
                           <br />
                         </h2>
-                        <button class="home-button button">ADD TO CART</button>
+                        <form id="wishlist" method="POST">
+                          <input
+                          type="hidden"
+                          name="userID"
+                          id="userID"
+                          class="book-info-textinput input"
+                          value= <%= loggedIn %>
+                          > 
+                          <button type ="submit" class="home-button button">WISH LIST</button>
+                        </form>
                       </div>
                     </div>
 
-                    <div class="home-book-cards swiper-slide">
-                      <div class="home-book-1">
-                        <img
-                          alt="Physicscanbefunbook16058"
-                          src="/playground_assets/physicscanbefunbook16058-w3jj-300h.png"
-                          class="home-physicscanbefunbook1"
-                        />
-                        <h2 class="home-text024">
-                          <span class="home-text025">Physics can be fun</span>
-                          <br class="home-text026" />
-                          <span class="home-text027">Y. Perelman</span>
-                          <br />
-                        </h2>
-                        <button class="home-button button">ADD TO CART</button>
-                      </div>
-                    </div>
-
-                    <div class="home-book-cards swiper-slide">
-                      <div class="home-book-1">
-                        <img
-                          alt="Physicscanbefunbook16058"
-                          src="/playground_assets/physicscanbefunbook16058-w3jj-300h.png"
-                          class="home-physicscanbefunbook1"
-                        />
-                        <h2 class="home-text024">
-                          <span class="home-text025">Physics can be fun</span>
-                          <br class="home-text026" />
-                          <span class="home-text027">Y. Perelman</span>
-                          <br />
-                        </h2>
-                        <button class="home-button button">ADD TO CART</button>
-                      </div>
-                    </div>
-
-                    <div class="home-book-cards swiper-slide">
-                      <div class="home-book-1">
-                        <img
-                          alt="Physicscanbefunbook16058"
-                          src="playground_assets/physicscanbefunbook16058-w3jj-300h.png"
-                          class="home-physicscanbefunbook1"
-                        />
-                        <h2 class="home-text024">
-                          <span class="home-text025">Physics can be fun</span>
-                          <br class="home-text026" />
-                          <span class="home-text027">Y. Perelman</span>
-                          <br />
-                        </h2>
-                        <button class="home-button button">ADD TO CART</button>
-                      </div>
-                    </div>
-
-                    <div class="home-book-cards swiper-slide">
-                      <div class="home-book-1">
-                        <img
-                          alt="Physicscanbefunbook16058"
-                          src="playground_assets/physicscanbefunbook16058-w3jj-300h.png"
-                          class="home-physicscanbefunbook1"
-                        />
-                        <h2 class="home-text024">
-                          <span class="home-text025">Physics can be fun</span>
-                          <br class="home-text026" />
-                          <span class="home-text027">Y. Perelman</span>
-                          <br />
-                        </h2>
-                        <button class="home-button button">ADD TO CART</button>
-                      </div>
-                    </div>
+                    
 
                   </div>
                 </div>

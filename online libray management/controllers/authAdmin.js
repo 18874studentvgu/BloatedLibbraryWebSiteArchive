@@ -11,9 +11,9 @@ module.exports=(req,res)=>{
        .then((same)=>{
                 if(same){
                     //get username
-                    admin = admin.userName;
+                    user1 = admin.userName;
                     console.log('sucess')
-                    console.log(admin)
+                    console.log(user1)
                     //assign cookies as user id
                     req.session.userId = admin._id
                     res.redirect('/')
