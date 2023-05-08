@@ -37,6 +37,7 @@ const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
 const updateAccount = require('./controllers/updateAccount')
+const searchFilterBook = require('./controllers/searchFilterBook')
 const payCash = require('./controllers/payCash')
 const payOnline = require('./controllers/payOnline')
 const payWaiting = require('./controllers/payWaiting')
@@ -146,6 +147,9 @@ app.post('/users/review', storeReviewController)
 
 //add to wishlist
 app.post('/users/wishlist', wishlist)
+
+// search filter book
+app.get('/searchFilterBook', searchFilterBook)
 
 // pay cash
 app.get('/payCash', payCash)
