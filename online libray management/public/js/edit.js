@@ -5,7 +5,7 @@ function _t(id) {
 var hey = document.querySelectorAll('input')
 let btn1 = _t('startEditing');
 
-startEditing.onclick = function(){
+btn1.onclick = function(){
     console.log("sucess")
     for (let i = 0; i < hey.length; i++) {
        if( hey[i].readOnly== true) {

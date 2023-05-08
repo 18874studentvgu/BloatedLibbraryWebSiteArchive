@@ -28,8 +28,8 @@ const UserSchema = new mongoose.Schema({
         //required: true
     },
     userInfo: {
-        last: String,
-        first: String,
+        LName: String,
+        FName: String,
         age: {
             type: Number,
             min: [0, 'Age cannot be negative, got {VALUE}!']

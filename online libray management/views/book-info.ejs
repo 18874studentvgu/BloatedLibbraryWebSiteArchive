@@ -167,12 +167,37 @@
           </div>
           <div class="book-info-review">
             <span class="book-info-text066"><span>Review</span></span>
-            <form method="POST" class="book-info-form">
+            <% if(loggedInAdmin || loggedIn) { %>
+            <form  method="POST" id="review" name ="review" class="book-info-form">
               <input
                 type="text"
+                name="body"
+                id="body"
                 placeholder="enter you review"
                 class="book-info-textinput input"
               />
+              <input
+              type="hidden"
+              name="writtenBy.userName"
+              id="writtenBy.userName"
+              class="book-info-textinput input"
+              value= <%= user1 %>
+              />
+              <input
+              type="hidden"
+              name="writtenBy.userID"
+              id="writtenBy.userID"
+              class="book-info-textinput input"
+              value= <%= loggedIn %>
+              />
+              <input
+              type="hidden"
+              name="rating"
+              id="rating"
+              class="book-info-textinput input"
+              value=""
+              />
+
               <button id="like" type="submit" class="book-info-button3 button">
                 <img
                   alt="pngaaa18616"
@@ -181,7 +206,7 @@
                 />
                 <h2 class="book-info-text068">like</h2>
               </button>
-              <button type="submit" class="book-info-button4 button">
+              <button id="dislike" type="submit" class="book-info-button4 button">
                 <img
                   alt="pngaaa18619"
                   src="/playground_assets/pngaaa18619-mnw-200w.png"
@@ -190,7 +215,11 @@
                 <h2 class="book-info-text069">dislike</h2>
               </button>
             </form>
-            <div class="book-info-reveiewplace">
+            <% } %>
+            <div class="book-info-reveiewplace2" >
+            <div class="book-info-reveiewplace" id="no">
+              <% if (id == "yes") { %>
+              <% for (var i = reviews.length-1; i >= 0; i--) { %>
               <div class="book-info-a-comment">
                 <div class="book-info-group13">
                   <img
@@ -199,53 +228,39 @@
                     class="book-info-image5"
                   />
                   <h3 class="book-info-text070">
-                    <span class="book-info-text071">catOverlord -&nbsp;</span>
-                    <span class="book-info-text072">Mar 23 at 11:06 PM</span>
+                    <span class="book-info-text071"><%= reviews[i].writtenBy.userName%> -&nbsp;</span>
+                    <span class="book-info-text072"><%= reviews[i].createdAt.toDateString()%></span>
                   </h3>
                 </div>
+                <% if (reviews[i].rating == "Recommended") { %>
                 <div class="book-info-frame10">
                   <p class="book-info-text073">
-                    <span>yo this book is kinda BUSSING</span>
+                    <span> <%= reviews[i].body %></span>
                   </p>
                 </div>
-                <div class="book-info-container4">
-                  <div class="book-info-aditional">
-                    <span class="book-info-text075">.detail</span>
-                    <span class="book-info-text076">.Reply&nbsp;</span>
+                <% } %>
+                <% if (reviews[i].rating != "Recommended") { %>
+                  <div class="book-info-framed" >
+                    <p class="book-info-text073">
+                      <span> <%= reviews[i].body %></span>
+                    </p>
                   </div>
-                </div>
+                  <% } %>
               </div>
-              <div class="book-info-a-comment1">
-                <div class="book-info-group131">
-                  <img
-                    alt="image56170"
-                    src="/playground_assets/image56170-e9ep-200h.png"
-                    class="book-info-image51"
-                  />
-                  <h3 class="book-info-text077">
-                    <span class="book-info-text078">catOverlord -&nbsp;</span>
-                    <span class="book-info-text079">Mar 23 at 11:06 PM</span>
-                  </h3>
-                </div>
-                <div class="book-info-frame101">
-                  <p class="book-info-text080">
-                    <span>yo this book is kinda BUSSING</span>
-                  </p>
-                </div>
-                <div class="book-info-container5">
-                  <div class="book-info-aditional1">
-                    <span class="book-info-text082">.detail</span>
-                    <span class="book-info-text083">.Reply&nbsp;</span>
-                  </div>
-                </div>
-              </div>
-              <div class="book-info-arrow">
-                <img
-                  alt="arrow16179"
-                  src="/playground_assets/arrow16179-d3p8-200h.png"
-                  class="book-info-arrow12"
-                />
-              </div>
+              <% } %>
+              <% } %>
+
+              <% if (id != "yes") { %>
+              <% } %>
+            </div>
+           
+            <div class="book-info-arrow" id="ye">
+              <img
+                alt="arrow16179"
+                src="/playground_assets/arrow16179-d3p8-200h.png"
+                class="book-info-arrow12"
+              />
+            </div>
             </div>
           </div>
           <img

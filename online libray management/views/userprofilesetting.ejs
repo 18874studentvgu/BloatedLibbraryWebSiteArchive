@@ -19,8 +19,8 @@
               </h1>
               <div class="userprofilesetting-edit">
                 <form
-                  action="/users/change"
                   method="POST"
+                  id ="change"
                   enctype="multipart/form-data"
                   class="userprofilesetting-form"
                 >
@@ -28,20 +28,22 @@
                     <label class="userprofilesetting-text18">First name:</label>
                     <input
                       type="text"
-                      id="first name"
-                      placeholder="placeholder"
+                      id="userInfo.FName"
+                      name="userInfo.FName"
                       class="userprofilesetting-textinput input"
                       readonly
+                      value= <%= user.userInfo.FName %>
                     />
                   </div>
                   <div class="userprofilesetting-container05">
                     <label class="userprofilesetting-text19">Last name:</label>
                     <input
                       type="text"
-                      id="last name"
-                      placeholder="placeholder"
+                      id="userInfo.LName"
+                      name="userInfo.LName"
                       class="userprofilesetting-textinput1 input"
                       readonly
+                      value= <%= user.userInfo.LName %>
                     />
                   </div>
                   <div class="userprofilesetting-container06">
@@ -49,38 +51,40 @@
                     <input
                       type="text"
                       id="username"
-                      placeholder="placeholder"
+                      name ="username"
                       class="userprofilesetting-textinput2 input"
                       readonly
-                    />
-                  </div>
-                  <div class="userprofilesetting-container07">
-                    <label class="userprofilesetting-text21">Age:</label>
-                    <input
-                      type="text"
-                      id="age"
-                      placeholder="placeholder"
-                      class="userprofilesetting-textinput3 input"
-                      readonly
+                      value= <%= user.username %>
                     />
                   </div>
                   <div class="userprofilesetting-container08">
                     <label class="userprofilesetting-text22">Email:</label>
                     <input
-                      type="text"
+                      type="email"
                       id="email"
-                      placeholder="placeholder"
+                      id="email"
                       class="userprofilesetting-textinput4 input"
                       readonly
+                      value= <%= user.email %>
                     />
                   </div>
                   <div class="userprofilesetting-container09">
                     <label class="userprofilesetting-text23">Password</label>
                     <input
-                      type="text"
+                      type="password"
                       id="password"
-                      placeholder="placeholder"
+                      name ="password"
                       class="userprofilesetting-textinput5 input"
+                      readonly
+                      value= <%= user.password %>
+                    />
+                  </div>
+                  <div class="userprofilesetting-container04">
+                    <label class="userprofilesetting-text18">profile image</label>
+                    <input
+                      type="file"
+                      id="first name"
+                      class="userprofilesetting-textinput input"
                       readonly
                     />
                   </div>

@@ -1,24 +1,18 @@
 const nodemailer=require('nodemailer')
 
-const htmlContent=`
-  email content here
-  `;
-
-  async function main(){
-    const transporter=nodemailer.createTransport({
-      service:'hotmail',
-      auth:{
-        user:'vgulibpeteam3@outlook.com.vn',
-        pass:'vgupe2023'
-      }
-    })
-    const info=await transporter.sendMail({
-      from:'vgulibpeteam3@outlook.com.vn',
-      to:'dodinhdong28092002@gmail.com',
-      subject:'Sending email with nodejs',
-      html:htmlContent,
-    })
-    console.log('Message sent: '+info.messageId)
-    console.log('URL: '+nodemailer.getTestMessageUrl(info))
-  }
-main().catch(e=>console.log(e))
+module.exports=async function sendEmail(recipient,subject,text){
+  const transporter=nodemailer.createTransport({
+    service:'gmail',
+    auth:{
+      user:'vgulibpeteam3@gmail.com',
+      pass:'xittksaucqhzwgiz'
+    }
+  })
+  const info=await transporter.sendMail({
+    from:'vgulibpeteam3@gmail.com',
+    to:recipient,
+    subject:subject,
+    text:text
+  })
+  console.log('Message sent: '+info.messageId)
+}
