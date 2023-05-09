@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const BookSchema = new mongoose.Schema({
-    title: { type: String, required: true },
+    name: { type: String, required: true },
     internationalNumber: { type: Number, required: true}, //IBSN for books and ISSN for mangazines
     author: [ {type: String, required: true }],
     synopsis: String,
