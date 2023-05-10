@@ -1,6 +1,6 @@
 var Shuffle = window.Shuffle;
 
-class Demo {
+class filterSort {
   constructor(element) {
     this.element = element;
     this.shuffle = new Shuffle(element, {
