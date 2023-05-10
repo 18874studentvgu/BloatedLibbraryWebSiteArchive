@@ -17,7 +17,7 @@ module.exports=(req,res)=>{
             if(password==password2){
                 console.log('comparing')
                 const encryptedPassword = bcrypt.hash(password, 10)
-                User.updateOne(
+                User.findOneAndUpdate(
                     {_id:global.userid},
                     {$set:{password:encryptedPassword}}
                 )
