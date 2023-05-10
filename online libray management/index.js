@@ -42,6 +42,8 @@ const adminUserDashboard = require('./controllers/admin/usersList')
 const adminBookDashboard = require('./controllers/admin/booksList')
 const adminAddBook = require('./controllers/admin/addBook')
 const adminAddUser = require('./controllers/admin/addUser')
+const adminStoreBook = require('./controllers/admin/storeBook')
+const adminStoreUser = require('./controllers/admin/storeUser')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -162,6 +164,12 @@ app.get('/adminBooksList/addBook', adminAddBook)
 
 //admin add user function
 app.get('/adminUsersList/addUser', adminAddUser)
+
+//store Book's information from admin
+app.post('/admin/storeBook', adminStoreBook)
+
+//store User's information from admin
+app.post('/admin/storeBook', adminStoreUser)
 
 //error page
 app.use((req, res) => res.render('404')); 

@@ -14,44 +14,47 @@
           <div class="add-user-login">
             <div class="add-user-background">
               <h1 class="add-user-text06">Add user</h1>
-              <form action="/users/login" method="POST" class="add-user-form">
+              <form action="/admin/storeUser" method="POST" class="add-user-form">
                 <div class="add-user-full-name">
-                  <label for="username" class="add-user-text07">
+                  <label for="fullName" class="add-user-text07">
                     Full name
                   </label>
                   <input
                     type="text"
-                    id="username"
+                    id="fullName"
+                    name="fullName"
                     class="add-user-textinput input"
                   />
                 </div>
                 <div class="add-user-username">
-                  <label for="password" class="add-user-text08">Username</label>
+                  <label for="userName" class="add-user-text08">Username</label>
                   <input
-                    type="password"
-                    id="password"
+                    type="text"
+                    id="userName"
+                    name="userName"
                     class="add-user-textinput1 input"
                   />
                 </div>
                 <div class="add-user-edition">
-                  <label for="password" class="add-user-text09">Age</label>
+                  <label for="Age" class="add-user-text09">Age</label>
                   <input
-                    type="password"
-                    id="password"
+                    type="text"
+                    id="Age"
+                    name="Age"
                     class="add-user-textinput2 input"
                   />
                 </div>
                 <div class="add-user-pub-year">
-                  <label for="password" class="add-user-text10">Email</label>
+                  <label for="Email" class="add-user-text10">Email</label>
                   <input
-                    type="password"
-                    id="password"
+                    type="text"
+                    id="Email"
+                    name="Email"
                     class="add-user-textinput3 input"
                   />
                 </div>
-                <a href="index.html" class="add-user-login1 button">Login</a>
+                <button type='submit' class="add-user-login1 button">Submit</button>
               </form>
-              <div class="add-user-input-info"></div>
             </div>
           </div>
         </div>

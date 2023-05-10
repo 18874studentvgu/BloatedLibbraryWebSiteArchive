@@ -5,12 +5,15 @@ const bookAdminSchema = new Schema ({
     Author: String,
     Category: String,
     publishedDate: String,
-    uploadedDate: {
-        type: Date,
-        default: new Date()
-    },
     Quantity: Number,
-    Recommendation: Number
+    Recommendation: 
+    {
+        type: Number,
+        default: 0
+    }
+},
+{ 
+    timestamps: true
 });
 
 const BooksAdmin = Mongo.model('BooksAdmin',bookAdminSchema);

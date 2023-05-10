@@ -5,15 +5,14 @@ const userAdminSchema = new Schema ({
     userName: String,
     Age: Number,
     Email: String,
-    Created: {
-        type: Date,
-        default: new Date()
-    },
-    lastActive: {
-        type: Date,
-        default: new Date()
-    },
-    borrowedBook: Number
+    borrowedBook:
+    {
+        type: Number,
+        default: 0
+    }
+},
+{ 
+    timestamps: true
 });
 
 const UsersAdmin = Mongo.model('UsersAdmin',userAdminSchema);
