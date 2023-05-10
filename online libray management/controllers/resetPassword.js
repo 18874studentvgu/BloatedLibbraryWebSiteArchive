@@ -15,14 +15,16 @@ module.exports=(req,res)=>{
         try{
             //const verify=jwt.verify(token,secret)
             if(password==password2){
-                console.log('comparing '+password+password2)
                 const encryptedPassword = bcrypt.hash(password, 10)
-                User.findOneAndUpdate(
+                User.updateOne(
                     {_id:global.userid},
-                    {$set:{password:encryptedPassword}}
+                    {$set:{password:password}}
                 )
-                res.redirect('/auth/login')
-            }
+                .then ((user2) => {
+                    console.log(user2)
+                    res.redirect('/auth/login')
+                }
+            )}
             else{
                 console.log('Password not match, try again')
                 res.render('resetPasswordPage')
