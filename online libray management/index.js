@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
+const Book = require('./models/Book')
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
@@ -162,6 +163,20 @@ app.get('/payWaiting', payWaiting)
 
 // pay success
 app.get('/paySuccess', paySuccess)
+
+//
+app.get('/',(req,res) => {
+    res.sendFile(__dirname + '/views/index');
+})
+
+// get book for searching
+app.post('/getBooks',async (req,res)=>{
+    let payload = req.body.payload.trim();
+    let search = await Book.find({name :{$regex : new RegExp('^'+payload+'.*','i')}}).exec();
+    //Limit Search Results to 10
+    search = search.slice(0,10);
+    res.send({payload: search});
+})
 
 //error page
 app.use((req, res) => res.render('404')); 
