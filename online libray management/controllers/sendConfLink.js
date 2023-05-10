@@ -10,6 +10,7 @@ module.exports=(req,res)=>{
         const secret=config.secret+user.password
         const token=jwt.sign({email:user.email,_id:user.id},secret,{expiresIn:'5m'})
         const link=`http://localhost:3000/reset/${user.id}/${token}`
+        res.send('Password reset link has been sent')
         sendEmail(user.email,
         'Password reset link',
         `Here is your password reset link: ${link}`)
