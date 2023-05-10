@@ -79,6 +79,7 @@ UserSchema.pre('save', async function (next) {
 
 
 UserSchema.pre('findOneAndUpdate', async function (next) {
+    console.log('running midleware for findOneAndUdate')
     try {
         if (this._update.password) {
             const hashed = await bcrypt.hash(this._update.password, 10)

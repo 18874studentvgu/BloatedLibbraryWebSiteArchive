@@ -15,7 +15,6 @@ module.exports=(req,res)=>{
         try{
             //const verify=jwt.verify(token,secret)
             if(password==password2){
-                const encryptedPassword = bcrypt.hash(password, 10)
                 User.findOneAndUpdate(
                     {_id : global.userid},
                     {password : password}
