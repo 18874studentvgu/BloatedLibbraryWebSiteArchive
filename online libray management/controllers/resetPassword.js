@@ -9,16 +9,16 @@ module.exports=(req,res)=>{
     const{password,password2}=req.body
     User.findOne({_id:global.userid})
     .then((user)=>{
-        console.log('User exist'+user)
+        //console.log('User exist'+user)
         const secret=config.secret+user.password
         console.log(secret)
         try{
             //const verify=jwt.verify(token,secret)
             if(password==password2){
                 const encryptedPassword = bcrypt.hash(password, 10)
-                User.updateOne(
-                    {_id:global.userid},
-                    {$set:{password:password}}
+                User.findOneAndUpdate(
+                    {_id : global.userid},
+                    {password : password}
                 )
                 .then ((user2) => {
                     console.log(user2)
