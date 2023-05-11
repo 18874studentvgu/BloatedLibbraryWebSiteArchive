@@ -61,11 +61,13 @@
                       <td class="admin-user-board-text028"><%= usersList[i].updatedAt.toDateString() %></td>
                       <td class="admin-user-board-text029"><%= usersList[i].borrowedBook %></td>
                       <td>
-                        <img
-                          alt="draw13434"
-                          src="playground_assets/draw13434-8jw-200w.png"
-                          class="admin-user-board-draw1"
-                        />
+                        <a href="/adminUsersList/edit/<%= usersList[i]._id %>">
+                          <img
+                            alt="draw13434"
+                            src="playground_assets/draw13434-8jw-200w.png"
+                            class="admin-user-board-draw1"
+                          />
+                        </a>
                       </td>
                       <td>
                         <img
@@ -75,11 +77,13 @@
                         />
                       </td>
                       <td>
-                        <img
-                          alt="image"
-                          src="playground_assets/trashcan13831-is4-200w.png"
-                          class="admin-user-board-image01"
-                        />
+                        <a href="/adminUsersList/<%= usersList[i]._id %>">
+                          <img
+                            alt="image"
+                            src="playground_assets/trashcan13831-is4-200w.png"
+                            class="admin-user-board-image01"
+                          />
+                        </a>
                       </td>
                     </tr>
                     <% } %>

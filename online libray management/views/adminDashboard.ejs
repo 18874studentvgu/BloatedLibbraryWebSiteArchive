@@ -39,7 +39,7 @@
               class="admin-image1"
             />
             <div class="admin-container05">
-              <span class="admin-text013">Issued</span>
+              <span class="admin-text013">Borrowed</span>
               <span class="admin-text014"><span>12,345,678</span></span>
             </div>
           </div>
@@ -53,7 +53,7 @@
             <div class="admin-lastactivetable">
               <div class="admin-container07">
                 <div class="admin-container08">
-                  <span class="admin-active-user-title">Last active users</span>
+                  <span class="admin-active-user-title">New users</span>
                   <table cellpadding = "7">
                     <thead>
                       <tr>
@@ -61,11 +61,11 @@
                         <th class="admin-text043">Fullname</th>
                         <th class="admin-text043">Username</th>  
                         <th class="admin-text043">ID</th>
-                        <th class="admin-text043">Active</th>
+                        <th class="admin-text043">Joined</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <% for (var i = 0; i < 5; i++) { %>
+                      <% for (var i = 0; i < usersList.length; i++) { %>
                       <tr>
                         <td>
                           <img
@@ -77,7 +77,7 @@
                         <td class="admin-text052"><%= usersList[i].fullName %></td>
                         <td class="admin-text053"><%= usersList[i].userName %></td>
                         <td class="admin-text054">17565</td>
-                        <td class="admin-text055">45 sec. ago</td>
+                        <td class="admin-text055"><%= usersList[i].createdAt.toDateString() %></td>
                       </tr>
                       <% } %>
                     </tbody>
@@ -107,13 +107,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% for (var i = 0; i < 5; i++) { %>
+                    <% for (var i = 0; i < booksList.length; i++) { %>
                     <tr>
                       <td class="admin-text092"><%= booksList[i].Title %></td>
                       <td class="admin-text093">17657</span>
                       <td class="admin-text094"><%= booksList[i].Author %></td>
                       <td class="admin-text095"><%= booksList[i].publishedDate %></td>
-                      <td class="admin-text096"><%= booksList[i].uploadedDate.toDateString() %></td>
+                      <td class="admin-text096"><%= booksList[i].createdAt.toDateString() %></td>
                       <td class="admin-text097"><%= booksList[i].Quantity %></td>
                     </tr>
                     <% } %>

@@ -59,11 +59,13 @@
                       <td class="admin-book-board-text026"><%= booksList[i].Recommendation %>%</td>
                       <br/>
                       <td>
-                        <img
-                          alt="draw13434"
-                          src="playground_assets/draw13434-8jw-200w.png"
-                          class="admin-book-board-draw1"
-                        />
+                        <a href="/adminBooksList/edit/<%= booksList[i]._id %>">
+                          <img
+                            alt="draw13434"
+                            src="playground_assets/draw13434-8jw-200w.png"
+                            class="admin-book-board-draw1"
+                          />
+                        </a>
                       </td>
                       <td>
                         <img
@@ -73,11 +75,13 @@
                         />
                       </td>
                       <td>
-                        <img
-                          alt="image"
-                          src="playground_assets/trashcan13831-is4-200w.png"
-                          class="admin-book-board-image01"
-                        />
+                        <a href="/adminBooksList/<%= booksList[i]._id %>">
+                          <img
+                            alt="image"
+                            src="playground_assets/trashcan13831-is4-200w.png"
+                            class="admin-book-board-image01"
+                          />
+                        </a>
                       </td>
                     </tr>
                     <% } %>

@@ -10,7 +10,8 @@ const sample_2 = [
   {month: "April", rev: 5216, loss: 3405},
   {month: "May", rev: 3462, loss: 5032},
   {month: "June", rev: 9585, loss: 4150}
-]
+];
+
 var myLineChart = new Chart(document.getElementById("myBarChart"), {
   type: 'bar',
   data: {
@@ -24,16 +25,18 @@ var myLineChart = new Chart(document.getElementById("myBarChart"), {
       {
         size: 20
     }
-    },{
-    label: "Loss",
-    backgroundColor: "rgb(238, 130, 238)",
-    borderColor: "rgb(238, 130, 238)",
-    data: sample_2.map(row => row.loss),
-    font: 
-      {
-        size: 20
     }
-    }],
+    // ,{
+    // label: "Loss",
+    // backgroundColor: "rgb(238, 130, 238)",
+    // borderColor: "rgb(238, 130, 238)",
+    // data: sample_2.map(row => row.loss),
+    // font: 
+    //   {
+    //     size: 20
+    // }
+    // }
+  ],
   },
   options: {
     scales: {
@@ -45,7 +48,7 @@ var myLineChart = new Chart(document.getElementById("myBarChart"), {
           display: false
         },
         ticks: {
-          maxTicksLimit: 10
+          maxTicksLimit: 5
         }
       }],
       yAxes: [{

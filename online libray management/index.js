@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
@@ -44,6 +43,12 @@ const adminAddBook = require('./controllers/admin/addBook')
 const adminAddUser = require('./controllers/admin/addUser')
 const adminStoreBook = require('./controllers/admin/storeBook')
 const adminStoreUser = require('./controllers/admin/storeUser')
+const adminGetBook = require('./controllers/admin/getBook')
+const adminGetUser = require('./controllers/admin/getUser')
+const adminGetEditBook = require('./controllers/admin/getEditBook')
+const adminStoreEditBook = require('./controllers/admin/storeEditBook')
+const adminGetEditUser = require('./controllers/admin/getEditUser')
+const adminStoreEditUser = require('./controllers/admin/storeEditUser')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -55,11 +60,6 @@ app.use('*', (req, res, next) => {
 
 });
 
-
-
-    
-
-
 //cookies
 app.use(fileUpload())
 app.use(bodyParser.json())
@@ -70,7 +70,6 @@ mongoose.connect('mongodb://0.0.0.0:27017/web', {useNewUrlParser: true})
 app.set('view engine','ejs')
 
 io.on("connection", function(socket){
-    console.log("user connected");
     socket.on("new_comment", function(reviews, userName, body, rating){
         io.emit("new_comment", reviews, userName, body, rating);
     })
@@ -81,9 +80,6 @@ app.use(express.static('public'))
 http.listen(3000, () => {
     console.log("App listening on port 3000")
 }) 
-
-
-
 
 //home and post preview
 app.get('/', homeController)
@@ -170,6 +166,24 @@ app.post('/admin/storeBook', adminStoreBook)
 
 //store User's information from admin
 app.post('/admin/storeBook', adminStoreUser)
+
+//get details about a Book from admin
+app.get("/adminBooksList/:id", adminGetBook)
+
+//get details about an User from admin
+app.get("/adminUsersList/:id", adminGetUser)
+
+//get page to edit a Book as an Admin
+app.get("/adminBooksList/edit/:id", adminGetEditBook)
+
+//store an edited Book as an Admin
+app.post("/admin/storeEditBook/:id", adminStoreEditBook)
+
+//get page to edit a User as an Admin
+app.get("/adminUsersList/edit/:id", adminGetEditUser)
+
+//store an edited User as an Admin
+app.post("/admin/storeEditUser/:id", adminStoreEditUser)
 
 //error page
 app.use((req, res) => res.render('404')); 
