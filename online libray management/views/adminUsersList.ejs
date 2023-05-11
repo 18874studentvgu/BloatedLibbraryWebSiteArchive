@@ -24,11 +24,10 @@
         </div>
           <div class="admin-user-board-adminuserboard">
             <div class="admin-user-board-container3">
-              <div class="admin-user-board-newusertable">
-                <table id = "table" class="display">
+              <!-- <div class="admin-user-board-newusertable"> -->
+                <table id = "table" class="display" style="width:100%">
                   <thead>
                     <tr>
-                      <th class="admin-user-board-text006">PFP</th>
                       <th class="admin-user-board-text006">ID</th>
                       <th class="admin-user-board-text008">Full name</th>
                       <th class="admin-user-board-text009">Username</th>
@@ -37,22 +36,19 @@
                       <th class="admin-user-board-text014">Created</th>
                       <th class="admin-user-board-text015">Last active</th>
                       <th class="admin-user-board-text016">Bor. books</th>
-                      <th class="admin-user-board-text016">Edit</th>
-                      <th class="admin-user-board-text016">Remove</th>
-                      <th class="admin-user-board-text016">Info</th>
+                      <th class="admin-user-board-text016"></th>
+                      <th class="admin-user-board-text016"></th>
+                      <th class="admin-user-board-text016"></th>
                     </tr>
                   </thead>
                   <tbody>
                     <% for (var i = 0; i < usersList.length; i++) { %>
                     <tr>
-                      <td>
-                        <img
-                          alt="user113434"
-                          src="playground_assets/user113434-gz8-200h.png"
-                          class="admin-user-board-user11"
-                        />
+                      <td class="admin-user-board-text017">
+                        <%= 
+                        usersList[i]._id.toString().substring( 17, 24 ) 
+                        %>
                       </td>
-                      <td class="admin-user-board-text017">12421412</td>
                       <td class="admin-user-board-text019"><%= usersList[i].fullName %></td>
                       <td class="admin-user-board-text021"><%= usersList[i].userName %></td>
                       <td class="admin-user-board-text022"><%= usersList[i].Age %></td>
@@ -89,7 +85,7 @@
                     <% } %>
                   </tbody>
                 </table>
-              </div>
+              <!--</div> -->
             </div>
           </div>
         </div>

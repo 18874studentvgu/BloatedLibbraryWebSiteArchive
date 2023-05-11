@@ -21,73 +21,74 @@
           </div>
           <div class="admin-book-board-adminuserboard">
             <div class="admin-book-board-container03">
-              <div class="admin-book-board-newusertable">
-                <table style="width: 100%; height: 100%;" id = "table">
-                  <thead>
-                    <tr>
-                      <th class="admin-book-board-text006">PFP</th>
-                      <th class="admin-book-board-text006">ID</th>
-                      <th class="admin-book-board-text008">Name</th>
-                      <th class="admin-book-board-text009" style="width: 10%;">Author</th>
-                      <th class="admin-book-board-text010">Cat.</th>
-                      <th class="admin-book-board-text011">Pub. date</th>
-                      <th class="admin-book-board-text012">Up. date</th>
-                      <th class="admin-book-board-text013">Quan.</th>
-                      <th class="admin-book-board-text014">Rec. %</th>
-                      <th class="admin-book-board-text014">Edit</th>
-                      <th class="admin-book-board-text014">Remove</th>
-                      <th class="admin-book-board-text014">Info</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% for (var i = 0; i < booksList.length; i++) { %>
-                    <tr>
-                      <td>
+              <table style="width: 100%;" id = "table">
+                <thead>
+                  <tr>
+                    <th class="admin-book-board-text006">ID</th>
+                    <th class="admin-book-board-text008">Name</th>
+                    <th class="admin-book-board-text009" style="width: 10%;">Author</th>
+                    <th class="admin-book-board-text010">Cat.</th>
+                    <th class="admin-book-board-text011">Pub. date</th>
+                    <th class="admin-book-board-text012">Up. date</th>
+                    <th class="admin-book-board-text013">Quan.</th>
+                    <th class="admin-book-board-text014">Rec. %</th>
+                    <th class="admin-book-board-text014"></th>
+                    <th class="admin-book-board-text014"></th>
+                    <th class="admin-book-board-text014"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for (var i = 0; i < booksList.length; i++) { %>
+                  <tr>
+                    <!-- <td>
+                      <img
+                        alt="image"
+                        src="playground_assets/user112951-5rs-200h.png"
+                        class="admin-book-board-image"
+                      />
+                    </td> -->
+                    <td class="admin-book-board-text015">
+                      <%= 
+                      booksList[i]._id.toString().substring( 17, 24 ) 
+                      %>
+                    </td>
+                    <td class="admin-book-board-text016"><%= booksList[i].Title %></td>
+                    <td class="admin-book-board-text017"><%= booksList[i].Author %></td>
+                    <td class="admin-book-board-text018"><%= booksList[i].Category %></td>
+                    <td class="admin-book-board-text019"><%= booksList[i].publishedDate %></td>
+                    <td class="admin-book-board-text020"><%= booksList[i].createdAt.toDateString() %></td>
+                    <td class="admin-book-board-text023"><%= booksList[i].Quantity %></td>
+                    <td class="admin-book-board-text026"><%= booksList[i].Recommendation %>%</td>
+                    <br/>
+                    <td>
+                      <a href="/adminBooksList/edit/<%= booksList[i]._id %>">
+                        <img
+                          alt="draw13434"
+                          src="playground_assets/draw13434-8jw-200w.png"
+                          class="admin-book-board-draw1"
+                        />
+                      </a>
+                    </td>
+                    <td>
+                      <img
+                        alt="trashcan13434"
+                        src="playground_assets/trashcan13434-meoe-200w.png"
+                        class="admin-book-board-trashcan1"
+                      />
+                    </td>
+                    <td>
+                      <a href="/adminBooksList/<%= booksList[i]._id %>">
                         <img
                           alt="image"
-                          src="playground_assets/user112951-5rs-200h.png"
-                          class="admin-book-board-image"
+                          src="playground_assets/trashcan13831-is4-200w.png"
+                          class="admin-book-board-image01"
                         />
-                      </td>
-                      <td class="admin-book-board-text015">123</td>
-                      <td class="admin-book-board-text016"><%= booksList[i].Title %></td>
-                      <td class="admin-book-board-text017"><%= booksList[i].Author %></td>
-                      <td class="admin-book-board-text018"><%= booksList[i].Category %></td>
-                      <td class="admin-book-board-text019"><%= booksList[i].publishedDate %></td>
-                      <td class="admin-book-board-text020"><%= booksList[i].createdAt.toDateString() %></td>
-                      <td class="admin-book-board-text023"><%= booksList[i].Quantity %></td>
-                      <td class="admin-book-board-text026"><%= booksList[i].Recommendation %>%</td>
-                      <br/>
-                      <td>
-                        <a href="/adminBooksList/edit/<%= booksList[i]._id %>">
-                          <img
-                            alt="draw13434"
-                            src="playground_assets/draw13434-8jw-200w.png"
-                            class="admin-book-board-draw1"
-                          />
-                        </a>
-                      </td>
-                      <td>
-                        <img
-                          alt="trashcan13434"
-                          src="playground_assets/trashcan13434-meoe-200w.png"
-                          class="admin-book-board-trashcan1"
-                        />
-                      </td>
-                      <td>
-                        <a href="/adminBooksList/<%= booksList[i]._id %>">
-                          <img
-                            alt="image"
-                            src="playground_assets/trashcan13831-is4-200w.png"
-                            class="admin-book-board-image01"
-                          />
-                        </a>
-                      </td>
-                    </tr>
-                    <% } %>
-                  </tbody>
-                </table>
-              </div>
+                      </a>
+                    </td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
             </div>
             <!-- <div class="admin-book-board-rectangle50">
               <img
