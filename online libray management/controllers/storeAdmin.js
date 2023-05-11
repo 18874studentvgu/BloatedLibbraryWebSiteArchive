@@ -3,6 +3,6 @@ module.exports=(req,res) =>{
     Admin.create(req.body)
     .then(()=>{
         console.log(req.body)
-        res.redirect('/loginAdmin')
+        res.redirect('/auth/loginAdmin')
     })
 }

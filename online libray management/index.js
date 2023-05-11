@@ -54,7 +54,9 @@ app.use('*', (req, res, next) => {
 
 });
 
-
+//global.userid=resetPasswordPageController.userid
+global.userid = null;
+console.log(userid)
 
     
 
