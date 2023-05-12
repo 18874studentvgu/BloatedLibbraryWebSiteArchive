@@ -11,6 +11,7 @@ module.exports = (request, response) => {
     Promise.all(query)
     .then ( (query) => {
         response.render('adminDashboard', { usersList : query[0], booksList : query[1] });
+        console.log(request.session);
     })
     .catch ( (error) => {
         console.log(error);

@@ -13,7 +13,7 @@
                     <div class="add-book-login">
                         <div class="add-book-background">
                             <h1 class="add-book-text06">Add book</h1>
-                            <form action="/admin/storeBook" method="POST" class="add-book-form">
+                            <form action="/admin/storeBook" name="addBook" method="POST" onsubmit="return validateForm()" class="add-book-form">
                                 <div class="add-book-book-name">
                                     <label for="Title" class="add-book-text07">Book name</label>
                                     <input
@@ -74,4 +74,5 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="/js/addBookEmpty.js"></script>
 </html>

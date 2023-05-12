@@ -12,48 +12,49 @@
                 <div class="add-book-container2">
                     <div class="add-book-login">
                         <div class="add-book-background">
-                            <h1 class="add-book-text06">Book Info</h1>
-                            <form action="/admin/storeBook" method="POST" class="add-book-form">
+                            <h1 class="add-book-text06">The following book will be removed from the database</h1>
+                            <form action="/admin/deleteBook/<%= detailedBook._id %>" method="POST" class="add-book-form">
                                 <div class="add-book-book-name">
                                     <label for="Title" class="add-book-text07">
-                                        Title: <%= detailedBook.Title %>
+                                        <%= detailedBook.Title %>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-author">
                                     <label for="Author" class="add-book-text08">
-                                        Author: <%= detailedBook.Author %>
+                                        <%= detailedBook.Author %>
                                     </label>                                    
                                 </div>
                                 <div class="add-book-author1">
                                     <label for="Category" class="add-book-text09">
-                                        Category: <%= detailedBook.Category %>
+                                        <%= detailedBook.Category %>
                                     </label>                                    
                                 </div>
                                 <div class="add-book-pub-year">
                                     <label for="publishedDate" class="add-book-text11">
-                                        Published Year: <%= detailedBook.publishedDate %>
+                                        <%= detailedBook.publishedDate %>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-quantity">
                                     <label for="Quantity" class="add-book-text12">
-                                        In Stock: <%= detailedBook.Quantity %>
+                                        <%= detailedBook.Quantity %>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-quantity">
                                     <label for="Quantity" class="add-book-text12">
-                                        Recommendation Percentage: <%= detailedBook.Recommendation%>
+                                        <%= detailedBook.Recommendation%>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-quantity">
                                     <label for="Quantity" class="add-book-text12">
-                                        Date Uploaded: <%= detailedBook.createdAt.toDateString() %>
+                                        <%= detailedBook.createdAt.toDateString() %>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-quantity">
                                     <label for="Quantity" class="add-book-text12">
-                                        Date Last Updated: <%= detailedBook.updatedAt.toDateString() %>
+                                        <%= detailedBook.updatedAt.toDateString() %>
                                     </label>                                   
                                 </div>
+                                <button type='submit' class="add-book-login1 button">Confirm</button>
                             </form>
                         </div>
                     </div>

@@ -32,9 +32,9 @@
                     <th class="admin-book-board-text012">Up. date</th>
                     <th class="admin-book-board-text013">Quan.</th>
                     <th class="admin-book-board-text014">Rec. %</th>
-                    <th class="admin-book-board-text014"></th>
-                    <th class="admin-book-board-text014"></th>
-                    <th class="admin-book-board-text014"></th>
+                    <th class="admin-book-board-text014">Edit</th>
+                    <th class="admin-book-board-text014">Delete</th>
+                    <th class="admin-book-board-text014">Info</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -70,11 +70,13 @@
                       </a>
                     </td>
                     <td>
-                      <img
-                        alt="trashcan13434"
-                        src="playground_assets/trashcan13434-meoe-200w.png"
-                        class="admin-book-board-trashcan1"
-                      />
+                      <a href="/adminBooksList/deleteWarn/<%= booksList[i]._id %>">
+                        <img
+                          alt="trashcan13434"
+                          src="playground_assets/trashcan13434-meoe-200w.png"
+                          class="admin-book-board-trashcan1"
+                        />
+                      </a>
                     </td>
                     <td>
                       <a href="/adminBooksList/<%= booksList[i]._id %>">

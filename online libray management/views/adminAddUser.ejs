@@ -14,7 +14,7 @@
           <div class="add-user-login">
             <div class="add-user-background">
               <h1 class="add-user-text06">Add user</h1>
-              <form action="/admin/storeUser" method="POST" class="add-user-form">
+              <form action="/admin/storeUser" name="addUser" method="POST" onsubmit="return validateForm()" class="add-user-form">
                 <div class="add-user-full-name">
                   <label for="fullName" class="add-user-text07">
                     Full name
@@ -62,4 +62,5 @@
       </div>
     </div>
   </body>
+  <script type="text/javascript" src="/js/addUserEmpty.js"></script>
 </html>

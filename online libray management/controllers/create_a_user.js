@@ -1,3 +1,7 @@
-var id = '645a66d9cac4e3df4a3a3b86'
+const mongoose = require('mongoose');
+const path = require('path');
+const Admin = require("../models/Admin.js");
 
-console.log(id.length)
+mongoose.connect('mongodb://0.0.0.0:27017/web', {useNewUrlParser: true}) 
+
+Admin.findById('64586542cc58326c4ef4ab83').then((user) => {console.log(user)})

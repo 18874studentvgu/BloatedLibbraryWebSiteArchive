@@ -36,9 +36,9 @@
                       <th class="admin-user-board-text014">Created</th>
                       <th class="admin-user-board-text015">Last active</th>
                       <th class="admin-user-board-text016">Bor. books</th>
-                      <th class="admin-user-board-text016"></th>
-                      <th class="admin-user-board-text016"></th>
-                      <th class="admin-user-board-text016"></th>
+                      <th class="admin-user-board-text016">Edit</th>
+                      <th class="admin-user-board-text016">Delete</th>
+                      <th class="admin-user-board-text016">Info</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -66,11 +66,13 @@
                         </a>
                       </td>
                       <td>
-                        <img
-                          alt="trashcan13434"
-                          src="playground_assets/trashcan13434-meoe-200w.png"
-                          class="admin-user-board-trashcan1"
-                        />
+                        <a href="/adminUsersList/deleteWarn/<%= usersList[i]._id %>">
+                          <img
+                            alt="trashcan13434"
+                            src="playground_assets/trashcan13434-meoe-200w.png"
+                            class="admin-user-board-trashcan1"
+                          />
+                        </a>
                       </td>
                       <td>
                         <a href="/adminUsersList/<%= usersList[i]._id %>">
