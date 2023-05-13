@@ -8,9 +8,11 @@ const BookCopieSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Book'
     },
+    outOfCommission: {type: Boolean, default:false}
     
 },
 { timestamps: true});
+
 
 const BookCopie = mongoose.model('BookCopie',BookCopieSchema);
 module.exports = BookCopie;
