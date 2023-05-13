@@ -64,7 +64,7 @@ app.set('view engine','ejs')
 
 //real time update
 io.on("connection", function(socket){
-    console.log("user connected");
+    //console.log("user connected");
     socket.on("new_comment", function(reviews, userName, body, rating){
         io.emit("new_comment", reviews, userName, body, rating);
     })
@@ -181,7 +181,7 @@ app.post('/users/change', updateAccount)
 app.get('/auth/logout', logout)
 
 //bookInfo
-app.get('/book-info', bookInfoController)
+app.get('/book-info/:id', bookInfoController)
 
 //store user review
 app.post('/users/review', storeReviewController)

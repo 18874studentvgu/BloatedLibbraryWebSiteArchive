@@ -3,16 +3,16 @@
    
     $('#wishlist0').submit(function(e){
         
-        formData= $('#wishlist0').serialize();
-        console.log(formData)
+        var formData1= $('#wishlist0').serialize();
+        console.log(formData1)
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData1,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("0", formData);
+                 socket.emit("0", formData1);
                  console.log("hi")
              }
          });
@@ -28,16 +28,15 @@
 
     $('#wishlist1').submit(function(e){
         
-        formData= $('#wishlist1').serialize();
-        console.log(formData)
+        var formData2= $('#wishlist1').serialize();
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData2,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("1", formData);
+                 socket.emit("1", formData2);
                  console.log("hi")
              }
          });
@@ -51,16 +50,16 @@
 
     $('#wishlist2').submit(function(e){
         
-        formData= $('#wishlist2').serialize();
-        console.log(formData)
+        var formData3= $('#wishlist2').serialize();
+
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData3,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("2", formData);
+                 socket.emit("2", formData3);
                  console.log("hi")
              }
          });
@@ -74,16 +73,16 @@
 
     $('#wishlist3').submit(function(e){
         
-        formData= $('#wishlist3').serialize();
-        console.log(formData)
+        var formData4= $('#wishlist3').serialize();
+
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData4,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("3", formData);
+                 socket.emit("3", formData4);
                  console.log("hi")
              }
          });
@@ -97,16 +96,15 @@
 
     $('#wishlist4').submit(function(e){
         
-        formData= $('#wishlist4').serialize();
-        console.log(formData)
+        formData5= $('#wishlist4').serialize();
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData5,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("4", formData);
+                 socket.emit("4", formData5);
                  console.log("hi")
              }
          });
@@ -120,16 +118,15 @@
 
     $('#wishlist5').submit(function(e){
         
-        formData= $('#wishlist5').serialize();
-        console.log(formData)
+        formData6= $('#wishlist5').serialize();
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData6,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("5", formData);
+                 socket.emit("5", formData6);
                  console.log("hi")
              }
          });
@@ -143,16 +140,15 @@
 
     $('#wishlist6').submit(function(e){
         
-        formData= $('#wishlist6').serialize();
-        console.log(formData)
+        formData7= $('#wishlist6').serialize();
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData7,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("6", formData);
+                 socket.emit("6", formData7);
                  console.log("hi")
              }
          });
@@ -166,16 +162,15 @@
 
     $('#wishlist7').submit(function(e){
         
-        formData= $('#wishlist7').serialize();
-        console.log(formData)
+        formData8= $('#wishlist7').serialize();
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData8,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("7", formData);
+                 socket.emit("7", formData8);
                  console.log("hi")
              }
          });
@@ -189,16 +184,15 @@
 
     $('#wishlist8').submit(function(e){
         
-        formData= $('#wishlist8').serialize();
-        console.log(formData)
+        formData9= $('#wishlist8').serialize();
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData9,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("8", formData);
+                 socket.emit("8", formData9);
                  console.log("hi")
              }
          });
@@ -212,16 +206,15 @@
 
     $('#wishlist9').submit(function(e){
         
-        formData= $('#wishlist9').serialize();
-        console.log(formData)
+        formData10= $('#wishlist9').serialize();
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formData10,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("9", formData);
+                 socket.emit("9", formData10);
                  console.log("hi")
              }
          });
@@ -235,16 +228,15 @@
 
     $('#wishlistD').submit(function(e){
         
-        formData= $('#wishlistD').serialize();
-        console.log(formData)
+        formDatad= $('#wishlistD').serialize();
         e.preventDefault();
          $.ajax({
              url: "/users/wishlist",
              type: 'post',
-             data : formData,
+             data : formDatad,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("new_button", formData);
+                 socket.emit("new_button", formDatad);
                  console.log("hi")
              }
          });
@@ -252,6 +244,6 @@
      }); 
      socket.on("new_button",function(button){
         var html = '';
-        html += '<button type ="button" class="home-button button" id="idkanymore">added</button>'
+        html += ' <button id="add to cart" type="submit" class="home-add-to-cart-button1 button"> ADDED </button>'
         $('#wishlistD').replaceWith(html);
     }) 
