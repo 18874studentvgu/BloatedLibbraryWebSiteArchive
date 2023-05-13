@@ -53,7 +53,7 @@
                   </span>
                 </p>
                 <div class="home-container02">
-                  <form id="wishlist2" method="POST">
+                  <form id="wishlistD" method="POST">
                     <input
                     type="hidden"
                     name="userID"
@@ -65,7 +65,7 @@
                     id="add to cart"
                     type="submit"
                     class="home-add-to-cart-button1 button"
-                    id="wishListButton2"
+                    id="wishListButtonD"
                   >
                     WISH LIST
                   </button>
@@ -88,7 +88,7 @@
               <div class="home-slide-container swiper">
                 <div class="home-the-slide-content">
                   <div class="home-slide-wrapper swiper-wrapper">
-                  
+                  <% for(var i = 0; i < 10; i++) { %>
                     <div class="home-book-cards swiper-slide">
                       <div class="home-book-1">
                         <img
@@ -102,8 +102,30 @@
                           <span class="home-text027">Y. Perelman</span>
                           <br />
                         </h2>
-                        
-                        <form id="wishlist" method="POST">
+                        <% if (loggedIn ) {%>
+                        <% if (idk == "yes") { %>
+                          <% if (wishlists.userID == loggedIn) { %>
+                            <form id="wishlist12" method="POST">
+                             
+                              <button type ="button" class="home-button button" id="idkanymore">added</button>
+                            </form>
+                          <% } %>
+                          <% if (wishlists.userID != loggedIn) { %>
+                            <form id="wishlist<%= i %>" method="POST">
+                              <input
+                              type="hidden"
+                              name="userID"
+                              id="userID"
+                              class="book-info-textinput input"
+                              value= <%= loggedIn %>
+                              > 
+                              <button type ="submit" class="home-button button" id="wishListButton<%= i %>">wishlist</button>
+                            </form>
+                          <% } %>
+                        <% } %>
+
+                        <% if (idk != "yes") { %>
+                         <form id="wishlist<%= i %>" method="POST">
                           <input
                           type="hidden"
                           name="userID"
@@ -111,13 +133,16 @@
                           class="book-info-textinput input"
                           value= <%= loggedIn %>
                           > 
-                          <button type ="submit" class="home-button button" id="wishListButton">ADDED</button>
-                       
+                          <button type ="submit" class="home-button button" id="wishListButton<%= i %>">wishlist</button>
                         </form>
+                        <% } %>
+                       <% } %>
+                       <% if (!loggedIn ) {%>
+                          <button type ="button" class="home-button button" id="wishListButton<%= i %>">wishlist</button>
+                      <% } %>
                       </div>
                     </div>
-                    
-                  
+                    <% } %>
                   </div>
                 </div>
                 <div class="swiper-button-next swiper-navBtn"></div>
