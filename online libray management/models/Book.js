@@ -1,20 +1,32 @@
 const mongoose = require('mongoose');
 // import './Review';
+// import bookCatergories from '../data/BookCategories';
+const _functions = require('./_functions')
+const cutomMGValidator = _functions.cutomMGValidator;
+
 
 const BookSchema = new mongoose.Schema({
-    title: { type: String, required: true },
-    internationalNumber: { type: Number, required: true}, //IBSN for books and ISSN for mangazines
-    author: [ {type: String, required: true }],
+    title: { type: String, required: true, alias: 'name' },
+    internationalNumber: { type: Number, required: true }, //IBSN for books and ISSN for mangazines
+    author: [{ type: String, required: true }],
+    categories: [{
+        type: String,
+        lowercase: true,
+        validate: {
+            validator: (v) => { cutomMGValidator(v,'bookCategories') },
+            message: '{VALUE} is not acceptable, please check in ../data/BookCategories.js or yell at son'
+        }
+    }],
     synopsis: String,
-    copiesAvailable: {type: Number, min: [0,'Availables copies cannot be negative ({VALUE})!']},
+    copiesAvailable: { type: Number, min: [0, 'Availables copies cannot be negative ({VALUE})!'] },
     PDFPreviewLink: String,
-    pagePerviewLink:[{page: Number, link: String}],
+    pagePerviewLink: [{ page: Number, link: String }],
 
-    totalRating:{
-        recommended: {type: Number, default: 0},
-        notRecommended: {type: Number, default: 0}
+    totalRating: {
+        recommended: { type: Number, default: 0 },
+        notRecommended: { type: Number, default: 0 }
     },
-    reviewPreview: [{
+    reviewPreview: [{ // NOTE: might not be needed afterall
         // review: {type: mongoose.Schema.Types.ObjectId, ref: 'Review'},
         // user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
         // rating: {
@@ -32,7 +44,7 @@ const BookSchema = new mongoose.Schema({
     }]
 
 },
-{ timestamps: true});
+    { timestamps: true });
 
-const Book = mongoose.model('Book',BookSchema);
+const Book = mongoose.model('Book', BookSchema);
 module.exports = Book;
