@@ -26,6 +26,22 @@ const BookSchema = new mongoose.Schema({
         recommended: { type: Number, default: 0 },
         notRecommended: { type: Number, default: 0 }
     },
+    language: {
+        type: String,
+        uppercase:true,
+        // validate: {
+            // validator: (v) => { cutomMGValidator(v,'langCode') },
+            // message: '{VALUE} is not acceptable, please check in or yell at son'
+        // }
+    }
+    publisher:{
+        type: String,
+        // validate: {
+            // validator: (v) => { cutomMGValidator(v,'publisher') },
+            // message: '{VALUE} is not acceptable, please check in or yell at son'
+        // }
+    }
+    publishedAt: Date,
     reviewPreview: [{ // NOTE: might not be needed afterall
         // review: {type: mongoose.Schema.Types.ObjectId, ref: 'Review'},
         // user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
