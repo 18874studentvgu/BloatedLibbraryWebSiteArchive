@@ -57,13 +57,13 @@
                   </span>
                 </div>
               </div>
-              <a
-                href="pay-due-fee-online.html"
-                id="viewAllUser"
-                class="bookcart-view-all-button button"
-              >
-                Pay overdue
-              </a>
+              <div class = "dropdown" >
+                <button  class="bookcart-view-all-button button" onclick="paymentFunction()">Pay Overdue</button>
+                <div class = "dropdown-content-1" id ="paymentChoice"  >
+                  <a href="/payCash">by Cash</a>
+                  <a href="/payOnline">by Credit card</a>
+                </div>
+              </div>
             </div>
             <div class="bookcart-container06">
               <span class="bookcart-text17">Issued (1)</span>
