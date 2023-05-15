@@ -1,14 +1,15 @@
 const Review = require("../models/Review");
-
+const Book = require("../models/Book")
 module.exports = (req, response) => {
-    Review.find({})
-    .then((reviews)=>{
+    Promise.all ([ Book.find({}), Review.find({})]) 
+    .then(([book, reviews])=>{
         //this is for when there are reviews
         var id = "yes"
         console.log(req.session)
         //console.log(post)
         response.render('book-info',{
             reviews:reviews,
+            book:book,
             id: id
         });
     })
