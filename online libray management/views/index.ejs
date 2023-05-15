@@ -109,6 +109,7 @@
               <div class="home-slide-container swiper">
                 <div class="home-the-slide-content">
                   <div class="home-slide-wrapper swiper-wrapper">
+                    
                   <% for(var i = 0 ; i < book.length; i++) { %>
                     
                     <div class="home-book-cards swiper-slide">
@@ -172,7 +173,7 @@
                              
                               <button type ="button" class="home-button button" id="idkanymore">added</button>
                             </form>
-                            <% break; %>
+                            <% break %>
                           <% } %>
                           <% if ( !a[j].bookID.equals(book[i]._id)) { %>
                             <form id="wishlist<%= i %>" method="POST">
