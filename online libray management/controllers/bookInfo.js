@@ -1,11 +1,14 @@
 const Review = require("../models/Review");
 const Book = require("../models/Book")
 module.exports = (req, response) => {
-    Promise.all ([ Book.find({}), Review.find({})]) 
+    id = req.params.id
+    if (id.match(/^[0-9a-fA-F]{24}$/)) {
+    // Yes, it's a valid ObjectId, proceed with `findById` call.
+    Promise.all ([ Book.findById(req.params.id), Review.find({})]) 
     .then(([book, reviews])=>{
         //this is for when there are reviews
         var id = "yes"
-        console.log(req.session)
+        console.log("have reviews")
         //console.log(post)
         response.render('book-info',{
             reviews:reviews,
@@ -13,12 +16,16 @@ module.exports = (req, response) => {
             id: id
         });
     })
-    .catch((error, reviews) => { 
+    .catch((error, book ,reviews) => { 
         //if there are no reviews
         id = "no"
         response.render('book-info',{
             reviews:reviews,
+            book: book,
             id: id
         });
     })
+
+}
+    
 }
