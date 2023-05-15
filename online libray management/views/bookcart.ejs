@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="english">
+  <%- include('layouts/header'); -%>
+
+  <body>
+    <div>
+      <link href="/css/bookcart.css" rel="stylesheet" />
+      <link href="/css/userprofilesetting.css" rel="stylesheet" />
+
+      <div class="bookcart-container">
+        <!-- navbar -->
+        <%- include('layouts/navbar'); -%>
+        <!-- userChoice -->
+        <%- include('layouts/UserNav'); -%>
+          <div class="bookcart-container02">
+            <div class="bookcart-container03">
+              <div class="bookcart-container04">
+                <span class="bookcart-text13"><span>All books (4)</span></span>
+              </div>
+            </div>
+            <div class="bookcart-container05">
+              <span class="bookcart-text15"><span>Overdue (1)</span></span>
+              <div class="app-component-container">
+                <input
+                  type="radio"
+                  name="radio"
+                  class="app-component-radiobutton"
+                />
+                <img
+                  alt="ThinkJavabook19753"
+                  src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
+                  class="app-component-think-javabook1"
+                />
+                <div class="app-component-container1">
+                  <span class="app-component-text">
+                    <span>Think Java</span>
+                  </span>
+                  <span class="app-component-text02">
+                    <span>Author:</span>
+                    <span class="app-component-text04">
+                      A. B. Downey, C. Mayfield
+                    </span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <span class="app-component-text07">
+                    <span>Issued date:</span>
+                    <span class="app-component-text09">03/04/2023</span>
+                  </span>
+                  <span class="app-component-text10">
+                    <span>Return date:</span>
+                    <span class="app-component-text12">10/04/2023</span>
+                  </span>
+                  <span class="app-component-text13">
+                    <span class="app-component-text14">Overdue:</span>
+                    <span class="app-component-text15">3 day(s)</span>
+                  </span>
+                </div>
+              </div>
+              <a
+                href="pay-due-fee-online.html"
+                id="viewAllUser"
+                class="bookcart-view-all-button button"
+              >
+                Pay overdue
+              </a>
+            </div>
+            <div class="bookcart-container06">
+              <span class="bookcart-text17">Issued (1)</span>
+              <div class="app-component-container">
+                <input
+                  type="radio"
+                  name="radio"
+                  class="app-component-radiobutton"
+                />
+                <img
+                  alt="ThinkJavabook19753"
+                  src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
+                  class="app-component-think-javabook1"
+                />
+                <div class="app-component-container1">
+                  <span class="app-component-text">
+                    <span>Think Java</span>
+                  </span>
+                  <span class="app-component-text02">
+                    <span>Author:</span>
+                    <span class="app-component-text04">
+                      A. B. Downey, C. Mayfield
+                    </span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <span class="app-component-text07">
+                    <span>Issued date:</span>
+                    <span class="app-component-text09">03/04/2023</span>
+                  </span>
+                  <span class="app-component-text10">
+                    <span>Return date:</span>
+                    <span class="app-component-text12">10/04/2023</span>
+                  </span>
+                  <span class="app-component-text13">
+                    <span class="app-component-text14">Overdue:</span>
+                    <span class="app-component-text15">3 day(s)</span>
+                  </span>
+                </div>
+              </div>
+              <a
+                href="admin-user-board.html"
+                id="viewAllUser"
+                class="bookcart-view-all-button1 button"
+              >
+                Return book
+              </a>
+            </div>
+            <div class="bookcart-container07">
+              <span class="bookcart-text18">Cart (1)</span>
+              <div class="app-component-container">
+                <input
+                  type="radio"
+                  name="radio"
+                  class="app-component-radiobutton"
+                />
+                <img
+                  alt="ThinkJavabook19753"
+                  src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
+                  class="app-component-think-javabook1"
+                />
+                <div class="app-component-container1">
+                  <span class="app-component-text">
+                    <span>Think Java</span>
+                  </span>
+                  <span class="app-component-text02">
+                    <span>Author:</span>
+                    <span class="app-component-text04">
+                      A. B. Downey, C. Mayfield
+                    </span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <span class="app-component-text07">
+                    <span>Issued date:</span>
+                    <span class="app-component-text09">03/04/2023</span>
+                  </span>
+                  <span class="app-component-text10">
+                    <span>Return date:</span>
+                    <span class="app-component-text12">10/04/2023</span>
+                  </span>
+                  <span class="app-component-text13">
+                    <span class="app-component-text14">Overdue:</span>
+                    <span class="app-component-text15">3 day(s)</span>
+                  </span>
+                </div>
+              </div>
+              <a
+                href="borrow-book-confirmation.html"
+                id="viewAllUser"
+                class="bookcart-view-all-button2 button"
+              >
+                Borrow book
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- footer -->
+        <%- include('layouts/footer'); -%>
+      </div>
+    </div>
+  </body>
+  <%- include('layouts/script'); -%>
+</html>

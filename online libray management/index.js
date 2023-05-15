@@ -43,6 +43,7 @@ const payCash = require('./controllers/payCash')
 const payOnline = require('./controllers/payOnline')
 const payWaiting = require('./controllers/payWaiting')
 const paySuccess = require('./controllers/paySuccess')
+const bookcart = require('./controllers/bookcart')
 
 //check logged in and newuser
 global.loggedIn = null;
@@ -165,6 +166,9 @@ app.get('/payWaiting', payWaiting)
 
 // pay success
 app.get('/paySuccess', paySuccess)
+
+// book cart
+app.get('/bookcart', bookcart)
 
 //
 app.get('/',(req,res) => {
