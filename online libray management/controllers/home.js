@@ -15,7 +15,6 @@ module.exports = (req, response) => {
                        console.log(wishlist)
                        console.log(book)
 
-
                                 
                        if(wishlist.length != 0 ) {
                                 idk = "yes"

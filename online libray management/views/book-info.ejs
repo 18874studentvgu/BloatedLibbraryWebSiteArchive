@@ -68,12 +68,66 @@
                 </div>
               </div>
               <div class="book-info-container2">
-                <button type="button" class="book-info-button1 button">
-                  Add to cart
+                <form id = "wishlistBook" method="POST">
+                  <input
+                              type="hidden"
+                              name="userID"
+                              id="userID"
+                              class="book-info-textinput input"
+                              value= <%= loggedIn %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="bookID"
+                              id="bookID"
+                              class="book-info-textinput input"
+                              value= <%= book._id %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="bookName"
+                              id="bookName"
+                              class="book-info-textinput input"
+                              value= <%= book.name %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="Author"
+                              id="Author"
+                              class="book-info-textinput input"
+                              value= <%= book.author %>
+                              > 
+
+                <button type="submit" class="book-info-button1 button">
+                  Wishlist
                 </button>
-                <button type="button" class="book-info-button2 button">
+              </form>
+                <form id = "borrow" method="POST">
+                  <input
+                  type="hidden"
+                  name="userID"
+                  id="userID"
+                  class="book-info-textinput input"
+                  value= <%= loggedIn %>
+                  > 
+
+                  <input
+                  type="hidden"
+                  name="bookID"
+                  id="bookID"
+                  class="book-info-textinput input"
+                  value= <%= book._id %>
+                  > 
+
+
+
+                <button type="submit" class="book-info-button2 button">
                   Borrow
                 </button>
+              </form>
               </div>
             </div>
           </div>
@@ -192,6 +246,13 @@
               />
               <input
               type="hidden"
+              name="bookID"
+              id="bookID"
+              class="book-info-textinput input"
+              value= <%= book._id %>
+              />
+              <input
+              type="hidden"
               name="rating"
               id="rating"
               class="book-info-textinput input"
@@ -219,36 +280,42 @@
             <div class="book-info-reveiewplace2" >
             <div class="book-info-reveiewplace" id="no">
               <% if (id == "yes") { %>
-              <% for (var i = reviews.length-1; i >= 0; i--) { %>
-              <div class="book-info-a-comment">
-                <div class="book-info-group13">
-                  <img
-                    alt="image56170"
-                    src="/playground_assets/image56170-e9ep-200h.png"
-                    class="book-info-image5"
-                  />
-                  <h3 class="book-info-text070">
-                    <span class="book-info-text071"><%= reviews[i].writtenBy.userName%> -&nbsp;</span>
-                    <span class="book-info-text072"><%= reviews[i].createdAt.toDateString()%></span>
-                  </h3>
-                </div>
-                <% if (reviews[i].rating == "Recommended") { %>
-                <div class="book-info-frame10">
-                  <p class="book-info-text073">
-                    <span> <%= reviews[i].body %></span>
-                  </p>
-                </div>
-                <% } %>
-                <% if (reviews[i].rating != "Recommended") { %>
-                  <div class="book-info-framed" >
-                    <p class="book-info-text073">
-                      <span> <%= reviews[i].body %></span>
-                    </p>
+              <% for (var i=reviews.length-1; i>= 0; i--) { %>
+                <% if (book._id.equals(reviews[i].bookID)  ) { %>
+                  <div class="book-info-a-comment">
+                    <div class="book-info-group13">
+                      <img alt="image56170" src="/playground_assets/image56170-e9ep-200h.png" class="book-info-image5" />
+                      <h3 class="book-info-text070">
+                        <span class="book-info-text071">
+                          <%= reviews[i].writtenBy.userName%> -&nbsp;
+                        </span>
+                        <span class="book-info-text072">
+                          <%= reviews[i].createdAt.toDateString()%>
+                        </span>
+                      </h3>
+                    </div>
+                    <% if (reviews[i].rating=="Recommended" ) { %>
+                      <div class="book-info-frame10">
+                        <p class="book-info-text073">
+                          <span>
+                            <%= reviews[i].body %>
+                          </span>
+                        </p>
+                      </div>
+                      <% } %>
+                        <% if (reviews[i].rating !="Recommended" ) { %>
+                          <div class="book-info-framed">
+                            <p class="book-info-text073">
+                              <span>
+                                <%= reviews[i].body %>
+                              </span>
+                            </p>
+                          </div>
+                          <% } %>
                   </div>
                   <% } %>
-              </div>
-              <% } %>
-              <% } %>
+                <% } %>
+                <% } %>
 
               <% if (id != "yes") { %>
               <% } %>

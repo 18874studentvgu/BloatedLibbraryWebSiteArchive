@@ -37,6 +37,7 @@ const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
 const updateAccount = require('./controllers/updateAccount')
+const borrow = require('./controllers/BorrowBook')
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -188,6 +189,9 @@ app.post('/users/review', storeReviewController)
 
 //add to wishlist
 app.post('/users/wishlist', wishlist)
+
+//borrow 
+app.post('/users/borrow', borrow)
 
 //error page
 app.use((req, res) => res.render('404')); 

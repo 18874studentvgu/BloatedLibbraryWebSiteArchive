@@ -7,7 +7,7 @@ const cutomMGValidator = _functions.cutomMGValidator;
 
 const BookSchema = new mongoose.Schema({
     title: { type: String, required: true, alias: 'name' },
-    internationalNumber: { type: Number, required: true }, //IBSN for books and ISSN for mangazines
+    internationalNumber: { type: Number, required: false }, //IBSN for books and ISSN for mangazines
     author: [{ type: String, required: true }],
     categories: [{
         type: String,

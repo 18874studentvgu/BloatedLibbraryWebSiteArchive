@@ -247,3 +247,26 @@
         html += ' <button id="add to cart" type="submit" class="home-add-to-cart-button1 button"> ADDED </button>'
         $('#wishlistD').replaceWith(html);
     }) 
+
+    $('#wishlistBook').submit(function(e){
+        
+        formDatad= $('#wishlistBook').serialize();
+        e.preventDefault();
+         $.ajax({
+             url: "/users/wishlist",
+             type: 'post',
+             data : formDatad,
+             success: function(respond){
+                 alert(respond.text);
+                 socket.emit("new_button", formDatad);
+                 console.log("hi")
+             }
+         });
+         return false;
+     }); 
+     socket.on("new_button",function(button){
+        var html = '';
+        html += ' <button type="submit" class="book-info-button1 button"> Added </button>'
+        $('#wishlistBook').replaceWith(html);
+    }) 
+
