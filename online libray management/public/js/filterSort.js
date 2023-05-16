@@ -1,11 +1,10 @@
 var Shuffle = window.Shuffle;
 
-class filterSort {
+class bookList {
   constructor(element) {
     this.element = element;
     this.shuffle = new Shuffle(element, {
-      itemSelector: '.picture-item',
-      sizer: element.querySelector('.my-sizer-element'),
+      itemSelector: '.book-item',
     });
 
     // Log events.
@@ -13,8 +12,8 @@ class filterSort {
     this._activeFilters = [];
     this.addFilterButtons();
     this.addSorting();
-    this.addSearchFilter();
   }
+}
 
   /**
    * Shuffle uses the CustomEvent constructor to dispatch events. You can listen
@@ -28,28 +27,41 @@ class filterSort {
       console.log('removed. data:', data);
     });
   }
-
-  addFilterButtons() {
-    const options = document.querySelector('.filter-options');
+  bookList.prototype.addFilterButtons = function() {
+    var options = document.querySelector('.filters-options');
     if (!options) {
       return;
     }
+
+    var filterButtons = Array.from(options.children);
     
-    const filterButtons = Array.from(options.children);
     const onClick = this._handleFilterClick.bind(this);
     filterButtons.forEach((button) => {
       button.addEventListener('click', onClick, false);
     });
   }
 
-  _handleFilterClick(evt) {
-    const btn = evt.currentTarget;
-    const isActive = btn.classList.contains('active');
-    const btnGroup = btn.getAttribute('data-group');
-    
+  bookList.prototype._handleFilterClick = function(evt) {
+    var btn = evt.currentTarget;
+    var isActive = btn.classList.contains('active');
+    var btnGroup = btn.getAttribute('data-group');
+
     this._removeActiveClassFromChildren(btn.parentNode);
-    
-    let filterGroup;
+
+    if (this.mode === 'additive') {
+      if (isActive) {
+        this._activeFilters.splice(this._activeFilters.indexOf(btnGroup));
+      } else {
+        this._activeFilters.push(btnGroup);
+      }
+  
+      btn.classList.toggle('active');
+      this.shuffle.filter(this._activeFilters);
+  
+    } else {
+      this._removeActiveClassFromChildren(btn.parentNode);
+
+    var filterGroup;
     if (isActive) {
       btn.classList.remove('active');
       filterGroup = Shuffle.ALL_ITEMS;
@@ -57,28 +69,29 @@ class filterSort {
       btn.classList.add('active');
       filterGroup = btnGroup;
     }
-    
+
     this.shuffle.filter(filterGroup);
   }
+  }
 
-  _removeActiveClassFromChildren(parent) {
-    const { children } = parent;
+  bookList.prototype._removeActiveClassFromChildren = function(parent) {
+    var children = parent.children;
     for (let i = children.length - 1; i >= 0; i--) {
       children[i].classList.remove('active');
     }
   }
 
-  addSorting() {
-    const buttonGroup = document.querySelector('.sort-options');
+  bookList.prototype.addSorting = function() {
+    var buttonGroup = document.querySelector('.sort-options');
     if (!buttonGroup) {
       return;
     }
     buttonGroup.addEventListener('change', this._handleSortChange.bind(this));
   }
 
-  _handleSortChange(evt) {
+  bookList.prototype._handleSortChange = function(evt) {
     // Add and remove `active` class from buttons.
-    const buttons = Array.from(evt.currentTarget.children);
+    var buttons = Array.from(evt.currentTarget.children);
     buttons.forEach((button) => {
       if (button.querySelector('input').value === evt.target.value) {
         button.classList.add('active');
@@ -86,65 +99,32 @@ class filterSort {
         button.classList.remove('active');
       }
     });
-    
+
     // Create the sort options to give to Shuffle.
-    const { value } = evt.target;
-    let options = {};
-    
-    function sortByDate(element) {
-      return element.getAttribute('data-created');
-    }
-    
+    var { value } = evt.target;
+    var options = {};
+
     function sortByTitle(element) {
       return element.getAttribute('data-title').toLowerCase();
     }
-    
-    if (value === 'date-created') {
+
+    function sortByAuthour(element) {
+      return element.getAttribute('data-authour').toLowerCase();
+    }
+
+    if (value === 'title') {
       options = {
-        reverse: true,
-        by: sortByDate,
-      };
-    } else if (value === 'title') {
-      options = {
+        //reverse: true,
         by: sortByTitle,
+      };
+    } else if (value === 'authour') {
+      options = {
+        by: sortByAuthour,
       };
     }
     this.shuffle.sort(options);
   }
 
-  // Advanced filtering
-  addSearchFilter() {
-    const searchInput = document.querySelector('.js-shuffle-search');
-    if (!searchInput) {
-      return;
-    }
-    searchInput.addEventListener('keyup', this._handleSearchKeyup.bind(this));
-  }
-
-  /**
-   * Filter the shuffle instance by items with a title that matches the search input.
-   * @param {Event} evt Event object.
-   */
-  _handleSearchKeyup(evt) {
-    const searchText = evt.target.value.toLowerCase();
-    this.shuffle.filter((element, shuffle) => {
-      // If there is a current filter applied, ignore elements that don't match it.
-      if (shuffle.group !== Shuffle.ALL_ITEMS) {
-        // Get the item's groups.
-        const groups = JSON.parse(element.getAttribute('data-groups'));
-        const isElementInCurrentGroup = groups.indexOf(shuffle.group) !== -1;
-        // Only search elements in the current group
-        if (!isElementInCurrentGroup) {
-          return false;
-        }
-      }
-      const titleElement = element.querySelector('.picture-item__title');
-      const titleText = titleElement.textContent.toLowerCase().trim();
-      return titleText.indexOf(searchText) !== -1;
-    });
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  window.demo = new Demo(document.getElementById('grid'));
-});
+  document.addEventListener('DOMContentLoaded', function() {
+    window.book_list = new bookList(document.getElementById('grid'));
+  });
