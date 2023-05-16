@@ -4,7 +4,7 @@ const Admin = require('./models/Admin');
 const Book = require('./models/Book');
 const Review = require('./models/Review');
 const WishList = require('./models/WishList');
-const BorrowedBook = require('./models/BorrowedBook');
+const BorrowedBook = require('./models/BorrowRecord');
 const SingleValue = require('./models/_SingleValue');
 const bookCategories = require('./data/BookCategories')
 // import { bookCategories } from './data/BookCategories.js';
