@@ -19,7 +19,7 @@ const BookSchema = new mongoose.Schema({
     }],
     synopsis: String,
     copiesAvailable: { type: Number, min: [0, 'Availables copies cannot be negative ({VALUE})!'] },
-    coverLink:{type: String, alias: src},
+    coverLink:{type: String},
     PDFPreviewLink: String,
     pagePerviewLink: [{ page: Number, link: String }],
 
