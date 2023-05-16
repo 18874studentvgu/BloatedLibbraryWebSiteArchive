@@ -157,16 +157,16 @@ app.post('/users/wishlist', wishlist)
 app.get('/searchFilterBook', searchFilterBook)
 
 // pay cash
-app.get('/payCash', payCash)
+app.get('/payCash/:id', payCash)
 
 // pay online
-app.get('/payOnline', payOnline)
+app.get('/payOnline/:id', payOnline)
 
 // pay waiting
-app.get('/payWaiting', payWaiting)
+app.get('/payWaiting/:id', payWaiting)
 
 // pay success
-app.get('/paySuccess', paySuccess)
+app.get('/paySuccess/:id', paySuccess)
 
 // book cart
 app.get('/bookcart', bookcart)
