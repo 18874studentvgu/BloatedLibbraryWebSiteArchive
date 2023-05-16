@@ -258,15 +258,11 @@
              data : formDatad,
              success: function(respond){
                  alert(respond.text);
-                 socket.emit("new_button", formDatad);
+                
                  console.log("hi")
              }
          });
          return false;
      }); 
-     socket.on("new_button",function(button){
-        var html = '';
-        html += ' <button type="submit" class="book-info-button1 button"> Added </button>'
-        $('#wishlistBook').replaceWith(html);
-    }) 
+     
 
