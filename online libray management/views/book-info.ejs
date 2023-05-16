@@ -205,19 +205,31 @@
                 <span></span>
               </span>
               <span class="book-info-text060">
-                <span>overwhelmingly positive</span>
+              <% if ( (book.totalRating.notRecommended != 0 && book.totalRating.recommended != 0 ) &&  book.totalRating.recommended/book.totalRating.notRecommended > 1 ) { %>
+                <span> Positive </span>
+                <% } %>
+
+                <% if ( (book.totalRating.notRecommended != 0 && book.totalRating.recommended != 0 ) &&  book.totalRating.recommended/book.totalRating.notRecommended < 1 ) { %>
+                  <span> Negative </span>
+                  <% } %>
+                
+                  <% if ( book.totalRating.notRecommended == 0 && book.totalRating.recommended != 0  ) { %>
+                    <span> Positive </span>
+                    <% } %>
+                  
+                    <% if ( book.totalRating.notRecommended != 0 && book.totalRating.recommended == 0  ) { %>
+                      <span> Positive </span>
+                    <% } %>
+                      
+                    <% if ( book.totalRating.notRecommended == 0 && book.totalRating.recommended == 0  ) { %>
+                      <span> Unknown </span>
+                    <% } %>
+  
                 <span></span>
               </span>
-              <span>(1 review(s))</span>
+              <span>(<%= book.totalRating.notRecommended + book.totalRating.recommended %> review(s))</span>
             </h1>
-            <div class="book-info-group14">
-              <img
-                alt="arrow16190"
-                src="/playground_assets/arrow16190-213e-200h.png"
-                class="book-info-arrow11"
-              />
-              <span class="book-info-text064"><span>show graph</span></span>
-            </div>
+            
           </div>
           <div class="book-info-review">
             <span class="book-info-text066"><span>Review</span></span>
