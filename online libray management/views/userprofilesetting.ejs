@@ -79,15 +79,7 @@
                       value= <%= user.password %>
                     />
                   </div>
-                  <div class="userprofilesetting-container04">
-                    <label class="userprofilesetting-text18">profile image</label>
-                    <input
-                      type="file"
-                      id="first name"
-                      class="userprofilesetting-textinput input"
-                      readonly
-                    />
-                  </div>
+                 
                   <div class="userprofilesetting-container10">
                     <button
                     type="button"
@@ -105,6 +97,31 @@
                     </button>
                   </div>
                 </form>
+
+                <form
+                action="/users/changeImage"
+                method="POST"
+                enctype="multipart/form-data"
+                class="userprofilesetting-form"
+              >
+                <div class="userprofilesetting-container04">
+                  <label class="userprofilesetting-text18">profile image</label>
+                  <input
+                    type="file"
+                    id="iconLink"
+                    name="iconLink"
+                    class="userprofilesetting-textinput input"
+                    
+                  />
+                </div>
+                <button
+                type="submit"
+                class="userprofilesetting-button1 button"
+                >
+                save
+              </button>
+                </form>
+
               </div>
             </div>
           </div>

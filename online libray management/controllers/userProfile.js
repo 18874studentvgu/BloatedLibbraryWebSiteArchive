@@ -1,3 +1,15 @@
+const User = require('../models/User')
 module.exports = (req, response) => {
-    response.render('userprofile')
+    const username = user1;
+    console.log(username);
+    User.findOne({username: username})
+    .then((user)=>{
+        console.log(user);
+        response.render('userprofile', {
+            user: user 
+        })
+    })
+    .catch((error,user) =>{
+        console.log(error,user)
+    })
 }
