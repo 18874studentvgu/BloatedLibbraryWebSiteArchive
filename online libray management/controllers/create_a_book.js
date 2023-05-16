@@ -1,7 +1,16 @@
 const mongoose = require('mongoose');
 const path = require('path');
-const BooksAdmin = require("../models/bookAdmin.js");
+const Books = require("../models/Book.js");
 
 mongoose.connect('mongodb://0.0.0.0:27017/web', {useNewUrlParser: true}) 
+var author = "Robert C Martin, Stryker Lawton, Strucker";
+var sample = 
+{
+    name: "Clean code : a handbook of agile software craftsmanship" ,
+    author: author.split(","),
+    copiesAvailable: 7, 
+    sypnopsis: "",
+    PDFPreviewLink: "",
+}
 
-BooksAdmin.findByIdAndUpdate('64586542cc58326c4ef4ab81', { Quantity: 7, Recommendation: 4, Author: 'Edgar Allan Poe' }, { new: true }).then((book) => {console.log(book)})
+Books.create(sample).then((book) => {console.log(book)})

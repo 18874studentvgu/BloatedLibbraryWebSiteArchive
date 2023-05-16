@@ -204,55 +204,55 @@ app.post('/users/review', storeReviewController)
 app.post('/users/wishlist', wishlist)
 
 //admin dashboard
-app.get('/adminDashboard', adminLoggedInCheck, adminDashboard)
+app.get('/adminDashboard', adminDashboard)
 
 //admin users dashboard
-app.get('/adminUsersList', adminLoggedInCheck, adminUserDashboard)
+app.get('/adminUsersList', adminUserDashboard)
 
 //admin books dashboard
-app.get('/adminBooksList', adminLoggedInCheck, adminBookDashboard)
+app.get('/adminBooksList', adminBookDashboard)
 
 //admin add book function
-app.get('/adminBooksList/addBook', adminLoggedInCheck, adminAddBook)
+app.get('/adminBooksList/addBook', adminAddBook)
 
 //admin add user function
-app.get('/adminUsersList/addUser', adminLoggedInCheck, adminAddUser)
+app.get('/adminUsersList/addUser', adminAddUser)
 
 //store Book's information from admin
-app.post('/admin/storeBook', adminLoggedInCheck, adminStoreBook)
+app.post('/admin/storeBook', adminStoreBook)
 
 //store User's information from admin
-app.post('/admin/storeUser', adminLoggedInCheck, adminStoreUser)
+app.post('/admin/storeUser', adminStoreUser)
 
 //get details about a Book from admin
-app.get("/adminBooksList/:id", adminLoggedInCheck, adminGetBook)
+app.get("/adminBooksList/:id", adminGetBook)
 
 //get details about an User from admin
-app.get("/adminUsersList/:id", adminLoggedInCheck, adminGetUser)
+app.get("/adminUsersList/:id", adminGetUser)
 
 //get page to edit a Book as an Admin
-app.get("/adminBooksList/edit/:id", adminLoggedInCheck, adminGetEditBook)
+app.get("/adminBooksList/edit/:id", adminGetEditBook)
 
 //store an edited Book as an Admin
-app.post("/admin/storeEditBook/:id", adminLoggedInCheck, adminStoreEditBook)
+app.post("/admin/storeEditBook/:id", adminStoreEditBook)
 
 //get page to edit a User as an Admin
-app.get("/adminUsersList/edit/:id", adminLoggedInCheck, adminGetEditUser)
+app.get("/adminUsersList/edit/:id", adminGetEditUser)
 
 //store an edited User as an Admin
-app.post("/admin/storeEditUser/:id", adminLoggedInCheck, adminStoreEditUser)
+app.post("/admin/storeEditUser/:id", adminStoreEditUser)
 
 //confirmation to delete a Book as an Admin
-app.get("/adminBooksList/deleteWarn/:id", adminLoggedInCheck, adminWarnDeleteBook)
+app.get("/adminBooksList/deleteWarn/:id", adminWarnDeleteBook)
 
 //send request to delete a Book as an Admin
-app.post("/admin/deleteBook/:id", adminLoggedInCheck, adminDeleteBook)
+app.post("/admin/deleteBook/:id", adminDeleteBook)
 
 //confirmation to delete a User as an Admin
-app.get("/adminUsersList/deleteWarn/:id", adminLoggedInCheck, adminWarnDeleteUser)
+app.get("/adminUsersList/deleteWarn/:id", adminWarnDeleteUser)
 
 //send request to delete a Useras an Admin
-app.post("/admin/deleteUser/:id", adminLoggedInCheck, adminDeleteUser)
+app.post("/admin/deleteUser/:id", adminDeleteUser)
 
 //error page
 app.use((req, res) => res.render('404')); 

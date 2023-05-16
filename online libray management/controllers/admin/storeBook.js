@@ -1,8 +1,10 @@
-const BooksAdmin = require("../../models/bookAdmin.js");
+const Books = require("../../models/Book.js");
 
 module.exports = (req,res) => 
 {
-    BooksAdmin.create(req.body)
+    req.body.author = req.body.author.split(',');
+    console.log(req.body)
+    Books.create(req.body)
     .then ( (book) => {
         console.log(book);
         res.redirect("/adminBooksList")

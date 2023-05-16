@@ -26,12 +26,10 @@
                   <tr>
                     <th class="admin-book-board-text006">ID</th>
                     <th class="admin-book-board-text008">Name</th>
-                    <th class="admin-book-board-text009" style="width: 10%;">Author</th>
-                    <th class="admin-book-board-text010">Cat.</th>
-                    <th class="admin-book-board-text011">Pub. date</th>
-                    <th class="admin-book-board-text012">Up. date</th>
+                    <th class="admin-book-board-text009">Author</th>
+                    <th class="admin-book-board-text010">ISBN</th>
+                    <th class="admin-book-board-text012">Uploaded date</th>
                     <th class="admin-book-board-text013">Quan.</th>
-                    <th class="admin-book-board-text014">Rec. %</th>
                     <th class="admin-book-board-text014">Edit</th>
                     <th class="admin-book-board-text014">Delete</th>
                     <th class="admin-book-board-text014">Info</th>
@@ -52,13 +50,17 @@
                       booksList[i]._id.toString().substring( 17, 24 ) 
                       %>
                     </td>
-                    <td class="admin-book-board-text016"><%= booksList[i].Title %></td>
-                    <td class="admin-book-board-text017"><%= booksList[i].Author %></td>
-                    <td class="admin-book-board-text018"><%= booksList[i].Category %></td>
-                    <td class="admin-book-board-text019"><%= booksList[i].publishedDate %></td>
+                    <td class="admin-book-board-text016"><%= booksList[i].name %></td>
+                    <td class="admin-book-board-text017">
+                      <% for (var j = 0; j < booksList[i].author.length; j++) { %> 
+                        <%= 
+                        booksList[i].author[j] 
+                        %> |
+                      <% } %>
+                    </td>
+                    <td class="admin-book-board-text018"><%= booksList[i].internationalNumber %></td>
                     <td class="admin-book-board-text020"><%= booksList[i].createdAt.toDateString() %></td>
-                    <td class="admin-book-board-text023"><%= booksList[i].Quantity %></td>
-                    <td class="admin-book-board-text026"><%= booksList[i].Recommendation %>%</td>
+                    <td class="admin-book-board-text023"><%= booksList[i].copiesAvailable %></td>
                     <br/>
                     <td>
                       <a href="/adminBooksList/edit/<%= booksList[i]._id %>">

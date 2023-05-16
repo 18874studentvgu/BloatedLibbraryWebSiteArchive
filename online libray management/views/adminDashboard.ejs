@@ -100,8 +100,7 @@
                     <tr>
                       <th class="admin-text043" style="width: 30%">Title</th>
                       <th class="admin-text043">ID</th>  
-                      <th class="admin-text043">Author</th>
-                      <th class="admin-text043">Published Date</th>
+                      <th class="admin-text043">ISBN</th>
                       <th class="admin-text043">Uploaded Date</th>
                       <th class="admin-text043">Quantity</th>
                     </tr>
@@ -109,12 +108,15 @@
                   <tbody>
                     <% for (var i = 0; i < booksList.length; i++) { %>
                     <tr>
-                      <td class="admin-text092"><%= booksList[i].Title %></td>
-                      <td class="admin-text093">17657</span>
-                      <td class="admin-text094"><%= booksList[i].Author %></td>
-                      <td class="admin-text095"><%= booksList[i].publishedDate %></td>
+                      <td class="admin-text092"><%= booksList[i].name %></td>
+                      <td class="admin-text093">
+                        <%= 
+                        booksList[i]._id.toString().substring( 17, 24 ) 
+                        %>
+                      </span>
+                      <td class="admin-text095"><%= booksList[i].internationalNumber %></td>
                       <td class="admin-text096"><%= booksList[i].createdAt.toDateString() %></td>
-                      <td class="admin-text097"><%= booksList[i].Quantity %></td>
+                      <td class="admin-text097"><%= booksList[i].copiesAvailable %></td>
                     </tr>
                     <% } %>
                   </tbody>

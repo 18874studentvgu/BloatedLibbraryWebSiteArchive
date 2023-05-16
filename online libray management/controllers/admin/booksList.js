@@ -1,6 +1,6 @@
-const BooksAdmin = require("../../models/bookAdmin.js")
+const Books = require("../../models/Book.js")
 module.exports = (request, response) => {
-    BooksAdmin.find({})
+    Books.find({})
     .then ( (books) => {
         response.render('adminBooksList', { booksList : books });
         // console.log(users);

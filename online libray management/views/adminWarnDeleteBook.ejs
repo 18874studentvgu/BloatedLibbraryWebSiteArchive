@@ -16,42 +16,43 @@
                             <form action="/admin/deleteBook/<%= detailedBook._id %>" method="POST" class="add-book-form">
                                 <div class="add-book-book-name">
                                     <label for="Title" class="add-book-text07">
-                                        <%= detailedBook.Title %>
+                                        Title: <%= detailedBook.name %>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-author">
-                                    <label for="Author" class="add-book-text08">
-                                        <%= detailedBook.Author %>
+                                    <label for="author" class="add-book-text08">
+                                        Author: <%= detailedBook.author %>
                                     </label>                                    
                                 </div>
                                 <div class="add-book-author1">
-                                    <label for="Category" class="add-book-text09">
-                                        <%= detailedBook.Category %>
+                                    <label for="internationalNumber" class="add-book-text09">
+                                        ISBN: <%= detailedBook.internationalNumber %>
                                     </label>                                    
                                 </div>
                                 <div class="add-book-pub-year">
-                                    <label for="publishedDate" class="add-book-text11">
-                                        <%= detailedBook.publishedDate %>
+                                    <label for="synopsis" class="add-book-text11">
+                                        Synopsis: <%= detailedBook.synopsis %>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-quantity">
-                                    <label for="Quantity" class="add-book-text12">
-                                        <%= detailedBook.Quantity %>
+                                    <label for="PDFPreviewLink" class="add-book-text12">
+                                        PDF Preview Link: 
+                                        <%= detailedBook.PDFPreviewLink %>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-quantity">
-                                    <label for="Quantity" class="add-book-text12">
-                                        <%= detailedBook.Recommendation%>
+                                    <label for="copiesAvailable" class="add-book-text12">
+                                        Quantity: <%= detailedBook.copiesAvailable%>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-quantity">
-                                    <label for="Quantity" class="add-book-text12">
-                                        <%= detailedBook.createdAt.toDateString() %>
+                                    <label for="createdAt" class="add-book-text12">
+                                        Uploaded: <%= detailedBook.createdAt.toDateString() %>
                                     </label>                                   
                                 </div>
                                 <div class="add-book-quantity">
-                                    <label for="Quantity" class="add-book-text12">
-                                        <%= detailedBook.updatedAt.toDateString() %>
+                                    <label for="updatedAt" class="add-book-text12">
+                                        Last Updated: <%= detailedBook.updatedAt.toDateString() %>
                                     </label>                                   
                                 </div>
                                 <button type='submit' class="add-book-login1 button">Confirm</button>

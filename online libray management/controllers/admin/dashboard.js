@@ -1,12 +1,12 @@
 const UsersAdmin = require("../../models/userAdmin.js");
-const BooksAdmin = require("../../models/bookAdmin.js");
+const Books = require("../../models/Book.js");
 
 var mysort = { updatedAt: -1 };
 module.exports = (request, response) => {
     var query = 
     [
         users = UsersAdmin.find({}).sort(mysort),
-        books = BooksAdmin.find({}).sort(mysort),
+        books = Books.find({}).sort(mysort),
     ];
     Promise.all(query)
     .then ( (query) => {

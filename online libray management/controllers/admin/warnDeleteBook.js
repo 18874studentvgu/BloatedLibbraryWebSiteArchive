@@ -1,6 +1,6 @@
-const BooksAdmin = require("../../models/bookAdmin.js")
+const Books = require("../../models/Book.js")
 module.exports = (request, response) => {
-    BooksAdmin.findById(request.params.id)
+    Books.findById(request.params.id)
     .then ( (detailedBook) => {
         response.render('adminWarnDeleteBook', { detailedBook });
     })

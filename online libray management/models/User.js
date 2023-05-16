@@ -20,13 +20,13 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    dateCreated: {
-        type: Date,
-    },
-    dateLastActive: {
-        type: Date,
-        //required: true
-    },
+    // dateCreated: {
+    //     type: Date,
+    // },
+    // dateLastActive: {
+    //     type: Date,
+    //     //required: true
+    // },
     userInfo: {
         LName: String,
         FName: String,

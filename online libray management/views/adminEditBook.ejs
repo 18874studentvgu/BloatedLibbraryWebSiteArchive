@@ -15,59 +15,71 @@
                             <h1 class="add-book-text06">Edit book</h1>
                             <form action="/admin/storeEditBook/<%= detailedBook._id %>" method="POST" class="add-book-form">
                                 <div class="add-book-book-name">
-                                    <label for="Title" class="add-book-text07">Book name</label>
+                                    <label for="name" class="add-book-text07">Book name</label>
                                     <input
                                         type="text"
-                                        id="Title"
-                                        name="Title"
+                                        id="name"
+                                        name="name"
                                         class="add-book-textinput input"
-                                        value= "<%= detailedBook.Title %>"
+                                        value= "<%= detailedBook.name %>"
                                     />
                                 </div>
                                 <div class="add-book-author">
-                                    <label for="Author" class="add-book-text08">
+                                    <label for="author" class="add-book-text08">
                                     Author (separated by commas)
                                     </label>
                                     <input
                                         type="text"
-                                        id="Author"
-                                        name="Author"
+                                        id="author"
+                                        name="author"
                                         class="add-book-textinput1 input"
-                                        value= "<%= detailedBook.Author %>"
+                                        value= "<%= detailedBook.author %>"
                                     />
                                 </div>
                                 <div class="add-book-author1">
-                                    <label for="Category" class="add-book-text09">
-                                    Category (separated by commas)
+                                    <label for="internationalNumber" class="add-book-text09">
+                                    ISBN
                                     </label>
                                     <input
                                         type="text"
-                                        id="Category"
-                                        name="Category"
+                                        id="internationalNumber"
+                                        name="internationalNumber"
                                         class="add-book-textinput2 input"
-                                        value= "<%= detailedBook.Category %>"
+                                        value= "<%= detailedBook.internationalNumber %>"
                                     />
                                 </div>
-                                <div class="add-book-pub-year">
-                                    <label for="publishedDate" class="add-book-text11">
-                                    Published year
+                                <div class="add-book-author">
+                                    <label for="author" class="add-book-text08">
+                                        Synopsis
                                     </label>
                                     <input
                                         type="text"
-                                        id="publishedDate"
-                                        name="publishedDate"
-                                        class="add-book-textinput4 input"
-                                        value= "<%= detailedBook.publishedDate %>"
+                                        id="synopsis"
+                                        name="synopsis"
+                                        class="add-book-textinput1 input"
+                                        value= "<%= detailedBook.synopsis %>"
+                                    />
+                                </div>
+                                <div class="add-book-author">
+                                    <label for="author" class="add-book-text08">
+                                        PDFPreviewLink
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="PDFPreviewLink"
+                                        name="PDFPreviewLink"
+                                        class="add-book-textinput1 input"
+                                        value= "<%= detailedBook.PDFPreviewLink %>"
                                     />
                                 </div>
                                 <div class="add-book-quantity">
-                                    <label for="Quantity" class="add-book-text12">No. of books</label>
+                                    <label for="copiesAvailable" class="add-book-text12">No. of books</label>
                                     <input
                                         type="text"
-                                        id="Quantity"
-                                        name="Quantity"
+                                        id="copiesAvailable"
+                                        name="copiesAvailable"
                                         class="add-book-textinput5 input"
-                                        value= "<%= detailedBook.Quantity %>"
+                                        value= "<%= detailedBook.copiesAvailable %>"
                                     />
                                 </div>
                                 <button type='submit' class="add-book-login1 button">Submit</button>
