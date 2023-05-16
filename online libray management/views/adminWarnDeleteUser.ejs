@@ -17,32 +17,32 @@
               <form action="/admin/deleteUser/<%= detailedUser._id %>" method="POST" class="add-user-form">
                 <div class="add-user-full-name">
                   <label for="fullName" class="add-user-text07">
-                    <%= detailedUser.fullName %>
+                    Full Name: <%= detailedUser.userInfo.FName %> <%= detailedUser.userInfo.LName %>
                   </label>
                 </div>
                 <div class="add-user-username">
                   <label for="userName" class="add-user-text08">
-                    <%= detailedUser.userName %>
+                    Username: <%= detailedUser.username %>
                   </label>
                 </div>
                 <div class="add-user-edition">
                   <label for="Age" class="add-user-text09">
-                    <%= detailedUser.Age %>
+                    Age: <%= detailedUser.userInfo.age %>
                   </label>
                 </div>
                 <div class="add-user-pub-year">
                   <label for="Email" class="add-user-text10">
-                    <%= detailedUser.Email %>
+                    Email: <%= detailedUser.email %>
                   </label>
                 </div>
                 <div class="add-user-pub-year">
                   <label for="Email" class="add-user-text10">
-                    <%= detailedUser.borrowedBook %>
+                    Books borrowed: <%= detailedUser.booksBorrowing.length %>
                   </label>
                 </div>
                 <div class="add-user-pub-year">
                   <label for="Email" class="add-user-text10">
-                    <%= detailedUser.createdAt.toDateString() %>
+                    Date created: <%= detailedUser.createdAt.toDateString() %>
                   </label>
                 </div>
                 <button type='submit' class="add-book-login1 button">Confirm</button>

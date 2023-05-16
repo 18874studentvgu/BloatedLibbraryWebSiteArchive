@@ -34,8 +34,7 @@
                       <th class="admin-user-board-text010">Age</th>
                       <th class="admin-user-board-text012">Email</th>
                       <th class="admin-user-board-text014">Created</th>
-                      <th class="admin-user-board-text015">Last active</th>
-                      <th class="admin-user-board-text016">Bor. books</th>
+                      <th class="admin-user-board-text016">Borrowed</th>
                       <th class="admin-user-board-text016">Edit</th>
                       <th class="admin-user-board-text016">Delete</th>
                       <th class="admin-user-board-text016">Info</th>
@@ -49,13 +48,14 @@
                         usersList[i]._id.toString().substring( 17, 24 ) 
                         %>
                       </td>
-                      <td class="admin-user-board-text019"><%= usersList[i].fullName %></td>
-                      <td class="admin-user-board-text021"><%= usersList[i].userName %></td>
-                      <td class="admin-user-board-text022"><%= usersList[i].Age %></td>
-                      <td class="admin-user-board-text024"><%= usersList[i].Email %></td>
+                      <td class="admin-user-board-text019">
+                        <%= usersList[i].userInfo.FName %> <%= usersList[i].userInfo.LName %>
+                      </td>
+                      <td class="admin-user-board-text021"><%= usersList[i].username %></td>
+                      <td class="admin-user-board-text022"><%= usersList[i].userInfo.age %></td>
+                      <td class="admin-user-board-text024"><%= usersList[i].email %></td>
                       <td class="admin-user-board-text026"><%= usersList[i].createdAt.toDateString() %></td>
-                      <td class="admin-user-board-text028"><%= usersList[i].updatedAt.toDateString() %></td>
-                      <td class="admin-user-board-text029"><%= usersList[i].borrowedBook %></td>
+                      <td class="admin-user-board-text029"><%= usersList[i].booksBorrowing.length %></td>
                       <td>
                         <a href="/adminUsersList/edit/<%= usersList[i]._id %>">
                           <img

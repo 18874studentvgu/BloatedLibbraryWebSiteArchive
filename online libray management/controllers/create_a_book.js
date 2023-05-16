@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 const path = require('path');
-const Books = require("../models/Book.js");
+const BorrowRecordSchema = require("../models/BorrowRecord.js");
 
 mongoose.connect('mongodb://0.0.0.0:27017/web', {useNewUrlParser: true}) 
-var author = "Robert C Martin, Stryker Lawton, Strucker";
-var sample = 
-{
-    name: "Clean code : a handbook of agile software craftsmanship" ,
-    author: author.split(","),
-    copiesAvailable: 7, 
-    sypnopsis: "",
-    PDFPreviewLink: "",
-}
 
-Books.create(sample).then((book) => {console.log(book)})
+BorrowRecordSchema.create(
+    {
+        userID: '6458776ef767fe588f962b0b',
+        bookID: '64627016b3bbb50adafe8dec',
+        dueDate: Date("2022-10-9"),
+        returnDate: Date("2022-12-9"),
+        paymentAmount: 9,
+        hasReturned: false
+    }
+    ).then((record) => {console.log(record)})

@@ -1,8 +1,9 @@
-const UsersAdmin = require("../../models/userAdmin.js");
+const Users = require("../../models/User.js");
 
 module.exports = (req,res) => 
 {
-    UsersAdmin.create(req.body)
+    console.log(req.body)
+    Users.create(req.body)
     .then ( (user) => {
         console.log(user);
         res.redirect("/adminUsersList")

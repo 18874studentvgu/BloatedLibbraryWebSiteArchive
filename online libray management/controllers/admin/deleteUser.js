@@ -1,9 +1,9 @@
-const UsersAdmin = require("../../models/userAdmin.js");
+const Users = require("../../models/User.js");
 
 module.exports = (req,res) => 
 {
-    UsersAdmin.findByIdAndDelete(req.params.id)
-    .then ( (user) => {
+    Users.findByIdAndDelete(req.params.id)
+    .then ( () => {
         res.redirect("/adminUsersList")
     })
     .catch ( (error) => {

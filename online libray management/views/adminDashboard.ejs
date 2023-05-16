@@ -74,9 +74,15 @@
                           class="admin-user11"
                           />
                         </td>
-                        <td class="admin-text052"><%= usersList[i].fullName %></td>
-                        <td class="admin-text053"><%= usersList[i].userName %></td>
-                        <td class="admin-text054">17565</td>
+                        <td class="admin-text052">
+                          <%= usersList[i].userInfo.FName %> <%= usersList[i].userInfo.LName %>
+                        </td>
+                        <td class="admin-text053"><%= usersList[i].username %></td>
+                        <td class="admin-text054">
+                          <%= 
+                          usersList[i]._id.toString().substring( 17, 24 )
+                           %>
+                        </td>
                         <td class="admin-text055"><%= usersList[i].createdAt.toDateString() %></td>
                       </tr>
                       <% } %>
@@ -111,7 +117,7 @@
                       <td class="admin-text092"><%= booksList[i].title %></td>
                       <td class="admin-text093">
                         <%= 
-                        booksList[i]._id.toString().substring( 17, 24 ) 
+                        booksList[i]._id.toString().substring( 17, 24 )
                         %>
                       </span>
                       <td class="admin-text095"><%= booksList[i].internationalNumber %></td>

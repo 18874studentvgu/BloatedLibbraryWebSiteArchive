@@ -1,6 +1,6 @@
-const UsersAdmin = require("../../models/userAdmin.js")
+const Users = require("../../models/User.js")
 module.exports = (request, response) => {
-    UsersAdmin.find({})
+    Users.find({})
     .then ( (users) => {
         response.render('adminUsersList', { usersList : users });
     })

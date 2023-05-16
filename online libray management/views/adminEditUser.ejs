@@ -17,44 +17,56 @@
               <form action="/admin/storeEditUser/<%= detailedUser._id %>" method="POST" class="add-user-form">
                 <div class="add-user-full-name">
                   <label for="fullName" class="add-user-text07">
-                    Full name
+                    First name
                   </label>
                   <input
                     type="text"
-                    id="fullName"
-                    name="fullName"
+                    id="userInfo.FName"
+                    name="userInfo.FName"
                     class="add-user-textinput input"
-                    value="<%= detailedUser.fullName %>"
+                    value="<%= detailedUser.userInfo.FName %>"
+                  />
+                </div>
+                <div class="add-user-full-name">
+                  <label for="fullName" class="add-user-text07">
+                    Last name
+                  </label>
+                  <input
+                    type="text"
+                    id="userInfo.LName"
+                    name="userInfo.LName"
+                    class="add-user-textinput input"
+                    value="<%= detailedUser.userInfo.LName %>"
                   />
                 </div>
                 <div class="add-user-username">
-                  <label for="userName" class="add-user-text08">Username</label>
+                  <label for="username" class="add-user-text08">Username</label>
                   <input
                     type="text"
-                    id="userName"
-                    name="userName"
+                    id="username"
+                    name="username"
                     class="add-user-textinput1 input"
-                    value="<%= detailedUser.userName %>"
+                    value="<%= detailedUser.username %>"
                   />
                 </div>
                 <div class="add-user-edition">
                   <label for="Age" class="add-user-text09">Age</label>
                   <input
                     type="text"
-                    id="Age"
-                    name="Age"
+                    id="userInfo.age"
+                    name="userInfo.age"
                     class="add-user-textinput2 input"
-                    value="<%= detailedUser.Age %>"
+                    value="<%= detailedUser.userInfo.age %>"
                   />
                 </div>
                 <div class="add-user-pub-year">
                   <label for="Email" class="add-user-text10">Email</label>
                   <input
                     type="text"
-                    id="Email"
-                    name="Email"
+                    id="email"
+                    name="email"
                     class="add-user-textinput3 input"
-                    value="<%= detailedUser.Email %>"
+                    value="<%= detailedUser.email %>"
                   />
                 </div>
                 <button type='submit' class="add-user-login1 button">Submit</button>
