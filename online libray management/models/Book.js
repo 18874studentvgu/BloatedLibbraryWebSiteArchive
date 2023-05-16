@@ -19,6 +19,7 @@ const BookSchema = new mongoose.Schema({
     }],
     synopsis: String,
     copiesAvailable: { type: Number, min: [0, 'Availables copies cannot be negative ({VALUE})!'] },
+    coverLink:{type: String, alias: src},
     PDFPreviewLink: String,
     pagePerviewLink: [{ page: Number, link: String }],
 
@@ -33,14 +34,14 @@ const BookSchema = new mongoose.Schema({
             // validator: (v) => { cutomMGValidator(v,'langCode') },
             // message: '{VALUE} is not acceptable, please check in or yell at son'
         // }
-    }
+    },
     publisher:{
         type: String,
         // validate: {
             // validator: (v) => { cutomMGValidator(v,'publisher') },
             // message: '{VALUE} is not acceptable, please check in or yell at son'
         // }
-    }
+    },
     publishedAt: Date,
     reviewPreview: [{ // NOTE: might not be needed afterall
         // review: {type: mongoose.Schema.Types.ObjectId, ref: 'Review'},
