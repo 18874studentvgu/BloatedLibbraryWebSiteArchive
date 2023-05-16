@@ -23,7 +23,7 @@
             </div>
             <div class="book-info-bok-info">
               <h1 class="book-info-text008">
-                <span><%= book.name %></span>
+                <span><%= book.title %></span>
               </h1>
               <div class="book-info-info">
                 <div class="book-info-info1">
@@ -41,15 +41,15 @@
                   </h2>
                 </div>
                 <div class="book-info-info2">
-                  <h2 class="book-info-text019">
+                  <!-- <h2 class="book-info-text019">
                     <span class="book-info-text020">Publisher:</span>
                     <span class="book-info-text021">R</span>
                     <span>andom House</span>
-                  </h2>
+                  </h2> -->
                   <h2 class="book-info-text023">
-                    <span class="book-info-text024">Published</span>
+                    <span class="book-info-text024">Uploaded</span>
                     <span class="book-info-text025">:</span>
-                    <span>November 30, 2012</span>
+                    <span><%= book.createdAt.toDateString() %></span>
                   </h2>
                 </div>
               </div>
@@ -157,33 +157,8 @@
             <h1 class="book-info-text037"><span>Summary</span></h1>
             <p id="Text" class="book-info-text039">
               <span>
-                The official book behind the Academy Award-winning film The
-                Imitation Game, starring Benedict Cumberbatch and Keira
-                KnightleyAlan Turing was the mathematician whose cipher-cracking
-                transformed the Second World War. Taken on by British
-                Intelligence in 1938, as a shy young Cambridge don, he combined
-                brilliant logic with a flair for engineering. In 1940 his
-                machines were breaking the Enigma-enciphered messages of Nazi
-                Germany’s air force. He then headed the penetration of the
-                super-secure U-boat communications.But his vision went far
-                beyond this achievement. Before the war he had invented the
-                concept of the universal machine, and in 1945 he turned this
-                into the first design for a digital computer.Turing's
-                far-sighted plans for the digital era forged ahead into a vision
-                for Artificial Intelligence. However, in 1952 his homosexuality
-                rendered him a criminal and he was subjected to humiliating
-                treatment. In 1954, aged 41, Alan Turing took his own life.
+                <%= book.synopsis %>
               </span>
-              <br />
-              <span>Source: Publisher</span>
-              <br />
-              <span>dadadad</span>
-              <br />
-              <span>adadadad</span>
-              <br />
-              <span>eqeqe</span>
-              <br />
-              <span>qeqeq</span>
               <br />
             </p>
             <img

@@ -25,7 +25,7 @@
                 <thead>
                   <tr>
                     <th class="admin-book-board-text006">ID</th>
-                    <th class="admin-book-board-text008">Name</th>
+                    <th class="admin-book-board-text008">Title</th>
                     <th class="admin-book-board-text009">Author</th>
                     <th class="admin-book-board-text010">ISBN</th>
                     <th class="admin-book-board-text012">Uploaded date</th>
@@ -50,7 +50,7 @@
                       booksList[i]._id.toString().substring( 17, 24 ) 
                       %>
                     </td>
-                    <td class="admin-book-board-text016"><%= booksList[i].name %></td>
+                    <td class="admin-book-board-text016"><%= booksList[i].title %></td>
                     <td class="admin-book-board-text017">
                       <% for (var j = 0; j < booksList[i].author.length; j++) { %> 
                         <%= 
@@ -81,7 +81,7 @@
                       </a>
                     </td>
                     <td>
-                      <a href="/adminBooksList/<%= booksList[i]._id %>">
+                      <a href="/book-info/<%= booksList[i]._id %>">
                         <img
                           alt="image"
                           src="playground_assets/trashcan13831-is4-200w.png"

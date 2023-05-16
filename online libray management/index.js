@@ -68,9 +68,6 @@ app.use('*', (req, res, next) => {
 global.userid = null;
 console.log(userid)
 
-    
-
-
 //cookies
 app.use(fileUpload())
 app.use(bodyParser.json())
