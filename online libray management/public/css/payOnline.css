@@ -197,9 +197,9 @@
   }
   .pay-due-fee-online-container04 {
     width: 1014px;
-    height: 425.3255157470703px;
+    /* height: 425.3255157470703px; */
     display: flex;
-    margin-top: var(--dl-space-space-oneandhalfunits);
+    /* margin-top: var(--dl-space-space-oneandhalfunits); */
     align-items: flex-start;
     margin-left: 120px;
     flex-direction: column;
@@ -251,7 +251,7 @@
   }
   .pay-due-fee-online-text16 {
     color: rgb(0, 0, 0);
-    width: 418px;
+    width: auto;
     height: auto;
     font-size: 32px;
     align-self: auto;
