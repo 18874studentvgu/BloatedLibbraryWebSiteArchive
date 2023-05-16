@@ -109,6 +109,7 @@
               <div class="home-slide-container swiper">
                 <div class="home-the-slide-content">
                   <div class="home-slide-wrapper swiper-wrapper">
+                    
                   <% for(var i = 0 ; i < book.length; i++) { %>
                     
                     <div class="home-book-cards swiper-slide">
@@ -139,24 +140,24 @@
 
                             <input
                             type="hidden"
-                            name="books.bookID"
-                            id="books.bookID"
+                            name="bookID"
+                            id="bookID"
                             class="book-info-textinput input"
                             value= <%= book[i]._id %>
                             > 
 
                             <input
                             type="hidden"
-                            name="books.bookName"
-                            id="books.bookName"
+                            name="bookName"
+                            id="bookName"
                             class="book-info-textinput input"
                             value= <%= book[i].name %>
                             > 
 
                             <input
                             type="hidden"
-                            name="books.Author"
-                            id="books.Author"
+                            name="Author"
+                            id="Author"
                             class="book-info-textinput input"
                             value= <%= book[i].author %>
                             > 
@@ -166,15 +167,15 @@
                         <% } %>
 
                         <% if (idk == "yes") { %>
-                        <% for (var j = 0; j < wishlists.length; j++)  { %>
-                          <% if (wishlists[j].userID == loggedIn ) { %>
+                        <% for (var j = 0; j < a.length; j++)  { %>
+                          <% if (a[j].bookID.equals(book[i]._id)  ) { %>
                             <form id="wishlist12" method="POST">
                              
                               <button type ="button" class="home-button button" id="idkanymore">added</button>
                             </form>
-                            <% break; %>
+                            <% break %>
                           <% } %>
-                          <% if ( wishlists[j].userID != loggedIn ) { %>
+                          <% if ( !a[j].bookID.equals(book[i]._id)) { %>
                             <form id="wishlist<%= i %>" method="POST">
                               <input
                               type="hidden"
@@ -186,24 +187,24 @@
 
                               <input
                               type="hidden"
-                              name="books.bookID"
-                              id="books.bookID"
+                              name="bookID"
+                              id="bookID"
                               class="book-info-textinput input"
                               value= <%= book[i]._id %>
                               > 
 
                               <input
                               type="hidden"
-                              name="books.bookName"
-                              id="books.bookName"
+                              name="bookName"
+                              id="bookName"
                               class="book-info-textinput input"
                               value= <%= book[i].name %>
                               > 
 
                               <input
                               type="hidden"
-                              name="books.Author"
-                              id="books.Author"
+                              name="Author"
+                              id="Author"
                               class="book-info-textinput input"
                               value= <%= book[i].author %>
                               > 
@@ -225,24 +226,24 @@
 
                               <input
                               type="hidden"
-                              name="books.bookID"
-                              id="books.bookID"
+                              name="bookID"
+                              id="bookID"
                               class="book-info-textinput input"
                               value= <%= book[i]._id %>
                               > 
 
                               <input
                               type="hidden"
-                              name="books.bookName"
-                              id="books.bookName"
+                              name="bookName"
+                              id="bookName"
                               class="book-info-textinput input"
                               value= <%= book[i].name %>
                               > 
 
                               <input
                               type="hidden"
-                              name="books.Author"
-                              id="books.Author"
+                              name="Author"
+                              id="Author"
                               class="book-info-textinput input"
                               value= <%= book[i].author %>
                               > 

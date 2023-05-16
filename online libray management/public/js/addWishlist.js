@@ -247,3 +247,22 @@
         html += ' <button id="add to cart" type="submit" class="home-add-to-cart-button1 button"> ADDED </button>'
         $('#wishlistD').replaceWith(html);
     }) 
+
+    $('#wishlistBook').submit(function(e){
+        
+        formDatad= $('#wishlistBook').serialize();
+        e.preventDefault();
+         $.ajax({
+             url: "/users/wishlist",
+             type: 'post',
+             data : formDatad,
+             success: function(respond){
+                 alert(respond.text);
+                
+                 console.log("hi")
+             }
+         });
+         return false;
+     }); 
+     
+

@@ -23,13 +23,13 @@
             </div>
             <div class="book-info-bok-info">
               <h1 class="book-info-text008">
-                <span>ALAN TURING: THE ENIGMA</span>
+                <span><%= book.name %></span>
               </h1>
               <div class="book-info-info">
                 <div class="book-info-info1">
                   <h2 class="book-info-text010">
                     <span class="book-info-text011">Athour:</span>
-                    <span>Andrew Hodges</span>
+                    <span><%= book.author %></span>
                   </h2>
                   <h2 class="book-info-text013">
                     <span class="book-info-text014">Language:</span>
@@ -68,12 +68,66 @@
                 </div>
               </div>
               <div class="book-info-container2">
-                <button type="button" class="book-info-button1 button">
-                  Add to cart
+                <form id = "wishlistBook" method="POST">
+                  <input
+                              type="hidden"
+                              name="userID"
+                              id="userID"
+                              class="book-info-textinput input"
+                              value= <%= loggedIn %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="bookID"
+                              id="bookID"
+                              class="book-info-textinput input"
+                              value= <%= book._id %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="bookName"
+                              id="bookName"
+                              class="book-info-textinput input"
+                              value= <%= book.name %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="Author"
+                              id="Author"
+                              class="book-info-textinput input"
+                              value= <%= book.author %>
+                              > 
+
+                <button type="submit" class="book-info-button1 button">
+                  Wishlist
                 </button>
-                <button type="button" class="book-info-button2 button">
+              </form>
+                <form id = "borrow" method="POST">
+                  <input
+                  type="hidden"
+                  name="userID"
+                  id="userID"
+                  class="book-info-textinput input"
+                  value= <%= loggedIn %>
+                  > 
+
+                  <input
+                  type="hidden"
+                  name="bookID"
+                  id="bookID"
+                  class="book-info-textinput input"
+                  value= <%= book._id %>
+                  > 
+
+
+
+                <button type="submit" class="book-info-button2 button">
                   Borrow
                 </button>
+              </form>
               </div>
             </div>
           </div>
@@ -151,19 +205,31 @@
                 <span></span>
               </span>
               <span class="book-info-text060">
-                <span>overwhelmingly positive</span>
+              <% if ( (book.totalRating.notRecommended != 0 && book.totalRating.recommended != 0 ) &&  book.totalRating.recommended/book.totalRating.notRecommended > 1 ) { %>
+                <span> Positive </span>
+                <% } %>
+
+                <% if ( (book.totalRating.notRecommended != 0 && book.totalRating.recommended != 0 ) &&  book.totalRating.recommended/book.totalRating.notRecommended < 1 ) { %>
+                  <span> Negative </span>
+                  <% } %>
+                
+                  <% if ( book.totalRating.notRecommended == 0 && book.totalRating.recommended != 0  ) { %>
+                    <span> Positive </span>
+                    <% } %>
+                  
+                    <% if ( book.totalRating.notRecommended != 0 && book.totalRating.recommended == 0  ) { %>
+                      <span> Positive </span>
+                    <% } %>
+                      
+                    <% if ( book.totalRating.notRecommended == 0 && book.totalRating.recommended == 0  ) { %>
+                      <span> Unknown </span>
+                    <% } %>
+  
                 <span></span>
               </span>
-              <span>(1 review(s))</span>
+              <span>(<%= book.totalRating.notRecommended + book.totalRating.recommended %> review(s))</span>
             </h1>
-            <div class="book-info-group14">
-              <img
-                alt="arrow16190"
-                src="/playground_assets/arrow16190-213e-200h.png"
-                class="book-info-arrow11"
-              />
-              <span class="book-info-text064"><span>show graph</span></span>
-            </div>
+            
           </div>
           <div class="book-info-review">
             <span class="book-info-text066"><span>Review</span></span>
@@ -189,6 +255,13 @@
               id="writtenBy.userID"
               class="book-info-textinput input"
               value= <%= loggedIn %>
+              />
+              <input
+              type="hidden"
+              name="bookID"
+              id="bookID"
+              class="book-info-textinput input"
+              value= <%= book._id %>
               />
               <input
               type="hidden"
@@ -219,36 +292,42 @@
             <div class="book-info-reveiewplace2" >
             <div class="book-info-reveiewplace" id="no">
               <% if (id == "yes") { %>
-              <% for (var i = reviews.length-1; i >= 0; i--) { %>
-              <div class="book-info-a-comment">
-                <div class="book-info-group13">
-                  <img
-                    alt="image56170"
-                    src="/playground_assets/image56170-e9ep-200h.png"
-                    class="book-info-image5"
-                  />
-                  <h3 class="book-info-text070">
-                    <span class="book-info-text071"><%= reviews[i].writtenBy.userName%> -&nbsp;</span>
-                    <span class="book-info-text072"><%= reviews[i].createdAt.toDateString()%></span>
-                  </h3>
-                </div>
-                <% if (reviews[i].rating == "Recommended") { %>
-                <div class="book-info-frame10">
-                  <p class="book-info-text073">
-                    <span> <%= reviews[i].body %></span>
-                  </p>
-                </div>
-                <% } %>
-                <% if (reviews[i].rating != "Recommended") { %>
-                  <div class="book-info-framed" >
-                    <p class="book-info-text073">
-                      <span> <%= reviews[i].body %></span>
-                    </p>
+              <% for (var i=reviews.length-1; i>= 0; i--) { %>
+                <% if (book._id.equals(reviews[i].bookID)  ) { %>
+                  <div class="book-info-a-comment">
+                    <div class="book-info-group13">
+                      <img alt="image56170" src="/playground_assets/image56170-e9ep-200h.png" class="book-info-image5" />
+                      <h3 class="book-info-text070">
+                        <span class="book-info-text071">
+                          <%= reviews[i].writtenBy.userName%> -&nbsp;
+                        </span>
+                        <span class="book-info-text072">
+                          <%= reviews[i].createdAt.toDateString()%>
+                        </span>
+                      </h3>
+                    </div>
+                    <% if (reviews[i].rating=="Recommended" ) { %>
+                      <div class="book-info-frame10">
+                        <p class="book-info-text073">
+                          <span>
+                            <%= reviews[i].body %>
+                          </span>
+                        </p>
+                      </div>
+                      <% } %>
+                        <% if (reviews[i].rating !="Recommended" ) { %>
+                          <div class="book-info-framed">
+                            <p class="book-info-text073">
+                              <span>
+                                <%= reviews[i].body %>
+                              </span>
+                            </p>
+                          </div>
+                          <% } %>
                   </div>
                   <% } %>
-              </div>
-              <% } %>
-              <% } %>
+                <% } %>
+                <% } %>
 
               <% if (id != "yes") { %>
               <% } %>

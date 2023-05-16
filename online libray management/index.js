@@ -36,6 +36,7 @@ const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
 const updateAccount = require('./controllers/updateAccount')
+const borrow = require('./controllers/BorrowBook')
 const adminDashboard = require('./controllers/admin/dashboard')
 const adminUserDashboard = require('./controllers/admin/usersList')
 const adminBookDashboard = require('./controllers/admin/booksList')
@@ -202,6 +203,9 @@ app.post('/users/review', storeReviewController)
 
 //add to wishlist
 app.post('/users/wishlist', wishlist)
+
+//borrow 
+app.post('/users/borrow', borrow)
 
 //admin dashboard
 app.get('/adminDashboard', adminDashboard)
