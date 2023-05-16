@@ -1,3 +1,9 @@
+const PayWaiting = require("../models/BorrowRecord");
+
 module.exports = (req, response) => {
-    response.render('payWaiting')
+    PayWaiting.findById(req.params.id)
+    .then( (payWaiting) => {
+        console.log(payWaiting)
+        response.render('payWaiting', { payWaiting : payWaiting })
+    })
 }

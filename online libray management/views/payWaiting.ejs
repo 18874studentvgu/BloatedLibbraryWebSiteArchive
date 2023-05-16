@@ -13,7 +13,7 @@
                 <h1 class="waiting-for-payment-confirmation-text06">
                   <span>Waiting for online payment</span>
                 </h1>
-                <form action="/storePaySuccess" method="POST" name="storePaySuccess">
+                <form action="/paySuccess/<%= payWaiting._id %>" method="GET" name="storePaySuccess">
                   <div class="waiting-for-payment-confirmation-container3">
                     <img
                       alt="AlanTuringbook28520"
@@ -29,7 +29,7 @@
                       <p class="waiting-for-payment-confirmation-text12">
                         <span class="waiting-for-payment-confirmation-text13">Total fee: </span>
                         <span></span>
-                        <span class="waiting-for-payment-confirmation-text15">50.000 VND</span>
+                        <span class="waiting-for-payment-confirmation-text15"><%= payWaiting.paymentAmount %>.000 VND</span>
                       </p>
                       <p class="waiting-for-payment-confirmation-text16">
                         <span>

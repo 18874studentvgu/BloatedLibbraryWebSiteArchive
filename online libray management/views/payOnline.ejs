@@ -28,26 +28,21 @@
                                         <span class="pay-due-fee-online-text12">
                                             <span class="pay-due-fee-online-text13">Borrowed date: </span>
                                             <span></span>
-                                            <span class="pay-due-fee-online-text15">20/03/2023</span>
+                                            <span class="pay-due-fee-online-text15"><%= payOnline.leaseDate.toDateString() %></span>
                                         </span>
                                         <span class="pay-due-fee-online-text16">
                                             <span class="pay-due-fee-online-text17">Expired date: </span>
                                             <span></span>
-                                            <span class="pay-due-fee-online-text19">24/03/2023</span>
-                                        </span>
-                                        <span class="pay-due-fee-online-text20">
-                                            <span class="pay-due-fee-online-text21">Total expired time: </span>
-                                            <span></span>
-                                            <span class="pay-due-fee-online-text23">2 days</span>
+                                            <span class="pay-due-fee-online-text19"><%= payOnline.returnDate.toDateString() %></span>
                                         </span>
                                         <span class="pay-due-fee-online-text24">
                                             <span class="pay-due-fee-online-text25">Total fee: </span>
                                             <span></span>
-                                            <span class="pay-due-fee-online-text27">50.000 VND</span>
+                                            <span class="pay-due-fee-online-text27"><%= payOnline.paymentAmount %>.000 VND</span>
                                         </span>
                                         <span class="pay-due-fee-online-text28">
                                             <span class="pay-due-fee-online-text29">Attention: </span>
-                                            <span> The fee is increased every 3 days unresolved, by 20% of orgininal price.</span>
+                                            <span> If you don’t pay this fee, you aren’t allowed to borrow the next book.</span>
                                         </span>
                                     </div>
                                 </div>
@@ -61,7 +56,7 @@
                                     />
                                     <div class="pay-due-fee-online-container06">
                                         <a
-                                            href="payWaiting"
+                                            href="/payWaiting/<%= payOnline._id %>"
                                             class="pay-due-fee-online-navlink06"
                                         >
                                             <img
@@ -71,7 +66,7 @@
                                             />
                                         </a>
                                         <a
-                                            href="payWaiting"
+                                            href="/payWaiting/<%= payOnline._id %>"
                                             class="pay-due-fee-online-navlink07"
                                         >
                                             <img
@@ -81,7 +76,7 @@
                                             />
                                         </a>
                                         <a
-                                            href="payWaiting"
+                                            href="/payWaiting/<%= payOnline._id %>"
                                             class="pay-due-fee-online-navlink08"
                                         >
                                             <img
@@ -103,7 +98,7 @@
                                     />
                                     <div class="pay-due-fee-online-container08">
                                         <a
-                                            href="payWaiting"
+                                            href="/payWaiting/<%= payOnline._id %>"
                                             class="pay-due-fee-online-navlink09"
                                         >
                                             <img
@@ -113,7 +108,7 @@
                                             />
                                         </a>
                                         <a
-                                            href="payWaiting"
+                                            href="/payWaiting/<%= payOnline._id %>"
                                             class="pay-due-fee-online-navlink10"
                                         >
                                             <img
@@ -123,7 +118,7 @@
                                             />
                                         </a>
                                         <a
-                                            href="payWaiting"
+                                            href="/payWaiting/<%= payOnline._id %>"
                                             class="pay-due-fee-online-navlink11"
                                         >
                                             <img
@@ -157,7 +152,7 @@
                                     <span class="pay-due-fee-online-text43"><span>CVV</span></span>
                                         <input type="text" class="pay-due-fee-online-textinput3 input" />
                                     <a
-                                    href="payWaiting"
+                                    href="/payWaiting/<%= payOnline._id %>"
                                     class="pay-due-fee-online-navlink12 button"
                                     > Pay
                                     </a>

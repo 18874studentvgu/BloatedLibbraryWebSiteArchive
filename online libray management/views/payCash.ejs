@@ -27,23 +27,17 @@
                     </span>
                     <span class="pay-due-fee-with-cash-text12">
                       <span class="pay-due-fee-with-cash-text13">Borrowed date:</span>
-                      <span></span>
-                      <span class="pay-due-fee-with-cash-text15">20/03/2023</span>
+                      <span class="pay-due-fee-with-cash-text15"><%= payCash.leaseDate.toDateString() %></span>
                     </span>
                     <span class="pay-due-fee-with-cash-text16">
                       <span class="pay-due-fee-with-cash-text17">Expired date:</span>
                       <span></span>
-                      <span class="pay-due-fee-with-cash-text19">24/03/2023</span>
-                    </span>
-                    <span class="pay-due-fee-with-cash-text20">
-                      <span class="pay-due-fee-with-cash-text21"> Total expired time: </span>
-                      <span></span>
-                      <span class="pay-due-fee-with-cash-text23">2 days</span>
+                      <span class="pay-due-fee-with-cash-text19"><%= payCash.returnDate.toDateString() %></span>
                     </span>
                     <span class="pay-due-fee-with-cash-text24">
                       <span class="pay-due-fee-with-cash-text25">Total fee:</span>
                       <span></span>
-                      <span class="pay-due-fee-with-cash-text27">50.000 VND</span>
+                      <span class="pay-due-fee-with-cash-text27"><%= payCash.paymentAmount %>.000 VND</span>
                     </span>
                     <span class="pay-due-fee-with-cash-text28">
                       <span class="pay-due-fee-with-cash-text29">Attention:</span>
@@ -63,7 +57,7 @@
                     </span>
                   </div>
                 </div>
-                <a href="bookcart" class="pay-due-fee-with-cash-return-home button">
+                <a href="/bookcart" class="pay-due-fee-with-cash-return-home button">
                   Return
                 </a>
                 <br>
