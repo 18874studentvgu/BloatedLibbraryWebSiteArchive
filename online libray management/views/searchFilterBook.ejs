@@ -10,60 +10,67 @@
             <div class="search-filter-book-filterbook">
               <div class="search-filter-book-container01">
                 <%- include('layouts/navbar'); -%>
-                <div class="search-filter-book-container03">
-                  <div class="search-filter-book-search-bar">
-                        <input
-                            type="text"
-                            placeholder=""
-                            class="search-filter-book-search-bar1 input"
-                        />
-                        <a
-                            href="searchFilterBook"
-                            class="search-filter-book-add-to-cart-button button"
-                        >   Search
-                        </a>
-                  </div>
-                  <div class="search-filter-book-container04">
-                    <span class="search-filter-book-text006">Result search books</span>
-                    <br>
-                    <div class="row">
-                      <div class="col-12@sm filters-group-wrap">
-                        <div class="filters-group">
-                          <p class="filter-label">Filter</p>
-                          <div class="btn-group filter-options">
-                            <button class="btn btn--primary" data-group="science">Science</button>
-                            <button class="btn btn--primary" data-group="novel">Novel</button>
-                            <button class="btn btn--primary" data-group="romantic">Romantic</button>
+                  <div class="search-filter-book-container03">
+                    <section id = "book_list">
+                    <div class="search-filter-book-search-bar">
+                          <input
+                              type="text"
+                              placeholder=""
+                              class="search-filter-book-search-bar1 input"
+                          />
+                          <!-- <a
+                              href="searchFilterBook"
+                              class="search-filter-book-add-to-cart-button button"
+                          >   Search
+                          </a> -->
+                    </div>
+                    <div class="search-filter-book-container04">
+                      <span class="search-filter-book-text006">Result search books</span>
+                      <br>
+                      <div class="row">
+                        <div class="col-12@sm filters-group-wrap">
+                          <div class="filters-group">
+                            <label class="filter-label">Filter</label>
+                            <div class="btn-group filter-options">
+                              <button class="btn btn--primary" data-group="science">Science</button>
+                              <button class="btn btn--primary" data-group="novel">Novel</button>
+                              <button class="btn btn--primary" data-group="romantic">Romantic</button>
+                              <button class="btn btn--primary" data-group="fairy">Fairy Tale</button>
+                            </div>
                           </div>
-                        </div>
-                        <div class="search-filter-book-container05">
-                        </div>
-                        <fieldset class="filters-group">
-                          <legend class="filter-label">Sort</legend>
-                          <div class="btn-group sort-options">
-                            <label class="btn active">
-                              <input type="radio" name="sort-value" value="dom" checked /> Default
-                            </label>
-                            <label class="btn">
-                              <input type="radio" name="sort-value" value="title" /> Title
-                            </label>
-                            <label class="btn">
-                              <input type="radio" name="sort-value" value="authour" /> Authour
-                            </label>
+                          <div class="search-filter-book-container05">
                           </div>
-                        </fieldset>
+                          <fieldset class="filters-group">
+                            <legend class="filter-label">Sort</legend>
+                            <div class="btn-group sort-options">
+                              <label class="btn active">
+                                <input type="radio" name="sort-value" value="dom" checked /> Default
+                              </label>
+                              <label class="btn">
+                                <input type="radio" name="sort-value" value="title" /> Title
+                              </label>
+                              <label class="btn">
+                                <input type="radio" name="sort-value" value="authour" /> Authour
+                              </label>
+                            </div>
+                          </fieldset>
+                        </div>
                       </div>
                     </div>
+                    </section>
                   </div>
-                </div>
-                <div class="search-filter-book-contianer">
-                  <img
-                        alt="AlanTuringbook11711"
-                        src="/playground_assets/alanturingbook11711-kiai-300w.png"
-                        class="search-filter-book-alan-turingbook1"
-                  />
-                  <div class="search-filter-book-container06">
-                        <h1 class="search-filter-book-text009">ALAN TURING: THE ENIGMA</h1>
+                    <div class="search-filter-book-contianer">
+                      <img
+                            alt="AlanTuringbook11711"
+                            src="/playground_assets/alanturingbook11711-kiai-300w.png"
+                            class="search-filter-book-alan-turingbook1"
+                      />
+                      <div class="search-filter-book-container06">
+                        <a href="book-info" class="search-filter-book-navlink06">
+                          <h1 class="search-filter-book-text009">
+                            ALAN TURING: THE ENIGMA
+                          </h1>
+                        </a>
                         <h2 class="search-filter-book-text010">
                             <span>Authour: </span>
                             <label class="search-filter-book-text012">Andrew Hodges</label>
@@ -95,213 +102,214 @@
                             </span>
                             </div>
                         </div>
-                  </div>
-                </div>
-                <div class="search-filter-book-contianer1">
-                  <img
-                  alt="AlanTuringbook11711"
-                  src="/playground_assets/Harry Potter book cover.jpg"
-                  class="search-filter-book-alan-turingbook11"
-                  />
-                  <div class="search-filter-book-container07">
-                  <h1 class="search-filter-book-text029">Harry Potter</h1>
-                  <h2 class="search-filter-book-text030">
-                      <span>Authour: </span>
-                      <span class="search-filter-book-text032">J.K. Rowling</span>
-                      <br class="search-filter-book-text033" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text035">
-                      <span>Published: </span>
-                      <span class="search-filter-book-text037">June 12, 1997</span>
-                      <span></span>
-                      <br class="search-filter-book-text039" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text041"><span>Category: </span></h2>
-                  <div class="search-filter-book-cat1">
-                      <div class="search-filter-book-tag03">
-                      <span class="search-filter-book-text043">
-                          <span>travel</span>
-                      </span>
                       </div>
-                      <div class="search-filter-book-tag04">
-                      <span class="search-filter-book-text045">
-                          <span>non-fictional</span>
-                      </span>
+                    </div>
+                    <div class="search-filter-book-contianer1">
+                      <img
+                      alt="AlanTuringbook11711"
+                      src="/playground_assets/Harry Potter book cover.jpg"
+                      class="search-filter-book-alan-turingbook11"
+                      />
+                      <div class="search-filter-book-container07">
+                      <h1 class="search-filter-book-text029">Harry Potter</h1>
+                      <h2 class="search-filter-book-text030">
+                          <span>Authour: </span>
+                          <span class="search-filter-book-text032">J.K. Rowling</span>
+                          <br class="search-filter-book-text033" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text035">
+                          <span>Published: </span>
+                          <span class="search-filter-book-text037">June 12, 1997</span>
+                          <span></span>
+                          <br class="search-filter-book-text039" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text041"><span>Category: </span></h2>
+                      <div class="search-filter-book-cat1">
+                          <div class="search-filter-book-tag03">
+                          <span class="search-filter-book-text043">
+                              <span>travel</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag04">
+                          <span class="search-filter-book-text045">
+                              <span>non-fictional</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag05">
+                          <span class="search-filter-book-text047">
+                              <span>novel</span>
+                          </span>
+                          </div>
                       </div>
-                      <div class="search-filter-book-tag05">
-                      <span class="search-filter-book-text047">
-                          <span>novel</span>
-                      </span>
                       </div>
-                  </div>
-                  </div>
-                </div>
-                <div class="search-filter-book-contianer2">
-                  <img
-                  alt="AlanTuringbook11711"
-                  src="/playground_assets/Atomic habits book cover.jpeg"
-                  class="search-filter-book-alan-turingbook12"
-                  />
-                  <div class="search-filter-book-container08">
-                  <h1 class="search-filter-book-text049">Atomic Habits</h1>
-                  <h2 class="search-filter-book-text050">
-                      <span>Authour: </span>
-                      <span class="search-filter-book-text052">James Clear</span>
-                      <br class="search-filter-book-text053" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text055">
-                      <span>Published:</span>
-                      <span class="search-filter-book-text057">May 9, 2013</span>
-                      <span></span>
-                      <br class="search-filter-book-text059" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text061"><span>Category:</span></h2>
-                  <div class="search-filter-book-cat2">
-                      <div class="search-filter-book-tag06">
-                      <span class="search-filter-book-text063">
-                          <span>romantic</span>
-                      </span>
+                    </div>
+                    <div class="search-filter-book-contianer2">
+                      <img
+                      alt="AlanTuringbook11711"
+                      src="/playground_assets/Atomic habits book cover.jpeg"
+                      class="search-filter-book-alan-turingbook12"
+                      />
+                      <div class="search-filter-book-container08">
+                      <h1 class="search-filter-book-text049">Atomic Habits</h1>
+                      <h2 class="search-filter-book-text050">
+                          <span>Authour: </span>
+                          <span class="search-filter-book-text052">James Clear</span>
+                          <br class="search-filter-book-text053" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text055">
+                          <span>Published:</span>
+                          <span class="search-filter-book-text057">May 9, 2013</span>
+                          <span></span>
+                          <br class="search-filter-book-text059" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text061"><span>Category:</span></h2>
+                      <div class="search-filter-book-cat2">
+                          <div class="search-filter-book-tag06">
+                          <span class="search-filter-book-text063">
+                              <span>romantic</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag07">
+                          <span class="search-filter-book-text065">
+                              <span>selfhelp</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag08">
+                          <span class="search-filter-book-text067">
+                              <span>functional</span>
+                          </span>
+                          </div>
                       </div>
-                      <div class="search-filter-book-tag07">
-                      <span class="search-filter-book-text065">
-                          <span>selfhelp</span>
-                      </span>
                       </div>
-                      <div class="search-filter-book-tag08">
-                      <span class="search-filter-book-text067">
-                          <span>functional</span>
-                      </span>
+                    </div>
+                    <div class="search-filter-book-contianer3">
+                      <img
+                      alt="AlanTuringbook11711"
+                      src="/playground_assets/alanturingbook11711-kiai-300w.png"
+                      class="search-filter-book-alan-turingbook13"
+                      />
+                      <div class="search-filter-book-container09">
+                      <h1 class="search-filter-book-text069">ALAN TURING: THE ENIGMA</h1>
+                      <h2 class="search-filter-book-text070">
+                          <span>Authour: </span>
+                          <span class="search-filter-book-text072">Andrew Hodges</span>
+                          <br class="search-filter-book-text073" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text075">
+                          <span>Published:</span>
+                          <span class="search-filter-book-text077">November 30, 2012</span>
+                          <span></span>
+                          <br class="search-filter-book-text079" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text081"><span>Category:</span></h2>
+                      <div class="search-filter-book-cat3">
+                          <div class="search-filter-book-tag09">
+                          <span class="search-filter-book-text083">
+                              <span>science</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag10">
+                          <span class="search-filter-book-text085">
+                              <span>science</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag11">
+                          <span class="search-filter-book-text087">
+                              <span>science</span>
+                          </span>
+                          </div>
                       </div>
-                  </div>
-                  </div>
-                </div>
-                <div class="search-filter-book-contianer3">
-                  <img
-                  alt="AlanTuringbook11711"
-                  src="/playground_assets/alanturingbook11711-kiai-300w.png"
-                  class="search-filter-book-alan-turingbook13"
-                  />
-                  <div class="search-filter-book-container09">
-                  <h1 class="search-filter-book-text069">ALAN TURING: THE ENIGMA</h1>
-                  <h2 class="search-filter-book-text070">
-                      <span>Authour: </span>
-                      <span class="search-filter-book-text072">Andrew Hodges</span>
-                      <br class="search-filter-book-text073" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text075">
-                      <span>Published:</span>
-                      <span class="search-filter-book-text077">November 30, 2012</span>
-                      <span></span>
-                      <br class="search-filter-book-text079" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text081"><span>Category:</span></h2>
-                  <div class="search-filter-book-cat3">
-                      <div class="search-filter-book-tag09">
-                      <span class="search-filter-book-text083">
-                          <span>science</span>
-                      </span>
                       </div>
-                      <div class="search-filter-book-tag10">
-                      <span class="search-filter-book-text085">
-                          <span>science</span>
-                      </span>
+                    </div>
+                    <div class="search-filter-book-contianer4">
+                      <img
+                      alt="AlanTuringbook11711"
+                      src="/playground_assets/alanturingbook11711-kiai-300w.png"
+                      class="search-filter-book-alan-turingbook14"
+                      />
+                      <div class="search-filter-book-container10">
+                      <h1 class="search-filter-book-text089">ALAN TURING: THE ENIGMA</h1>
+                      <h2 class="search-filter-book-text090">
+                          <span>Authour: </span>
+                          <span class="search-filter-book-text092">Andrew Hodges</span>
+                          <br class="search-filter-book-text093" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text095">
+                          <span>Published:</span>
+                          <span class="search-filter-book-text097">November 30, 2012</span>
+                          <span></span>
+                          <br class="search-filter-book-text099" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text101"><span>Category:</span></h2>
+                      <div class="search-filter-book-cat4">
+                          <div class="search-filter-book-tag12">
+                          <span class="search-filter-book-text103">
+                              <span>science</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag13">
+                          <span class="search-filter-book-text105">
+                              <span>science</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag14">
+                          <span class="search-filter-book-text107">
+                              <span>science</span>
+                          </span>
+                          </div>
                       </div>
-                      <div class="search-filter-book-tag11">
-                      <span class="search-filter-book-text087">
-                          <span>science</span>
-                      </span>
                       </div>
-                  </div>
-                  </div>
-                </div>
-                <div class="search-filter-book-contianer4">
-                  <img
-                  alt="AlanTuringbook11711"
-                  src="/playground_assets/alanturingbook11711-kiai-300w.png"
-                  class="search-filter-book-alan-turingbook14"
-                  />
-                  <div class="search-filter-book-container10">
-                  <h1 class="search-filter-book-text089">ALAN TURING: THE ENIGMA</h1>
-                  <h2 class="search-filter-book-text090">
-                      <span>Authour: </span>
-                      <span class="search-filter-book-text092">Andrew Hodges</span>
-                      <br class="search-filter-book-text093" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text095">
-                      <span>Published:</span>
-                      <span class="search-filter-book-text097">November 30, 2012</span>
-                      <span></span>
-                      <br class="search-filter-book-text099" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text101"><span>Category:</span></h2>
-                  <div class="search-filter-book-cat4">
-                      <div class="search-filter-book-tag12">
-                      <span class="search-filter-book-text103">
-                          <span>science</span>
-                      </span>
+                    </div>
+                    <div class="search-filter-book-contianer5">
+                      <img
+                      alt="AlanTuringbook11711"
+                      src="/playground_assets/alanturingbook11711-kiai-300w.png"
+                      class="search-filter-book-alan-turingbook15"
+                      />
+                      <div class="search-filter-book-container11">
+                      <h1 class="search-filter-book-text109">ALAN TURING: THE ENIGMA</h1>
+                      <h2 class="search-filter-book-text110">
+                          <span>Authour: </span>
+                          <span class="search-filter-book-text112">Andrew Hodges</span>
+                          <br class="search-filter-book-text113" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text115">
+                          <span>Published:</span>
+                          <span class="search-filter-book-text117">November 30, 2012</span>
+                          <span></span>
+                          <br class="search-filter-book-text119" />
+                          <span></span>
+                      </h2>
+                      <h2 class="search-filter-book-text121"><span>Category:</span></h2>
+                      <div class="search-filter-book-cat5">
+                          <div class="search-filter-book-tag15">
+                          <span class="search-filter-book-text123">
+                              <span>science</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag16">
+                          <span class="search-filter-book-text125">
+                              <span>science</span>
+                          </span>
+                          </div>
+                          <div class="search-filter-book-tag17">
+                          <span class="search-filter-book-text127">
+                              <span>science</span>
+                          </span>
+                          </div>
                       </div>
-                      <div class="search-filter-book-tag13">
-                      <span class="search-filter-book-text105">
-                          <span>science</span>
-                      </span>
                       </div>
-                      <div class="search-filter-book-tag14">
-                      <span class="search-filter-book-text107">
-                          <span>science</span>
-                      </span>
-                      </div>
-                  </div>
-                  </div>
-                </div>
-                <div class="search-filter-book-contianer5">
-                  <img
-                  alt="AlanTuringbook11711"
-                  src="/playground_assets/alanturingbook11711-kiai-300w.png"
-                  class="search-filter-book-alan-turingbook15"
-                  />
-                  <div class="search-filter-book-container11">
-                  <h1 class="search-filter-book-text109">ALAN TURING: THE ENIGMA</h1>
-                  <h2 class="search-filter-book-text110">
-                      <span>Authour: </span>
-                      <span class="search-filter-book-text112">Andrew Hodges</span>
-                      <br class="search-filter-book-text113" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text115">
-                      <span>Published:</span>
-                      <span class="search-filter-book-text117">November 30, 2012</span>
-                      <span></span>
-                      <br class="search-filter-book-text119" />
-                      <span></span>
-                  </h2>
-                  <h2 class="search-filter-book-text121"><span>Category:</span></h2>
-                  <div class="search-filter-book-cat5">
-                      <div class="search-filter-book-tag15">
-                      <span class="search-filter-book-text123">
-                          <span>science</span>
-                      </span>
-                      </div>
-                      <div class="search-filter-book-tag16">
-                      <span class="search-filter-book-text125">
-                          <span>science</span>
-                      </span>
-                      </div>
-                      <div class="search-filter-book-tag17">
-                      <span class="search-filter-book-text127">
-                          <span>science</span>
-                      </span>
-                      </div>
-                  </div>
-                  </div>
-                </div>
+                    </div>
+                  </section>
                 <footer class="search-filter-book-footer">
                   <div class="search-filter-book-container12">
                     <div class="search-filter-book-container12">
