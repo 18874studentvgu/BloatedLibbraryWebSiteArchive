@@ -456,6 +456,8 @@
   display: flex;
   margin-top: 2%;
   flex-direction: column;
+  background-color:rgb(240, 240, 240);
+  border-radius: 9px;
 }
 .bookcart-text15 {
   color: rgba(255, 0, 0, 1);
@@ -500,6 +502,8 @@
   display: flex;
   margin-top: 2%;
   flex-direction: column;
+  background-color:rgb(240, 240, 240);
+  border-radius: 9px;
 }
 .bookcart-text17 {
   color: #db812d;
@@ -520,6 +524,8 @@
   display: flex;
   margin-top: 2%;
   flex-direction: column;
+  background-color:rgb(240, 240, 240);
+  border-radius: 9px;
 }
 .bookcart-text18 {
   color: rgb(219, 129, 45);
