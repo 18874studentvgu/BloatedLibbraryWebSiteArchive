@@ -186,7 +186,7 @@ app.post('/getBooks',async (req,res)=>{
 })
 
 // store pay success
-app.post('/storePaySuccess', storePaySuccess);
+app.post('/storePaySuccess/:id', storePaySuccess);
 
 //error page
 app.use((req, res) => res.render('404')); 
