@@ -214,11 +214,11 @@
                   <% } %>
                 
                   <% if ( book.totalRating.notRecommended == 0 && book.totalRating.recommended != 0  ) { %>
-                    <span> Positive </span>
+                    <span> Completely Positive </span>
                     <% } %>
                   
                     <% if ( book.totalRating.notRecommended != 0 && book.totalRating.recommended == 0  ) { %>
-                      <span> Positive </span>
+                      <span> Completely Negative </span>
                     <% } %>
                       
                     <% if ( book.totalRating.notRecommended == 0 && book.totalRating.recommended == 0  ) { %>
