@@ -29,7 +29,7 @@
                 <img
                   alt="ThinkJavabook19753"
                   src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
-                  class="app-component-think-javabook1"
+                  class="app-component-think-javabook1" 
                 />
                 <div class="app-component-container1">
                   <span class="app-component-text">
@@ -45,23 +45,29 @@
                   </span>
                   <span class="app-component-text07">
                     <span>Issued date:</span>
-                    <span class="app-component-text09">03/04/2023</span>
+                    <span class="app-component-text09">
+                      <%= borrowedList[0].leaseDate.toDateString() %>
+                    </span>
                   </span>
                   <span class="app-component-text10">
                     <span>Return date:</span>
-                    <span class="app-component-text12">10/04/2023</span>
+                    <span class="app-component-text12">
+                      <%= borrowedList[0].returnDate.toDateString() %>
+                    </span>
                   </span>
                   <span class="app-component-text13">
                     <span class="app-component-text14">Overdue:</span>
-                    <span class="app-component-text15">3 day(s)</span>
+                    <span class="app-component-text15">
+                      <%= borrowedList[0].dueDate.toDateString() %>
+                    </span>
                   </span>
                 </div>
               </div>
               <div class = "dropdown" >
                 <button  class="bookcart-view-all-button button" onclick="paymentFunction()">Pay Overdue</button>
                 <div class = "dropdown-content-1" id ="paymentChoice"  >
-                  <a href="/payCash">by Cash</a>
-                  <a href="/payOnline">by Credit card</a>
+                  <a href="/payCash/<%= borrowedList[0]._id %>">by Cash</a>
+                  <a href="/payOnline/<%= borrowedList[0]._id %>">by Credit card</a>
                 </div>
               </div>
             </div>
