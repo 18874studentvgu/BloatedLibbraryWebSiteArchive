@@ -476,9 +476,9 @@
   width: 210px;
   height: 45px;
   font-size: 24px;
-  align-self: flex-end;
+  align-self: flex-start;
   font-style: normal;
-  margin-top: var(--dl-space-space-unit);
+  margin-top: var(--dl-space-space-sixunit);
   text-align: center;
   transition: 0.3s;
   font-family: Montserrat;
@@ -514,30 +514,6 @@
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
-}
-.bookcart-view-all-button1 {
-  color: rgb(255, 255, 255);
-  width: 210px;
-  height: 45px;
-  font-size: 24px;
-  align-self: flex-end;
-  font-style: normal;
-  margin-top: var(--dl-space-space-unit);
-  text-align: center;
-  transition: 0.3s;
-  font-family: Montserrat;
-  font-weight: 700;
-  border-width: 0px;
-  border-radius: 9px;
-  text-transform: capitalize;
-  text-decoration: none;
-  background-color: rgb(219, 129, 45);
-}
-.bookcart-view-all-button1:hover {
-  box-shadow: 5px 5px 10px 0px #aaa8a8;
-}
-.bookcart-view-all-button1:active {
-  background-color: #985010;
 }
 .bookcart-container07 {
   width: 1200px;

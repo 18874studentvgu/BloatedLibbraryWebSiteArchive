@@ -1,4 +1,4 @@
-const BorrowedBookSchema = require('../models/BorrowedBook')
+const BorrowedBookSchema = require('../models/BorrowRecord')
 module.exports=(req,res) =>{
     BorrowedBookSchema.findByIdAndUpdate(req.session.userId, { paymentAmount : 0 })
     .then((remain)=>{
