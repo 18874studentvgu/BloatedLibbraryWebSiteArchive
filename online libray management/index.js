@@ -56,6 +56,7 @@ const adminDeleteBook = require('./controllers/admin/deleteBook')
 const adminWarnDeleteUser = require('./controllers/admin/warnDeleteUser')
 const adminDeleteUser = require('./controllers/admin/deleteUser')
 
+const updateImage = require('./controllers/updateAccountImage')
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -70,6 +71,7 @@ console.log(userid)
 
 //cookies
 app.use(fileUpload())
+app.use(express.json())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true})) 
 mongoose.connect('mongodb://0.0.0.0:27017/web', {useNewUrlParser: true}) 
@@ -80,8 +82,8 @@ app.set('view engine','ejs')
 //real time update
 io.on("connection", function(socket){
     //console.log("user connected");
-    socket.on("new_comment", function(reviews, userName, body, rating){
-        io.emit("new_comment", reviews, userName, body, rating);
+    socket.on("new_comment", function(reviews, userName, body, rating, title){
+        io.emit("new_comment", reviews, userName, body, rating, title);
     })
 
     socket.on("new_button", function(button){
@@ -188,6 +190,9 @@ app.get('/user_profile_setting', userProfileSettingController)
 
 //update account
 app.post('/users/change', updateAccount)
+
+//update image
+app.post('/users/changeImage', updateImage)
 
 //logout
 app.get('/auth/logout', logout)

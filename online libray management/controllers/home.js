@@ -1,5 +1,6 @@
 const WishList = require('../models/WishList')
 const Book = require('../models/Book')
+const Book1 = require('../models/Book')
 const { promises } = require('nodemailer/lib/xoauth2')
 var mongoose = require('mongoose');
 
@@ -9,12 +10,12 @@ module.exports = (req, response) => {
         var objectId = new mongoose.Types.ObjectId(id);
                console.log(id)
                mongoose.set('debug',true)
-               Promise.all ([ Book.find({}), WishList.find({userID: objectId.toString()})])
-                .then (([book, wishlist]) => {
+               Promise.all ([ Book.find({}).limit(8), WishList.find({userID: objectId.toString()}), Book1.find().limit(1)])
+                .then (([book, wishlist, book1]) => {
                         
                        console.log(wishlist)
-                       console.log(book)
-
+                       //console.log(book)
+                       console.log(book1)
                                 
                        if(wishlist.length != 0 ) {
                                 idk = "yes"
@@ -28,7 +29,8 @@ module.exports = (req, response) => {
                                         wishlists: wishlist,
                                         idk: idk,
                                         book: book,
-                                        a: a
+                                        a: a,
+                                        book1: book1
                                         
                                 })  
                         } else {
@@ -38,8 +40,8 @@ module.exports = (req, response) => {
                                 {
                                         wishlists: wishlist,
                                         idk: idk,
-                                        book: book
-                                        
+                                        book: book,
+                                        book1: book1
                                 })  
                         }
                        

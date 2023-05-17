@@ -3,8 +3,8 @@
       <div class="userprofilesetting-group13">
         <img
           alt="image5884"
-          src="/playground_assets/image5884-bghq-200h.png"
           class="userprofilesetting-image5"
+          src="<%= user.iconLink %>""
         />
       </div>
       <div class="userprofilesetting-nanme">
@@ -32,6 +32,12 @@
         <%  } %>
         
       <% if(!loggedInAdmin) { %>
+
+        <a href="/user_profile" class="userprofilesetting-navlink07">
+          <h2 class="userprofilesetting-text10"><span>User Profile</span></h2>
+        </a>
+
+
         <a href="bookcart.html" class="userprofilesetting-navlink07">
           <h2 class="userprofilesetting-text10"><span>Books</span></h2>
         </a>

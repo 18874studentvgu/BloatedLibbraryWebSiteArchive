@@ -7,6 +7,7 @@ $('#review').submit(function(e){
    var userID = document.getElementById('writtenBy.userID').value; 
    var body = document.getElementById('body').value; 
    var rating = document.getElementById('rating').value;
+   var title = document.getElementById('title').value;
    e.preventDefault();
     $.ajax({
         url: "/users/review",
@@ -14,7 +15,7 @@ $('#review').submit(function(e){
         data : formData,
         success: function(respond){
             formData._id = respond._id;
-            socket.emit("new_comment", formData, userName, body, rating);
+            socket.emit("new_comment", formData, userName, body, rating, title);
             alert(respond.text);
             console.log("hi")
         }
@@ -22,14 +23,18 @@ $('#review').submit(function(e){
     return false;
 }); 
 
-socket.on("new_comment",function(reviews, userName, body, rating){
+socket.on("new_comment",function(reviews, userName, body, rating, title){
 
     const d = new Date();
     let text = d.toDateString();
     var html = '';
     html += '<div class="book-info-a-comment">';
     html += ' <div class="book-info-group13">';
-    html += '<img alt="image56170" src="/playground_assets/image56170-e9ep-200h.png" class="book-info-image5"/>';
+    html += '<img alt="image56170" src=" ';
+
+    html += title;
+    
+    html += ' " class="book-info-image5"/>';
     html += '  <h3 class="book-info-text070">';
     html += ' <span class="book-info-text071">';
     html +=  userName ;

@@ -354,6 +354,7 @@
   margin-bottom: 5%;
   justify-content: center;
   background-color: rgba(219, 129, 45, 1);
+  flex-direction: column;
 }
 .userprofilesetting-form {
   width: 100%;

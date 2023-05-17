@@ -9,7 +9,7 @@ const UserSchema = new mongoose.Schema({
     },
     iconLink: {
         type: String,
-        default: "" /*link to defaut profile picture here*/
+        default: "/playground_assets/image5884-bghq-200h.png" /*link to defaut profile picture here*/
     },
     email: {
         type: String,
