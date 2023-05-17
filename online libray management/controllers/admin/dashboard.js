@@ -3,9 +3,11 @@ const Books = require("../../models/Book.js");
 
 var mysort = { updatedAt: -1 };
 module.exports = (request, response) => {
-    Promise.all([
+    Promise.all
+    ([
         Users.find({}).sort(mysort), 
-        Books.find({}).sort(mysort)])
+        Books.find({}).sort(mysort)
+    ])
     .then ( ([usersDoc, booksDoc]) => {
         var totalBorrowed = 0;
         for (var i = 0; i < usersDoc.length; i++)

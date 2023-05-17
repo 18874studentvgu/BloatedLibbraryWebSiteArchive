@@ -1790,7 +1790,7 @@
 .home-info {
   flex: 0 0 auto;
   width: 683px;
-  height: 584px;
+  height: a;
   display: flex;
   position: relative;
   align-self: center;
