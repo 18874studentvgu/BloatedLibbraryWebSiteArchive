@@ -233,7 +233,7 @@
           </div>
           <div class="book-info-review">
             <span class="book-info-text066"><span>Review</span></span>
-            <% if(loggedInAdmin || loggedIn) { %>
+            <% if(loggedIn) { %>
             <form  method="POST" id="review" name ="review" class="book-info-form">
               <input
                 type="text"
@@ -276,7 +276,7 @@
               name="title"
               id="title"
               class="book-info-textinput input"
-              value="<%= user.iconLink %>"
+              value="<%= user[0].iconLink %>"
               />
 
               <button id="like" type="submit" class="book-info-button3 button">
