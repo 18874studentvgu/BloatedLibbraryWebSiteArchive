@@ -14,7 +14,6 @@ module.exports = (req, response) => {
                 .then (([book, wishlist, book1]) => {
                         
                        console.log(wishlist)
-                       //console.log(book)
                        console.log(book1)
                                 
                        if(wishlist.length != 0 ) {

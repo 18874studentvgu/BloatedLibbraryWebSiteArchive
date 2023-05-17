@@ -44,7 +44,7 @@ global.loggedIn = null;
 global.user1= null;
 global.loggedInAdmin= null;
 
-
+//
 global.userid = null;
 console.log(userid)
 

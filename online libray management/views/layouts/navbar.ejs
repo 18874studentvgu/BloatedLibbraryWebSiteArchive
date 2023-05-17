@@ -22,7 +22,7 @@
       <img alt="magnifyingglass11955" src="/playground_assets/magnifyingglass11955-xoij-200h.png"
         class="home-magnifyingglass1" />
     </a>
-    <% if(!loggedIn) { %>
+    <% if(!loggedIn && !loggedInAdmin) { %>
     <div class = "dropdown" >
       <button  class="home-navlink5 button" onclick="myFunction()">LOGIN</button>
       <div class = "dropdown-content" id ="myDropdown"  >
@@ -31,9 +31,11 @@
       </div>
     </div>
     <%  } %>
-    <% if(loggedIn) { %>
+    <% if(loggedIn || loggedInAdmin) { %>
       <a  href="/user_profile" class="home-navlink5 button">Hi <%= user1 %></a>
       <%  } %>
+
+     
   </div>
 </div>
 
