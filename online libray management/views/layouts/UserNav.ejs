@@ -1,11 +1,21 @@
 <div class="userprofilesetting-container02">
     <div class="userprofilesetting-userchoice">
       <div class="userprofilesetting-group13">
+       <% if (!loggedInAdmin) { %> 
         <img
           alt="image5884"
           class="userprofilesetting-image5"
-          src="<%= user.iconLink %>""
+          src="<%= user.iconLink %>"
         />
+        <%  } %>
+
+        <% if (loggedInAdmin) { %> 
+          <img
+            alt="image5884"
+            class="userprofilesetting-image5"
+            src="/playground_assets/image5884-bghq-200h.png"
+          />
+          <%  } %>
       </div>
       <div class="userprofilesetting-nanme">
         <h2 class="userprofilesetting-text06">
