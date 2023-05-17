@@ -16,6 +16,7 @@ module.exports=(req,res)=>{
                     console.log('sucess')
                     console.log(user1)
                     req.session.userId = user._id
+                    loggedIn = req.session.userId
                     //console.log("Successful")
                     res.redirect('/')
                    

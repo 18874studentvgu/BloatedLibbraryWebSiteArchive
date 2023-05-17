@@ -60,10 +60,6 @@ const updateImage = require('./controllers/updateAccountImage')
 global.loggedIn = null;
 global.user1= null;
 global.loggedInAdmin= null;
-app.use('*', (req, res, next) => {    
-    loggedIn = req.session.userId;
-    next()
-});
 
 global.userid = null;
 console.log(userid)

@@ -7,25 +7,29 @@ module.exports = (req, response) => {
     if (id1.match(/^[0-9a-fA-F]{24}$/)) {
     // Yes, it's a valid ObjectId, proceed with `findById` call.
     if(loggedIn) {
-    Promise.all ([ Book.findById(req.params.id), Review.find({}), User.findOne({username : username})]) 
+    Promise.all ([ Book.findById(req.params.id), Review.find({}), User.find({username : username}).limit(1)]) 
     .then(([book, reviews, user])=>{
         //this is for when there are reviews
-        var id = "yes"
-        console.log("have reviews")
-        console.log(book.title)
-        console.log(user.iconLink)
-        response.render('book-info',{
-            reviews:reviews,
-            book:book,
-            id: id,
-            user: user
-        });
+        
+            //if(!user) {console.log("no user");throw new Error('UwU user not logged in')}
+            var id = "yes"
+            console.log("have reviews")
+            console.log(book.name)
+            response.render('book-info',{
+                reviews:reviews,
+                book:book,
+                id: id,
+                user: user
+            });
+        
+        
     })
-    .catch((error, book ,reviews,) => { 
+    .catch((error, book) => { 
+        //console.log("no bro")
+        console.log(book.name)
         //if there are no reviews
         id = "no"
         response.render('book-info',{
-            reviews:reviews,
             book: book,
             id: id
         });
