@@ -37,12 +37,10 @@
                 <h2 class="home-text009"><span>BOOK OF THE WEEK</span></h2>
                 <h1 class="home-text011">
                   <span>
-                    <span>ALAN TURING:</span>
-                    <br />
-                    <span>THE ENIGMA</span>
+                    <span><%= book1[0].name %></span>
                   </span>
                 </h1>
-                <h2 class="home-text016"><span>Andrew Hodges</span></h2>
+                <h2 class="home-text016"><span><%= book1[0].author %></span></h2>
                 <p class="home-text018">
                   <span>
                     Listed as one of the essential 50 books of all time in The
@@ -92,7 +90,7 @@
                                         <% } %>
                   
                   
-                  <a href="/book-info" class="home-text020">
+                  <a href="/book-info/<%= book1[0]._id %>" class="home-text020">
                     <span>View book</span>
                   </a>
                 </div>
