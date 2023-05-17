@@ -54,7 +54,9 @@
                       <td class="admin-user-board-text021"><%= usersList[i].username %></td>
                       <td class="admin-user-board-text022"><%= usersList[i].userInfo.age %></td>
                       <td class="admin-user-board-text024"><%= usersList[i].email %></td>
-                      <td class="admin-user-board-text026"><%= usersList[i].createdAt.toDateString() %></td>
+                      <td class="admin-user-board-text026">
+                        <%= usersList[i].createdAt.toDateString() %>
+                      </td>
                       <td class="admin-user-board-text029"><%= usersList[i].booksBorrowing.length %></td>
                       <td>
                         <a href="/adminUsersList/edit/<%= usersList[i]._id %>">

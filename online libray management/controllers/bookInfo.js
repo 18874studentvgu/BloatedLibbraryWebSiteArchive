@@ -1,7 +1,6 @@
 const Review = require("../models/Review");
 const Book = require("../models/Book");
 const User = require('../models/User')
-var mongoose = require('mongoose');
 module.exports = (req, response) => {
     var id1 = req.params.id
     var username = user1
@@ -13,6 +12,7 @@ module.exports = (req, response) => {
         //this is for when there are reviews
         var id = "yes"
         console.log("have reviews")
+        console.log(book.title)
         console.log(user.iconLink)
         response.render('book-info',{
             reviews:reviews,

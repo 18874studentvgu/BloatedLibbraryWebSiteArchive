@@ -3,14 +3,20 @@ const Books = require("../../models/Book.js");
 
 var mysort = { updatedAt: -1 };
 module.exports = (request, response) => {
-    var query = 
-    [
-        users = Users.find({}).sort(mysort),
-        books = Books.find({}).sort(mysort),
-    ];
-    Promise.all(query)
-    .then ( (query) => {
-        response.render('adminDashboard', { usersList : query[0], booksList : query[1] });
+    Promise.all([
+        Users.find({}).sort(mysort), 
+        Books.find({}).sort(mysort)])
+    .then ( ([usersDoc, booksDoc]) => {
+        var totalBorrowed = 0;
+        for (var i = 0; i < usersDoc.length; i++)
+        {
+            totalBorrowed += usersDoc[i].booksBorrowing.length;
+        }
+        response.render('adminDashboard', { 
+            usersList: usersDoc,
+            booksList: booksDoc, 
+            totalBorrowed
+        });
         console.log(request.session);
     })
     .catch ( (error) => {
