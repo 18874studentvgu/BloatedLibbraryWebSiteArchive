@@ -19,7 +19,7 @@
             </h1>
             <div class="home-search-bar">
               <a
-                href="search-filter-book.html"
+                href="/searchFilterBook"
                 class="home-add-to-cart-button button"
               >
                 OneSEARCH
@@ -27,8 +27,54 @@
               <input
                 type="text"
                 placeholder="All resources in a single search"
+                id="search-box"
+                onkeyup="sendData(this)"
                 class="home-search-bar1 input"
               />
+              <section id="searchResults">
+
+              </section>
+
+              <script>
+                function sendData(e){
+                  const searchResults = document.getElementById('searchResults')
+                  let match = e.value.match(/^[a-zA-Z ]*/);
+                  let match2 = e.value.match(/\s*/);
+                  if(match2[0] === e.value){
+                    searchResults.innerHTML = '';
+                    return;
+                  }
+                  if(match[0] === e.value){
+                    fetch('getBooks',{
+                    method:'POST',
+                    headers: {'Content-Type':'application/json'},
+                    body : JSON.stringify({payload: e.value})
+                  }).then(res => res.json()).then(data =>{
+                    let payload = data.payload;
+                    searchResults.innerHTML = '';
+                    if(payload.length < 1){
+                      searchResults.innerHTML = '<p>Sorry. Nothing Found.</p>';
+                      return;
+                    }
+                    payload.forEach((item,index)=>{
+                      if(index>0) searchResults.innerHTML += '<hr>';
+                      searchResults.innerHTML += `<p>${item.name}</p>`;
+                    });
+                   
+                  });
+                  return;
+                  }
+                  searchResults.innerHTML = '';
+                  
+                  
+                }
+              </script>
+              <script>
+              // assuming we have a variable called "results" that contains the search results
+              if (results.length > 0) {
+              document.getElementById("searchResults").classList.add("hasResults");
+                }
+              </script>
             </div>
           </div>
           <main class="home-main-content">

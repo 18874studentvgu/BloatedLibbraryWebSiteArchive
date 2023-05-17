@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
+const Book = require('./models/Book')
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
@@ -36,26 +37,14 @@ const bookInfoController=require('./controllers/bookInfo')
 const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
 const updateAccount = require('./controllers/updateAccount')
-const borrow = require('./controllers/BorrowBook')
-const adminDashboard = require('./controllers/admin/dashboard')
-const adminUserDashboard = require('./controllers/admin/usersList')
-const adminBookDashboard = require('./controllers/admin/booksList')
-const adminAddBook = require('./controllers/admin/addBook')
-const adminAddUser = require('./controllers/admin/addUser')
-const adminStoreBook = require('./controllers/admin/storeBook')
-const adminStoreUser = require('./controllers/admin/storeUser')
-const adminGetBook = require('./controllers/admin/getBook')
-const adminGetUser = require('./controllers/admin/getUser')
-const adminGetEditBook = require('./controllers/admin/getEditBook')
-const adminStoreEditBook = require('./controllers/admin/storeEditBook')
-const adminGetEditUser = require('./controllers/admin/getEditUser')
-const adminStoreEditUser = require('./controllers/admin/storeEditUser')
-const adminLoggedInCheck = require('./middleware/adminValidationMiddleware')
-const adminWarnDeleteBook = require('./controllers/admin/warnDeleteBook')
-const adminDeleteBook = require('./controllers/admin/deleteBook')
-const adminWarnDeleteUser = require('./controllers/admin/warnDeleteUser')
-const adminDeleteUser = require('./controllers/admin/deleteUser')
-const updateImage = require('./controllers/updateAccountImage')
+const searchFilterBook = require('./controllers/searchFilterBook')
+const payCash = require('./controllers/payCash')
+const payOnline = require('./controllers/payOnline')
+const payWaiting = require('./controllers/payWaiting')
+const paySuccess = require('./controllers/paySuccess')
+const storePaySuccess = require('./controllers/storePaySuccess')
+const bookcart = require('./controllers/bookcart')
+
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -202,8 +191,35 @@ app.post('/users/review', storeReviewController)
 //add to wishlist
 app.post('/users/wishlist', wishlist)
 
-//borrow 
-app.post('/users/borrow', borrow)
+// search filter book
+app.get('/searchFilterBook', searchFilterBook)
+
+// pay cash
+app.get('/payCash/:id', payCash)
+
+// pay online
+app.get('/payOnline/:id', payOnline)
+
+// pay waiting
+app.get('/payWaiting/:id', payWaiting)
+
+// pay success
+app.get('/paySuccess/:id', paySuccess)
+
+// book cart
+app.get('/bookcart', bookcart)
+
+// get book for searching
+app.post('/getBooks',async (req,res)=>{
+    let payload = req.body.payload.trim();
+    let search = await Book.find({name :{$regex : new RegExp('^'+payload+'.*','i')}}).exec();
+    //Limit Search Results to 10
+    search = search.slice(0,10);
+    res.send({payload: search});
+})
+
+// store pay success
+app.post('/storePaySuccess/:id', storePaySuccess); 
 
 //admin dashboard
 app.get('/adminDashboard', adminDashboard)
