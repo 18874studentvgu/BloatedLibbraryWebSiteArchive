@@ -200,7 +200,7 @@
 .admin-container {
   width: 100%;
   display: flex;
-  overflow: auto;
+  /* overflow: auto; */
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
@@ -359,7 +359,7 @@
   display: flex;
   align-self: flex-start;
   align-items: flex-start;
-  margin-left: 7%;
+  margin-left: 4%;
   justify-content: undefined;
 }
 .admin-totalusers {
@@ -563,7 +563,7 @@
 }
 .admin-admindashboard {
   width: 100%;
-  height: 1500px;
+  height: auto;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -1038,14 +1038,14 @@
 .admin-container06 {
   flex: 0 0 auto;
   width: auto;
-  height: 600px;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
 .admin-lastactivetable {
-  width: 600px;
-  height: 600px;
+  width: auto;
+  height: auto;
   display: flex;
   align-self: flex-start;
   box-sizing: border-box;
@@ -1664,7 +1664,8 @@
   font-size: 24px;
   align-self: flex-end;
   font-style: normal;
-  margin-top: var(--dl-space-space-unit);
+  margin-top: 5%;
+  margin-bottom: 5%;
   text-align: center;
   transition: 0.3s;
   font-family: Montserrat;
@@ -1682,15 +1683,15 @@
   background-color: #985010;
 }
 .admin-newbooktable {
-  width: 900px;
-  height: 600px;
+  width: auto;
+  height: auto;
   display: flex;
-  align-self: flex-start;
+  align-self: center;
   box-sizing: border-box;
   margin-top: 10%;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 1;
-  margin-left: 7%;
+  margin-left: 25%;
   padding-top: 0;
   border-color: transparent;
   border-style: none;
@@ -2526,9 +2527,10 @@
   width: 210px;
   height: 45px;
   font-size: 24px;
-  align-self: flex-end;
+  align-self: center;
   font-style: normal;
-  margin-top: var(--dl-space-space-unit);
+  margin-top: 5%;
+  margin-bottom: 5%;
   text-align: center;
   transition: 0.3s;
   font-family: Montserrat;

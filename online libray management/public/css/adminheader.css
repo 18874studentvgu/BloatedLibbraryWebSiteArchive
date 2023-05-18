@@ -1,5 +1,5 @@
 .adminheader-adminheader {
-  width: 1500px;
+  width: 100%;
   height: 150px;
   display: flex;
   position: relative;
@@ -8,14 +8,14 @@
   border-color: transparent;
 }
 .adminheader-adminheader1 {
-  width: 100%;
+  width: 1647px;
   height: 150px;
   display: flex;
   padding: 0;
   align-self: auto;
   box-sizing: border-box;
   align-items: flex-start;
-  /* position: relative; */
+  position: relative;
   flex-shrink: 1;
   border-color: transparent;
   border-style: none;

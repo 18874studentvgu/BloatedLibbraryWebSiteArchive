@@ -201,7 +201,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  /* overflow: auto; */
+  overflow: auto;
   /* min-height: 100vh; */
   align-items: center;
   flex-direction: column;
@@ -382,9 +382,9 @@
 .admin-user-board-add-new-user-button {
   color: rgb(255, 255, 255);
   top: 275px;
-  position: absolute;
+  /* position: absolute; */
   width: 250px;
-  height: 40px;
+  /* height: 40px; */
   font-size: 20px;
   align-self: center;
   font-style: normal;
