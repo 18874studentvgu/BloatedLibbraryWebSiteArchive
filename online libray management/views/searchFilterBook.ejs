@@ -110,50 +110,29 @@
                     bookTitle.innerText = payload[0].title; 
                     bookAuthor.innerText = payload[0].author;                   
                     bookHref.setAttribute('href', payload[0].url);
-                    bookTitle1.innerText = payload[1].name;  
+                    bookTitle1.innerText = payload[1].title;  
                     bookAuthor1.innerText = payload[1].author;
-                    bookTitle2.innerText = payload[2].name;  
+                    bookHref1.setAttribute('href', payload[1].url);
+                    bookTitle2.innerText = payload[2].title;  
                     bookAuthor2.innerText = payload[2].author; 
-                    bookTitle3.innerText = payload[3].name;  
+                    bookHref2.setAttribute('href', payload[2].url);
+                    bookTitle3.innerText = payload[3].title;  
                     bookAuthor3.innerText = payload[3].author; 
-                    bookTitle4.innerText = payload[4].name;  
-                    bookAuthor4.innerText = payload[4].author;    
-                    bookTitle5.innerText = payload[5].name;  
-                    bookAuthor5.innerText = payload[5].author;     
+                    bookHref3.setAttribute('href', payload[3].url);
+                    bookTitle4.innerText = payload[4].title;  
+                    bookAuthor4.innerText = payload[4].author; 
+                    bookHref4.setAttribute('href', payload[4].url);   
+                    bookTitle5.innerText = payload[5].title;  
+                    bookAuthor5.innerText = payload[5].author;  
+                    bookHref5.setAttribute('href', payload[5].url);   
                  
                           
                     
                     payload.forEach((item,index)=>{
-                      if(index === 0) {
-                  //     bookTitle.innerText = item.name;
+                      if(index === 0) {                 
                         searchResults.innerHTML = `<p><a href="/searchFilterBook" >${item.title}</a></p>`;         
                         document.getElementById('bookAuthor').textContent = 'Author : '+item.author; 
-                 
-                        
-                     }    /*   else if (index === 2) {
-                        bookTitle1.src = item.name;
-                        searchResults.innerHTML += `<p>${item.name}</a></p>`;
-                        document.getElementById('bookAuthor2').textContent = 'Author : '+item.author;                           
-                        
-                      } 
-                      else if (index === 3) {
-                        bookTitle1.src = item.name;
-                        searchResults.innerHTML += <p><a href="${item.url}" target="_blank" onclick="handleBookSelection(event)">${item.name}</a></p>;
-                        document.getElementById('bookAuthor3').textContent = 'Author : '+item.author;                           
-                        
-                      } 
-                      else if (index === 4) {
-                        bookTitle1.src = item.name;
-                        searchResults.innerHTML += <p><a href="${item.url}" target="_blank" onclick="handleBookSelection(event)">${item.name}</a></p>;
-                        document.getElementById('bookAuthor4').textContent = 'Author : '+item.author;                           
-                        
-                      } 
-                      else if (index === 5) {
-                        bookTitle1.src = item.name;
-                        searchResults.innerHTML += <p><a href="${item.url}" target="_blank" onclick="handleBookSelection(event)">${item.name}</a></p>;
-                        document.getElementById('bookAuthor5').textContent = 'Author : '+item.author;                           
-                        
-                      } */
+                    } 
                       
                     });
                      
@@ -206,8 +185,9 @@
                    
                     </div>                   
                   </div>
-                  </a>   
-                  <div class="search-filter-book-contianer2">
+                  </a>
+                  <a id="bookHref2" href="">    
+                  <div class="search-filter-book-contianer">
                     <img 
                         id="bookImage2"                                             
                         src='/playground_assets/red.png'
@@ -222,7 +202,9 @@
                     </h2>
                   </div>
                 </div> 
-                <div class="search-filter-book-contianer2">
+                </a>
+                <a id="bookHref3" href="">
+                <div class="search-filter-book-contianer">
                   <img 
                       id="bookImage3"                                             
                       src='/playground_assets/orange.png'
@@ -236,8 +218,10 @@
                       <span></span>
                   </h2>
                 </div>
-              </div>  
-              <div class="search-filter-book-contianer2">
+              </div>
+              </a>
+              <a id="bookHref4" href=""> 
+              <div class="search-filter-book-contianer">
                 <img 
                     id="bookImage4"                                             
                     src='/playground_assets/black.png'
@@ -252,7 +236,9 @@
                 </h2>
               </div>
             </div>
-            <div class="search-filter-book-contianer2">
+            </a> 
+            <a id="bookHref5" href=""> 
+            <div class="search-filter-book-contianer">
               <img 
                   id="bookImage5"                                             
                   src='/playground_assets/gray.png'
@@ -266,7 +252,8 @@
                   <span></span>
               </h2>
             </div>
-          </div>        
+          </div>
+          </a>        
                 
                     <!--footer-->
                     <%- include('layouts/footer'); -%>
