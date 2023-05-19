@@ -8,7 +8,7 @@ module.exports = (req, response) => {
     Promise.all
     ([
         Users.findById(req.session.userId), 
-        BorrowRecords.find({userID : req.session.userId}),
+        BorrowRecords.find({userID : objectId.toString()}),
         WishList.find({userID: objectId.toString()})
     ])
     .then( ([user, record, wishlist]) => {
