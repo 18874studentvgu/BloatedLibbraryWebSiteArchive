@@ -89,8 +89,7 @@
                       return;
                       }
                     let bookTitle   = document.getElementById('bookTitle');
-                    let bookAuthor  = document.getElementById('bookAuthor'); 
-                    let bookURL     = document.getElementById('bookURL');                   
+                    let bookAuthor  = document.getElementById('bookAuthor');                              
                     let bookTitle1  = document.getElementById('bookTitle1');
                     let bookAuthor1 = document.getElementById('bookAuthor1');
                     let bookTitle2  = document.getElementById('bookTitle2');
@@ -101,11 +100,10 @@
                     let bookAuthor4 = document.getElementById('bookAuthor4');
                     let bookTitle5  = document.getElementById('bookTitle5');
                     let bookAuthor5 = document.getElementById('bookAuthor5');
-                    let bookHref = document.getElementById('bookHref');
+           //         let bookHref = document.getElementById('bookHref');
                     bookTitle.innerText = payload[0].name; 
-                    bookAuthor.innerText = payload[0].author;
-                    bookHref = payload[0].url;
-                    bookHref.getAttribute('href') = payload[0].url; 
+                    bookAuthor.innerText = payload[0].author;                   
+           //         bookHref.setAttribute('href', payload[0].url);
                     bookTitle1.innerText = payload[1].name;  
                     bookAuthor1.innerText = payload[1].author;
                     bookTitle2.innerText = payload[2].name;  
@@ -121,17 +119,12 @@
                     
                     payload.forEach((item,index)=>{
                       if(index === 0) {
-                  //      bookTitle.innerText = item.name;
+                  //     bookTitle.innerText = item.name;
                         searchResults.innerHTML = `<p><a href="/searchFilterBook" >${item.name}</a></p>`;         
                         document.getElementById('bookAuthor').textContent = 'Author : '+item.author; 
-                  //      document.getElementById('bookURL').getAttribute('href') = item.url; 
+                 
                         
-                     }  else if (index === 1) {
-                        bookTitle1.src = item.name;
-                        searchResults.innerHTML += `<p>${item.name}</a></p>`;
-                        document.getElementById('bookAuthor1').textContent = 'Author : '+item.author;                           
-                         
-                      }  /*   else if (index === 2) {
+                     }    /*   else if (index === 2) {
                         bookTitle1.src = item.name;
                         searchResults.innerHTML += `<p>${item.name}</a></p>`;
                         document.getElementById('bookAuthor2').textContent = 'Author : '+item.author;                           
@@ -164,6 +157,7 @@
                     searchResults.innerHTML = '';
                     
                 } 
+              
                
 
                   
@@ -188,7 +182,8 @@
                   
                 </div>
                 </a>
-                  <div class="search-filter-book-contianer1">
+                  <a id="bookHref1" href=""> 
+                  <div class="search-filter-book-contianer  xdws1q">
                     <img 
                           id="bookImage1" 
                           alt="Image will be here ^^"                       
@@ -204,7 +199,8 @@
                      </h2>                  
                    
                     </div>                   
-                  </div>   
+                  </div>
+                  </a>   
                   <div class="search-filter-book-contianer2">
                     <img 
                         id="bookImage2"                                             
