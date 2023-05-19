@@ -70,7 +70,7 @@ const returnBook = require('./controllers/returnBook')
 global.loggedIn = null;
 global.user1= null;
 global.loggedInAdmin= null;
-
+global.bookid = null;
 //
 global.userid = null;
 console.log(userid)

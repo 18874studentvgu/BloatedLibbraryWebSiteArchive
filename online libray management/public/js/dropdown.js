@@ -47,13 +47,17 @@ window.onclick = function(event) {
 toggle between hiding and showing the dropdown content */
 function paymentFunction() {
   document.getElementById("paymentChoice").classList.toggle("show");
-  console.log("sucess")
+  bookid = document.querySelector('input[name="id"]:checked').value;
+  document.getElementById("help").href="/payCash/" + bookid + ""; 
+  document.getElementById("why").href="/payOnline/" + bookid + ""; 
+  
   }
   
   // Close the dropdown if the user clicks outside of it
   window.onclick = function(event) {
   if (!event.target.matches('.bookcart-view-all-button')) {
    var dropdowns = document.getElementsByClassName("dropdown-content-1");
+   
    var i;
    for (i = 0; i < dropdowns.length; i++) {
      var openDropdown = dropdowns[i];
