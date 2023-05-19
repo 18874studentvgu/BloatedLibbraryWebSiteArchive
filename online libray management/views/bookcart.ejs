@@ -19,6 +19,8 @@
             </div>
             <div class="bookcart-container05">
               <span class="bookcart-text15"><span>Overdue</span></span>
+            <% for (var r = 0; r < borrowedList.length; r++) { %>
+              <% if (borrowedList[r].hasReturned == false) { %>
               <div class="app-component-container">
                 <input
                   type="radio"
@@ -62,6 +64,8 @@
                   </span>
                 </div>
               </div>
+              <% }%>
+              <% } %>
               <div class = "dropdown" >
                 <button  class="bookcart-view-all-button button" onclick="paymentFunction()">Pay Overdue</button>
                 <div class = "dropdown-content-1" id ="paymentChoice"  >
@@ -69,18 +73,31 @@
                   <a href="/payOnline">by Credit card</a>
                 </div>
               </div>
+              
             </div>
 
             <div class="bookcart-container06">
               <span class="bookcart-text17">Issued</span>
 
             <% for (var j = 0; j < borrowedList.length; j++) { %>
+              <% if (borrowedList[j].hasReturned == false) { %>
+              <form action="/users/returnBook" method="POST">
               <div class="app-component-container">
                 <input
                   type="radio"
                   name="radio"
                   class="app-component-radiobutton"
                 />
+                <input
+                type="hidden"
+                name="ID"
+                id ="ID"
+                value= <%= borrowedList[j].bookID %>
+              />
+               
+                <% for (var k = 0; k < book.length; k++) { %>
+                  <%if(borrowedList[j].bookID.equals(book[k]._id ) ) {%>
+                    
                 <img
                   alt="ThinkJavabook19753"
                   src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
@@ -88,12 +105,12 @@
                 />
                 <div class="app-component-container1">
                   <span class="app-component-text">
-                    <span>Think Java</span>
+                    <span><%= book[k].name %></span>
                   </span>
                   <span class="app-component-text02">
                     <span>Author:</span>
                     <span class="app-component-text04">
-                      A. B. Downey, C. Mayfield
+                     <%= book[k].author %> 
                     </span>
                     <span></span>
                     <span></span>
@@ -106,27 +123,28 @@
                     <span>Return date:</span>
                     <span class="app-component-text12">10/04/2023</span>
                   </span>
-                  <span class="app-component-text13">
-                    <span class="app-component-text14">Overdue:</span>
-                    <span class="app-component-text15">3 day(s)</span>
-                  </span>
                 </div>
               </div>
-              <a
-                href="/user_profile"
-                id="viewAllUser"
+             
+              <button
+                type="submit"
                 class="bookcart-view-all-button button"
               >
                 Return book
-              </a>
-
+              </button>
+            
+                  <% break %>
+                  <% } %>
+                  <% } %>
+              </form>
+              <% } %>  
               <% } %>
             </div>
 
 
             <div class="bookcart-container07">
               <span class="bookcart-text18">Cart</span>
-            
+            <% if (idk == "yes") { %>
               <% for (var i = 0; i < a.length; i++) { %>
                <form action="/users/borrow2" method="POST" >
               <div class="app-component-container">
@@ -178,10 +196,7 @@
                     <span>Return date:</span>
                     <span class="app-component-text12">10/04/2023</span>
                   </span>
-                  <span class="app-component-text13">
-                    <span class="app-component-text14">Overdue:</span>
-                    <span class="app-component-text15">3 day(s)</span>
-                  </span>
+                  
                 </div>
               </div>
               <button
@@ -193,8 +208,9 @@
               </form>
 
               <% } %>
-             
-            
+             <% } %>
+             <% if (idk != "yes") { %>
+              <% } %>
             </div>
           </div>
         </div>

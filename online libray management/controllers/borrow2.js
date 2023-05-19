@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 module.exports=(req,res) =>{
     const id = req.session.userId;
     var objectId = new mongoose.Types.ObjectId(id);
-
+    console.log(req.body)
     let book = {
         'bookID': req.body.bookID,
     }

@@ -65,7 +65,7 @@ const payWaiting = require('./controllers/payWaiting')
 const paySuccess = require('./controllers/paySuccess')
 const storePaySuccess = require('./controllers/storePaySuccess')
 const bookcart = require('./controllers/bookcart')
-
+const returnBook = require('./controllers/returnBook')
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -153,6 +153,10 @@ app.post('/users/borrow', borrow)
 
 //borrow2
 app.post('/users/borrow2', borrow2)
+
+//return the book
+app.post('/users/returnBook', returnBook)
+
 
 //get
 app.get('/about', aboutController)
