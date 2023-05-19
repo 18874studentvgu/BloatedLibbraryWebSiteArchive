@@ -4,315 +4,268 @@
   <%- include('layouts/header'); -%>
 
     <body>
-      <div>
+      <div>       
         <link href="/css/searchFilterBook.css" rel="stylesheet" />
           <div class="search-filter-book-container">
             <div class="search-filter-book-filterbook">
-              <div class="search-filter-book-container01">
+              <div class="search-filter-book-container01" id="book_list">
                 <%- include('layouts/navbar'); -%>
-                  <div class="search-filter-book-container03">
-                    <section id = "book_list">
-                    <div class="search-filter-book-search-bar">
-                          <input
-                              type="text"
-                              placeholder=""
-                              class="search-filter-book-search-bar1 input"
-                          />
-                          <!-- <a
-                              href="searchFilterBook"
-                              class="search-filter-book-add-to-cart-button button"
-                          >   Search
-                          </a> -->
-                    </div>
-                    <div class="search-filter-book-container04">
-                      <span class="search-filter-book-text006">Result search books</span>
-                      <br>
-                      <div class="row">
-                        <div class="col-12@sm filters-group-wrap">
-                          <div class="filters-group">
-                            <label class="filter-label">Filter</label>
-                            <div class="btn-group filter-options">
-                              <button class="btn btn--primary" data-group="science">Science</button>
-                              <button class="btn btn--primary" data-group="novel">Novel</button>
-                              <button class="btn btn--primary" data-group="romantic">Romantic</button>
-                              <button class="btn btn--primary" data-group="fairy">Fairy Tale</button>
-                            </div>
-                          </div>
-                          <div class="search-filter-book-container05">
-                          </div>
-                          <fieldset class="filters-group">
-                            <legend class="filter-label">Sort</legend>
-                            <div class="btn-group sort-options">
-                              <label class="btn active">
-                                <input type="radio" name="sort-value" value="dom" checked /> Default
-                              </label>
-                              <label class="btn">
-                                <input type="radio" name="sort-value" value="title" /> Title
-                              </label>
-                              <label class="btn">
-                                <input type="radio" name="sort-value" value="authour" /> Authour
-                              </label>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </div>
-                    </section>
-                  </div>
-                    <div class="search-filter-book-contianer">
-                      <img
-                            alt="AlanTuringbook11711"
-                            src="/playground_assets/alanturingbook11711-kiai-300w.png"
-                            class="search-filter-book-alan-turingbook1"
-                      />
-                      <div class="search-filter-book-container06">
-                        <a href="book-info" class="search-filter-book-navlink06">
-                          <h1 class="search-filter-book-text009">
-                            ALAN TURING: THE ENIGMA
-                          </h1>
+                <div class="search-filter-book-container03">
+                  <div class="search-filter-book-search-bar">
+                        <input
+                            type="text"
+                            placeholder="Search for book you want"
+                            onkeyup="sendData(this)"
+                            class="search-filter-book-search-bar1 input"
+                        />
+                        <a
+                            href="searchFilterBook"
+                            class="search-filter-book-add-to-cart-button button"
+                        >   Search
                         </a>
-                        <h2 class="search-filter-book-text010">
-                            <span>Authour: </span>
-                            <label class="search-filter-book-text012">Andrew Hodges</label>
-                            <br class="search-filter-book-text013" />
-                            <span></span>
-                        </h2>
-                        <h2 class="search-filter-book-text015">
-                            <span>Published: </span>
-                            <span class="search-filter-book-text017">November 30, 2012</span>
-                            <span></span>
-                            <br class="search-filter-book-text019" />
-                            <span></span>
-                        </h2>
-                        <h2 class="search-filter-book-text021"><span>Category: </span></h2>
-                        <div class="search-filter-book-cat">
-                            <div class="search-filter-book-tag">
-                            <span class="search-filter-book-text023">
-                                <span>science</span>
-                            </span>
+                  </div>
+                 
+                    <div class="search-filter-book-container03">
+                      
+                      <div class="search-filter-book-container04">
+                        <span class="search-filter-book-text006">Result search books</span>
+                        <br>
+                        <div class="row">
+                          <div class="col-12@sm filters-group-wrap">
+                            <!--Filter button-->
+                            <div class="filters-group">
+                              <label class="filter-label">Filter</label>
+                              <div class="btn-group filter-options">
+                                <button class="btn btn--primary" data-group="science">Science</button>
+                                <button class="btn btn--primary" data-group="novel">Novel</button>
+                                <button class="btn btn--primary" data-group="romantic">Romantic</button>
+                                <button class="btn btn--primary" data-group="fairy">Fairy Tale</button>
+                              </div>
                             </div>
-                            <div class="search-filter-book-tag01">
-                            <span class="search-filter-book-text025">
-                                <span>novel</span>
-                            </span>
+                            <div class="search-filter-book-container05">
                             </div>
-                            <div class="search-filter-book-tag02">
-                            <span class="search-filter-book-text027">
-                                <span>story</span>
-                            </span>
-                            </div>
+                            <!-- Sort button -->
+                            <fieldset class="filters-group">
+                              <legend class="filter-label">Sort</legend>
+                              <div class="btn-group sort-options">
+                                <label class="btn active">
+                                  <input type="radio" name="sort-value" value="dom" checked /> Default
+                                </label>
+                                <label class="btn">
+                                  <input type="radio" name="sort-value" value="title" /> Title
+                                </label>
+                                <label class="btn">
+                                  <input type="radio" name="sort-value" value="authour" /> Authour
+                                </label>
+                              </div>
+                            </fieldset>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="search-filter-book-contianer1">
-                      <img
-                      alt="AlanTuringbook11711"
-                      src="/playground_assets/Harry Potter book cover.jpg"
-                      class="search-filter-book-alan-turingbook11"
-                      />
-                      <div class="search-filter-book-container07">
-                      <h1 class="search-filter-book-text029">Harry Potter</h1>
-                      <h2 class="search-filter-book-text030">
-                          <span>Authour: </span>
-                          <span class="search-filter-book-text032">J.K. Rowling</span>
-                          <br class="search-filter-book-text033" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text035">
-                          <span>Published: </span>
-                          <span class="search-filter-book-text037">June 12, 1997</span>
-                          <span></span>
-                          <br class="search-filter-book-text039" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text041"><span>Category: </span></h2>
-                      <div class="search-filter-book-cat1">
-                          <div class="search-filter-book-tag03">
-                          <span class="search-filter-book-text043">
-                              <span>travel</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag04">
-                          <span class="search-filter-book-text045">
-                              <span>non-fictional</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag05">
-                          <span class="search-filter-book-text047">
-                              <span>novel</span>
-                          </span>
-                          </div>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="search-filter-book-contianer2">
-                      <img
-                      alt="AlanTuringbook11711"
-                      src="/playground_assets/Atomic habits book cover.jpeg"
+                    </div>                 
+                  </div>
+                <section id="searchResults">
+
+                </section>             
+                <script>
+                  function sendData(e){
+                    const searchResults = document.getElementById('searchResults')
+                    let match = e.value.match(/^[a-zA-Z ]*/);
+                    let match2 = e.value.match(/\s*/);
+                    if(match2[0] === e.value){
+                      searchResults.innerHTML = '';
+                      return;
+                    }
+                    if(match[0] === e.value){
+                      fetch('getBooks',{
+                      method:'POST',
+                      headers: {'Content-Type':'application/json'},
+                      body : JSON.stringify({payload: e.value})
+                    }).then(res => res.json()).then(data =>{
+                      let payload = data.payload;
+                      searchResults.innerHTML = '';
+                      if(payload.length < 1){
+                        searchResults.innerHTML = '<p>Sorry. Nothing Found.</p>';
+                      return;
+                      }
+                    let bookTitle   = document.getElementById('bookTitle');
+                    let bookAuthor  = document.getElementById('bookAuthor'); 
+                    let bookURL     = document.getElementById('bookURL');                   
+                    let bookTitle1  = document.getElementById('bookTitle1');
+                    let bookAuthor1 = document.getElementById('bookAuthor1');
+                    let bookTitle2  = document.getElementById('bookTitle2');
+                    let bookAuthor2 = document.getElementById('bookAuthor2');
+                    let bookTitle3  = document.getElementById('bookTitle3');
+                    let bookAuthor3 = document.getElementById('bookAuthor3');
+                    let bookTitle4  = document.getElementById('bookTitle4');
+                    let bookAuthor4 = document.getElementById('bookAuthor4');
+                    let bookTitle5  = document.getElementById('bookTitle5');
+                    let bookAuthor5 = document.getElementById('bookAuthor5');
+                    let bookHref = document.getElementById('bookHref');
+                    bookTitle.innerText = payload[0].name; 
+                    bookAuthor.innerText = payload[0].author;
+                    bookHref = payload[0].url;
+                    bookHref.getAttribute('href') = payload[0].url; 
+                    bookTitle1.innerText = payload[1].name;  
+                    bookAuthor1.innerText = payload[1].author;
+                    bookTitle2.innerText = payload[2].name;  
+                    bookAuthor2.innerText = payload[2].author; 
+                    bookTitle3.innerText = payload[3].name;  
+                    bookAuthor3.innerText = payload[3].author; 
+                    bookTitle4.innerText = payload[4].name;  
+                    bookAuthor4.innerText = payload[4].author;    
+                    bookTitle5.innerText = payload[5].name;  
+                    bookAuthor5.innerText = payload[5].author;     
+                 //   let bookLink = document.getElementById('bookLink'); 
+                          
+                    
+                    payload.forEach((item,index)=>{
+                      if(index === 0) {
+                  //      bookTitle.innerText = item.name;
+                        searchResults.innerHTML = `<p><a href="/searchFilterBook" >${item.name}</a></p>`;         
+                        document.getElementById('bookAuthor').textContent = 'Author : '+item.author; 
+                  //      document.getElementById('bookURL').getAttribute('href') = item.url; 
+                        
+                     }  else if (index === 1) {
+                        bookTitle1.src = item.name;
+                        searchResults.innerHTML += `<p>${item.name}</a></p>`;
+                        document.getElementById('bookAuthor1').textContent = 'Author : '+item.author;                           
+                         
+                      }  /*   else if (index === 2) {
+                        bookTitle1.src = item.name;
+                        searchResults.innerHTML += `<p>${item.name}</a></p>`;
+                        document.getElementById('bookAuthor2').textContent = 'Author : '+item.author;                           
+                        
+                      } 
+                      else if (index === 3) {
+                        bookTitle1.src = item.name;
+                        searchResults.innerHTML += <p><a href="${item.url}" target="_blank" onclick="handleBookSelection(event)">${item.name}</a></p>;
+                        document.getElementById('bookAuthor3').textContent = 'Author : '+item.author;                           
+                        
+                      } 
+                      else if (index === 4) {
+                        bookTitle1.src = item.name;
+                        searchResults.innerHTML += <p><a href="${item.url}" target="_blank" onclick="handleBookSelection(event)">${item.name}</a></p>;
+                        document.getElementById('bookAuthor4').textContent = 'Author : '+item.author;                           
+                        
+                      } 
+                      else if (index === 5) {
+                        bookTitle1.src = item.name;
+                        searchResults.innerHTML += <p><a href="${item.url}" target="_blank" onclick="handleBookSelection(event)">${item.name}</a></p>;
+                        document.getElementById('bookAuthor5').textContent = 'Author : '+item.author;                           
+                        
+                      } */
+                      
+                    });
+                     
+                  });
+                  return;
+                  }
+                    searchResults.innerHTML = '';
+                    
+                } 
+               
+
+                  
+                </script>
+                 <a id="bookHref" href="">   
+                <div class="search-filter-book-contianer">                 
+                  <img 
+                        id="bookImage" 
+                        alt="Image will be here ^^"                       
+                        src='/playground_assets/yellow.png'
+                        class="search-filter-book-alan-turingbook1"
+                  />                  
+                  <div class="search-filter-book-container06">                                     
+                    <h1 class="search-filter-book-text009" id="bookTitle" ></h1>                                                                  
+                    <h2 class="search-filter-book-text010">                      
+                      <label class="search-filter-book-text012" id="bookAuthor"></label>
+                      <br class="search-filter-book-text013" />                      
+                      <span></span>
+                   </h2>                  
+                  
+                  </div>
+                  
+                </div>
+                </a>
+                  <div class="search-filter-book-contianer1">
+                    <img 
+                          id="bookImage1" 
+                          alt="Image will be here ^^"                       
+                          src='/playground_assets/pink.png'
+                          class="search-filter-book-alan-turingbook11"
+                    />
+                    <div class="search-filter-book-container07">
+                      <h1 class="search-filter-book-text029" id="bookTitle1"></h1>                                                  
+                      <h2 class="search-filter-book-text030">                      
+                        <label class="search-filter-book-text032" id="bookAuthor1"></label>
+                        <br class="search-filter-book-text033" />
+                        <span></span>
+                     </h2>                  
+                   
+                    </div>                   
+                  </div>   
+                  <div class="search-filter-book-contianer2">
+                    <img 
+                        id="bookImage2"                                             
+                        src='/playground_assets/red.png'
+                        class="search-filter-book-alan-turingbook12"
+                    />
+                    <div class="search-filter-book-container08">
+                      <h1 class="search-filter-book-text029" id="bookTitle2"></h1>  
+                    <h2 class="search-filter-book-text050">                          
+                        <label class="search-filter-book-text032" id="bookAuthor2"></label>
+                        <br class="search-filter-book-text053" />
+                        <span></span>
+                    </h2>
+                  </div>
+                </div> 
+                <div class="search-filter-book-contianer2">
+                  <img 
+                      id="bookImage3"                                             
+                      src='/playground_assets/orange.png'
                       class="search-filter-book-alan-turingbook12"
-                      />
-                      <div class="search-filter-book-container08">
-                      <h1 class="search-filter-book-text049">Atomic Habits</h1>
-                      <h2 class="search-filter-book-text050">
-                          <span>Authour: </span>
-                          <span class="search-filter-book-text052">James Clear</span>
-                          <br class="search-filter-book-text053" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text055">
-                          <span>Published:</span>
-                          <span class="search-filter-book-text057">May 9, 2013</span>
-                          <span></span>
-                          <br class="search-filter-book-text059" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text061"><span>Category:</span></h2>
-                      <div class="search-filter-book-cat2">
-                          <div class="search-filter-book-tag06">
-                          <span class="search-filter-book-text063">
-                              <span>romantic</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag07">
-                          <span class="search-filter-book-text065">
-                              <span>selfhelp</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag08">
-                          <span class="search-filter-book-text067">
-                              <span>functional</span>
-                          </span>
-                          </div>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="search-filter-book-contianer3">
-                      <img
-                      alt="AlanTuringbook11711"
-                      src="/playground_assets/alanturingbook11711-kiai-300w.png"
-                      class="search-filter-book-alan-turingbook13"
-                      />
-                      <div class="search-filter-book-container09">
-                      <h1 class="search-filter-book-text069">ALAN TURING: THE ENIGMA</h1>
-                      <h2 class="search-filter-book-text070">
-                          <span>Authour: </span>
-                          <span class="search-filter-book-text072">Andrew Hodges</span>
-                          <br class="search-filter-book-text073" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text075">
-                          <span>Published:</span>
-                          <span class="search-filter-book-text077">November 30, 2012</span>
-                          <span></span>
-                          <br class="search-filter-book-text079" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text081"><span>Category:</span></h2>
-                      <div class="search-filter-book-cat3">
-                          <div class="search-filter-book-tag09">
-                          <span class="search-filter-book-text083">
-                              <span>science</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag10">
-                          <span class="search-filter-book-text085">
-                              <span>science</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag11">
-                          <span class="search-filter-book-text087">
-                              <span>science</span>
-                          </span>
-                          </div>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="search-filter-book-contianer4">
-                      <img
-                      alt="AlanTuringbook11711"
-                      src="/playground_assets/alanturingbook11711-kiai-300w.png"
-                      class="search-filter-book-alan-turingbook14"
-                      />
-                      <div class="search-filter-book-container10">
-                      <h1 class="search-filter-book-text089">ALAN TURING: THE ENIGMA</h1>
-                      <h2 class="search-filter-book-text090">
-                          <span>Authour: </span>
-                          <span class="search-filter-book-text092">Andrew Hodges</span>
-                          <br class="search-filter-book-text093" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text095">
-                          <span>Published:</span>
-                          <span class="search-filter-book-text097">November 30, 2012</span>
-                          <span></span>
-                          <br class="search-filter-book-text099" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text101"><span>Category:</span></h2>
-                      <div class="search-filter-book-cat4">
-                          <div class="search-filter-book-tag12">
-                          <span class="search-filter-book-text103">
-                              <span>science</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag13">
-                          <span class="search-filter-book-text105">
-                              <span>science</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag14">
-                          <span class="search-filter-book-text107">
-                              <span>science</span>
-                          </span>
-                          </div>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="search-filter-book-contianer5">
-                      <img
-                      alt="AlanTuringbook11711"
-                      src="/playground_assets/alanturingbook11711-kiai-300w.png"
-                      class="search-filter-book-alan-turingbook15"
-                      />
-                      <div class="search-filter-book-container11">
-                      <h1 class="search-filter-book-text109">ALAN TURING: THE ENIGMA</h1>
-                      <h2 class="search-filter-book-text110">
-                          <span>Authour: </span>
-                          <span class="search-filter-book-text112">Andrew Hodges</span>
-                          <br class="search-filter-book-text113" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text115">
-                          <span>Published:</span>
-                          <span class="search-filter-book-text117">November 30, 2012</span>
-                          <span></span>
-                          <br class="search-filter-book-text119" />
-                          <span></span>
-                      </h2>
-                      <h2 class="search-filter-book-text121"><span>Category:</span></h2>
-                      <div class="search-filter-book-cat5">
-                          <div class="search-filter-book-tag15">
-                          <span class="search-filter-book-text123">
-                              <span>science</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag16">
-                          <span class="search-filter-book-text125">
-                              <span>science</span>
-                          </span>
-                          </div>
-                          <div class="search-filter-book-tag17">
-                          <span class="search-filter-book-text127">
-                              <span>science</span>
-                          </span>
-                          </div>
-                      </div>
-                      </div>
-                    </div>
-                  </section>
-                <footer class="search-filter-book-footer">
-                  <div class="search-filter-book-container12">
-                    <div class="search-filter-book-container12">
+                  />
+                  <div class="search-filter-book-container08">
+                    <h1 class="search-filter-book-text029" id="bookTitle3"></h1>  
+                  <h2 class="search-filter-book-text050">                          
+                      <label class="search-filter-book-text032" id="bookAuthor3"></label>
+                      <br class="search-filter-book-text053" />
+                      <span></span>
+                  </h2>
+                </div>
+              </div>  
+              <div class="search-filter-book-contianer2">
+                <img 
+                    id="bookImage4"                                             
+                    src='/playground_assets/black.png'
+                    class="search-filter-book-alan-turingbook12"
+                />
+                <div class="search-filter-book-container08">
+                  <h1 class="search-filter-book-text029" id="bookTitle4"></h1>  
+                <h2 class="search-filter-book-text050">                          
+                    <label class="search-filter-book-text032" id="bookAuthor4"></label>
+                    <br class="search-filter-book-text053" />
+                    <span></span>
+                </h2>
+              </div>
+            </div>
+            <div class="search-filter-book-contianer2">
+              <img 
+                  id="bookImage5"                                             
+                  src='/playground_assets/gray.png'
+                  class="search-filter-book-alan-turingbook12"
+              />
+              <div class="search-filter-book-container08">
+                <h1 class="search-filter-book-text029" id="bookTitle5"></h1>  
+              <h2 class="search-filter-book-text050">                          
+                  <label class="search-filter-book-text032" id="bookAuthor5"></label>
+                  <br class="search-filter-book-text053" />
+                  <span></span>
+              </h2>
+            </div>
+          </div>        
+                
                     <!--footer-->
                     <%- include('layouts/footer'); -%>
                     </div>
@@ -323,7 +276,12 @@
           </div>
       </div>
     <!--Script-->
-    <%- include('layouts/script'); -%>
+    <!-- <%- include('layouts/script'); -%> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/4.0.0/shuffle.min.js"></script>
+  
+    <script src="/js/filterSort.js"></script>
   </body>
 </html>
             
