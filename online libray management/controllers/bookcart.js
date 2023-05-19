@@ -19,10 +19,11 @@ module.exports = (req, response) => {
         // console.log(user)
          //console.log(record[0].bookID)
         // console.log(wishlist[0].books)
-        if (wishlist[0] != null) {
+        if (wishlist[0] != null && record.length != 0 ) {
             idk = "yes"
-        a = wishlist[0].books
-        response.render('bookcart', {
+            a = wishlist[0].books
+            
+            response.render('bookcart', {
              borrowedList : record, 
              user: user,
              wishlist: wishlist,
