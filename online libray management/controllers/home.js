@@ -10,7 +10,7 @@ module.exports = (req, response) => {
         var objectId = new mongoose.Types.ObjectId(id);
                console.log(id)
                mongoose.set('debug',true)
-               Promise.all ([ Book.find({}).limit(8), WishList.find({userID: objectId.toString()}), Book1.find().limit(1)])
+               Promise.all ([ Book.find({}).sort({ rating: -1 }).limit(8), WishList.find({userID: objectId.toString()}), Book1.find().limit(1)])
                 .then (([book, wishlist, book1]) => {                        
                 //        console.log(wishlist)
                 //        console.log(book1)

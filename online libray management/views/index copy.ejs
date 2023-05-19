@@ -98,18 +98,17 @@
                   </span>
                 </p>
                 <div class="home-container02">
-                  <% var h = 0 ; %> 
+
                   <% if (loggedIn ) {%>
                     <% if (idk=="yes" ) { %>
-                      <% if (h < a.length && a[h].bookID.equals(book1[0]._id )) { %>
-                        <% h ++ %>
+                      <% if (wishlists.userID==loggedIn) { %>
                         <form id="wishlistD" method="POST">
                           <button id="add to cart" type="button" class="home-add-to-cart-button1 button" id="wishListButtonD">
                            ADDED
                           </button>
                         </form>
                         <% } %>
-                          <% if (h-1 < a.length && !a[h-1].bookID.equals(book1[0]._id )) { %>
+                          <% if (wishlists.userID !=loggedIn) { %>
                             <form id="wishlistD" method="POST">
                               <input
                             type="hidden"
@@ -214,7 +213,7 @@
               <div class="home-slide-container swiper">
                 <div class="home-the-slide-content">
                   <div class="home-slide-wrapper swiper-wrapper">
-                    <% var j = 0 ; %> 
+                    
                   <% for(var i = 0 ; i < book.length; i++) { %>
                     
                     <div class="home-book-cards swiper-slide">
@@ -272,15 +271,15 @@
                         <% } %>
 
                         <% if (idk == "yes") { %>
-                         <% if ( j < a.length && a[j].bookID.equals(book[i]._id ))  { %>
-                            <% j++ %>
-                            <form id="wishlist12" method="POST">  
+                        <% for (var j = 0; j < a.length; j++)  { %>
+                          <% if (a[j].bookID.equals(book[i]._id)  ) { %>
+                            <form id="wishlist12" method="POST">
+                             
                               <button type ="button" class="home-button button" id="idkanymore">added</button>
                             </form>
-                           
+                            <% break %>
                           <% } %>
-
-                          <% if ( j-1 < a.length && !a[j-1].bookID.equals(book[i]._id ))  { %>
+                          <% if ( !a[j].bookID.equals(book[i]._id)) { %>
                             <form id="wishlist<%= i %>" method="POST">
                               <input
                               type="hidden"
@@ -316,12 +315,51 @@
 
                               <button type ="submit" class="home-button button" id="wishListButton<%= i %>">wishlist</button>
                             </form>
-                           
-                           
+                            <% break %>
                           <% } %>
-                            
                           
+                          <% if (wishlists[j].userID != loggedIn && book[i]._id == wishlists[j].books.bookID ) { %>
+                            <form id="wishlist<%= i %>" method="POST">
+                              <input
+                              type="hidden"
+                              name="userID"
+                              id="userID"
+                              class="book-info-textinput input"
+                              value= <%= loggedIn %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="bookID"
+                              id="bookID"
+                              class="book-info-textinput input"
+                              value= <%= book[i]._id %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="bookName"
+                              id="bookName"
+                              class="book-info-textinput input"
+                              value= <%= book[i].name %>
+                              > 
+
+                              <input
+                              type="hidden"
+                              name="Author"
+                              id="Author"
+                              class="book-info-textinput input"
+                              value= <%= book[i].author %>
+                              > 
+
+                              <button type ="submit" class="home-button button" id="wishListButton<%= i %>">wishlist</button>
+                            </form>
+                            <% break %>
+                          <% } %>
+
+                          <% } %>
                         <% } %>
+
 
                        <% } %>
                        <% if (!loggedIn ) {%>
