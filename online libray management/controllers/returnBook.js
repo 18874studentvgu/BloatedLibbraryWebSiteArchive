@@ -8,7 +8,7 @@ module.exports=(req,res) =>{
     var userId = new mongoose.Types.ObjectId(user);
     Promise.all
     ([
-        Borrow.findOneAndDelete({bookID : objectId .toString(), userID: userId.toString() }),
+        Borrow.findOneAndUpdate({bookID : objectId .toString(), userID: userId.toString() }, {hasReturned: true}),
     ])
     .then(()=>{
         console.log("delete")

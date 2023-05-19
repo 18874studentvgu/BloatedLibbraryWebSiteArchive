@@ -19,6 +19,8 @@
             </div>
             <div class="bookcart-container05">
               <span class="bookcart-text15"><span>Overdue</span></span>
+            <% for (var r = 0; r < borrowedList.length; r++) { %>
+              <% if (borrowedList[r].hasReturned == false) { %>
               <div class="app-component-container">
                 <input
                   type="radio"
@@ -62,6 +64,8 @@
                   </span>
                 </div>
               </div>
+              <% }%>
+              <% } %>
               <div class = "dropdown" >
                 <button  class="bookcart-view-all-button button" onclick="paymentFunction()">Pay Overdue</button>
                 <div class = "dropdown-content-1" id ="paymentChoice"  >
@@ -69,12 +73,14 @@
                   <a href="/payOnline">by Credit card</a>
                 </div>
               </div>
+              
             </div>
 
             <div class="bookcart-container06">
               <span class="bookcart-text17">Issued</span>
 
             <% for (var j = 0; j < borrowedList.length; j++) { %>
+              <% if (borrowedList[j].hasReturned == false) { %>
               <form action="/users/returnBook" method="POST">
               <div class="app-component-container">
                 <input
@@ -130,7 +136,8 @@
                   <% break %>
                   <% } %>
                   <% } %>
-              </form>  
+              </form>
+              <% } %>  
               <% } %>
             </div>
 
