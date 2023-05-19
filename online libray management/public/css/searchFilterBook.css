@@ -284,6 +284,7 @@
   align-self: center;
   box-sizing: border-box;
   margin-top: var(--dl-space-space-halfunit);
+  margin-left: 20%;
   align-items: flex-start;
   flex-shrink: 1;
   border-color: transparent;
@@ -332,7 +333,7 @@
   font-size: 28px;
   align-self: auto;
   font-style: Bold;
-  text-align: left;
+  text-align: right;
   font-family: Montserrat;
   font-weight: 700;
   line-height: normal;
@@ -343,6 +344,7 @@
 .search-filter-book-text012 {
   font-style: normal;
   font-weight: 500;
+  
 }
 .search-filter-book-text013 {
   color: #000000;
