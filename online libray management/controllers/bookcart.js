@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 module.exports = (req, response) => {
     const id = req.session.userId;
     var objectId = new mongoose.Types.ObjectId(id);
+    console.log(bookid)
     Promise.all
     ([
         Users.findById(req.session.userId), 
@@ -14,15 +15,16 @@ module.exports = (req, response) => {
         Book.find(),
     ])
     .then( ([user, record, wishlist, book]) => {
-      
+       
         console.log("have it")
         // console.log(user)
          //console.log(record[0].bookID)
         // console.log(wishlist[0].books)
-        if (wishlist[0] != null) {
+        if (wishlist[0] != null && record.length != 0 ) {
             idk = "yes"
-        a = wishlist[0].books
-        response.render('bookcart', {
+            a = wishlist[0].books
+
+            response.render('bookcart', {
              borrowedList : record, 
              user: user,
              wishlist: wishlist,

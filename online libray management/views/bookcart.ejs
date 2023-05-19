@@ -24,8 +24,12 @@
               <div class="app-component-container">
                 <input
                   type="radio"
-                  name="radio"
+                  name="id"
+                  id = "id "
                   class="app-component-radiobutton"
+                  checked= ""
+                  value = <%= borrowedList[r].bookID %>
+                  
                 />
                 <img
                   alt="ThinkJavabook19753"
@@ -69,8 +73,8 @@
               <div class = "dropdown" >
                 <button  class="bookcart-view-all-button button" onclick="paymentFunction()">Pay Overdue</button>
                 <div class = "dropdown-content-1" id ="paymentChoice"  >
-                  <a href="/payCash">by Cash</a>
-                  <a href="/payOnline">by Credit card</a>
+                  <a  id= "help" href="/payCash/<%= bookid  %>">by Cash</a>
+                  <a  id="why" href="/payOnline/<%= bookid  %>">by Credit card</a>
                 </div>
               </div>
               
