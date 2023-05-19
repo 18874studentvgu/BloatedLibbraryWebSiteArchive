@@ -11,15 +11,13 @@ module.exports = (req, response) => {
                console.log(id)
                mongoose.set('debug',true)
                Promise.all ([ Book.find({}).limit(8), WishList.find({userID: objectId.toString()}), Book1.find().limit(1)])
-                .then (([book, wishlist, book1]) => {
-                        
-                       console.log(wishlist)
-                       console.log(book1)
-                                
+                .then (([book, wishlist, book1]) => {                        
+                //        console.log(wishlist)
+                //        console.log(book1)
                        if(wishlist.length != 0 ) {
                                 idk = "yes"
                                 let a = wishlist[0].books;
-                                console.log(a[0].bookID)
+                                // console.log(a[0].bookID)
  
                                 console.log("u have it ye...")
                                 response.render('index', 
@@ -43,9 +41,6 @@ module.exports = (req, response) => {
                                         book1: book1
                                 })  
                         }
-                       
-                       
-
                
                 })
               .catch((error, book, wishlist)=> {

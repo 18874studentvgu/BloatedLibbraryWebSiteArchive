@@ -10,14 +10,25 @@ module.exports = (request, response) => {
     ])
     .then ( ([usersDoc, booksDoc]) => {
         var totalBorrowed = 0;
+        var chartData = [];
+        var top5count = 5;
+        if (booksDoc.length < 5)
+        {
+            top5count = booksDoc.length;
+        }
         for (var i = 0; i < usersDoc.length; i++)
         {
             totalBorrowed += usersDoc[i].booksBorrowing.length;
         }
+        for (var i = 0; i < top5count; i++)
+        {
+        chartData[i] = { title: booksDoc[i].title , copies: booksDoc[i].copiesAvailable, id: booksDoc[i]._id.toString().substring( 17, 24 ) }
+        }
         response.render('adminDashboard', { 
             usersList: usersDoc,
             booksList: booksDoc, 
-            totalBorrowed
+            totalBorrowed,
+            chartData
         });
         console.log(request.session);
     })

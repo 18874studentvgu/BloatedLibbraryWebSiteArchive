@@ -1665,6 +1665,32 @@
   flex-direction: initial;
   text-decoration: none;
 }
+
+.home-navlink5_1 {
+  color: rgb(255, 255, 255);
+  width: 183px;
+  font-size: 24px;
+  font-style: normal;
+  text-align: center;
+  transition: 0.3s;
+  font-family: Montserrat;
+  font-weight: 700;
+  margin-left: 2%;
+  border-width: 0px;
+  margin-right: 2%;
+  text-decoration: none;
+  background-color: rgb(222, 112, 0);
+}
+.home-navlink5_1:hover {
+  width: 181px;
+  height: 39px;
+  font-style: normal;
+  font-weight: 500;
+}
+.home-navlink5_1:active {
+  background-color: #af5d05;
+}
+
 .home-navlink5 {
   color: rgb(255, 255, 255);
   width: 183px;

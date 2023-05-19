@@ -31,6 +31,11 @@
                 Username: <%= detailedUser.username %>
               </label>
             </div>
+            <div class="add-user-username">
+              <label for="userid" class="add-user-text08">
+                User ID: <%= detailedUser._id %>
+              </label>
+            </div>
             <div class="add-user-edition">
               <label for="Age" class="add-user-text09">
                 Age: <%= detailedUser.userInfo.age %>
@@ -53,22 +58,22 @@
               </label>
               <div class="add-user-pub-year">
                 <label for="Book Borrowed" class="add-user-text10">
-                    Book's Title: <%= detailedUser.booksBorrowing[i].bookName %>
+                  Book's Title: <%= detailedUser.booksBorrowing[i].bookName %>
                 </label>
               </div>
               <div class="add-user-pub-year">
                 <label for="Book Borrowed" class="add-user-text10">
-                    Book's ID: <%= detailedUser.booksBorrowing[i].bookID %>
+                  Book's ID: <%= detailedUser.booksBorrowing[i].bookID %>
                 </label>
               </div>
               <div class="add-user-pub-year">
                 <label for="Book Borrowed" class="add-user-text10">
-                    Book's Title: <%= detailedUser.booksBorrowing[i].borrowID %>
+                  Record's ID: <%= detailedUser.booksBorrowing[i].borrowID %>
                 </label>
               </div>
               <div class="add-user-pub-year">
                 <label for="Book Borrowed" class="add-user-text10">
-                    Book's Title: <%= detailedUser.booksBorrowing[i].dueDate.toDateString() %>
+                  Borrow Due Date: <%= detailedUser.booksBorrowing[i].dueDate.toDateString() %>
                 </label>
               </div>
             </div>

@@ -3,79 +3,53 @@
 // Bar Chart Example
 // var ctx = document.getElementById("myBarChart");
 
-const sample_2 = [
-  {month: "January", rev: 1215, loss: 584},
-  {month: "February", rev: 352, loss: 125},
-  {month: "March", rev: 2567, loss: 1405},
-  {month: "April", rev: 5216, loss: 3405},
-  {month: "May", rev: 3462, loss: 5032},
-  {month: "June", rev: 9585, loss: 4150}
-];
+const sample_2 = JSON.parse(document.getElementById('data-container').getAttribute('data-array'));
+const tooltips = sample_2.map(obj => obj.title);
+console.log(sample_2)
 
 var myLineChart = new Chart(document.getElementById("myBarChart"), {
   type: 'bar',
   data: {
-    labels: sample_2.map(row => row.month),
+    labels: sample_2.map(row => row.id),
     datasets: [{
-      label: "Revenue",
+      label: "Copies",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: sample_2.map(row => row.rev),
+      data: sample_2.map(row => row.copies),
       font: 
       {
         size: 20
     }
     }
-    // ,{
-    // label: "Loss",
-    // backgroundColor: "rgb(238, 130, 238)",
-    // borderColor: "rgb(238, 130, 238)",
-    // data: sample_2.map(row => row.loss),
-    // font: 
-    //   {
-    //     size: 20
-    // }
-    // }
   ],
   },
   options: {
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'month'
-        },
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          maxTicksLimit: 5
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          max: 15000,
-          maxTicksLimit: 5
-        },
-        gridLines: {
-          display: true
-        }
-      }],
-    },
     plugins: {
-        legend: {
-        display: true
+      tooltip: {
+        font: {
+          size: 20
         },
-        title: {
-            display: true,
-            text: 'Custom Chart Title',
-            font: {
-                size: 40
-            },
-            padding: {
-                top: 10,
-                bottom: 100
-            }
+        // Overrides the global setting
+        callbacks: 
+        {
+          title: function(context) {
+            return `${tooltips[context[0].dataIndex]}`;
+          }
         }
+      },
+      legend: {
+        display: true
+      },
+      title: {
+          display: true,
+          text: 'Top 5 books with largest number of copies',
+          font: {
+              size: 40
+          },
+          padding: {
+              top: 10,
+              bottom: 10
+          }
+      }
     }
 }});

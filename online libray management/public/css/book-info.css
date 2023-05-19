@@ -197,8 +197,8 @@
   border-color: transparent;
 }
 .book-info-bok-info {
-  width: 909px;
-  height: 555.2291679382324px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: flex-start;
   margin-left: 5%;
@@ -207,7 +207,7 @@
 }
 .book-info-text008 {
   color: rgba(255, 255, 255, 1);
-  width: 618px;
+  width: auto;
   height: auto;
   font-size: 64px;
   align-self: auto;

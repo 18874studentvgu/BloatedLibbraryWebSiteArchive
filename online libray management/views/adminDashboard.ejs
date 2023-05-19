@@ -49,6 +49,7 @@
             <canvas style = "position:absolute" id="myBarChart" width="100px" height="50px"></canvas>
             <!-- <span class="admin-text041"><span>Reports</span></span> -->
           </div>
+          <div id="data-container" data-array="<%= JSON.stringify(chartData) %>"></div>
           <div class="admin-container06">
             <div class="admin-lastactivetable">
               <div class="admin-container07">
@@ -146,5 +147,6 @@
   <!--Script-->
   <%- include('layouts/script'); -%>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module" src="js/graph.js"></script>
+  <script src="/js/graph.js">
+  </script>
 </html>
