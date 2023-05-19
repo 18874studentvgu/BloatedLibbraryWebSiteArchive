@@ -38,6 +38,7 @@ const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
 const updateAccount = require('./controllers/updateAccount')
 const borrow = require('./controllers/BorrowBook')
+const borrow2 = require('./controllers/borrow2')
 const adminDashboard = require('./controllers/admin/dashboard')
 const adminUserDashboard = require('./controllers/admin/usersList')
 const adminBookDashboard = require('./controllers/admin/booksList')
@@ -149,6 +150,9 @@ app.get('/index', homeController)
 
 //borrow 
 app.post('/users/borrow', borrow)
+
+//borrow2
+app.post('/users/borrow2', borrow2)
 
 //get
 app.get('/about', aboutController)

@@ -6,7 +6,6 @@
     <div>
       <link href="/css/bookcart.css" rel="stylesheet" />
       <link href="/css/userprofilesetting.css" rel="stylesheet" />
-
       <div class="bookcart-container">
         <!-- navbar -->
         <%- include('layouts/navbar'); -%>
@@ -46,19 +45,19 @@
                   <span class="app-component-text07">
                     <span>Issued date:</span>
                     <span class="app-component-text09">
-                      <%= borrowedList[0].leaseDate.toDateString() %>
+                      help
                     </span>
                   </span>
                   <span class="app-component-text10">
                     <span>Return date:</span>
                     <span class="app-component-text12">
-                      <%= borrowedList[0].returnDate.toDateString() %>
+                    help
                     </span>
                   </span>
                   <span class="app-component-text13">
                     <span class="app-component-text14">Total fee:</span>
                     <span class="app-component-text15">
-                      <%= borrowedList[0].paymentAmount %>.000 VND
+                     help
                     </span>
                   </span>
                 </div>
@@ -66,13 +65,16 @@
               <div class = "dropdown" >
                 <button  class="bookcart-view-all-button button" onclick="paymentFunction()">Pay Overdue</button>
                 <div class = "dropdown-content-1" id ="paymentChoice"  >
-                  <a href="/payCash/<%= borrowedList[0]._id %>">by Cash</a>
-                  <a href="/payOnline/<%= borrowedList[0]._id %>">by Credit card</a>
+                  <a href="/payCash">by Cash</a>
+                  <a href="/payOnline">by Credit card</a>
                 </div>
               </div>
             </div>
+
             <div class="bookcart-container06">
               <span class="bookcart-text17">Issued</span>
+
+            <% for (var j = 0; j < borrowedList.lengh; j++) { %>
               <div class="app-component-container">
                 <input
                   type="radio"
@@ -117,15 +119,40 @@
               >
                 Return book
               </a>
+
+              <% } %>
             </div>
+
+
             <div class="bookcart-container07">
               <span class="bookcart-text18">Cart</span>
+            
+              <% for (var i = 0; i < a.length; i++) { %>
+               <form action="/users/borrow2" method="POST" >
               <div class="app-component-container">
                 <input
                   type="radio"
                   name="radio"
                   class="app-component-radiobutton"
                 />
+                
+                <input
+                type="hidden"
+                name="userID"
+                id="userID"
+                class="book-info-textinput input"
+                value= <%= loggedIn %>
+                > 
+
+                <input
+                type="hidden"
+                name="bookID"
+                id="bookID"
+                class="book-info-textinput input"
+                value= <%= a[i].bookID %>
+                > 
+
+
                 <img
                   alt="ThinkJavabook19753"
                   src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
@@ -133,12 +160,12 @@
                 />
                 <div class="app-component-container1">
                   <span class="app-component-text">
-                    <span>Think Java</span>
+                    <span><%= a[i].bookName %></span>
                   </span>
                   <span class="app-component-text02">
                     <span>Author:</span>
                     <span class="app-component-text04">
-                      A. B. Downey, C. Mayfield
+                      <%= a[i].Author %> 
                     </span>
                     <span></span>
                     <span></span>
@@ -157,13 +184,17 @@
                   </span>
                 </div>
               </div>
-              <a
-                href="/user_profile"
-                id="viewAllUser"
+              <button
+                type="submit"
                 class="bookcart-view-all-button button"
-              >
+                >
                 Borrow book
-              </a>
+              </button>
+              </form>
+
+              <% } %>
+             
+            
             </div>
           </div>
         </div>
