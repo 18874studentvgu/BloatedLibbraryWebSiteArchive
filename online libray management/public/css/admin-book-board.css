@@ -201,7 +201,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  overflow: auto;
+  /* overflow: auto; */
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
@@ -383,7 +383,7 @@
 .admin-book-board-add-new-user-button {
   color: rgb(255, 255, 255);
   width: 250px;
-  height: 35px;
+  /* height: 35px; */
   font-size: 20px;
   align-self: center;
   font-style: normal;
@@ -391,7 +391,7 @@
   transition: 0.3s;
   font-family: Montserrat;
   font-weight: 700;
-  margin-left: -10%;
+  margin-left: -17%;
   border-width: 0px;
   border-radius: 9px;
   text-transform: capitalize;
@@ -417,7 +417,6 @@
   background-color: rgba(255, 255, 255, 1);
 }
 
-.admin-book-board-adminuserboard {}
 .admin-book-board-container03 {
   flex: 0 0 auto;
   width: 100%;

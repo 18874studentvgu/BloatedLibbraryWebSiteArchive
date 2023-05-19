@@ -2,19 +2,29 @@
     <div class="userprofilesetting-userchoice">
       <div class="userprofilesetting-group13">
        <% if (!loggedInAdmin) { %> 
-        <img
-          alt="image5884"
-          class="userprofilesetting-image5"
-          src="<%= user.iconLink %>"
-        />
+        <a
+        href="/user_profile"
+        class="userprofilesetting-navlink08"
+      >
+          <img
+            alt="image5884"
+            class="userprofilesetting-image5"
+            src="<%= user.iconLink %>"
+          />
+        </a>
         <%  } %>
 
         <% if (loggedInAdmin) { %> 
+          <a
+        href="/user_profile"
+        class="userprofilesetting-navlink08"
+      >
           <img
             alt="image5884"
             class="userprofilesetting-image5"
             src="/playground_assets/image5884-bghq-200h.png"
           />
+          </a>
           <%  } %>
       </div>
       <div class="userprofilesetting-nanme">

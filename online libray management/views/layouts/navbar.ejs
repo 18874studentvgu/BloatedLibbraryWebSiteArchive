@@ -23,17 +23,26 @@
         class="home-magnifyingglass1" />
     </a>
     <% if(!loggedIn && !loggedInAdmin) { %>
-    <div class = "dropdown" >
-      <button  class="home-navlink5 button" onclick="myFunction()">LOGIN</button>
-      <div class = "dropdown-content" id ="myDropdown"  >
+    <div class = "dropdown_1" >
+      <button class="home-navlink5 button" onclick="myFunction()">LOGIN</button>
+      <div class = "dropdown-content" id ="myDropdown_1"  >
         <a href="/auth/login">as User</a>
         <a href="/auth/loginAdmin">as Admin</a>
       </div>
     </div>
     <%  } %>
-    <% if(loggedIn || loggedInAdmin) { %>
-      <a  href="/user_profile" class="home-navlink5 button">Hi <%= user1 %></a>
+    <% if(loggedIn && !loggedInAdmin) { %>
+    <a  href="/user_profile" class="home-navlink5 button">Hi <%= user1 %></a>
       <%  } %>
+    <% if(!loggedIn && loggedInAdmin) { %>
+    <div class = "dropdown_2" >
+      <button class="home-navlink5 button" onclick="myFunction()">Admin</button>
+      <div class = dropdown-content" id="myDropdown_2" >
+        <a href="/adminDashboard">To Dashboard</a>
+        <a href="/auth/logout">Log out</a>
+      </div>
+    </div>
+    <%} %>
   </div>
 </div>
 

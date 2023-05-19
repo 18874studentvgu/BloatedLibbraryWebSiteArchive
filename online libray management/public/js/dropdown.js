@@ -3,9 +3,11 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
-document.getElementById("myDropdown").classList.toggle("show");
+document.getElementById("myDropdown_1").classList.toggle("show");
+document.getElementById("myDropdown_2").classList.toggle("show");
 console.log("sucess")
 }
+
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
