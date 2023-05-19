@@ -89,21 +89,27 @@
                       return;
                       }
                     let bookTitle   = document.getElementById('bookTitle');
-                    let bookAuthor  = document.getElementById('bookAuthor');                              
+                    let bookAuthor  = document.getElementById('bookAuthor');
+                    let bookHref = document.getElementById('bookHref');                              
                     let bookTitle1  = document.getElementById('bookTitle1');
                     let bookAuthor1 = document.getElementById('bookAuthor1');
+                    let bookHref1 = document.getElementById('bookHref1');
                     let bookTitle2  = document.getElementById('bookTitle2');
                     let bookAuthor2 = document.getElementById('bookAuthor2');
+                    let bookHref2 = document.getElementById('bookHref2');
                     let bookTitle3  = document.getElementById('bookTitle3');
                     let bookAuthor3 = document.getElementById('bookAuthor3');
+                    let bookHref3 = document.getElementById('bookHref3');
                     let bookTitle4  = document.getElementById('bookTitle4');
                     let bookAuthor4 = document.getElementById('bookAuthor4');
+                    let bookHref4 = document.getElementById('bookHref4');
                     let bookTitle5  = document.getElementById('bookTitle5');
                     let bookAuthor5 = document.getElementById('bookAuthor5');
-           //         let bookHref = document.getElementById('bookHref');
-                    bookTitle.innerText = payload[0].name; 
+                    let bookHref5 = document.getElementById('bookHref5');
+                    
+                    bookTitle.innerText = payload[0].title; 
                     bookAuthor.innerText = payload[0].author;                   
-           //         bookHref.setAttribute('href', payload[0].url);
+                    bookHref.setAttribute('href', payload[0].url);
                     bookTitle1.innerText = payload[1].name;  
                     bookAuthor1.innerText = payload[1].author;
                     bookTitle2.innerText = payload[2].name;  
@@ -114,13 +120,13 @@
                     bookAuthor4.innerText = payload[4].author;    
                     bookTitle5.innerText = payload[5].name;  
                     bookAuthor5.innerText = payload[5].author;     
-                 //   let bookLink = document.getElementById('bookLink'); 
+                 
                           
                     
                     payload.forEach((item,index)=>{
                       if(index === 0) {
                   //     bookTitle.innerText = item.name;
-                        searchResults.innerHTML = `<p><a href="/searchFilterBook" >${item.name}</a></p>`;         
+                        searchResults.innerHTML = `<p><a href="/searchFilterBook" >${item.title}</a></p>`;         
                         document.getElementById('bookAuthor').textContent = 'Author : '+item.author; 
                  
                         
@@ -183,7 +189,7 @@
                 </div>
                 </a>
                   <a id="bookHref1" href=""> 
-                  <div class="search-filter-book-contianer  xdws1q">
+                  <div class="search-filter-book-contianer ">
                     <img 
                           id="bookImage1" 
                           alt="Image will be here ^^"                       
