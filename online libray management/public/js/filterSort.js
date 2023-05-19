@@ -27,6 +27,7 @@ class bookList {
       console.log('removed. data:', data);
     });
   }
+
   bookList.prototype.addFilterButtons = function() {
     var options = document.querySelector('.filters-options');
     if (!options) {
