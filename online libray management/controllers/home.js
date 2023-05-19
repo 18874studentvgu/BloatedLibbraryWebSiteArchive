@@ -14,10 +14,10 @@ module.exports = (req, response) => {
                 .then (([book, wishlist, book1]) => {                        
                 //        console.log(wishlist)
                 //        console.log(book1)
-                       if(wishlist.length != 0 ) {
+                       if(wishlist.length != 0) {
                                 idk = "yes"
                                 let a = wishlist[0].books;
-                                // console.log(a[0].bookID)
+                                console.log(a[0])
  
                                 console.log("u have it ye...")
                                 response.render('index', 
