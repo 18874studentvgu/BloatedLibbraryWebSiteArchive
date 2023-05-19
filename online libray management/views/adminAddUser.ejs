@@ -14,7 +14,7 @@
           <div class="add-user-login">
             <div class="add-user-background">
               <h1 class="add-user-text06">Add user</h1>
-              <form action="/admin/storeUser" name="addUser" method="POST" onsubmit="return validateForm()" class="add-user-form">
+              <form action="/admin/storeUser" name="addUser" enctype="multipart/form-data" method="POST" onsubmit="return validateForm()" class="add-user-form">
                 <div class="add-user-full-name">
                   <label for="fullName" class="add-user-text07">
                     First name
@@ -70,6 +70,15 @@
                     type="text"
                     id="email"
                     name="email"
+                    class="add-user-textinput3 input"
+                  />
+                </div>
+                <div class="add-user-pub-year">
+                  <label for="profileImage" class="add-user-text10">Image</label>
+                  <input
+                    type="file"
+                    id="iconLink"
+                    name="iconLink"
                     class="add-user-textinput3 input"
                   />
                 </div>

@@ -2000,6 +2000,7 @@
 }
 .home-slide-container {
   width: 85%;
+  height: auto;
   display: flex;
   position: relative;
   margin-top: 20px;
@@ -2017,6 +2018,7 @@
 }
 .home-the-slide-content {
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -2027,11 +2029,14 @@
   align-items: center;
   flex-direction: row;
   justify-content: center;
+  height: auto;
 }
+
+div#swiper-wrapper-bc41c199eb85c765 {}
 .home-book-cards {
   flex: 0 0 auto;
   width: auto;
-  height: 497px;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: row;
