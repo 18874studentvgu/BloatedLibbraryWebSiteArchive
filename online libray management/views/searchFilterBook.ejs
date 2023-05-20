@@ -12,60 +12,56 @@
                 <%- include('layouts/navbar'); -%>
                 <div class="search-filter-book-container03">
                   <div class="search-filter-book-search-bar">
-                        <input
-                            type="text"
-                            placeholder="Search for book you want"
-                            onkeyup="sendData(this)"
-                            class="search-filter-book-search-bar1 input"
-                        />
-                        <a
+                      <input
+                          type="text"
+                          placeholder="Search for book you want"
+                          maxlength="150"
+                          onkeyup="sendData(this)"
+                          class="search-filter-book-search-bar1"
+                      />
+                        <!-- <a
                             href="searchFilterBook"
                             class="search-filter-book-add-to-cart-button button"
                         >   Search
-                        </a>
+                        </a> -->
                   </div>
-                 
-                    <div class="search-filter-book-container03">
-                      
-                      <div class="search-filter-book-container04">
-                        <span class="search-filter-book-text006">Result search books</span>
-                        <br>
-                        <div class="row">
-                          <div class="col-12@sm filters-group-wrap">
-                            <!--Filter button-->
-                            <div class="filters-group">
-                              <label class="filter-label">Filter</label>
-                              <div class="btn-group filter-options">
-                                <button class="btn btn--primary" data-group="science">Science</button>
-                                <button class="btn btn--primary" data-group="novel">Novel</button>
-                                <button class="btn btn--primary" data-group="romantic">Romantic</button>
-                                <button class="btn btn--primary" data-group="fairy">Fairy Tale</button>
-                              </div>
-                            </div>
-                            <div class="search-filter-book-container05">
-                            </div>
-                            <!-- Sort button -->
-                            <fieldset class="filters-group">
-                              <legend class="filter-label">Sort</legend>
-                              <div class="btn-group sort-options">
-                                <label class="btn active">
-                                  <input type="radio" name="sort-value" value="dom" checked /> Default
-                                </label>
-                                <label class="btn">
-                                  <input type="radio" name="sort-value" value="title" /> Title
-                                </label>
-                                <label class="btn">
-                                  <input type="radio" name="sort-value" value="authour" /> Authour
-                                </label>
-                              </div>
-                            </fieldset>
+                  <div class="search-filter-book-container04">
+                    <span class="search-filter-book-text006">Result search books</span>
+                    <br>
+                    <!-- <div class="row">
+                      <div class="col-12@sm filters-group-wrap">
+                        // Filter button
+                        <div class="filters-group">
+                          <label class="filter-label">Filter</label>
+                          <div class="btn-group filter-options">
+                            <button class="btn btn--primary" data-group="science">Science</button>
+                            <button class="btn btn--primary" data-group="novel">Novel</button>
+                            <button class="btn btn--primary" data-group="romantic">Romantic</button>
+                            <button class="btn btn--primary" data-group="fairy">Fairy Tale</button>
                           </div>
                         </div>
+                        <div class="search-filter-book-container05">
+                        </div>
+                        // Sort button
+                        <fieldset class="filters-group">
+                          <legend class="filter-label">Sort</legend>
+                          <div class="btn-group sort-options">
+                            <label class="btn active">
+                              <input type="radio" name="sort-value" value="dom" checked /> Default
+                            </label>
+                            <label class="btn">
+                              <input type="radio" name="sort-value" value="title" /> Title
+                            </label>
+                            <label class="btn">
+                              <input type="radio" name="sort-value" value="authour" /> Authour
+                            </label>
+                          </div>
+                        </fieldset>
                       </div>
-                    </div>                 
+                    </div> -->
                   </div>
+                </div>                 
                 <section id="searchResults">
-
                 </section>             
                 <script>
                   function sendData(e){
@@ -147,28 +143,27 @@
 
                   
                 </script>
-                 <a id="bookHref" href="">   
-                <div class="search-filter-book-contianer">                 
-                  <img 
-                        id="bookImage" 
-                        alt="Image will be here ^^"                       
-                        src='/playground_assets/yellow.png'
-                        class="search-filter-book-alan-turingbook1"
-                  />                  
-                  <div class="search-filter-book-container06">                                     
-                    <h1 class="search-filter-book-text009" id="bookTitle" ></h1>                                                                  
-                    <h2 class="search-filter-book-text010">                      
-                      <label class="search-filter-book-text012" id="bookAuthor"></label>
-                      <br class="search-filter-book-text013" />                      
-                      <span></span>
-                   </h2>                  
-                  
-                  </div>
-                  
-                </div>
-                </a>
+                <div class="search-filter-book-container05">
+                  <a id="bookHref" href="">   
+                    <div class="search-filter-book-contianer">                 
+                      <img 
+                            id="bookImage" 
+                            alt="Image will be here ^^"                       
+                            src='/playground_assets/yellow.png'
+                            class="search-filter-book-alan-turingbook1"
+                      />
+                      <div class="search-filter-book-container06">                                     
+                        <h1 class="search-filter-book-text009" id="bookTitle" ></h1>                                                                  
+                        <h2 class="search-filter-book-text010">                      
+                          <label class="search-filter-book-text012" id="bookAuthor"></label>
+                          <br class="search-filter-book-text013" />                      
+                          <span></span>
+                        </h2>                  
+                      </div>
+                    </div>
+                  </a>
                   <a id="bookHref1" href=""> 
-                  <div class="search-filter-book-contianer ">
+                    <div class="search-filter-book-contianer ">
                     <img 
                           id="bookImage1" 
                           alt="Image will be here ^^"                       
@@ -181,96 +176,89 @@
                         <label class="search-filter-book-text032" id="bookAuthor1"></label>
                         <br class="search-filter-book-text033" />
                         <span></span>
-                     </h2>                  
-                   
+                      </h2>                  
+                    
                     </div>                   
-                  </div>
+                    </div>
                   </a>
                   <a id="bookHref2" href="">    
-                  <div class="search-filter-book-contianer">
-                    <img 
+                    <div class="search-filter-book-contianer">
+                      <img 
                         id="bookImage2"                                             
                         src='/playground_assets/red.png'
                         class="search-filter-book-alan-turingbook12"
-                    />
-                    <div class="search-filter-book-container08">
-                      <h1 class="search-filter-book-text029" id="bookTitle2"></h1>  
-                    <h2 class="search-filter-book-text050">                          
-                        <label class="search-filter-book-text032" id="bookAuthor2"></label>
-                        <br class="search-filter-book-text053" />
-                        <span></span>
-                    </h2>
-                  </div>
-                </div> 
-                </a>
-                <a id="bookHref3" href="">
-                <div class="search-filter-book-contianer">
-                  <img 
-                      id="bookImage3"                                             
-                      src='/playground_assets/orange.png'
-                      class="search-filter-book-alan-turingbook12"
-                  />
-                  <div class="search-filter-book-container08">
-                    <h1 class="search-filter-book-text029" id="bookTitle3"></h1>  
-                  <h2 class="search-filter-book-text050">                          
-                      <label class="search-filter-book-text032" id="bookAuthor3"></label>
-                      <br class="search-filter-book-text053" />
-                      <span></span>
-                  </h2>
-                </div>
-              </div>
-              </a>
-              <a id="bookHref4" href=""> 
-              <div class="search-filter-book-contianer">
-                <img 
-                    id="bookImage4"                                             
-                    src='/playground_assets/black.png'
-                    class="search-filter-book-alan-turingbook12"
-                />
-                <div class="search-filter-book-container08">
-                  <h1 class="search-filter-book-text029" id="bookTitle4"></h1>  
-                <h2 class="search-filter-book-text050">                          
-                    <label class="search-filter-book-text032" id="bookAuthor4"></label>
-                    <br class="search-filter-book-text053" />
-                    <span></span>
-                </h2>
-              </div>
-            </div>
-            </a> 
-            <a id="bookHref5" href=""> 
-            <div class="search-filter-book-contianer">
-              <img 
-                  id="bookImage5"                                             
-                  src='/playground_assets/gray.png'
-                  class="search-filter-book-alan-turingbook12"
-              />
-              <div class="search-filter-book-container08">
-                <h1 class="search-filter-book-text029" id="bookTitle5"></h1>  
-              <h2 class="search-filter-book-text050">                          
-                  <label class="search-filter-book-text032" id="bookAuthor5"></label>
-                  <br class="search-filter-book-text053" />
-                  <span></span>
-              </h2>
-            </div>
-          </div>
-          </a>        
-                
-                    <!--footer-->
-                    <%- include('layouts/footer'); -%>
+                      />
+                      <div class="search-filter-book-container08">
+                        <h1 class="search-filter-book-text029" id="bookTitle2"></h1>  
+                        <h2 class="search-filter-book-text050">                          
+                            <label class="search-filter-book-text032" id="bookAuthor2"></label>
+                            <br class="search-filter-book-text053" />
+                            <span></span>
+                        </h2>
+                      </div>
+                    </div> 
+                  </a>
+                  <a id="bookHref3" href="">
+                    <div class="search-filter-book-contianer">
+                      <img 
+                        id="bookImage3"                                             
+                        src='/playground_assets/orange.png'
+                        class="search-filter-book-alan-turingbook12"
+                      />
+                      <div class="search-filter-book-container08">
+                        <h1 class="search-filter-book-text029" id="bookTitle3"></h1>  
+                        <h2 class="search-filter-book-text050">                          
+                          <label class="search-filter-book-text032" id="bookAuthor3"></label>
+                          <br class="search-filter-book-text053" />
+                          <span></span>
+                        </h2>
+                      </div>
                     </div>
-                  </div>
-                </footer>
+                  </a>
+                  <a id="bookHref4" href=""> 
+                    <div class="search-filter-book-contianer">
+                      <img 
+                        id="bookImage4"                                             
+                        src='/playground_assets/black.png'
+                        class="search-filter-book-alan-turingbook12"
+                      />
+                      <div class="search-filter-book-container08">
+                        <h1 class="search-filter-book-text029" id="bookTitle4"></h1>  
+                        <h2 class="search-filter-book-text050">                          
+                            <label class="search-filter-book-text032" id="bookAuthor4"></label>
+                            <br class="search-filter-book-text053" />
+                            <span></span>
+                        </h2>
+                      </div>
+                    </div>
+                  </a> 
+                  <a id="bookHref5" href=""> 
+                    <div class="search-filter-book-contianer">
+                      <img 
+                        id="bookImage5"                                             
+                        src='/playground_assets/gray.png'
+                        class="search-filter-book-alan-turingbook12"
+                      />
+                      <div class="search-filter-book-container08">
+                        <h1 class="search-filter-book-text029" id="bookTitle5"></h1>  
+                        <h2 class="search-filter-book-text050">                          
+                            <label class="search-filter-book-text032" id="bookAuthor5"></label>
+                            <br class="search-filter-book-text053" />
+                            <span></span>
+                        </h2>
+                      </div>
+                    </div>
+                  </a>        
+                </div>
+                <%- include('layouts/footer'); -%>
               </div>
+              <!-- footer
+              <%- include('layouts/footer'); -%> -->
             </div>
           </div>
       </div>
     <!--Script-->
-    <!-- <%- include('layouts/script'); -%> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/4.0.0/shuffle.min.js"></script>
-  
-    <script src="/js/filterSort.js"></script>
+    <%- include('layouts/script'); -%>
   </body>
 </html>
             
