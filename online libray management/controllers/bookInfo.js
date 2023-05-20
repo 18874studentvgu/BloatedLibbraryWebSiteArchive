@@ -12,7 +12,7 @@ module.exports = (req, response) => {
         //this is for when there are reviews
         var start = Date.now()
         var date = new Date(start);
-        date.setDate(date.getDate() + 1);
+        date.setDate(date.getDate() + 4);
         console.log(date)
         console.log("have it")
         var date1 = date. toISOString();
@@ -68,7 +68,7 @@ module.exports = (req, response) => {
             reviews:reviews,
             book: book,
             id: id
-            
+
         });
     })
     }

@@ -19,7 +19,7 @@ module.exports = (req, response) => {
         //get date and set due date for the borrow book
         var start = Date.now()
         var date = new Date(start);
-        date.setDate(date.getDate() + 1);
+        date.setDate(date.getDate() + 4);
         console.log(date)
         console.log("have it")
         var date1 = date. toISOString();
@@ -42,7 +42,24 @@ module.exports = (req, response) => {
              da:date, // this is date format which will be used to print out on Front End
             })
 
-        } else {
+        } else if(wishlist[0] != null && record.length == 0) {
+            
+            idk = "yes"
+            a = wishlist[0].books
+
+            response.render('bookcart', {
+             borrowedList : record, 
+             user: user,
+             wishlist: wishlist,
+             a: a,
+             book: book,
+             idk: idk,
+             date: date1, // this is ISO format to store to the data base
+             da:date, // this is date format which will be used to print out on Front End
+            })
+        }
+        
+        else {
             idk = "no"
             response.render('bookcart', {
                 borrowedList : record, 

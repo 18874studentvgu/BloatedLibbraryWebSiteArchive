@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  overflow: auto;
+  /* overflow: auto; */
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
@@ -11,6 +11,7 @@
   width: 100%;
   height: auto;
   /* display: flex; */
+  display: flex;
   overflow: hidden;
   position: relative;
   align-items: flex-start;
