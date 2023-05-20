@@ -66,6 +66,11 @@ const paySuccess = require('./controllers/paySuccess')
 const storePaySuccess = require('./controllers/storePaySuccess')
 const bookcart = require('./controllers/bookcart')
 const returnBook = require('./controllers/returnBook')
+
+//middileware
+    //check due date of borrowed book
+    const borrowDueDate = require('./middleware/checkDueDate')
+
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
@@ -145,8 +150,8 @@ http.listen(3000, () => {
 }) 
 
 //home and post preview
-app.get('/', homeController)
-app.get('/index', homeController)
+app.get('/', borrowDueDate,homeController)
+app.get('/index', borrowDueDate ,homeController)
 
 //borrow 
 app.post('/users/borrow', borrow)

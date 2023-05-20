@@ -38,8 +38,8 @@ module.exports = (req, response) => {
              a: a,
              book: book,
              idk: idk,
-             date: date1,
-             da:date,
+             date: date1, // this is ISO format to store to the data base
+             da:date, // this is date format which will be used to print out on Front End
             })
 
         } else {

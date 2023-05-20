@@ -1,5 +1,11 @@
 
 var date = document.getElementById('dueDate').value;
+var length = document.getElementById('length').value;
+var borrowDate = [];
+var user = [];
+for (var i = 0; i < 1; i++) {
+    //borrowDate[i] =  
+}
 //var date1 = date.toString()  
 // Set the date we're counting down to
 var countDownDate = new Date(date).getTime();
