@@ -223,7 +223,7 @@
 }
 .book-info-info {
   width: 885px;
-  height: 92.33333587646484px;
+  height: auto;
   display: flex;
   margin-top: 20px;
   align-items: center;
@@ -231,7 +231,7 @@
 }
 .book-info-info1 {
   width: 374px;
-  height: 87.33333587646484px;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -351,8 +351,8 @@
   text-decoration: none;
 }
 .book-info-cat {
-  width: 117px;
-  height: 38px;
+  width: auto;
+  height: 50px;
   display: flex;
   padding: 0;
   align-self: auto;
@@ -368,8 +368,8 @@
   background-color: transparent;
 }
 .book-info-tag {
-  width: 117px;
-  height: 38px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   margin-right: 40px;
@@ -379,7 +379,7 @@
 }
 .book-info-text029 {
   color: rgba(0, 0, 0, 1);
-  width: 117px;
+  width: auto;
   height: auto;
   font-size: 20px;
   align-self: auto;

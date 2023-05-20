@@ -13,7 +13,7 @@
                     <div class="add-book-login">
                         <div class="add-book-background">
                             <h1 class="add-book-text06">Add book</h1>
-                            <form action="/admin/storeBook" name="addBook" method="POST" onsubmit="return validateForm()" class="add-book-form">
+                            <form action="/admin/storeBook" name="addBook" enctype="multipart/form-data" method="POST" onsubmit="return validateForm()" class="add-book-form">
                                 <div class="add-book-book-name">
                                     <label for="Title" class="add-book-text07">Book name</label>
                                     <input
@@ -45,6 +45,17 @@
                                         class="add-book-textinput1 input"
                                     />
                                 </div>
+                                <div class="add-book-author">
+                                    <label for="category" class="add-book-text08">
+                                    Category (separated by commas)
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="categories"
+                                        name="categories"
+                                        class="add-book-textinput1 input"
+                                    />
+                                </div>
                                 <div class="add-book-author1">
                                     <label for="sypnopsis" class="add-book-text09">
                                         Synopsis
@@ -67,6 +78,39 @@
                                         class="add-book-textinput4 input"
                                     />
                                 </div>
+                                <div class="add-book-pub-year">
+                                    <label for="PDFPreviewLink" class="add-book-text11">
+                                    Language
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="language"
+                                        name="language"
+                                        class="add-book-textinput4 input"
+                                    />
+                                </div>
+                                <div class="add-book-pub-year">
+                                    <label for="PDFPreviewLink" class="add-book-text11">
+                                    Publisher
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="publisher"
+                                        name="publisher"
+                                        class="add-book-textinput4 input"
+                                    />
+                                </div>
+                                <div class="add-book-pub-year">
+                                    <label for="PDFPreviewLink" class="add-book-text11">
+                                    Published Year
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="publishedAt"
+                                        name="publishedAt"
+                                        class="add-book-textinput4 input"
+                                    />
+                                </div>
                                 <div class="add-book-quantity">
                                     <label for="Quantity" class="add-book-text12">No. of books</label>
                                     <input
@@ -76,6 +120,15 @@
                                         class="add-book-textinput5 input"
                                     />
                                 </div>
+                                <div class="add-book-pub-year">
+                                    <label for="coverLink" class="add-book-text10">Book Cover</label>
+                                    <input
+                                      type="file"
+                                      id="coverLink"
+                                      name="coverLink"
+                                      class="add-book-textinput3 input"
+                                    />
+                                  </div>
                                 <button type='submit' class="add-book-login1 button">Submit</button>
                             </form>
                         </div>
