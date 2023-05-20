@@ -44,12 +44,20 @@ module.exports = (req, response) => {
     } else {
     Promise.all ([ Book.findById(req.params.id), Review.find({})]) 
     .then(([book, reviews])=>{
+        var start = Date.now()
+        var date = new Date(start);
+        date.setDate(date.getDate() + 1);
+        console.log(date)
+        console.log("have it")
+        var date1 = date. toISOString();
+        console.log(date1)
         //this is for when there are reviews
         var id = "yes"
         console.log("have reviews")
         response.render('book-info',{
             reviews:reviews,
             book:book,
+            date: date1,
             id: id,
         });
     })
