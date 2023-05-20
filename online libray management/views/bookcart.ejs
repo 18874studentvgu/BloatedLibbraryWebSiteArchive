@@ -121,11 +121,11 @@
                   </span>
                   <span class="app-component-text07">
                     <span>Issued date:</span>
-                    <span class="app-component-text09">03/04/2023</span>
+                    <span class="app-component-text09"><%= borrowedList[j].createdAt.toDateString() %></span>
                   </span>
                   <span class="app-component-text10">
                     <span>Return date:</span>
-                    <span class="app-component-text12">10/04/2023</span>
+                    <span class="app-component-text12"><%= da.toDateString() %></span>
                   </span>
                 </div>
               </div>
@@ -144,7 +144,7 @@
               <% } %>  
               <% } %>
             </div>
-
+            <p id="demo"> </p>
 
             <div class="bookcart-container07">
               <span class="bookcart-text18">Cart</span>
@@ -174,6 +174,13 @@
                 value= <%= a[i].bookID %>
                 > 
 
+                <input
+                type="hidden"
+                name="dueDate"
+                id="dueDate"
+                class="book-info-textinput input"
+                value= <%= date %>
+                > 
 
                 <img
                   alt="ThinkJavabook19753"
@@ -193,12 +200,8 @@
                     <span></span>
                   </span>
                   <span class="app-component-text07">
-                    <span>Issued date:</span>
-                    <span class="app-component-text09">03/04/2023</span>
-                  </span>
-                  <span class="app-component-text10">
-                    <span>Return date:</span>
-                    <span class="app-component-text12">10/04/2023</span>
+                    <span>wishlist date:</span>
+                    <span class="app-component-text09"><%= wishlist[0].createdAt.toDateString() %></span>
                   </span>
                   
                 </div>
