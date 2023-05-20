@@ -14,7 +14,9 @@ module.exports = (req, response) => {
                 .then (([book, wishlist, book1]) => {                        
                 //        console.log(wishlist)
                 //        console.log(book1)
+                if (book.length != 0 && book1.length!= 0){
                        if(wishlist.length != 0) {
+                                //if have wishlist and
                                 idk = "yes"
                                 let a = wishlist[0].books;
                                 console.log(a[0])
@@ -41,7 +43,20 @@ module.exports = (req, response) => {
                                         book1: book1
                                 })  
                         }
-               
+                } else {
+
+                        idk = "idk"
+                        console.log("u don't have book")
+                        response.render('index', 
+                        {
+                                
+                                wishlists: wishlist,
+                                idk: idk,
+                                book: book,
+                                book1: book1
+                                
+                        })  
+                }
                 })
               .catch((error, book, wishlist)=> {
                 //if there is no book or wishlist
