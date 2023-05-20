@@ -351,8 +351,8 @@
   text-decoration: none;
 }
 .book-info-cat {
-  width: auto;
-  height: 50px;
+  width: 60%;
+  height: 100%;
   display: flex;
   padding: 0;
   align-self: auto;
