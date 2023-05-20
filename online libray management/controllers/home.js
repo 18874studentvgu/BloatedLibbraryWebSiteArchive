@@ -47,7 +47,6 @@ module.exports = (req, response) => {
                 //if there is no book or wishlist
                 console.log("can't find book bro")        
                 idk = "no"
-
                         response.render('index',
                         {
                                 idk: idk,

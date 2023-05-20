@@ -44,6 +44,7 @@
               <div class="home-info">
                 <h2 class="home-text009"><span>BOOK OF THE WEEK</span></h2>
                 <h1 class="home-text011">
+                  <% if (idk=="yes" ) { %>
                   <span>
                     <span><%= book1[0].name %></span>
                   </span>
@@ -58,6 +59,23 @@
                     account of an extraordinary mind and life.
                   </span>
                 </p>
+                <% } %>
+                <% if (idk=="no" ) { %>
+                  <span>
+                    <span><%= book1[0].name %></span>
+                  </span>
+                </h1>
+                <h2 class="home-text016"><span><%= book1[0].author %></span></h2>
+                <p class="home-text018">
+                  <span>
+                    Listed as one of the essential 50 books of all time in The
+                    Guardian, this classic biography of the founder of computer
+                    science, reissued on the centenary of his birth with a
+                    substantial new preface by the author, is the definitive
+                    account of an extraordinary mind and life.
+                  </span>
+                </p>
+                <% } %>
                 <div class="home-container02">
                   <% var h = 0 ; %> 
                   <% if (loggedIn ) {%>
