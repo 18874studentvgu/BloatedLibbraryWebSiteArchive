@@ -81,7 +81,7 @@
                   <% if (loggedIn ) {%>
                     <% if (idk=="yes" ) { %>
                       <% if ( a.length == 0 ) { %>
-                        <form id="wishlistD" method="POST">
+                        <form action="/users/wishlist" method="POST">
                           <input
                         type="hidden"
                         name="userID"
@@ -130,7 +130,7 @@
                         <% } %>
                           <% if (h-1 >= 0) { %>
                           <% if (h-1 < a.length && !a[h-1].bookID.equals(book1[0]._id )) { %>
-                            <form id="wishlistD" method="POST">
+                            <form action="/users/wishlist" method="POST">
                               <input
                             type="hidden"
                             name="userID"
@@ -172,7 +172,7 @@
 
                             <% if (h-1 < 0) { %>
                               <% if ( h < a.length && !a[h].bookID.equals(book1[0]._id ))  { %>
-                                <form id="wishlistD" method="POST">
+                                <form action="/users/wishlist" method="POST">
                                   <input
                                 type="hidden"
                                 name="userID"
@@ -215,7 +215,7 @@
                             <% } %>
 
                                 <% if (idk !="yes" && idk1 != "idk" ) { %>
-                                  <form id="wishlistD" method="POST">
+                                  <form action="/users/wishlist" method="POST">
                                     <input
                                     type="hidden"
                                     name="userID"
@@ -307,7 +307,7 @@
                         </h2>
                         <% if (loggedIn ) {%>
                           <% if (idk !="yes" && idk1 != "idk" ) { %>
-                            <form id="wishlist<%= i %>" method="POST">
+                            <form action="/users/wishlist" method="POST">
                               <input type="hidden" name="userID" id="userID" class="book-info-textinput input" value=<%=loggedIn %>
                               >
                   
@@ -327,7 +327,7 @@
                   
                               <% if (idk=="yes" ) { %>
                                 <% if ( a.length==0 ) { %>
-                                  <form id="wishlist<%= i %>" method="POST">
+                                  <form action="/users/wishlist" method="POST">
                                     <input type="hidden" name="userID" id="userID" class="book-info-textinput input" value=<%=loggedIn %>
                                     >
                   
@@ -356,7 +356,7 @@
                                         <% } %>
                                           <% if (j-1>= 0) { %>
                                             <% if ( j-1 < a.length && !a[j-1].bookID.equals(book[i]._id )) { %>
-                                              <form id="wishlist<%= i %>" method="POST">
+                                              <form action="/users/wishlist" method="POST">
                                                 <input type="hidden" name="userID" id="userID" class="book-info-textinput input"
                                                   value=<%=loggedIn %>
                                                 >
@@ -383,7 +383,7 @@
                   
                                                   <% if (j-1 < 0) { %>
                                                     <% if ( j < a.length && !a[j].bookID.equals(book[i]._id )) { %>
-                                                      <form id="wishlist<%= i %>" method="POST">
+                                                      <form action="/users/wishlist" method="POST">
                                                         <input type="hidden" name="userID" id="userID" class="book-info-textinput input"
                                                           value=<%=loggedIn %>
                                                         >
