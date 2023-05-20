@@ -82,7 +82,7 @@
                       headers: {'Content-Type':'application/json'},
                       body : JSON.stringify({payload: e.value})
                     }).then(res => res.json()).then(data =>{
-                      let payload = data.payload;     // payload is an array coontaining the book's title, author and URL link 
+                      let payload = data.payload;     // payload is an array coontaining the book's title, author and _id link 
                       searchResults.innerHTML = '';
                       if(payload.length < 1){
                         searchResults.innerHTML = '<p>Sorry. Nothing Found.</p>';
@@ -90,7 +90,7 @@
                       }
                     let bookTitle   = document.getElementById('bookTitle'); // get ID from bookTitle below
                     let bookAuthor  = document.getElementById('bookAuthor'); // get ID from bookAuthor below
-                    let bookHref = document.getElementById('bookHref');      // get ID from bookHref below  (URL link of the book)                      
+                    let bookHref = document.getElementById('bookHref');      // get ID from bookHref below  (_id link of the book)                      
                     let bookTitle1  = document.getElementById('bookTitle1'); // and so on for bookTitle 1,2,3,4,5
                     let bookAuthor1 = document.getElementById('bookAuthor1');
                     let bookHref1 = document.getElementById('bookHref1');
@@ -109,22 +109,22 @@
                     
                     bookTitle.innerText = payload[0].title;  // take the title from the first slot of the payload[0] array
                     bookAuthor.innerText = payload[0].author; // take the author from the first slot of the payload[0] array                  
-                    bookHref.setAttribute('href', payload[0].url); // take the URL link from the first slot of the payload[0] array
+                    bookHref.setAttribute('href', '/book-info/' + payload[0]._id); // take the _id link from the first slot of the payload[0] array
                     bookTitle1.innerText = payload[1].title;  
                     bookAuthor1.innerText = payload[1].author;
-                    bookHref1.setAttribute('href', payload[1].url);
+                    bookHref1.setAttribute('href', '/book-info/' + payload[1]._id);
                     bookTitle2.innerText = payload[2].title;  
                     bookAuthor2.innerText = payload[2].author; 
-                    bookHref2.setAttribute('href', payload[2].url);
+                    bookHref2.setAttribute('href', '/book-info/' + payload[2]._id);
                     bookTitle3.innerText = payload[3].title;  
                     bookAuthor3.innerText = payload[3].author; 
-                    bookHref3.setAttribute('href', payload[3].url);
+                    bookHref3.setAttribute('href', '/book-info/' + payload[3]._id);
                     bookTitle4.innerText = payload[4].title;  
                     bookAuthor4.innerText = payload[4].author; 
-                    bookHref4.setAttribute('href', payload[4].url);   
+                    bookHref4.setAttribute('href', '/book-info/' + payload[4]._id);   
                     bookTitle5.innerText = payload[5].title;  
                     bookAuthor5.innerText = payload[5].author;  
-                    bookHref5.setAttribute('href', payload[5].url);   
+                    bookHref5.setAttribute('href', '/book-info/' + payload[5]._id);   
                  
                           
                     
@@ -147,7 +147,7 @@
 
                   
                 </script>
-                 <a id="bookHref" href="">   
+                 <a id="bookHref">   
                 <div class="search-filter-book-contianer">                 
                   <img 
                         id="bookImage" 
@@ -167,7 +167,7 @@
                   
                 </div>
                 </a>
-                  <a id="bookHref1" href=""> 
+                  <a id="bookHref1" > 
                   <div class="search-filter-book-contianer ">
                     <img 
                           id="bookImage1" 
@@ -186,7 +186,7 @@
                     </div>                   
                   </div>
                   </a>
-                  <a id="bookHref2" href="">    
+                  <a id="bookHref2" >    
                   <div class="search-filter-book-contianer">
                     <img 
                         id="bookImage2"                                             
@@ -203,7 +203,7 @@
                   </div>
                 </div> 
                 </a>
-                <a id="bookHref3" href="">
+                <a id="bookHref3" >
                 <div class="search-filter-book-contianer">
                   <img 
                       id="bookImage3"                                             
@@ -220,7 +220,7 @@
                 </div>
               </div>
               </a>
-              <a id="bookHref4" href=""> 
+              <a id="bookHref4" > 
               <div class="search-filter-book-contianer">
                 <img 
                     id="bookImage4"                                             
@@ -237,7 +237,7 @@
               </div>
             </div>
             </a> 
-            <a id="bookHref5" href=""> 
+            <a id="bookHref5" > 
             <div class="search-filter-book-contianer">
               <img 
                   id="bookImage5"                                             

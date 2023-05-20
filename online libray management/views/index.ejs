@@ -571,6 +571,7 @@
   <script>
     function sendData(e){
       const searchResults = document.getElementById('searchResults')
+      console.log(searchResults)
       let match = e.value.match(/^[a-zA-Z ]*/);
       let match2 = e.value.match(/\s*/);
       if(match2[0] === e.value){
@@ -591,7 +592,7 @@
         }       
         payload.forEach((item,index)=>{
           if(index>0) searchResults.innerHTML += '<hr>';
-          searchResults.innerHTML += `<p><a href="${item.url}" target="_blank">${item.title}</a></p>`; // displaying the name of the book and its URL when click in
+          searchResults.innerHTML += `<p><a href="/book-info/${item._id}" target="_blank">${item.title}</a></p>`; // displaying the name of the book and its URL when click in
         });
        
       });
