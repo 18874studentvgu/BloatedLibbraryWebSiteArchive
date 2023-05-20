@@ -12,14 +12,14 @@ const BookSchema = new mongoose.Schema({
     categories: [{
         type: String,
         lowercase: true,
-        validate: {
-            validator: async function (v) {
-                let a = await cutomMGValidator(v, 'bookCategories');
-                // console.log(a);
-                return a
-            },
-            message: '\"{VALUE}\" is not acceptable, please check in ../data/BookCategories.js or yell at son'
-        }
+        // validate: {
+        //     validator: async function (v) {
+        //         let a = await cutomMGValidator(v, 'bookCategories');
+        //         // console.log(a);
+        //         return a
+        //     },
+        //     message: '\"{VALUE}\" is not acceptable, please check in ../data/BookCategories.js or yell at son'
+        // }
     }],
     synopsis: String,
     copiesAvailable: { type: Number, min: [0, 'Availables copies cannot be negative ({VALUE})!'] },
@@ -46,7 +46,9 @@ const BookSchema = new mongoose.Schema({
         // message: '{VALUE} is not acceptable, please check in or yell at son'
         // }
     },
-    publishedAt: Date,
+    publishedAt: {
+        type: Number,
+    },
     reviewPreview: [{ // NOTE: might not be needed afterall
         // review: {type: mongoose.Schema.Types.ObjectId, ref: 'Review'},
         // user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},

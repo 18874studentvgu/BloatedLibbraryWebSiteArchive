@@ -3,7 +3,6 @@ const path = require('path')
 
 module.exports = (req,res) => 
 {
-    console.log(req.body)
     let { iconLink } = req.files;
     iconLink.mv(path.resolve(__dirname,'..', '..' ,'public/upload', iconLink.name), function (err) 
     {   

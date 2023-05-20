@@ -20,7 +20,6 @@ module.exports = (req, response) => {
             //if(!user) {console.log("no user");throw new Error('UwU user not logged in')}
             var id = "yes"
             console.log("have reviews")
-            console.log(book.name)
             response.render('book-info',{
                 reviews:reviews,
                 book:book,
