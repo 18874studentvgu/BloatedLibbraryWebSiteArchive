@@ -1767,15 +1767,16 @@
 #searchResults {
   position: absolute;
   top: 100%; /* changed from 200% */
-  left: 28.5%; /* added */
-  width: 57.5%; /* changed from 100% */
+  left: 27.5%; /* added */
+  width: 60%; /* changed from 100% */
   max-height: 200px; /* added */
   overflow-y: auto; /* added to enable scroll if height exceeds 200px */
   background-color: #FFF;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   z-index: 1;
-  padding: 10px;
-  border-radius: 9px
+  /* padding: 10px; */
+  border-radius: 0px 0px 9px 9px;
+  align-items: center;
 }
 
 #searchResults hr {

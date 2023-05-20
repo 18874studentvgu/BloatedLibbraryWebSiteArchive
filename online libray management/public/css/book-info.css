@@ -168,13 +168,13 @@
   background-color: rgba(219, 129, 45, 1);
 }
 .book-info-book-image {
-  width: 350px;
-  height: 500px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 4%;
+  margin-bottom: 10%;
 }
 .book-info-text006 {
   color: rgba(255, 255, 255, 1);
@@ -202,14 +202,14 @@
   height: auto;
   display: flex;
   align-items: flex-start;
-  margin-left: 5%;
+  margin-left: 3%;
   margin-right: -5%;
   margin-top: 3%;
   flex-direction: column;
 }
 .book-info-text008 {
   color: rgba(255, 255, 255, 1);
-  width: 900px;
+  width: 880px;
   height: auto;
   font-size: 64px;
   align-self: auto;
@@ -716,10 +716,11 @@
   font-size: 20px;
   margin-right: 3%;
   background-color: #db812d;
+  border-radius: 9px;
 }
 .book-info-button3 {
   color: #ffffff;
-  width: 15%;
+  width: 25%;
   display: flex;
   font-size: 18px;
   font-style: normal;
@@ -731,7 +732,7 @@
   border-width: 0px;
   flex-direction: row;
   justify-content: center;
-  background-color: #db812d;
+  background-color: #00FF00;
 }
 .book-info-button3:hover {
   box-shadow: 5px 5px 10px 0px #767272;
@@ -750,7 +751,7 @@
 }
 .book-info-button4 {
   color: #ffffff;
-  width: 15%;
+  width: 25%;
   display: flex;
   font-size: 18px;
   font-style: normal;
@@ -764,7 +765,7 @@
   margin-right: 3%;
   flex-direction: row;
   justify-content: center;
-  background-color: rgb(219, 129, 45);
+  background-color: #FF0000;
 }
 .book-info-button4:hover {
   box-shadow: 5px 5px 10px 0px #767272;
