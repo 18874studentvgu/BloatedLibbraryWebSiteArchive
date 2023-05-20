@@ -213,7 +213,8 @@
                               <% } %>
 
                             <% } %>
-                                <% if (idk !="yes" ) { %>
+
+                                <% if (idk !="yes" && idk1 != "idk" ) { %>
                                   <form id="wishlistD" method="POST">
                                     <input
                                     type="hidden"
@@ -305,7 +306,7 @@
                           </a>
                         </h2>
                         <% if (loggedIn ) {%>
-                          <% if (idk !="yes" ) { %>
+                          <% if (idk !="yes" && idk1 != "idk" ) { %>
                             <form id="wishlist<%= i %>" method="POST">
                               <input type="hidden" name="userID" id="userID" class="book-info-textinput input" value=<%=loggedIn %>
                               >
