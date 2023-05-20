@@ -583,7 +583,7 @@
         headers: {'Content-Type':'application/json'},
         body : JSON.stringify({payload: e.value})
       }).then(res => res.json()).then(data =>{
-        let payload = data.payload;
+        let payload = data.payload; // payload is an array coontaining the book's title, author and URL link
         searchResults.innerHTML = '';
         if(payload.length < 1){
           searchResults.innerHTML = '<p>Sorry. Nothing Found.</p>';
@@ -591,7 +591,7 @@
         }       
         payload.forEach((item,index)=>{
           if(index>0) searchResults.innerHTML += '<hr>';
-          searchResults.innerHTML += `<p><a href="${item.url}" target="_blank">${item.title}</a></p>`;
+          searchResults.innerHTML += `<p><a href="${item.url}" target="_blank">${item.title}</a></p>`; // displaying the name of the book and its URL when click in
         });
        
       });

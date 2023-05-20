@@ -69,7 +69,7 @@
                 </section>             
                 <script>
                   function sendData(e){
-                    const searchResults = document.getElementById('searchResults')
+                    const searchResults = document.getElementById('searchResults') 
                     let match = e.value.match(/^[a-zA-Z ]*/);
                     let match2 = e.value.match(/\s*/);
                     if(match2[0] === e.value){
@@ -82,16 +82,16 @@
                       headers: {'Content-Type':'application/json'},
                       body : JSON.stringify({payload: e.value})
                     }).then(res => res.json()).then(data =>{
-                      let payload = data.payload;
+                      let payload = data.payload;     // payload is an array coontaining the book's title, author and URL link 
                       searchResults.innerHTML = '';
                       if(payload.length < 1){
                         searchResults.innerHTML = '<p>Sorry. Nothing Found.</p>';
                       return;
                       }
-                    let bookTitle   = document.getElementById('bookTitle');
-                    let bookAuthor  = document.getElementById('bookAuthor');
-                    let bookHref = document.getElementById('bookHref');                              
-                    let bookTitle1  = document.getElementById('bookTitle1');
+                    let bookTitle   = document.getElementById('bookTitle'); // get ID from bookTitle below
+                    let bookAuthor  = document.getElementById('bookAuthor'); // get ID from bookAuthor below
+                    let bookHref = document.getElementById('bookHref');      // get ID from bookHref below  (URL link of the book)                      
+                    let bookTitle1  = document.getElementById('bookTitle1'); // and so on for bookTitle 1,2,3,4,5
                     let bookAuthor1 = document.getElementById('bookAuthor1');
                     let bookHref1 = document.getElementById('bookHref1');
                     let bookTitle2  = document.getElementById('bookTitle2');
@@ -107,9 +107,9 @@
                     let bookAuthor5 = document.getElementById('bookAuthor5');
                     let bookHref5 = document.getElementById('bookHref5');
                     
-                    bookTitle.innerText = payload[0].title; 
-                    bookAuthor.innerText = payload[0].author;                   
-                    bookHref.setAttribute('href', payload[0].url);
+                    bookTitle.innerText = payload[0].title;  // take the title from the first slot of the payload[0] array
+                    bookAuthor.innerText = payload[0].author; // take the author from the first slot of the payload[0] array                  
+                    bookHref.setAttribute('href', payload[0].url); // take the URL link from the first slot of the payload[0] array
                     bookTitle1.innerText = payload[1].title;  
                     bookAuthor1.innerText = payload[1].author;
                     bookHref1.setAttribute('href', payload[1].url);
@@ -128,9 +128,9 @@
                  
                           
                     
-                    payload.forEach((item,index)=>{
+                    payload.forEach((item,index)=>{ // loop to display each book (item) information from the payload
                       if(index === 0) {                 
-                        searchResults.innerHTML = `<p><a href="/searchFilterBook" >${item.title}</a></p>`;         
+                        searchResults.innerHTML = `<p>${item.title}</p>`;         
                         document.getElementById('bookAuthor').textContent = 'Author : '+item.author; 
                     } 
                       
