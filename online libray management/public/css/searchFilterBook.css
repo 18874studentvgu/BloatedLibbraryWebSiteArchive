@@ -275,14 +275,14 @@
   border-radius: 9px;
 }
 .search-filter-book-contianer {
-  width: 1380px;
+  width: 1200px;
   height: 440px;
   display: flex;
   padding: 0;
   align-self: center;
   box-sizing: border-box;
   /* margin-top: var(--dl-space-space-halfunit); */
-  margin-left: 7%;
+  margin-left: 8%;
   margin-bottom: 50px;
   align-items: flex-start;
   flex-shrink: 1;
