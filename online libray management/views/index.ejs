@@ -46,17 +46,13 @@
                 <h1 class="home-text011">
                 <% if (idk1 !="idk" ) { %>
                   <span>
-                    <span><%= book1[0].name %></span>
+                    <span><%= book[2].title %></span>
                   </span>
                 </h1>
-                <h2 class="home-text016"><span><%= book1[0].author %></span></h2>
+                <h2 class="home-text016"><span><%= book[2].author %></span></h2>
                 <p class="home-text018">
                   <span>
-                    Listed as one of the essential 50 books of all time in The
-                    Guardian, this classic biography of the founder of computer
-                    science, reissued on the centenary of his birth with a
-                    substantial new preface by the author, is the definitive
-                    account of an extraordinary mind and life.
+                    <%= book[2].synopsis %>
                   </span>
                 </p>  
                 <% } %>
@@ -272,11 +268,18 @@
                     <% } %>
                 </div>
               </div>
+              <% if (idk1 != "idk" ) { %>
+              <img
+                src="<%= book[2].coverLink %>"
+                class="home-alan-turingbook1"
+              />
+              <% } else { %>
               <img
                 alt="AlanTuringbook16046"
                 src="playground_assets/alanturingbook16046-yca6-500w.png"
                 class="home-alan-turingbook1"
               />
+                <% } %>
             </div>
 
             <div class="home-featured-books">
@@ -291,8 +294,18 @@
                    
                     <div class="home-book-cards swiper-slide">
                       <div class="home-book-1">
-                        <img alt="Physicscanbefunbook16058" src="/playground_assets/physicscanbefunbook16058-w3jj-300h.png"
-                          class="home-physicscanbefunbook1" />
+                        <% if (book[i].iconLink == '') { %>
+                        <img 
+                          alt="Physicscanbefunbook16058" 
+                          src="/playground_assets/physicscanbefunbook16058-w3jj-300h.png"
+                          class="home-physicscanbefunbook1" 
+                        />
+                        <% } else { %>
+                        <img
+                          src="<%= book[i].coverLink %>"
+                          class="home-physicscanbefunbook1"
+                        />
+                        <% } %>
                         <h2 class="home-text024">
                           <a href="/book-info/<%= book[i]._id %>">
                             <span class="home-text025">

@@ -77,44 +77,45 @@
                      <% } %>
                 </div>
               </div>
+              <% if (loggedIn) { %>
               <div class="book-info-container2">
                 <form action="/users/wishlist" method="POST">
                   <input
-                              type="hidden"
-                              name="userID"
-                              id="userID"
-                              class="book-info-textinput input"
-                              value= <%= loggedIn %>
-                              > 
+                  type="hidden"
+                  name="userID"
+                  id="userID"
+                  class="book-info-textinput input"
+                  value= <%= loggedIn %>
+                  > 
 
-                              <input
-                              type="hidden"
-                              name="bookID"
-                              id="bookID"
-                              class="book-info-textinput input"
-                              value= <%= book._id %>
-                              > 
+                  <input
+                  type="hidden"
+                  name="bookID"
+                  id="bookID"
+                  class="book-info-textinput input"
+                  value= <%= book._id %>
+                  > 
 
-                              <input
-                              type="hidden"
-                              name="bookName"
-                              id="bookName"
-                              class="book-info-textinput input"
-                              value= <%= book.name %>
-                              > 
+                  <input
+                  type="hidden"
+                  name="bookName"
+                  id="bookName"
+                  class="book-info-textinput input"
+                  value= <%= book.name %>
+                  > 
 
-                              <input
-                              type="hidden"
-                              name="Author"
-                              id="Author"
-                              class="book-info-textinput input"
-                              value= <%= book.author %>
-                              > 
+                  <input
+                  type="hidden"
+                  name="Author"
+                  id="Author"
+                  class="book-info-textinput input"
+                  value= <%= book.author %>
+                  > 
 
-                <button type="submit" class="book-info-button1 button">
-                  Wishlist
-                </button>
-              </form>
+                  <button type="submit" class="book-info-button1 button">
+                    Wishlist
+                  </button>
+                </form>
                 <form action="/users/returnBook" method="POST">
                   <input
                   type="hidden"
@@ -140,12 +141,12 @@
                   value= <%= date %>
                   > 
 
-
-                <button type="submit" class="book-info-button2 button">
-                  Borrow
-                </button>
-              </form>
+                  <button type="submit" class="book-info-button2 button">
+                    Borrow
+                  </button>
+                </form>
               </div>
+              <% } %>
             </div>
           </div>
           <div class="book-info-container3">
