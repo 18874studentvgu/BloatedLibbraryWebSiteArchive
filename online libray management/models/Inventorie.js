@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const BookCopieSchema = new mongoose.Schema({
+const InventorySchema = new mongoose.Schema({
     bookID: {
         required: true,
         type: mongoose.Schema.Types.ObjectId,
@@ -14,5 +14,5 @@ const BookCopieSchema = new mongoose.Schema({
 { timestamps: true});
 
 
-const BookCopie = mongoose.model('BookCopie',BookCopieSchema);
-module.exports = BookCopie;
+const Inventory = mongoose.model('Inventory',InventorySchema);
+module.exports = Inventory;
