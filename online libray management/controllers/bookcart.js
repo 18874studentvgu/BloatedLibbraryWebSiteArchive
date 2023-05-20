@@ -19,7 +19,7 @@ module.exports = (req, response) => {
         //get date and set due date for the borrow book
         var start = Date.now()
         var date = new Date(start);
-        date.setDate(date.getDate() + 3);
+        date.setDate(date.getDate() + 4);
         console.log(date)
         console.log("have it")
         var date1 = date. toISOString();
