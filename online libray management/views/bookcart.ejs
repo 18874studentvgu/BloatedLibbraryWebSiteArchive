@@ -20,7 +20,7 @@
             <div class="bookcart-container05">
               <span class="bookcart-text15"><span>Overdue</span></span>
             <% for (var r = 0; r < borrowedList.length; r++) { %>
-              <% if (borrowedList[r].hasReturned == false) { %>
+              <% if (borrowedList[r].returnDate == null) { %>
               <div class="app-component-container">
                 <input
                   type="radio"

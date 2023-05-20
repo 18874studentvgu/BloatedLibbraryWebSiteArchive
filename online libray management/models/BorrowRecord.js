@@ -3,28 +3,28 @@ const mongoose = require('mongoose');
 const BorrowRecordSchema = new mongoose.Schema({
     userID: {
         type: mongoose.Types.ObjectId,
-        required: true,
+        //required: true,
         ref: 'User'
     },
     bookID: {
         type: mongoose.Types.ObjectId,
-        required: true,
+        //required: true,
         ref: 'Book'
     },
     inventoryID: {
         type: mongoose.Types.ObjectId,
-        required: true,
+        //required: true,
         ref: 'Invetorie'
     },
 
     leaseDate: {
         type: Date,
         default: mongoose.now,
-        required: true
+        //required: true
     },
     dueDate: {
         type: Date,
-        required: true
+        //required: true
     },
     returnDate: {
         type: Date,
