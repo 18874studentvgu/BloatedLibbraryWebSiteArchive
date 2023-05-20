@@ -5,11 +5,10 @@ module.exports = (req, response) => {
     console.log(username);
     Promise.all([
         User.findById(req.session.userId),
-        Review.find({userID: req.session.userId})
+        Review.find({ "writtenBy.userID": req.session.userId })
     ])
     .then(([user,reviews])=>{
         console.log("hi")
-        console.log(user)
         response.render('userprofile', {
             user,
             reviews
