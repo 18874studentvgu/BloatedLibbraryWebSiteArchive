@@ -13,12 +13,17 @@ const BookSchema = new mongoose.Schema({
         type: String,
         lowercase: true,
         validate: {
-            validator: (v) => { cutomMGValidator(v,'bookCategories') },
-            message: '{VALUE} is not acceptable, please check in ../data/BookCategories.js or yell at son'
+            validator: async function (v) {
+                let a = await cutomMGValidator(v, 'bookCategories');
+                // console.log(a);
+                return a
+            },
+            message: '\"{VALUE}\" is not acceptable, please check in ../data/BookCategories.js or yell at son'
         }
     }],
     synopsis: String,
     copiesAvailable: { type: Number, min: [0, 'Availables copies cannot be negative ({VALUE})!'] },
+    coverLink: { type: String },
     PDFPreviewLink: String,
     pagePerviewLink: [{ page: Number, link: String }],
 
@@ -26,6 +31,22 @@ const BookSchema = new mongoose.Schema({
         recommended: { type: Number, default: 0 },
         notRecommended: { type: Number, default: 0 }
     },
+    language: {
+        type: String,
+        uppercase: true,
+        // validate: {
+        // validator: (v) => { cutomMGValidator(v,'langCode') },
+        // message: '{VALUE} is not acceptable, please check in or yell at son'
+        // }
+    },
+    publisher: {
+        type: String,
+        // validate: {
+        // validator: (v) => { cutomMGValidator(v,'publisher') },
+        // message: '{VALUE} is not acceptable, please check in or yell at son'
+        // }
+    },
+    publishedAt: Date,
     reviewPreview: [{ // NOTE: might not be needed afterall
         // review: {type: mongoose.Schema.Types.ObjectId, ref: 'Review'},
         // user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
