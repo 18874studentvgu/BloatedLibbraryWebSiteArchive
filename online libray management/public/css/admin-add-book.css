@@ -417,8 +417,7 @@
   font-size: 48px;
   align-self: center;
   font-style: Bold;
-  margin-top: -4%;
-  margin-bottom: 30px;
+  margin-top: 5%;
   text-align: center;
   font-family: Montserrat;
   font-weight: 700;
@@ -554,7 +553,7 @@
   background-size: cover;
   text-decoration: none;
   background-color: rgb(219, 129, 45);
-  margin-top: 5px;
+  margin-bottom: 3%;
 }
 .add-book-login1:hover {
   box-shadow: 5px 5px 10px 0px #b6b0b0;
