@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
     ])
         .then(([user, borrow]) => {
             //caculate the date
-           
+           if (user.length != 0 && borrow.length !=0) {
                 var dif = []
                 var due = []
                 for (var i = 0; i < borrow.length; i++) {
@@ -47,8 +47,9 @@ module.exports = (req, res, next) => {
                         }
                     }
                 }
-         
+            }
             next(); 
            
         })
+
 }

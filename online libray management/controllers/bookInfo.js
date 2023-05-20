@@ -68,6 +68,7 @@ module.exports = (req, response) => {
             reviews:reviews,
             book: book,
             id: id
+            
         });
     })
     }

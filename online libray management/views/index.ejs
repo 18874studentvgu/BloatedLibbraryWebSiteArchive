@@ -44,7 +44,7 @@
               <div class="home-info">
                 <h2 class="home-text009"><span>BOOK OF THE WEEK</span></h2>
                 <h1 class="home-text011">
-                <% if (idk !="idk" ) { %>
+                <% if (idk1 !="idk" ) { %>
                   <span>
                     <span><%= book1[0].name %></span>
                   </span>
@@ -60,7 +60,7 @@
                   </span>
                 </p>  
                 <% } %>
-                <% if (idk =="idk" ) { %>
+                <% if (idk1 =="idk" ) { %>
                   <span>
                     <span>no book</span>
                   </span>
@@ -259,10 +259,16 @@
                                         </button>
                                         <% } %>
                   
-                  
+                  <% if (idk1 !="idk" ) { %>
                   <a href="/book-info/<%= book1[0]._id %>" class="home-text020">
                     <span>View book</span>
                   </a>
+                  <% } %>
+                  <% if (idk1 =="idk" ) { %>
+                    <a  class="home-text020">
+                      <span>No book</span>
+                    </a>
+                    <% } %>
                 </div>
               </div>
               <img
@@ -277,7 +283,7 @@
               <div class="home-slide-container swiper">
                 <div class="home-the-slide-content">
                   <div class="home-slide-wrapper swiper-wrapper">
-                  <% if (idk != "idk" ) { %>  
+                  <% if (idk1 != "idk" ) { %>  
                     <% var j = 0 ; %> 
                  
                   <% for(var i=0 ; i < book.length; i++) { %>
