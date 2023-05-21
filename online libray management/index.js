@@ -97,50 +97,7 @@ io.on("connection", function(socket){
         io.emit("new_comment", reviews, userName, body, rating, title);
     })
 
-    socket.on("new_button", function(button){
-        io.emit("new_button", button);
-    })
-
-    
-    socket.on("0", function(button){
-        io.emit("0", button);
-    })
-    
-    socket.on("1", function(button){
-        io.emit("1", button);
-    })
-
-    socket.on("2", function(button){
-        io.emit("2", button);
-    })
-
-    socket.on("3", function(button){
-        io.emit("3", button);
-    })
-
-    socket.on("4", function(button){
-        io.emit("4", button);
-    })
-
-    socket.on("5", function(button){
-        io.emit("5", button);
-    })
-
-    socket.on("6", function(button){
-        io.emit("6", button);
-    })
-
-    socket.on("7", function(button){
-        io.emit("7", button);
-    })
-
-    socket.on("8", function(button){
-        io.emit("8", button);
-    })
-
-    socket.on("9", function(button){
-        io.emit("9", button);
-    })
+  
 });
 
 app.use(express.static('public'))
