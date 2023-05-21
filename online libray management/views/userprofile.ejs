@@ -26,14 +26,14 @@
                     <div class="userprofile-container06">
                       <span class="userprofile-text18">
                         <span class="userprofile-text19">
-                          Borrowing books: <%= user.booksBorrowing.length %>
+                          Borrowing books: <%= borrowCount %>
                         </span>
                       </span>
                       <span class="userprofile-text20">
                         <span class="userprofile-text21">
                           Over due book(s):
                         </span>
-                        <span class="userprofile-text22">1</span>
+                        <span class="userprofile-text22"><%= dueCount %></span>
                       </span>
                     </div>
                     <div class="userprofile-container07">
@@ -42,7 +42,7 @@
                         <span><%= reviews.length %></span>
                       </span>
                       <span class="userprofile-text26">
-                        <span class="userprofile-text27">Books in cart: 4</span>
+                        <span class="userprofile-text27">Books in cart: <%= wishlistCount %></span>
                       </span>
                     </div>
                   </div>
@@ -52,16 +52,11 @@
                 <div class="userprofile-frame13">
                   <span class="userprofile-text28">Overdue books!</span>
                   <div class="userprofile-container08">
-                    <a
-                      href="pay-due-fee-online.html"
-                      class="userprofile-navlink09"
-                    >
-                      <img
-                        alt="ThinkJavabook1879"
-                        src="/playground_assets/thinkjavabook1879-ii5v-300h.png"
-                        class="userprofile-think-javabook1"
-                      />
-                    </a>
+                    <img
+                      alt="ThinkJavabook1879"
+                      src="/playground_assets/thinkjavabook1879-ii5v-300h.png"
+                      class="userprofile-think-javabook1"
+                    />
                     <h2 class="userprofile-text29">for 3 days&nbsp;</h2>
                   </div>
                 </div>
