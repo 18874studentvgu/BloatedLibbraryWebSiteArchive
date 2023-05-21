@@ -110,8 +110,6 @@ http.listen(3000, () => {
 app.get('/', borrowDueDate,homeController)
 app.get('/index', borrowDueDate ,homeController)
 
-//borrow 
-app.post('/users/borrow', borrow)
 
 //borrow2
 app.post('/users/borrow2', borrow2)
