@@ -13,23 +13,31 @@
                 <h1 class="waiting-for-payment-confirmation-text06">
                   <span>Waiting for online payment</span>
                 </h1>
-                <form action="/storePaySuccess/<%= payWaiting._id %>" method="POST" name="storePaySuccess">
+                <form action="/storePaySuccess/<%= record._id %>" method="POST" name="storePaySuccess">
                   <div class="waiting-for-payment-confirmation-container3">
-                    <img
-                      alt="AlanTuringbook28520"
-                      src="/playground_assets/alanturingbook28520-8axk-500h.png"
-                      class="waiting-for-payment-confirmation-alan-turingbook2"
-                    />
+                    <% if (book.coverLink) {%>
+                      <img
+                        alt="AlanTuringbook28573"
+                        src="<%= book.coverLink %>"
+                        class="waiting-for-payment-confirmation-alan-turingbook2"
+                      />
+                      <%} else {%> 
+                        <img
+                        alt="AlanTuringbook28520"
+                        src="/playground_assets/alanturingbook28520-8axk-500h.png"
+                        class="waiting-for-payment-confirmation-alan-turingbook2"
+                      />
+                      <%} %>
                     <article class="waiting-for-payment-confirmation-container4">
                       <p class="waiting-for-payment-confirmation-text08">
                         <span class="waiting-for-payment-confirmation-text09">Book name: </span>
                         <span></span>
-                        <span class="waiting-for-payment-confirmation-text11"> ALAN TURING: THE ENIGMA </span>
+                        <span class="waiting-for-payment-confirmation-text11"><%= book.title %> </span>
                       </p>
                       <p class="waiting-for-payment-confirmation-text12">
                         <span class="waiting-for-payment-confirmation-text13">Total fee: </span>
                         <span></span>
-                        <span class="waiting-for-payment-confirmation-text15"><%= payWaiting.paymentAmount %>.000 VND</span>
+                        <span class="waiting-for-payment-confirmation-text15"><%= record.paymentAmount %>.000 VND</span>
                       </p>
                       <p class="waiting-for-payment-confirmation-text16">
                         <span>

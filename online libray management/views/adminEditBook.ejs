@@ -13,7 +13,19 @@
                     <div class="add-book-login">
                         <div class="add-book-background">
                             <h1 class="add-book-text06">Edit book</h1>
-                            <form action="/admin/storeEditBook/<%= detailedBook._id %>" method="POST" class="add-book-form">
+                            <form action="/admin/storeEditBook/<%= detailedBook._id %>" enctype="multipart/form-data" method="POST" class="add-book-form">
+                                <label for="avatar" class = "add-book-text07">
+                                    Book Cover:
+                                    <% if (detailedBook.coverLink) { %>
+                                    <img
+                                    src="<%= detailedBook.coverLink %>"
+                                    />
+                                    <% } else { %>
+                                    <label for="avatar" class = "add-book-text07">
+                                        None
+                                    </label>
+                                    <% } %>
+                                  </label>
                                 <div class="add-book-book-name">
                                     <label for="name" class="add-book-text07">Book name</label>
                                     <input
@@ -84,6 +96,42 @@
                                         value= "<%= detailedBook.PDFPreviewLink %>"
                                     />
                                 </div>
+                                <div class="add-book-pub-year">
+                                    <label for="PDFPreviewLink" class="add-book-text11">
+                                    Language
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="language"
+                                        name="language"
+                                        class="add-book-textinput4 input"
+                                        value= "<%= detailedBook.language %>"
+                                    />
+                                </div>
+                                <div class="add-book-pub-year">
+                                    <label for="PDFPreviewLink" class="add-book-text11">
+                                    Publisher
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="publisher"
+                                        name="publisher"
+                                        class="add-book-textinput4 input"
+                                        value= "<%= detailedBook.publisher %>"
+                                    />
+                                </div>
+                                <div class="add-book-pub-year">
+                                    <label for="PDFPreviewLink" class="add-book-text11">
+                                    Published Year
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="publishedAt"
+                                        name="publishedAt"
+                                        class="add-book-textinput4 input"
+                                        value= "<%= detailedBook.publishedAt %>"
+                                    />
+                                </div>
                                 <div class="add-book-quantity">
                                     <label for="copiesAvailable" class="add-book-text12">No. of books</label>
                                     <input
@@ -92,6 +140,15 @@
                                         name="copiesAvailable"
                                         class="add-book-textinput5 input"
                                         value= "<%= detailedBook.copiesAvailable %>"
+                                    />
+                                </div>
+                                <div class="add-book-pub-year">
+                                    <label for="coverLink" class="add-book-text10">Book Cover</label>
+                                    <input
+                                      type="file"
+                                      id="image"
+                                      name="image"
+                                      class="add-book-textinput3 input"
                                     />
                                 </div>
                                 <button type='submit' class="add-book-login1 button">Submit</button>

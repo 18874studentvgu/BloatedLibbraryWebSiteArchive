@@ -186,7 +186,7 @@
 }
 .pay-due-fee-with-cash-container3 {
   width: 1291.9921493530273px;
-  height: 544px;
+  height: auto;
   display: flex;
   align-self: center;
   margin-top: -40px;
@@ -202,7 +202,7 @@
 }
 .pay-due-fee-with-cash-container4 {
   width: 1014px;
-  height: 550px;
+  height: auto;
   display: flex;
   /* margin-top: var(--dl-space-space-fourunits); */
   align-items: flex-start;

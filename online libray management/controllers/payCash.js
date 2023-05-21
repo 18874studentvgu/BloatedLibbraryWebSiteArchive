@@ -1,9 +1,24 @@
-const PayCash = require("../models/BorrowRecord");
+const Record = require("../models/BorrowRecord");
+const Books = require("../models/Book");
 
 module.exports = (req, response) => {
-    PayCash.findById(req.params.id)
-    .then( (payCash) => {
-        console.log(payCash)
-        response.render('payCash', { payCash : payCash })
+    Promise.all
+    ([
+        Record.findById(req.params.id),
+        Books.find({})
+    ])
+    .then( ([record, books]) => {
+        var book;
+        for (var i = 0; i < books.length; i++)
+        {
+            if (record.bookID.equals(books[i]._id))
+            {
+                book = books[i];
+            }
+        }
+        response.render('payCash', { 
+            record,
+            book
+         })
     })
 }

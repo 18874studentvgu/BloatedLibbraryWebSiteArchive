@@ -14,26 +14,39 @@
                                     <span>Pay overdue fee with online banking</span>
                                 </span>
                                 <div class="pay-due-fee-online-container03">
+                                    <% if (book.coverLink) {%>
                                     <img
-                                    alt="AlanTuringbook28573"
-                                    src="/playground_assets/alanturingbook28573-m3wl-500h.png"
-                                    class="pay-due-fee-online-alan-turingbook2"
+                                        alt="AlanTuringbook28573"
+                                        src="<%= book.coverLink %>"
+                                        class="pay-due-fee-online-alan-turingbook2"
                                     />
+                                    <%} else {%> 
+                                    <img
+                                        alt="AlanTuringbook28573"
+                                        src="/playground_assets/alanturingbook28573-m3wl-500h.png"
+                                        class="pay-due-fee-online-alan-turingbook2"
+                                    />
+                                    <%} %>
                                     <div class="pay-due-fee-online-container04">
                                         <span class="pay-due-fee-online-text08">
                                             <span class="pay-due-fee-online-text09">Book name: </span>
                                             <span></span>
-                                            <span class="pay-due-fee-online-text11">ALAN TURING: THE ENIGMA </span>
+                                            <span class="pay-due-fee-online-text11"><%= book.title %></span>
                                         </span>
                                         <span class="pay-due-fee-online-text12">
                                             <span class="pay-due-fee-online-text13">Issued date: </span>
                                             <span></span>
-                                            <span class="pay-due-fee-online-text15"><%= payOnline.leaseDate.toDateString() %></span>
+                                            <span class="pay-due-fee-online-text15"><%= record.leaseDate.toDateString() %></span>
+                                        </span>
+                                        <span class="pay-due-fee-online-text16">
+                                            <span class="pay-due-fee-online-text17">Due date: </span>
+                                            <span></span>
+                                            <span class="pay-due-fee-online-text19"><%= record.dueDate.toDateString() %></span>
                                         </span>
                                         <span class="pay-due-fee-online-text24">
                                             <span class="pay-due-fee-online-text25">Total fee: </span>
                                             <span></span>
-                                            <span class="pay-due-fee-online-text27"><%= payOnline.paymentAmount %>.000 VND</span>
+                                            <span class="pay-due-fee-online-text27"><%= record.paymentAmount %>.000 VND</span>
                                         </span>
                                         <span class="pay-due-fee-online-text28">
                                             <span class="pay-due-fee-online-text29">Attention: </span>
@@ -51,7 +64,7 @@
                                     />
                                     <div class="pay-due-fee-online-container06">
                                         <a
-                                            href="/payWaiting/<%= payOnline._id %>"
+                                            href="/payWaiting/<%= record._id %>"
                                             class="pay-due-fee-online-navlink06"
                                         >
                                             <img
@@ -61,7 +74,7 @@
                                             />
                                         </a>
                                         <a
-                                            href="/payWaiting/<%= payOnline._id %>"
+                                            href="/payWaiting/<%= record._id %>"
                                             class="pay-due-fee-online-navlink07"
                                         >
                                             <img
@@ -71,7 +84,7 @@
                                             />
                                         </a>
                                         <a
-                                            href="/payWaiting/<%= payOnline._id %>"
+                                            href="/payWaiting/<%= record._id %>"
                                             class="pay-due-fee-online-navlink08"
                                         >
                                             <img
@@ -93,7 +106,7 @@
                                     />
                                     <div class="pay-due-fee-online-container08">
                                         <a
-                                            href="/payWaiting/<%= payOnline._id %>"
+                                            href="/payWaiting/<%= record._id %>"
                                             class="pay-due-fee-online-navlink09"
                                         >
                                             <img
@@ -103,7 +116,7 @@
                                             />
                                         </a>
                                         <a
-                                            href="/payWaiting/<%= payOnline._id %>"
+                                            href="/payWaiting/<%= record._id %>"
                                             class="pay-due-fee-online-navlink10"
                                         >
                                             <img
@@ -113,7 +126,7 @@
                                             />
                                         </a>
                                         <a
-                                            href="/payWaiting/<%= payOnline._id %>"
+                                            href="/payWaiting/<%= record._id %>"
                                             class="pay-due-fee-online-navlink11"
                                         >
                                             <img
@@ -147,7 +160,7 @@
                                     <span class="pay-due-fee-online-text43"><span>CVV</span></span>
                                         <input type="text" class="pay-due-fee-online-textinput3 input" />
                                     <a
-                                    href="/payWaiting/<%= payOnline._id %>"
+                                    href="/payWaiting/<%= record._id %>"
                                     class="pay-due-fee-online-navlink12 button"
                                     > Pay
                                     </a>
