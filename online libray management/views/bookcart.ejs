@@ -185,7 +185,7 @@
                 value= <%= date %>
                 > 
                 <% for (var k = 0; k < book.length; k++)  { %>
-                  <%if(a[i].bookName == book[k].name )  { %>
+                  <%if(a[i].bookID.equals(book[k]._id))  { %>
                 <img
                   alt="ThinkJavabook19753"
                   src="<%= book[k].coverLink %>"
@@ -193,12 +193,12 @@
                 />
                 <div class="app-component-container1">
                   <span class="app-component-text">
-                    <span><%= a[i].bookName %></span>
+                    <span><%= book[k].title %></span>
                   </span>
                   <span class="app-component-text02">
                     <span>Author:</span>
                     <span class="app-component-text04">
-                      <%= a[i].Author %> 
+                      <%= book[k].author %> 
                     </span>
                     <span></span>
                     <span></span>
