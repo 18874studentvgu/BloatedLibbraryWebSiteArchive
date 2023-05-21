@@ -47,9 +47,9 @@ window.onclick = function(event) {
 toggle between hiding and showing the dropdown content */
 function paymentFunction() {
   document.getElementById("paymentChoice").classList.toggle("show");
-  bookid = document.querySelector('input[name="id"]:checked').value;
-  document.getElementById("help").href="/payCash/" + bookid + ""; 
-  document.getElementById("why").href="/payOnline/" + bookid + ""; 
+  borrowid = document.querySelector('input[name="id"]:checked').value;
+  document.getElementById("help").href="/payCash/" + borrowid + ""; 
+  document.getElementById("why").href="/payOnline/" + borrowid + ""; 
   
   }
   
