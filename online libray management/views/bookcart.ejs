@@ -35,7 +35,7 @@
                 <%if(borrowedList[r].bookID.equals(book[k]._id ) ) {%>
                 <img
                   alt="ThinkJavabook19753"
-                  src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
+                  src="<%= book[k].coverLink %>"
                   class="app-component-think-javabook1" 
                 />
                 <div class="app-component-container1">
@@ -107,7 +107,7 @@
                     
                 <img
                   alt="ThinkJavabook19753"
-                  src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
+                  src="<%= book[k].coverLink %>"
                   class="app-component-think-javabook1"
                 />
                 <div class="app-component-container1">
@@ -184,10 +184,11 @@
                 class="book-info-textinput input"
                 value= <%= date %>
                 > 
-
+                <% for (var k = 0; k < book.length; k++)  { %>
+                  <%if(a[i].bookName == book[k].name )  { %>
                 <img
                   alt="ThinkJavabook19753"
-                  src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
+                  src="<%= book[k].coverLink %>"
                   class="app-component-think-javabook1"
                 />
                 <div class="app-component-container1">
@@ -202,6 +203,8 @@
                     <span></span>
                     <span></span>
                   </span>
+                  <% } %>
+                  <% } %>
                   <span class="app-component-text07">
                     <span>wishlist date:</span>
                     <span class="app-component-text09"><%= wishlist[0].createdAt.toDateString() %></span>
