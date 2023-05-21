@@ -20,9 +20,7 @@
             <div class="bookcart-container05">
               <span class="bookcart-text15"><span>Overdue</span></span>
             <% for (var r = 0; r < borrowedList.length; r++) { %>
-            <% for (var j = 0; j < book.length; j++) { %>
-              <% if (borrowedList[r].overDue == true &&
-              borrowedList[r].bookID.equals( book[j]._id ) ) { %>
+              <% if (borrowedList[r].overDue == true ) { %>
               <div class="app-component-container">
                 <input
                   type="radio"
@@ -33,19 +31,21 @@
                   value = <%= borrowedList[r]._id %>
                   
                 />
+                <% for (var k = 0; k < book.length; k++) { %>
+                <%if(borrowedList[r].bookID.equals(book[k]._id ) ) {%>
                 <img
                   alt="ThinkJavabook19753"
-                  src="<%= book[j].coverLink %>"
+                  src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
                   class="app-component-think-javabook1" 
                 />
                 <div class="app-component-container1">
                   <span class="app-component-text">
-                    <span><%= book[j].name %></span>
+                    <span><%=book[k].name %></span>
                   </span>
                   <span class="app-component-text02">
                     <span>Author:</span>
                     <span class="app-component-text04">
-                      <%= book[j].author %>
+                     <%=book[k].author %>
                     </span>
                     <span></span>
                     <span></span>
@@ -53,33 +53,31 @@
                   <span class="app-component-text07">
                     <span>Issued date:</span>
                     <span class="app-component-text09">
-                      <%= borrowedList[r].leaseDate.toDateString() %>
+                      <%= borrowedList[r].createdAt.toDateString() %>
                     </span>
                   </span>
-                  <span class="app-component-text10">
-                    <span>Due date:</span>
-                    <span class="app-component-text12">
-                      <%= borrowedList[r].dueDate.toDateString() %>
-                    </span>
-                  </span>
+                  
                   <span class="app-component-text13">
                     <span class="app-component-text14">Total fee:</span>
                     <span class="app-component-text15">
-                      <%= borrowedList[r].paymentAmount %>.000VND
+                      <%= borrowedList[r].paymentAmount %>
                     </span>
                   </span>
                 </div>
+                <% break %>
+                <% } %>
+                <% } %>
+
               </div>
+              <% }%>
+              <% } %>
               <div class = "dropdown" >
                 <button  class="bookcart-view-all-button button" onclick="paymentFunction()">Pay Overdue</button>
                 <div class = "dropdown-content-1" id ="paymentChoice"  >
-                  <a  id= "help" href="/payCash/<%= borrowedList[r]._id %>">by Cash</a>
-                  <a  id="why" href="/payOnline/<%= borrowedList[r]._id %>">by Credit card</a>
+                  <a  id= "help" href="/payCash/<%= bookid  %>">by Cash</a>
+                  <a  id="why" href="/payOnline/<%= bookid  %>">by Credit card</a>
                 </div>
               </div>
-              <% } %>
-              <% } %>
-              <% } %>
               
             </div>
           
