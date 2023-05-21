@@ -1,8 +1,6 @@
 const Borrow = require("../models/BorrowRecord");
 const Users = require("../models/User.js");
-const Borrow1 = require("../models/BorrowRecord");
-const Book = require('../models/Book')
-var mongoose = require('mongoose');
+
 const sendEmail=require('../controllers/sendEmail')
 module.exports = (req, res, next) => {
     Promise.all
