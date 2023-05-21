@@ -31,6 +31,8 @@
                   value = <%= borrowedList[r]._id %>
                   
                 />
+                <% for (var k = 0; k < book.length; k++) { %>
+                <%if(borrowedList[r].bookID.equals(book[k]._id ) ) {%>
                 <img
                   alt="ThinkJavabook19753"
                   src="/playground_assets/thinkjavabook19753-xe8k-200w.png"
@@ -38,12 +40,12 @@
                 />
                 <div class="app-component-container1">
                   <span class="app-component-text">
-                    <span>Think Java</span>
+                    <span><%=book[k].author %></span>
                   </span>
                   <span class="app-component-text02">
                     <span>Author:</span>
                     <span class="app-component-text04">
-                      A. B. Downey, C. Mayfield
+                     <%=book[k].author %>
                     </span>
                     <span></span>
                     <span></span>
@@ -51,22 +53,21 @@
                   <span class="app-component-text07">
                     <span>Issued date:</span>
                     <span class="app-component-text09">
-                      help
+                      <%= borrowedList[r].createdAt.toDateString() %>
                     </span>
                   </span>
-                  <span class="app-component-text10">
-                    <span>Return date:</span>
-                    <span class="app-component-text12">
-                    help
-                    </span>
-                  </span>
+                  
                   <span class="app-component-text13">
                     <span class="app-component-text14">Total fee:</span>
                     <span class="app-component-text15">
-                     help
+                      <%= borrowedList[r].paymentAmount %>
                     </span>
                   </span>
                 </div>
+                <% break %>
+                <% } %>
+                <% } %>
+
               </div>
               <% }%>
               <% } %>
@@ -126,7 +127,7 @@
                     <span class="app-component-text09"><%= borrowedList[j].createdAt.toDateString() %></span>
                   </span>
                   <span class="app-component-text10">
-                    <span>Return date:</span>
+                    <span>Due date:</span>
                     <span class="app-component-text12"><%= da.toDateString() %></span>
                   </span>
                 </div>

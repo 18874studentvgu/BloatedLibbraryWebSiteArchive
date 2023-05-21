@@ -32,7 +32,8 @@ const BorrowRecordSchema = new mongoose.Schema({
     },
     paymentAmount: {
         type: Number,
-        min: [0, 'Payment cannot be <0, got {VALUE}.']
+        min: [0, 'Payment cannot be <0, got {VALUE}.'],
+        default: 0
     },
 
     hasReturned: { type: Boolean, default: false },

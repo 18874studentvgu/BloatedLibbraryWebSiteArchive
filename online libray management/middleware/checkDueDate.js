@@ -39,6 +39,7 @@ module.exports = (req, res, next) => {
                             if (user[k]._id.equals(borrow[i].userID) ){
                                 console.log("help")
                                 borrow[i].overDue = true
+                                borrow[i].paymentAmount = 100;
                                 borrow[i].status = "overdue";
                                 borrow[i].save()
                             }
