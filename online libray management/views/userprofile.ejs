@@ -26,7 +26,7 @@
                     <div class="userprofile-container06">
                       <span class="userprofile-text18">
                         <span class="userprofile-text19">
-                          Borrowing books: 3
+                          Borrowing books: <%= user.booksBorrowing.length %>
                         </span>
                       </span>
                       <span class="userprofile-text20">
@@ -39,7 +39,7 @@
                     <div class="userprofile-container07">
                       <span class="userprofile-text23">
                         <span class="userprofile-text24">Books reviewed:</span>
-                        <span>4</span>
+                        <span><%= reviews.length %></span>
                       </span>
                       <span class="userprofile-text26">
                         <span class="userprofile-text27">Books in cart: 4</span>

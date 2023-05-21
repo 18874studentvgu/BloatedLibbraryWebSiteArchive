@@ -1,12 +1,17 @@
 const User = require('../models/User')
+const Review = require('../models/Review')
 module.exports = (req, response) => {
     const username = user1;
     console.log(username);
-    User.findOne({username: username})
-    .then((user)=>{
-        console.log(user);
+    Promise.all([
+        User.findById(req.session.userId),
+        Review.find({ "writtenBy.userID": req.session.userId })
+    ])
+    .then(([user,reviews])=>{
+        console.log("hi")
         response.render('userprofile', {
-            user: user 
+            user,
+            reviews
         })
     })
     .catch((error,user) =>{

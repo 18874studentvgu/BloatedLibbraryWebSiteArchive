@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
-const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session');
+const Book = require('./models/Book')
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
@@ -38,18 +38,47 @@ const logout=require('./controllers/logout')
 const wishlist = require('./controllers/AddToWishlist')
 const updateAccount = require('./controllers/updateAccount')
 const borrow = require('./controllers/BorrowBook')
+const borrow2 = require('./controllers/borrow2')
+const adminDashboard = require('./controllers/admin/dashboard')
+const adminUserDashboard = require('./controllers/admin/usersList')
+const adminBookDashboard = require('./controllers/admin/booksList')
+const adminAddBook = require('./controllers/admin/addBook')
+const adminAddUser = require('./controllers/admin/addUser')
+const adminStoreBook = require('./controllers/admin/storeBook')
+const adminStoreUser = require('./controllers/admin/storeUser')
+const adminGetBook = require('./controllers/admin/getBook')
+const adminGetUser = require('./controllers/admin/getUser')
+const adminGetEditBook = require('./controllers/admin/getEditBook')
+const adminStoreEditBook = require('./controllers/admin/storeEditBook')
+const adminGetEditUser = require('./controllers/admin/getEditUser')
+const adminStoreEditUser = require('./controllers/admin/storeEditUser')
+const adminLoggedInCheck = require('./middleware/adminValidationMiddleware')
+const adminWarnDeleteBook = require('./controllers/admin/warnDeleteBook')
+const adminDeleteBook = require('./controllers/admin/deleteBook')
+const adminWarnDeleteUser = require('./controllers/admin/warnDeleteUser')
+const adminDeleteUser = require('./controllers/admin/deleteUser')
 const updateImage = require('./controllers/updateAccountImage')
+const searchFilterBook = require('./controllers/searchFilterBook')
+const payCash = require('./controllers/payCash')
+const payOnline = require('./controllers/payOnline')
+const payWaiting = require('./controllers/payWaiting')
+const paySuccess = require('./controllers/paySuccess')
+const storePaySuccess = require('./controllers/storePaySuccess')
+const bookcart = require('./controllers/bookcart')
+const returnBook = require('./controllers/returnBook')
+
+//middileware
+    //check due date of borrowed book
+    const borrowDueDate = require('./middleware/checkDueDate')
+
 //check logged in and newuser
 global.loggedIn = null;
 global.user1= null;
 global.loggedInAdmin= null;
-
+global.bookid = null;
 //
 global.userid = null;
 console.log(userid)
-
-    
-
 
 //cookies
 app.use(fileUpload())
@@ -68,50 +97,7 @@ io.on("connection", function(socket){
         io.emit("new_comment", reviews, userName, body, rating, title);
     })
 
-    socket.on("new_button", function(button){
-        io.emit("new_button", button);
-    })
-
-    
-    socket.on("0", function(button){
-        io.emit("0", button);
-    })
-    
-    socket.on("1", function(button){
-        io.emit("1", button);
-    })
-
-    socket.on("2", function(button){
-        io.emit("2", button);
-    })
-
-    socket.on("3", function(button){
-        io.emit("3", button);
-    })
-
-    socket.on("4", function(button){
-        io.emit("4", button);
-    })
-
-    socket.on("5", function(button){
-        io.emit("5", button);
-    })
-
-    socket.on("6", function(button){
-        io.emit("6", button);
-    })
-
-    socket.on("7", function(button){
-        io.emit("7", button);
-    })
-
-    socket.on("8", function(button){
-        io.emit("8", button);
-    })
-
-    socket.on("9", function(button){
-        io.emit("9", button);
-    })
+  
 });
 
 app.use(express.static('public'))
@@ -120,12 +106,19 @@ http.listen(3000, () => {
     console.log("App listening on port 3000")
 }) 
 
-
-
-
 //home and post preview
-app.get('/', homeController)
-app.get('/index', homeController)
+app.get('/', borrowDueDate,homeController)
+app.get('/index', borrowDueDate ,homeController)
+
+//borrow 
+app.post('/users/borrow', borrow)
+
+//borrow2
+app.post('/users/borrow2', borrow2)
+
+//return the book
+app.post('/users/returnBook', returnBook)
+
 
 //get
 app.get('/about', aboutController)
@@ -191,9 +184,86 @@ app.post('/users/review', storeReviewController)
 //add to wishlist
 app.post('/users/wishlist', wishlist)
 
-//borrow 
-app.post('/users/borrow', borrow)
+// search filter book
+app.get('/searchFilterBook', searchFilterBook)
+
+// pay cash
+app.get('/payCash/:id', payCash)
+
+// pay online
+app.get('/payOnline/:id', payOnline)
+
+// pay waiting
+app.get('/payWaiting/:id', payWaiting)
+
+// pay success
+app.get('/paySuccess/:id', paySuccess)
+
+// book cart
+app.get('/bookcart', bookcart)
+
+// get book for searching
+app.post('/getBooks',async (req,res)=>{
+    let payload = req.body.payload.trim();
+    let search = await Book.find({title :{$regex : new RegExp('^'+payload+'.*','i')}}).exec();
+    //Limit Search Results to 10
+    search = search.slice(0,10);
+    res.send({payload: search});
+})
+
+// store pay success
+app.post('/storePaySuccess/:id', storePaySuccess); 
+
+//admin dashboard
+app.get('/adminDashboard', adminLoggedInCheck, adminDashboard)
+
+//admin users dashboard
+app.get('/adminUsersList', adminLoggedInCheck, adminUserDashboard)
+
+//admin books dashboard
+app.get('/adminBooksList', adminLoggedInCheck, adminBookDashboard)
+
+//admin add book function
+app.get('/adminBooksList/addBook', adminLoggedInCheck, adminAddBook)
+
+//admin add user function
+app.get('/adminUsersList/addUser', adminLoggedInCheck, adminAddUser)
+
+//store Book's information from admin
+app.post('/admin/storeBook', adminLoggedInCheck, adminStoreBook)
+
+//store User's information from admin
+app.post('/admin/storeUser', adminLoggedInCheck, adminStoreUser)
+
+//get details about a Book from admin
+app.get("/adminBooksList/:id", adminLoggedInCheck, adminGetBook)
+
+//get details about an User from admin
+app.get("/adminUsersList/:id", adminLoggedInCheck, adminGetUser)
+
+//get page to edit a Book as an Admin
+app.get("/adminBooksList/edit/:id", adminLoggedInCheck, adminGetEditBook)
+
+//store an edited Book as an Admin
+app.post("/admin/storeEditBook/:id", adminLoggedInCheck, adminStoreEditBook)
+
+//get page to edit a User as an Admin
+app.get("/adminUsersList/edit/:id", adminLoggedInCheck, adminGetEditUser)
+
+//store an edited User as an Admin
+app.post("/admin/storeEditUser/:id", adminLoggedInCheck, adminStoreEditUser)
+
+//confirmation to delete a Book as an Admin
+app.get("/adminBooksList/deleteWarn/:id", adminLoggedInCheck, adminWarnDeleteBook)
+
+//send request to delete a Book as an Admin
+app.post("/admin/deleteBook/:id", adminLoggedInCheck, adminDeleteBook)
+
+//confirmation to delete a User as an Admin
+app.get("/adminUsersList/deleteWarn/:id", adminLoggedInCheck, adminWarnDeleteUser)
+
+//send request to delete a Useras an Admin
+app.post("/admin/deleteUser/:id", adminLoggedInCheck, adminDeleteUser)
 
 //error page
 app.use((req, res) => res.render('404')); 
-

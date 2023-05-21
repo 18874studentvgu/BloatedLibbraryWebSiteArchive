@@ -2,19 +2,29 @@
     <div class="userprofilesetting-userchoice">
       <div class="userprofilesetting-group13">
        <% if (!loggedInAdmin) { %> 
-        <img
-          alt="image5884"
-          class="userprofilesetting-image5"
-          src="<%= user.iconLink %>"
-        />
+        <a
+        href="/user_profile"
+        class="userprofilesetting-navlink08"
+      >
+          <img
+            alt="image5884"
+            class="userprofilesetting-image5"
+            src="<%= user.iconLink %>"
+          />
+        </a>
         <%  } %>
 
         <% if (loggedInAdmin) { %> 
+          <a
+        href="/user_profile"
+        class="userprofilesetting-navlink08"
+      >
           <img
             alt="image5884"
             class="userprofilesetting-image5"
             src="/playground_assets/image5884-bghq-200h.png"
           />
+          </a>
           <%  } %>
       </div>
       <div class="userprofilesetting-nanme">
@@ -26,7 +36,7 @@
       <% if(loggedInAdmin) { %>
 
         <a
-        href="/user_profile_setting"
+        href="/adminDashboard"
         class="userprofilesetting-navlink08"
         >
         <h2 class="userprofilesetting-text12"><span>Admin</span></h2>
@@ -42,13 +52,7 @@
         <%  } %>
         
       <% if(!loggedInAdmin) { %>
-
-        <a href="/user_profile" class="userprofilesetting-navlink07">
-          <h2 class="userprofilesetting-text10"><span>User Profile</span></h2>
-        </a>
-
-
-        <a href="bookcart.html" class="userprofilesetting-navlink07">
+        <a href="/bookcart" class="userprofilesetting-navlink07">
           <h2 class="userprofilesetting-text10"><span>Books</span></h2>
         </a>
   

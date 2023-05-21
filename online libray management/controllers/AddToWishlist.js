@@ -2,11 +2,7 @@ const WishList = require('../models/WishList')
 module.exports=(req,res) =>{
     if(loggedIn){
         console.log(req.body)
-        // WishList.create(req.body)
-        // .then(()=>{
-        //     res.send({
-        //     text:"sucessfully send"
-        //     });
+        
         let uid= req.body.userID;
         console.log(req.body.userID);
         let book = {
@@ -19,9 +15,7 @@ module.exports=(req,res) =>{
         WishList.findOneAndUpdate({'userID': uid}, {$push: {'books': book}},{upsert:true})
         .catch((error)=> console.log(error))
         .then((book)=>{
-            res.send({
-            text:"sucessfully send"
-            });
+            res.redirect('/index')
         })
     } else {
         console.log(req.body)

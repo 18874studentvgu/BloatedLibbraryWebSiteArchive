@@ -14,98 +14,72 @@
 
           <div class="book-info-bookdetailauthordatenamedescrip">
             <div class="book-info-book-image">
-              <h2 class="book-info-text006"><span>About this edition</span></h2>
-              <img
+              <h2 class="book-info-text006"><span>About this book</span></h2>
+              <% if (book.coverLink) { %>
+                <img
+                src="<%= book.coverLink %>"
+                class="book-info-alan-turingbook1"
+              />
+              <% } else { %> 
+                <img
                 alt="AlanTuringbook16114"
                 src="/playground_assets/alanturingbook16114-t1r-500w.png"
                 class="book-info-alan-turingbook1"
-              />
+              /> 
+              <% } %>
             </div>
             <div class="book-info-bok-info">
               <h1 class="book-info-text008">
-                <span><%= book.name %></span>
+                <span><%= book.title %></span>
               </h1>
               <div class="book-info-info">
                 <div class="book-info-info1">
                   <h2 class="book-info-text010">
-                    <span class="book-info-text011">Athour:</span>
+                    <span class="book-info-text011">Author:</span>
                     <span><%= book.author %></span>
                   </h2>
-                  <h2 class="book-info-text013">
+                  <h2 class="book-info-text010">
                     <span class="book-info-text014">Language:</span>
                     <span class="book-info-text015">
                       <span></span>
                       <span></span>
                     </span>
-                    <span>English</span>
+                    <span><%= book.language %></span>
+                  </h2>
+                  <h2 class="book-info-text010">
+                    <span class="book-info-text011">Uploaded:</span>
+                    <span><%= book.createdAt.toDateString() %></span>
                   </h2>
                 </div>
                 <div class="book-info-info2">
                   <h2 class="book-info-text019">
                     <span class="book-info-text020">Publisher:</span>
-                    <span class="book-info-text021">R</span>
-                    <span>andom House</span>
+                    <span class="book-info-text021"><%= book.publisher %></span>
                   </h2>
                   <h2 class="book-info-text023">
-                    <span class="book-info-text024">Published</span>
+                    <span class="book-info-text024">Published Year:</span>
                     <span class="book-info-text025">:</span>
-                    <span>November 30, 2012</span>
+                    <span><%= book.publishedAt %></span>
                   </h2>
                 </div>
               </div>
               <div class="book-info-category">
                 <h2 class="book-info-text027"><span>Category:</span></h2>
                 <div class="book-info-cat">
+                  <% for (var i = 0; i < book.categories.length; i++) { %> 
                   <div class="book-info-tag">
-                    <span class="book-info-text029"><span>science</span></span>
+                    <span class="book-info-text029">
+                      <span>
+                      <%= book.categories[i] %> 
+                      </span>
+                    </span>
                   </div>
-                  <div class="book-info-tag1">
-                    <span class="book-info-text031"><span>science</span></span>
-                  </div>
-                  <div class="book-info-tag2">
-                    <span class="book-info-text033"><span>science</span></span>
-                  </div>
+                     <% } %>
                 </div>
               </div>
+              <% if (loggedIn) { %>
               <div class="book-info-container2">
-                <form id = "wishlistBook" method="POST">
-                  <input
-                              type="hidden"
-                              name="userID"
-                              id="userID"
-                              class="book-info-textinput input"
-                              value= <%= loggedIn %>
-                              > 
-
-                              <input
-                              type="hidden"
-                              name="bookID"
-                              id="bookID"
-                              class="book-info-textinput input"
-                              value= <%= book._id %>
-                              > 
-
-                              <input
-                              type="hidden"
-                              name="bookName"
-                              id="bookName"
-                              class="book-info-textinput input"
-                              value= <%= book.name %>
-                              > 
-
-                              <input
-                              type="hidden"
-                              name="Author"
-                              id="Author"
-                              class="book-info-textinput input"
-                              value= <%= book.author %>
-                              > 
-
-                <button type="submit" class="book-info-button1 button">
-                  Wishlist
-                </button>
-              </form>
-                <form id = "borrow" method="POST">
+                <form action="/users/wishlist" method="POST">
                   <input
                   type="hidden"
                   name="userID"
@@ -122,13 +96,57 @@
                   value= <%= book._id %>
                   > 
 
+                  <input
+                  type="hidden"
+                  name="bookName"
+                  id="bookName"
+                  class="book-info-textinput input"
+                  value= <%= book.name %>
+                  > 
 
+                  <input
+                  type="hidden"
+                  name="Author"
+                  id="Author"
+                  class="book-info-textinput input"
+                  value= <%= book.author %>
+                  > 
 
-                <button type="submit" class="book-info-button2 button">
-                  Borrow
-                </button>
-              </form>
+                  <button type="submit" class="book-info-button1 button">
+                    Wishlist
+                  </button>
+                </form>
+                <form action="/users/returnBook" method="POST">
+                  <input
+                  type="hidden"
+                  name="userID"
+                  id="userID"
+                  class="book-info-textinput input"
+                  value= <%= loggedIn %>
+                  > 
+
+                  <input
+                  type="hidden"
+                  name="bookID"
+                  id="bookID"
+                  class="book-info-textinput input"
+                  value= <%= book._id %>
+                  > 
+
+                  <input
+                  type="hidden"
+                  name="dueDate"
+                  id="dueDate"
+                  class="book-info-textinput input"
+                  value= <%= date %>
+                  > 
+
+                  <button type="submit" class="book-info-button2 button">
+                    Borrow
+                  </button>
+                </form>
               </div>
+              <% } %>
             </div>
           </div>
           <div class="book-info-container3">
@@ -157,33 +175,8 @@
             <h1 class="book-info-text037"><span>Summary</span></h1>
             <p id="Text" class="book-info-text039">
               <span>
-                The official book behind the Academy Award-winning film The
-                Imitation Game, starring Benedict Cumberbatch and Keira
-                KnightleyAlan Turing was the mathematician whose cipher-cracking
-                transformed the Second World War. Taken on by British
-                Intelligence in 1938, as a shy young Cambridge don, he combined
-                brilliant logic with a flair for engineering. In 1940 his
-                machines were breaking the Enigma-enciphered messages of Nazi
-                Germany’s air force. He then headed the penetration of the
-                super-secure U-boat communications.But his vision went far
-                beyond this achievement. Before the war he had invented the
-                concept of the universal machine, and in 1945 he turned this
-                into the first design for a digital computer.Turing's
-                far-sighted plans for the digital era forged ahead into a vision
-                for Artificial Intelligence. However, in 1952 his homosexuality
-                rendered him a criminal and he was subjected to humiliating
-                treatment. In 1954, aged 41, Alan Turing took his own life.
+                <%= book.synopsis %>
               </span>
-              <br />
-              <span>Source: Publisher</span>
-              <br />
-              <span>dadadad</span>
-              <br />
-              <span>adadadad</span>
-              <br />
-              <span>eqeqe</span>
-              <br />
-              <span>qeqeq</span>
               <br />
             </p>
             <img
