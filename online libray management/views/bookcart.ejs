@@ -20,7 +20,7 @@
             <div class="bookcart-container05">
               <span class="bookcart-text15"><span>Overdue</span></span>
             <% for (var r = 0; r < borrowedList.length; r++) { %>
-              <% if (borrowedList[r].returnDate == null) { %>
+              <% if (borrowedList[r].overDue == true ) { %>
               <div class="app-component-container">
                 <input
                   type="radio"
@@ -84,7 +84,7 @@
               <span class="bookcart-text17">Issued</span>
 
             <% for (var j = 0; j < borrowedList.length; j++) { %>
-              <% if (borrowedList[j].hasReturned == false) { %>
+              <% if (borrowedList[j].overDue == false && borrowedList[j].hasReturned == false) { %>
               <form action="/users/returnBook" method="POST">
               <div class="app-component-container">
                 <input

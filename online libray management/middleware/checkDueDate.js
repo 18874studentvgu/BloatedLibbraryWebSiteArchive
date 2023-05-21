@@ -17,8 +17,8 @@ module.exports = (req, res, next) => {
                     var now = new Date().getTime();
                     dif[i] = (Math.abs(now - borrow[i].createdAt)) / (1000 * 3600 * 24);
                     due[i] = (Math.abs(borrow[i].dueDate - borrow[i].createdAt)) / (1000 * 3600 * 24);
-                    // dif[i] = 0;
-                    // due[i] = 0;
+                    //  dif[i] = 0;
+                    //  due[i] = 0;
                     console.log(dif[i])
                     console.log(due[i])
                     
@@ -38,7 +38,7 @@ module.exports = (req, res, next) => {
                         for (var k = 0; k < user.length; k++) {
                             if (user[k]._id.equals(borrow[i].userID) ){
                                 console.log("help")
-                                borrow[i].hasReturned = true;
+                                borrow[i].overDue = true
                                 borrow[i].status = "overdue";
                                 borrow[i].save()
                             }
