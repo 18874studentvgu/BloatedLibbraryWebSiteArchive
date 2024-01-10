@@ -2,6 +2,9 @@
 
 # Project: Online Library Management
 
+> ## Note: 
+> This is an archive of our Univeristy project for the module "Programing Excercise" in WS2022. It is not really suitable to be anything other than a proof of concept.  
+
 ## Members:
  1. Tra Dang Khoa - @17637 - User ID: 13789744 (team leader)
  2. Son Nguyen Thanh - @18874studentvgu  -  User ID: 13789908
